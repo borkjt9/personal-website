@@ -8,8 +8,6 @@ image: node:7.8.0
 clone:
   depth: full
 
-
-  
 pipelines:
   default:
     - step:
