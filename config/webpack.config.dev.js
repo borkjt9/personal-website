@@ -221,8 +221,7 @@ module.exports = {
           {
             test: /\.scss$/,
             loaders: [
-              require.resolve('style-loader'),
-            ]
+              require.resolve('css-loader')            ]
           },
           {
             // Exclude `js` files to keep "css" loader working as it injects
