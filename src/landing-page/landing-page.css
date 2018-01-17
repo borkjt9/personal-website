@@ -1,0 +1,31 @@
+$underlineColor: #636363;
+$underlineHeight: 5%;
+$portfolioItemDimension: 250px;
+$pageColor: #FCFCFC;
+
+.landing-page {
+
+}
+.landing-page__portfolio {
+  max-width: 1200px;
+
+
+
+
+  }
+
+  .is-expanding {
+  animation: PortfolioExpand 0.8s ease-in-out 0.8s;
+  animation-fill-mode: both
+  }
+.landing-page__portfolio__item {
+
+
+
+}
+.is-expanded {
+  height: $portfolioItemDimension !important;
+  width: $portfolioItemDimension !important;
+  margin: 20px 10px 10px !important;
+  padding: 20px;
+}

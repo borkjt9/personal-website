@@ -6,7 +6,7 @@ import Portfolio from '../portfolio/portfolio';
 import Footer from '../footer/footer';
 import { Link } from 'react-router-dom';
 
-import './landing-page.scss';
+import './landing-page.css';
 import _ from "lodash"
 const duration = 4;
 
