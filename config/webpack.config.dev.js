@@ -221,8 +221,8 @@ module.exports = {
           {
             test: /\.scss$/,
             loaders: [
-              require.resolve('css-loader'),
-              require.resolve('sass-loader')
+              require.resolve('style-loader'),
+              require.resolve('css-loader')
             ]
           },
           {
