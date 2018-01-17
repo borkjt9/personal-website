@@ -102,7 +102,7 @@
     "extends": "react-app"
   },
   "engines": {
-    "node": "6.10.0",
+    "node": "7.8.0",
     "npm": "4.3.0"
 }
 }
