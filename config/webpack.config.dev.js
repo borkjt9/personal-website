@@ -219,6 +219,12 @@ module.exports = {
           // This loader doesn't use a "test" so it will catch all modules
           // that fall through the other loaders.
           {
+            test: /\.scss$/,
+            loaders: [
+              require.resolve('style-loader'),
+            ]
+          },
+          {
             // Exclude `js` files to keep "css" loader working as it injects
             // its runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
