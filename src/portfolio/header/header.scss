@@ -1,0 +1,46 @@
+$borderColor: #D9D9D9;
+$underlineColor: #636363;
+$underlineHeight: 5%;
+$portfolioItemDimension: 200px;
+$pageColor: #FCFCFC;
+
+.header {
+  background: white;
+
+  .header__top-bar {
+    height: 90px;
+    width: 100%;
+    border-bottom: 1px solid $borderColor;
+  }
+    .header__home-link {
+      left: 100px;
+    }
+
+    .header__portfolio-links {
+      margin: 0px auto;
+      display: inline-block;
+      position: relative;
+      right: 100px;
+      float: right;
+
+
+    }
+
+    .header__portfolio {
+      box-shadow: #D9D9D9 0px 1px 5px;
+      padding-left: 10%;
+      padding-right: 10%;
+
+      .header__portfolio__item {
+        &.is-expanding {
+          animation: Expand-Header 0.5s ease-in-out;
+          animation-fill-mode: forwards;
+        }
+
+        &.is-minimizing {
+          animation: Minimize-Header 0.5s ease-in-out;
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+}

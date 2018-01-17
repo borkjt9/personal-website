@@ -1,0 +1,17 @@
+$underlineColor: #636363;
+$underlineHeight: 5%;
+$portfolioItemDimension: 250px;
+$pageColor: #FCFCFC;
+html {
+  height: 100%;
+  background: $pageColor;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body {
+  margin: 0px;
+}

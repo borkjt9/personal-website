@@ -1,0 +1,25 @@
+$pageColor: #FAFAFA;
+$borderColor: #D9D9D9;
+
+.bac {
+
+  .bac__banner {
+    width: 100%;
+  }
+
+  .bac__body {
+    max-width: 800px;
+    min-height: 1000px;
+    margin: 0px auto 0px;
+
+    background-color: #FFFFFF;
+    border-left: 1px solid $borderColor;
+    border-right: 1px solid $borderColor;
+    box-shadow: #D9D9D9 0px 0px 8px;
+
+    .bac__tasks {
+      padding-right: 40px;
+    }
+
+  }
+}

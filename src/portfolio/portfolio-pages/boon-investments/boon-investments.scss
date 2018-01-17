@@ -1,0 +1,66 @@
+$pageColor: #FAFAFA;
+$borderColor: #D9D9D9;
+$underlineColor: #636363;
+
+.boon-investments {
+
+  .boon-investments__design__text,  .boon-investments__investment__text{
+    margin: -30px 0px;
+    width: 45%;
+    display: inline-block;
+  }
+
+  .boon-investments__wireframe, .boon-investments__investment__white-paper {
+    width: 35%;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    margin: auto 0px;
+    cursor: pointer;
+
+    &:hover {
+      .boon-investments__design__wireframe__description, .boon-investments__investment__white-paper__description {
+        opacity: 1
+      }
+    }
+
+    .boon-investments__design__wireframe__image, .boon-investments__investment__white-paper__image {
+      width: 100%;
+      border: solid 1px $borderColor;
+      padding: 2px;
+      box-shadow: 1px 1px 2px $borderColor;
+    }
+
+     .boon-investments__design__wireframe__description, .boon-investments__investment__white-paper__description {
+      margin: 4px auto;
+      opacity: 0;
+      transition: all 0.1s ease-in-out;
+      text-align: center;
+    }
+  }
+
+  .boon-investments__product__iphone-image {
+
+      margin: auto 20px;
+      width: 30%;
+      height: 50.1%;
+      text-align: center;
+  }
+
+
+  .boon-investments__product__text {
+    width: 50%;
+    display: inline-block;
+    margin: auto 20px;
+  }
+
+
+
+
+  .boon-investments__timeline {
+    .boon-investments__timeline__image {
+      width: calc(100% - 80px);
+      margin: auto 40px;
+    }
+  }
+
+}

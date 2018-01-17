@@ -1,0 +1,54 @@
+$underlineColor: #636363;
+$underlineHeight: 5%;
+$portfolioItemDimension: 250px;
+$pageColor: #FCFCFC;
+
+.links {
+
+  .links__link {
+    float: left;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: calc(100% - 16px);
+      margin-left: 8px;
+      position: absolute;
+      height: 1px;
+      bottom: -1px;
+      left: 0;
+      background-color: $underlineColor;
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+    }
+
+    &:hover::before {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+
+
+    &.is-active {
+      &::before {
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+    }
+  }
+
+
+  .links__divide {
+    float: left;
+    margin: 0px 20px;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    font-weight: 400px;
+  }
+}
+
+.links--landing-page {
+  margin: 20px auto;
+  display: inline-block;
+}

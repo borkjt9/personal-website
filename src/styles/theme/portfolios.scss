@@ -1,0 +1,38 @@
+.portfolio {
+  overflow: hidden;
+
+  &.portfolio--wrapped {
+    flex-flow: row wrap;
+  }
+
+  .portfolio__item {
+    max-width: 100vw;
+    max-height: 100vw;
+    float: left;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+
+
+
+    &:hover {
+      .portfolio__item__skills {
+        opacity: 1;
+        transition: all ease-in-out 0.1s
+      }
+    }
+  }
+  .portfolio__item__title {
+    position: absolute;
+    left: 0px;
+    bottom: 10px;
+    width: 100%;
+  }
+
+  .portfolio__item__skills {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    bottom: -10px;
+    opacity: 0;
+  }
+}
