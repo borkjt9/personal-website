@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import './styles/theme/typography.scss';
 import './styles/theme/spacing.scss';
 import './styles/theme/links.scss';

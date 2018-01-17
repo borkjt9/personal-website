@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, applyMiddleware } from 'redux';
@@ -24,7 +23,6 @@ ReactDOM.render(
       <div>
         <Switch>
         <Route path="/home" component={App} />
-        <Route path="/portfolio/:portfolioID" component={Portfolio} />
         <Route path="/portfolio/:portfolioID" component={Portfolio} />
 
         {/* <Route path="/boon-investments" component={BoonInvestments} />
