@@ -24,6 +24,7 @@ ReactDOM.render(
         <Switch>
         <Route path="/home" component={App} />
         <Route path="/portfolio/:portfolioID" component={Portfolio} />
+        <Route path="/portfolio/" component={Portfolio} />
 
         {/* <Route path="/boon-investments" component={BoonInvestments} />
         <Route path="/ria-portal" component={RiaPortal} />

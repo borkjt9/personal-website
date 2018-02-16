@@ -18,7 +18,7 @@ class Portfolio extends Component {
     super(props)
     this.handlePortfolioChange = this.handlePortfolioChange.bind(this);
     console.log(props.match.params.portfolioID)
-    const selectedPortfolio = props.match.params.portfolioID
+    const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID: "boon-investments-t"
     this.state = {
       'selectedPortfolio': selectedPortfolio,
       'nextPortfolio': this.navRefs[selectedPortfolio].nref,
