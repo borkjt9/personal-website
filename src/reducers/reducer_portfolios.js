@@ -25,7 +25,24 @@ export default function() {
         href: "autoPOOL",
         nref: "boon-investments-t",
         pref: "ria-portal",
-        }],
+      },
+      {
+      name: "Bank of America",
+      image: "bank-of-america.png",
+      skills: ["Modeling", "Forecasting"],
+      href: "bank-of-america",
+      nref: "sunrun",
+      pref: "boon-investments-f",
+      },
+      {
+        name: "SunRun",
+        image: "sunrun.png",
+        skills: ["FP&A", "IPO"],
+        href: "sunrun",
+        nref: "boon-investments-f",
+        pref: "bank-of-america",
+      }
+      ],
       "finance": [
         {
         name: "Bank of America",

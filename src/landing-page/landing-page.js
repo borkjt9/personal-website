@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Transition from 'react-transition-group/Transition';
 import Portfolio from '../portfolio/portfolio';
+import About from '../about/about';
 import Footer from '../footer/footer';
 import {connect} from 'react-redux';
 import './landing-page.scss';
@@ -11,60 +12,7 @@ import _ from "lodash"
 const duration = 4;
 
 class LandingPage extends Component {
-  // portfolios = {
-  //   "technology": [
-  //     {
-  //     name: "Boon Investments",
-  //     image: "boon-investments.png",
-  //     skills: ["UI/UX", "Swift", "Python"],
-  //     href: "boon-investments-t",
-  //     nref: "ria-portal",
-  //     pref: "autoPOOL",
-  //     },
-  //     {
-  //       name: "RIA Portal",
-  //       image: "auto-oms.png",
-  //       skills: ["UI/UX", "Angular", "AWS"],
-  //       href: "ria-portal",
-  //       nref: "autoPOOL",
-  //       pref: "boon-investments-t",
-  //
-  //     },
-  //     {
-  //     name: "AutoPOOL",
-  //     image: "autopool.png",
-  //     skills: ["UI/UX", "Swift", "App Engine" ],
-  //     href: "autoPOOL",
-  //     nref: "boon-investments-t",
-  //     pref: "ria-portal",
-  //     }],
-  //   "finance": [
-  //     {
-  //     name: "Bank of America",
-  //     image: "bank-of-america.png",
-  //     skills: ["Modeling", "Forecasting"],
-  //     href: "bank-of-america",
-  //     nref: "sunrun",
-  //     pref: "boon-investments-f",
-  //     },
-  //     {
-  //       name: "SunRun",
-  //       image: "sunrun.png",
-  //       skills: ["FP&A", "IPO"],
-  //       href: "sunrun",
-  //       nref: "boon-investments-f",
-  //       pref: "bank-of-america",
-  //     },
-  //     {
-  //     name: "Boon Investments",
-  //     image: "boon-investments.png",
-  //     skills: ["Investments", "B2B Sales"],
-  //     href: "boon-investments-f",
-  //     nref: "bank-of-america",
-  //     pref: "sunrun",
-  //     }
-  //   ]
-  // }
+
   initialPortfolioLoad = true
   expandTechnologyPortfolio = true
   expandFinancePortfolio = false
@@ -125,7 +73,13 @@ class LandingPage extends Component {
     //   }));
     // }
   }
-
+  renderSubSection(type) {
+    if (type === 'about') {
+      return <About />
+    } else {
+      return this.renderPortfolio(type)
+    }
+  }
   renderPortfolio(type) {
     const portfolio = this.props.portfolios[type];
     var shouldExpand = 'is-expanded'
@@ -182,34 +136,34 @@ class LandingPage extends Component {
     const horizontalStyle = {"float": "left"}
 
     return (
-      <div className="landing-page dimensions-is-screen vert-center">
+      <div className="landing-page width-is-screen vert-center">
         <div className="" >
           <div >
-            <div className={initialFadeIn}>
+            <div>
               <h2 className="name">
                 john borkowski
               </h2>
             </div>
                   <div className = "links links--landing-page">
                     <a onClick={this.changeActiveContainer.bind(this, "technology")} className={activeLink === 'technology' ? "links__link is-active" : "links__link is-inactive"}>
-                      <h4 className="margins--remove-default">Technology</h4>
+                      <h4 className="margins--remove-default">Work</h4>
                     </a>
-                    <h4 className="links__divide margins--remove-default">|</h4>
+                    {/* <h4 className="links__divide margins--remove-default">|</h4> */}
                     {/* <a onClick={this.changeActiveContainer.bind(this, "")} className={activeLink === 'applications'  ? "active-link link-2" : "inactive-link link-2"}>Applications</a>
                     <p className="divide">|</p> */}
-                    <a onClick={this.changeActiveContainer.bind(this, "finance")} className={ activeLink === 'finance'  ? "links__link is-active" : "links__link is-inactive"}>
+                    {/* <a onClick={this.changeActiveContainer.bind(this, "finance")} className={ activeLink === 'finance'  ? "links__link is-active" : "links__link is-inactive"}>
                       <h4 className="margins--remove-default">Finance</h4>
-                    </a>
+                    </a> */}
                     <h4 className="links__divide margins--remove-default">|</h4>
                     <a onClick={this.changeActiveContainer.bind(this, "about")} className={ activeLink === 'about'  ? "links__link is-active" : "links__link is-inactive"}>
                       <h4 className="margins--remove-default">About</h4>
                     </a>
                   </div>
 
-            {activeLink != ('about' || '') ? this.renderPortfolio(activeLink) : ''}
-            {/* {activeLink != '' ? this.renderFinancePortfolio((activeLink === 'finance')) : ''} */}
-
+            {activeLink != ('') ? this.renderSubSection(activeLink) : ''}
           </div>
+          <Footer />
+
         </div>
 
       </div>

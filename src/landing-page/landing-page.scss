@@ -6,9 +6,10 @@ $pageColor: #FCFCFC;
 .landing-page {
   position: absolute;
    top: 15%;
-  
+
   .landing-page__portfolio {
     max-width: 1200px;
+    margin-bottom: 40px;
 
     .is-animated {
       white-space: nowrap;

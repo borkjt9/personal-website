@@ -1,0 +1,35 @@
+.about {
+    max-width: 900px;
+    min-height: calc(100vh - 90px);
+    margin: auto;
+    padding-bottom: 20px;
+
+    .about__section {
+      display: flex;
+      margin: auto auto 40px;
+      justify-content: space-between;
+
+      .about__section__image {
+        max-width: 320px;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        .about__section__image__desc {
+          margin-top: 5px;
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: 1px;
+          color: #636363;
+          font-weight: 300;
+
+        }
+      }
+
+      .about__section__desc {
+        margin-top: auto;
+        margin-bottom: auto;
+        text-align: left;
+        max-width: 400px;
+      }
+    }
+}
