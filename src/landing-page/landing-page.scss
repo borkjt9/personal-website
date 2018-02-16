@@ -4,13 +4,22 @@ $portfolioItemDimension: 250px;
 $pageColor: #FCFCFC;
 
 .landing-page {
+  position: absolute;
+   top: 15%;
+  
   .landing-page__portfolio {
     max-width: 1200px;
+
+    .is-animated {
+      white-space: nowrap;
+      font-size: inherit;
+    }
 
     .landing-page__portfolio__item {
       &.is-expanding {
       animation: PortfolioExpand 0.8s ease-in-out 0.8s;
-      animation-fill-mode: both
+      animation-fill-mode: both;
+      font-size: 12px;
       }
 
       &.is-expanded {
@@ -18,6 +27,8 @@ $pageColor: #FCFCFC;
         width: $portfolioItemDimension !important;
         margin: 20px 10px 10px !important;
         padding: 20px;
+        font-size: 12px;
+
       }
     }
   }

@@ -17,12 +17,6 @@ $underlineColor: #636363;
     margin: auto 0px;
     cursor: pointer;
 
-    &:hover {
-      .ria-portal__design__wireframe__description {
-        opacity: 1
-      }
-    }
-
     .ria-portal__design__wireframe__image {
       width: 100%;
       border: solid 1px $borderColor;
@@ -32,7 +26,6 @@ $underlineColor: #636363;
 
      .ria-portal__design__wireframe__description {
       margin: 4px auto;
-      opacity: 0;
       transition: all 0.1s ease-in-out;
       text-align: center;
     }

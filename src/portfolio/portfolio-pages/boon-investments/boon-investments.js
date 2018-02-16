@@ -4,7 +4,7 @@ import './boon-investments.scss';
 import whitePaperPDF from '../../../assets/pdfs/boon-investments-white-paper.pdf'
 class BoonInvestments extends Component {
 
-  summaryBody = "Boon Investments is an S.E.C registered investment advisor that provides non-U.S. residents access to the U.S. investment markets. Boon is the first robo-advisor in the United States to accept international clients.\n\nAs co-founder and CEO of Boon Investments, John's main contributions include writing the investment algorithms which power Boon's investment process, developing Boon's flagship iOS application in swift, and closing deals with multiple business partners.";
+  summaryBody = "Boon Investments is an S.E.C registered investment advisor that provides non-U.S. residents access to the U.S. investment markets. Boon is the first robo-advisor in the United States to accept international clients.\n\nAs co-founder and CEO of Boon Investments, John's main contributions include leading design for Boon's suite of product, writing the investment algorithms which power Boon's portfolios, developing Boon's flagship iOS application, and closing deals with multiple business partners.";
 
   skillsDictionary = {
     "Development": ["Python", "Swift", "Javascript", "HTML/CSS"],
@@ -13,13 +13,13 @@ class BoonInvestments extends Component {
     "General": ["Product Management", "Design", "Marketing", "Contracts",  "Regulation", ]
   }
 
-  productCaptions = ["Direct U.S. investment made simple", "You pick the companies\nWe optimize the portfolios"]
+  productCaptions = ["Direct U.S. investment made simple", "Clients pick the companies\nBoon optimizes the portfolios"]
   productDescriptions = [
     "Boon offers clients the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then blend these choices with a diversified pool of assets to create a portfolio tailored to each client’s unique financial circumstance.",
     "Boon clients have the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then combine the clients choices with a diversified portfolio of assets to minimize their risk and maximize their returns."
   ]
 
-  designBody = "The application was conceived in August 2015 and went through many iterations before launching to the public.\n\nThe application was prototyped in Sketch. For iOS , the application was developed in Swift, Apple’s native programming language. For Android, the application was developed in Java."
+  designBody = "The application was conceived in August 2015 and went through many iterations before launching to the public.\n\nThe application was prototyped in Sketch. For iOS, the application was developed in Swift, Apple’s native programming language. For Android, the application was developed in Java."
   designCaption = "From Conception to MVP"
 
   investmentCaption = "Automated Portfolio Management"

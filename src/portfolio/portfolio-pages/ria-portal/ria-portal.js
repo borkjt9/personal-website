@@ -4,7 +4,7 @@ import './ria-portal.scss';
 
 class RiaPortal extends Component {
 
-  summaryBody = "Boon's  Automated Order Management System (\"Auto-OMS\") is a B2B portfolio management product that helps mid-sized investment advisors bridge the gap to the 21st century.\n\nThe Auto-OMS is a a full-service RESTful API paired with an intuitive web application that enables advisors to manage thousands of client portfolios with a few clicks.";
+  summaryBody = "Boon's  Automated Order Management System (\"Auto-OMS\") is a B2B portfolio management product that helps mid-sized investment advisors bridge the gap to the 21st century.\n\nThe Auto-OMS is a a full-service RESTful API paired with an intuitive web application that enables advisors to manage thousands of client portfolios with a few clicks.\n\nAs product manager for the Auto-OMS, John was responsible for desiging the RIA Portal, managing (and collaborating with) a small team of developers, and ulitmately ensuring that products were shipped by their agreed upon deadlines to partners.";
 
 
   skillsDictionary = {
@@ -19,7 +19,7 @@ class RiaPortal extends Component {
     "Boon clients have the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then combine the clients choices with a diversified portfolio of assets to minimize their risk and maximize their returns."
   ]
 
-  designBody = "The Auto-OMS was spun out of Boon's existing technology infrastructure. It began as an API that connected partners to Boon's internal engine.\n\nVery quickly, the Boon team realized they needed an interface through which partners could more easily interact with the Auto-OMS. The RIA Portal satisfies this need."
+  designBody = "The Auto-OMS was spun out of Boon's existing technology infrastructure.  It began as an API that connected partners to Boon's internal engine.\n\nVery quickly, the Boon team realized they needed an interface through which partners could more easily interact with the Auto-OMS. The RIA Portal satisfies this need."
   designCaption = "From API to GUI"
 
 

@@ -15,25 +15,29 @@
 
 
     &:hover {
-      .portfolio__item__skills {
+      .portfolio__item__desc__skills {
         opacity: 1;
         transition: all ease-in-out 0.1s
       }
     }
   }
-  .portfolio__item__title {
+  .portfolio__item__desc__title {
     position: absolute;
     left: 0px;
     bottom: 10px;
     width: 100%;
   }
 
-  .portfolio__item__skills {
+  .portfolio__item__desc__skills {
     position: absolute;
     left: 0px;
     width: 100%;
     bottom: -10px;
     opacity: 0;
+    h5 {
+      white-space: nowrap;
+      overflow: hidden;
+    }
   }
 
 

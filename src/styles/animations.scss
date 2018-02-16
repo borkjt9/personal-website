@@ -37,15 +37,28 @@ $portfolioItemDimension: 250px;
     margin-bottom: 0px;
     font-size: 0px;
     padding: 0px;
+    .portfolio__item__title {
+      margin-left: -125px;
+
+    }
   }
   100% {
     height: $portfolioItemDimension;
     width: $portfolioItemDimension;
     margin: 20px 10px 10px;
-    font-size: 12px;
+    font-size: 12px !important;
     padding: 20px;
+
+    .portfolio__item__title {
+      margin-left: 0px;
+
+    }
+
+
   }
 }
+
+
 
 
 
@@ -84,8 +97,9 @@ $portfolioItemDimension: 250px;
 
   100% {
     margin: 20px auto;
-    height: 125px;
+    height: 150px;
     padding: 10px;
+
   }
 }
 
@@ -98,7 +112,7 @@ $portfolioItemDimension: 250px;
     border: 0px;
 
   }
-  
+
   100% {
     margin: 0px auto;
     height: 0px;

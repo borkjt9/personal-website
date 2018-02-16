@@ -99,14 +99,16 @@ class Header extends Component {
     const portfolioClassNames = shouldExpand ? `expand-portfolio portfolio justify-content-around portfolio--wrapped header__portfolio`: 'minimize-portfolio portfolio justify-content-around portfolio--wrapped header__portfolio';
 
     const portfolioItemClassNames = shouldExpand ? `transition-border portfolio__item header__portfolio__item is-expanding`: 'portfolio__item header__portfolio__item is-minimizing';
-    const portfolioItemStyle = { backgroundColor: "#FFFFFF", width: 150,  height:0, boxShadow: "2px 3px 3px rgba(52,71,89,0.15)",  }
+    const portfolioItemStyle = { border: 1, borderColor: "rgba(52,71,89,0.05)", borderStyle: "solid",  backgroundColor: "#FFFFFF", width: 175,  height:0, boxShadow: "2px 3px 3px rgba(52,71,89,0.15)",  }
 
     const portfolioItems = _.map(portfolio, item => {
-      const imageStyle = {height: "100%", width: "100%", margin: "auto"}
+      const imageStyle = {height: "90%", width: "90%", margin: "auto", marginLeft: "5%"}
+      const descriptionStyle = {bottom: "4px", textAlign: "center", margin: "0px", marginLeft: "5px", width: "calc(100% - 5px)"}
       return (
         <div className={portfolioItemClassNames} style={portfolioItemStyle}>
           <a onClick={this.changePortfolioItem.bind(this, item.href)}>
           <img style={imageStyle} src={require(`../../assets/images/${item.image}`)}></img>
+          <h5 className="portfolio__item__desc__title" style={descriptionStyle}>{item.name}</h5>
           </a>
         </div>
       )

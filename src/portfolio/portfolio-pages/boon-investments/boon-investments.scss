@@ -17,12 +17,6 @@ $underlineColor: #636363;
     margin: auto 0px;
     cursor: pointer;
 
-    &:hover {
-      .boon-investments__design__wireframe__description, .boon-investments__investment__white-paper__description {
-        opacity: 1
-      }
-    }
-
     .boon-investments__design__wireframe__image, .boon-investments__investment__white-paper__image {
       width: 100%;
       border: solid 1px $borderColor;
@@ -32,7 +26,6 @@ $underlineColor: #636363;
 
      .boon-investments__design__wireframe__description, .boon-investments__investment__white-paper__description {
       margin: 4px auto;
-      opacity: 0;
       transition: all 0.1s ease-in-out;
       text-align: center;
     }

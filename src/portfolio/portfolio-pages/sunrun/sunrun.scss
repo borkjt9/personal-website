@@ -4,6 +4,36 @@ $borderColor: #D9D9D9;
 
 
 .sunrun {
+  .sunrun__ipo__image {
+    //56.34
+    width: 50%;
+    height: 28.17%
+  }
 
+  .sunrun__ipo__text {
+    //56.34
+    margin: auto 20px;
+  }
 
+  .sunrun__cash-flow__image {
+    //77.4
+    width: 50%;
+    height: 38.7%;
+  }
+
+  .sunrun__cash-flow__text{
+    //77.4
+    margin: auto 20px;
+  }
+
+  .sunrun__financial-modeling__image {
+    //58.53
+    width: 50%;
+    height: 29.265%;
+  }
+
+  .sunrun__financial-modeling__text{
+    //77.4
+    margin: auto 20px;
+  }
 }
