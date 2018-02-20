@@ -1,11 +1,10 @@
 export default function() {
-  return  {
-      "technology": [
+  return  [
         {
         name: "Boon Investments",
         image: "boon-investments.png",
         skills: ["UI/UX", "Swift", "Python"],
-        href: "boon-investments-t",
+        href: "boon-investments",
         nref: "ria-portal",
         pref: "autoPOOL",
         },
@@ -14,17 +13,25 @@ export default function() {
           image: "auto-oms.png",
           skills: ["UI/UX", "Angular", "AWS"],
           href: "ria-portal",
-          nref: "autoPOOL",
-          pref: "boon-investments-t",
+          nref: "partner-apps",
+          pref: "boon-investments",
 
         },
+        {
+        name: "Partner Apps",
+        image: "oshares.png",
+        skills: ["Swift", "Partnerships"],
+        href: "partner-apps",
+        nref: "autoPOOL",
+        pref: "ria-portal",
+      },
         {
         name: "AutoPOOL",
         image: "autopool.png",
         skills: ["UI/UX", "Swift", "App Engine" ],
         href: "autoPOOL",
-        nref: "boon-investments-t",
-        pref: "ria-portal",
+        nref: "bank-of-america",
+        pref: "partner-apps",
       },
       {
       name: "Bank of America",
@@ -32,42 +39,16 @@ export default function() {
       skills: ["Modeling", "Forecasting"],
       href: "bank-of-america",
       nref: "sunrun",
-      pref: "boon-investments-f",
+      pref: "autoPOOL",
       },
       {
         name: "SunRun",
         image: "sunrun.png",
         skills: ["FP&A", "IPO"],
         href: "sunrun",
-        nref: "boon-investments-f",
+        nref: "boon-investments",
         pref: "bank-of-america",
       }
-      ],
-      "finance": [
-        {
-        name: "Bank of America",
-        image: "bank-of-america.png",
-        skills: ["Modeling", "Forecasting"],
-        href: "bank-of-america",
-        nref: "sunrun",
-        pref: "boon-investments-f",
-        },
-        {
-          name: "SunRun",
-          image: "sunrun.png",
-          skills: ["FP&A", "IPO"],
-          href: "sunrun",
-          nref: "boon-investments-f",
-          pref: "bank-of-america",
-        },
-        {
-        name: "Boon Investments",
-        image: "boon-investments.png",
-        skills: ["Investments", "B2B Sales"],
-        href: "boon-investments-f",
-        nref: "bank-of-america",
-        pref: "sunrun",
-        }
       ]
-    }
+
 }

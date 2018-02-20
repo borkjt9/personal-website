@@ -6,11 +6,11 @@ class About extends Component {
   professionalDesc = "I am a product designer and developer in the financial space. I have worked for both Fortune 500 companies and startups.\n\nI began my career as an analyst for Bank of America before moving out to San Francisco, where I worked on the corporate finance team for Sunrun in preparation of their IPO. Most recently I was co-founder / CEO of Boon Investments, the first robo-advisor in the United States to accept international clients.\n\nI enjoy working on small, dynamic teams that build products to solve real problems for real people."
 
 
-  funDesc = "When not working, I mainly spend my time reading and drinking large amounts of slightly burnt coffee. I tend to read books that end up becoming HBO series in 2 - 5 years.\n\nWhen I am stumble upon a week or more of uninterrupted time, I like to travel. Preferably to places with a high probability of getting lost.\n\nTrust the Process."
+  funDesc = "When not working, I mainly spend my time reading and drinking large amounts of slightly burnt coffee. I tend to read books that end up becoming HBO series in 2 - 5 years.\n\nWhen I stumble upon a week or more of uninterrupted time, I like to travel. Preferably to places with a high probability of getting lost.\n\nTrust the Process."
 
   renderProfessional() {
     const imageWidth = {"width": "100%"}
-    const imageDescription = "My last professional headshot. Two years ago.\nA lot has changed.";
+    const imageDescription = "My last professional headshot. Taken two years ago. A lot has changed.";
 
     return (
       <div className="about__section">

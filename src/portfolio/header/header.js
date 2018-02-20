@@ -1,102 +1,56 @@
 import React, { Component } from 'react';
+import Slider from 'react-slick'
 import createHistory from 'history/createBrowserHistory'
-
+import {connect} from 'react-redux';
 import _ from 'lodash';
 import './header.scss';
+import Carousel from '../carousel/carousel';
 
 class Header extends Component {
   history = createHistory()
 
-  portfolios = {
-    "technology": [
-      {
-      name: "Boon Investments",
-      image: "boon-investments.png",
-      skills: ["UI/UX", "Swift", "Python"],
-      href: "boon-investments-t"
-      },
-      {
-        name: "RIA Portal",
-        image: "auto-oms.png",
-        skills: ["UI/UX", "Angular", "AWS"],
-        href: "ria-portal"
-
-      },
-      {
-      name: "AutoPOOL",
-      image: "autopool.png",
-      skills: ["UI/UX", "Swift", "App Engine" ],
-      href: "autoPOOL"
-      }],
-    "finance": [
-      {
-      name: "Bank of America",
-      image: "bank-of-america.png",
-      skills: ["Modeling", "Forecasting"],
-      href: "bank-of-america"
-      },
-      {
-        name: "SunRun",
-        image: "sunrun.png",
-        skills: ["FP&A", "IPO"],
-        href: "sunrun"
-      },
-      {
-      name: "Boon Investments",
-      image: "boon-investments.png",
-      skills: ["Investments", "B2B Sales"],
-      href: "boon-investments-f"
-      }]
-    }
-
   constructor(props){
     super(props);
+    console.log('header props', this.props)
     this.state = {
       'portfolioShouldExpand': false,
-      'portfolioToExpand': ''
+      'initialLoad': true,
     }
-
   }
 
-  technologyLabel = 'technology';
-  financeLabel = 'finance';
+  workLabel = 'work';
+  aboutLabel = 'about';
 
   expandPortfolio(portfolio, props) {
     var portfolioShouldExpand = true
-    if (portfolio === 'finance' && this.financeLabel === 'finance') {
-        this.financeLabel = 'close';
-        this.technologyLabel = 'technology';
-    } else if (portfolio === 'technology' && this.technologyLabel === 'technology') {
-      this.financeLabel = 'finance';
-      this.technologyLabel = 'close';
+    if (this.workLabel === 'work') {
+      this.workLabel = 'close';
     } else {
-      if (this.technologyLabel === 'close') {
-        this.technologyLabel = 'technology';
-        portfolioShouldExpand = false;
-      } else {
-        this.financeLabel = 'finance';
-        portfolioShouldExpand = false;
-      }
+      this.workLabel = 'work';
+      portfolioShouldExpand = false;
     }
+
+    this.props.onWorkToggle(portfolioShouldExpand)
+
+
     this.setState({
+      initialLoad: false,
       'portfolioShouldExpand': portfolioShouldExpand,
-      'portfolioToExpand': portfolio
     })
+
   }
 
   changePortfolioItem(selectedPortfolio) {
 
-    console.log(this.history)
     this.props.onPortfolioChange(selectedPortfolio)
   }
-  renderPortfolio(type) {
-    var shouldExpand = true
-
-    if (!this.state.portfolioShouldExpand) {
-      shouldExpand = false
+  renderPortfolio() {
+    var shouldExpand = false
+    if (this.state.portfolioShouldExpand) {
+      shouldExpand = true
     }
-    const portfolio = this.portfolios[type];
-    const portfolioClassNames = shouldExpand ? `expand-portfolio portfolio justify-content-around portfolio--wrapped header__portfolio`: 'minimize-portfolio portfolio justify-content-around portfolio--wrapped header__portfolio';
+    const portfolio = this.props.portfolios;
+    const portfolioClassNames = shouldExpand ? `portfolio portfolio--wrapped header__portfolio`: 'portfolio portfolio--wrapped header__portfolio';
 
     const portfolioItemClassNames = shouldExpand ? `transition-border portfolio__item header__portfolio__item is-expanding`: 'portfolio__item header__portfolio__item is-minimizing';
     const portfolioItemStyle = { border: 1, borderColor: "rgba(52,71,89,0.05)", borderStyle: "solid",  backgroundColor: "#FFFFFF", width: 175,  height:0, boxShadow: "2px 3px 3px rgba(52,71,89,0.15)",  }
@@ -114,10 +68,21 @@ class Header extends Component {
       )
     })
 
+    if (!this.state.portfolioShouldExpand) {
+      setTimeout(() => {
+                  this.setState({
+                  initialLoad: true
+                })
+              }, 501)
+    }
+
+
     return (
-        <div className={portfolioClassNames}>
-          {portfolioItems}
-        </div>
+
+      <div className={portfolioClassNames}>
+        <Carousel  onPortfolioChange={this.props.onPortfolioChange} currentPortfolioIndex={this.props.currentPortfolioIndex} shouldExpand={shouldExpand}/>
+        {/* {portfolioItems} */}
+      </div>
 
     );
 
@@ -127,8 +92,7 @@ class Header extends Component {
 
 
   render() {
-    const techClassName = `links__link ${this.technologyLabel}`;
-    const financeClassName = `links__link ${this.financeLabel}`;
+    const workClassName = `links__link ${this.workLabel}`;
     return (
       <div className="header">
         <div className="header__top-bar links">
@@ -136,20 +100,23 @@ class Header extends Component {
             <h4 className="margins--remove-default" >Home</h4>
           </a>
           <div className="text__vert-middle header__portfolio-links">
-            <a className={techClassName} onClick={this.expandPortfolio.bind(this,"technology")}>
-              <h4 className="margins--remove-default">{this.technologyLabel}</h4>
+            <a className={workClassName} onClick={this.expandPortfolio.bind(this,"work")}>
+              <h4 className="margins--remove-default">{this.workLabel}</h4>
             </a>
-            <h4 className="links__divide">|</h4>
-            <a className={financeClassName} onClick={this.expandPortfolio.bind(this,"finance")}>
-              <h4 className="margins--remove-default">{this.financeLabel}</h4>
-            </a>
+            {/* <h4 className="links__divide">|</h4>
+            <a className='links__link' onClick={this.expandPortfolio.bind(this,"about")}>
+              <h4 className="margins--remove-default">About</h4>
+            </a> */}
           </div>
         </div>
-        {(this.state.portfolioToExpand != '') ? this.renderPortfolio(this.state.portfolioToExpand) : ''}
-
+        {this.state.initialLoad ? '': this.renderPortfolio()}
       </div>
     )
   }
 }
 
-export default Header;
+function mapStateToProps(state) {
+  return {portfolios: state.portfolios };
+
+}
+export default connect(mapStateToProps)(Header);

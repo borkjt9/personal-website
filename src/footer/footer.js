@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import resumePDF from '../assets/pdfs/resume-john-borkowski.pdf'
 
 import './footer.scss';
 
@@ -17,7 +18,7 @@ class Footer extends Component {
           <h5 className="footer-link__name">LinkedIn</h5>
         </span>
         <span className="footer-link">
-          <a  className="resume" href="https://www.linkedin.com/in/john-borkowski-cfa-8533bb25/"/>
+          <a  className="resume" href={resumePDF} target="_blank"/>
           <h5 className="footer-link__name">Resume</h5>
 
         </span>

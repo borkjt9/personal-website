@@ -6,7 +6,8 @@ import SunRun from './portfolio-pages/sunrun/sunrun';
 import RiaPortal from './portfolio-pages/ria-portal/ria-portal';
 import AutoPOOL from './portfolio-pages/autopool/autopool';
 import BoonInvestments from './portfolio-pages/boon-investments/boon-investments';
-
+import PartnerApps from './portfolio-pages/partner-apps/partner-apps'
+import About from '../about/about';
 import _ from 'lodash';
 import './portfolio.scss';
 
@@ -17,41 +18,53 @@ class Portfolio extends Component {
   constructor(props) {
     super(props)
     this.handlePortfolioChange = this.handlePortfolioChange.bind(this);
+    this.handleWorkToggle = this.handleWorkToggle.bind(this);
+
     console.log(props.match.params.portfolioID)
-    const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID: "boon-investments-t"
+    const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID: "boon-investments"
     this.state = {
       'selectedPortfolio': selectedPortfolio,
       'nextPortfolio': this.navRefs[selectedPortfolio].nref,
-      'previousPortfolio': this.navRefs[selectedPortfolio].pref
+      'previousPortfolio': this.navRefs[selectedPortfolio].pref,
+      'currentPortfolioIndex': this.navRefs[selectedPortfolio].index,
+      'headerExpanded': false,
+
     }
   }
 
   history = createHistory()
 
   navRefs = {
-    'bank-of-america': {
-      pref: 'boon-investments-f',
-      nref: 'sunrun'
+    'boon-investments': {
+    pref: 'sunrun',
+    nref: 'ria-portal',
+    index: 0,
     },
-    'boon-investments-f': {
-      pref: 'sunrun',
-      nref: 'bank-of-america'
+    'ria-portal': {
+      pref: 'boon-investments',
+      nref: 'partner-apps',
+      index: 1,
+    },
+    'partner-apps': {
+      pref: 'ria-portal',
+      nref: 'autoPOOL',
+      index: 2,
+
+    },
+    'autoPOOL': {
+      pref: 'partner-apps',
+      nref: 'bank-of-america',
+      index: 3,
+    },
+    'bank-of-america': {
+      pref: 'autoPOOL',
+      nref: 'sunrun',
+      index: 4,
     },
     'sunrun': {
       pref: 'bank-of-america',
-      nref: 'boon-investments-f'
-    },
-    'ria-portal': {
-      pref: 'boon-investments-t',
-      nref: 'autoPOOL'
-    },
-    'autoPOOL': {
-      pref: 'ria-portal',
-      nref: 'boon-investments-t'
-    },
-    'boon-investments-t': {
-      pref: 'autoPOOL',
-      nref: 'ria-portal'
+      nref: 'boon-investments',
+      index: 5,
     },
   }
   renderSelectedPortfolio() {
@@ -65,19 +78,26 @@ class Portfolio extends Component {
       case "ria-portal":
         return <RiaPortal />
         break
-      case "boon-investments-t":
+      case "boon-investments":
         return <BoonInvestments />
         break
-        case "boon-investments-f":
-          return <BoonInvestments />
-          break
       case "sunrun":
         return <SunRun />
         break
       case "autoPOOL":
         return <AutoPOOL />
         break
+        case "partner-apps":
+          return <PartnerApps />
+          break
     }
+  }
+
+  handleWorkToggle(expanded) {
+    console.log(expanded)
+    this.setState({
+      'headerExpanded': expanded
+    })
   }
 
   handlePortfolioChange(newPortfolio) {
@@ -87,7 +107,7 @@ class Portfolio extends Component {
     this.setState({
       'nextPortfolio': this.navRefs[newPortfolio].nref,
       'previousPortfolio': this.navRefs[newPortfolio].pref,
-
+      'currentPortfolioIndex': this.navRefs[newPortfolio].index,
       'selectedPortfolio': newPortfolio}, ()=>{
       })
   }
@@ -108,12 +128,15 @@ class Portfolio extends Component {
       </div>
     )
   }
+
   render() {
+      console.log('rerendering portfolio, index: ', this.state.currentPortfolioIndex)
       return (
         <div className="portfolio">
-          <Header onPortfolioChange={this.handlePortfolioChange}></Header>
+          <Header currentPortfolioIndex={this.state.currentPortfolioIndex} onWorkToggle={this.handleWorkToggle} onPortfolioChange={this.handlePortfolioChange}></Header>
           {this.renderSelectedPortfolio()}
-          {this.renderPortfolioNavs()}
+          {this.state.headerExpanded ? '': this.renderPortfolioNavs()}
+
         </div>
 
       );

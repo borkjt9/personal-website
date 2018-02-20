@@ -90,13 +90,15 @@ $portfolioItemDimension: 250px;
   0% {
     height: 0px;
     font-size: 0px;
-    margin: 0px auto;
-    padding: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px 10px;
 
   }
 
   100% {
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     height: 150px;
     padding: 10px;
 
@@ -106,18 +108,21 @@ $portfolioItemDimension: 250px;
 @keyframes Minimize-Header {
 
   0% {
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 10px;
-    height: 125px;
-    border: 0px;
-
+    height: 150px;
+    border-top: 0px;
+    border-bottom: 0px;
   }
 
   100% {
-    margin: 0px auto;
     height: 0px;
+    margin-top: 00px;
+    margin-bottom: 0px;
     font-size: 0px;
-    padding: 0px;
-    border: 0px;
+    padding: 0px 10px;
+    border-top: 0px;
+    border-bottom: 0px;
   }
 }

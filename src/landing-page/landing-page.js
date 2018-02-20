@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+
 //import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 // import {connect} from 'react-redux';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
@@ -14,15 +16,14 @@ const duration = 4;
 class LandingPage extends Component {
 
   initialPortfolioLoad = true
-  expandTechnologyPortfolio = true
-  expandFinancePortfolio = false
+  expandWork = true
   constructor(props){
     super(props);
 
     this.state = {
       onInitialLoad: false,
       onRemoveName: true,
-      activeLink: "technology"
+      activeLink: "work"
     }
   }
 
@@ -40,38 +41,19 @@ class LandingPage extends Component {
 
 
     switch(activeC) {
-      case "technology":
+      case "work":
         this.setState({
-          activeLink: "technology"
+          activeLink: "work"
         });
-        this.expandTechnologyPortfolio = true
-        this.expandFinancePortfolio = false
-
-        break
-      case "finance":
-        this.setState({
-          activeLink: "finance"
-        });
-        this.expandTechnologyPortfolio = false
-
-        this.expandFinancePortfolio = true
+        this.expandWork = true
 
         break
       case "about":
         this.setState({
           activeLink: "about"
         });
-        this.expandTechnologyPortfolio = false
-
-        this.expandFinancePortfolio = false
-
         break
     }
-    // if (onRemoveName) {
-    //   this.setState(({ onRemoveName }) => ({
-    //     onRemoveName: !onRemoveName
-    //   }));
-    // }
   }
   renderSubSection(type) {
     if (type === 'about') {
@@ -81,7 +63,7 @@ class LandingPage extends Component {
     }
   }
   renderPortfolio(type) {
-    const portfolio = this.props.portfolios[type];
+    const portfolio = this.props.portfolios;
     var shouldExpand = 'is-expanded'
     // if (this.initialPortfolioLoad) {
     //   shouldExpand = 'is-expanding'
@@ -95,7 +77,7 @@ class LandingPage extends Component {
 
       return (
         <div className={portfolioItemClassNames} style={portfolioItemStyle}>
-            <a href={`portfolio/${item.href}`}>
+            <a href={`work/${item.href}`}>
             {/* <Link to={{
               pathname: '/portfolio',
               selectedPortfolio: item.href,
@@ -145,15 +127,9 @@ class LandingPage extends Component {
               </h2>
             </div>
                   <div className = "links links--landing-page">
-                    <a onClick={this.changeActiveContainer.bind(this, "technology")} className={activeLink === 'technology' ? "links__link is-active" : "links__link is-inactive"}>
+                    <a onClick={this.changeActiveContainer.bind(this, "work")} className={activeLink === 'work' ? "links__link is-active" : "links__link is-inactive"}>
                       <h4 className="margins--remove-default">Work</h4>
                     </a>
-                    {/* <h4 className="links__divide margins--remove-default">|</h4> */}
-                    {/* <a onClick={this.changeActiveContainer.bind(this, "")} className={activeLink === 'applications'  ? "active-link link-2" : "inactive-link link-2"}>Applications</a>
-                    <p className="divide">|</p> */}
-                    {/* <a onClick={this.changeActiveContainer.bind(this, "finance")} className={ activeLink === 'finance'  ? "links__link is-active" : "links__link is-inactive"}>
-                      <h4 className="margins--remove-default">Finance</h4>
-                    </a> */}
                     <h4 className="links__divide margins--remove-default">|</h4>
                     <a onClick={this.changeActiveContainer.bind(this, "about")} className={ activeLink === 'about'  ? "links__link is-active" : "links__link is-inactive"}>
                       <h4 className="margins--remove-default">About</h4>
