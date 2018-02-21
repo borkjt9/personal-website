@@ -18,19 +18,19 @@ class Header extends Component {
     }
   }
 
-  workLabel = 'work';
+  portfolioLabel = 'portfolio';
   aboutLabel = 'about';
 
   expandPortfolio(portfolio, props) {
     var portfolioShouldExpand = true
-    if (this.workLabel === 'work') {
-      this.workLabel = 'close';
+    if (this.portfolioLabel === 'portfolio') {
+      this.portfolioLabel = 'close';
     } else {
-      this.workLabel = 'work';
+      this.portfolioLabel = 'portfolio';
       portfolioShouldExpand = false;
     }
 
-    this.props.onWorkToggle(portfolioShouldExpand)
+    this.props.onPortfolioToggle(portfolioShouldExpand)
 
 
     this.setState({
@@ -92,16 +92,16 @@ class Header extends Component {
 
 
   render() {
-    const workClassName = `links__link ${this.workLabel}`;
+    const portfolioClassName = `links__link ${this.portfolioLabel}`;
     return (
       <div className="header">
         <div className="header__top-bar links">
           <a className="text__vert-middle header__home-link links__link" href="../home">
             <h4 className="margins--remove-default" >Home</h4>
           </a>
-          <div className="text__vert-middle header__portfolio-links">
-            <a className={workClassName} onClick={this.expandPortfolio.bind(this,"work")}>
-              <h4 className="margins--remove-default">{this.workLabel}</h4>
+          <div className="text__vert-middle header__portfolio-links links__link">
+            <a className={portfolioClassName} onClick={this.expandPortfolio.bind(this,"portfolio")}>
+              <h4 className="margins--remove-default">{this.portfolioLabel}</h4>
             </a>
             {/* <h4 className="links__divide">|</h4>
             <a className='links__link' onClick={this.expandPortfolio.bind(this,"about")}>

@@ -13,15 +13,15 @@ export default function() {
           image: "auto-oms.png",
           skills: ["UI/UX", "Angular", "AWS"],
           href: "ria-portal",
-          nref: "partner-apps",
+          nref: "white-label-apps",
           pref: "boon-investments",
 
         },
         {
-        name: "Partner Apps",
+        name: "White Label Apps",
         image: "oshares.png",
         skills: ["Swift", "Partnerships"],
-        href: "partner-apps",
+        href: "white-label-apps",
         nref: "autoPOOL",
         pref: "ria-portal",
       },
@@ -31,7 +31,7 @@ export default function() {
         skills: ["UI/UX", "Swift", "App Engine" ],
         href: "autoPOOL",
         nref: "bank-of-america",
-        pref: "partner-apps",
+        pref: "white-label-apps",
       },
       {
       name: "Bank of America",

@@ -1,3 +1,5 @@
+$pageColor: #FCFCFC;
+
 .footer {
   position: relative;
   bottom: 0;
@@ -16,6 +18,20 @@
   }
   .footer-link {
     float: left;
+    border-bottom: solid $pageColor 0px;
+    border-top: solid $pageColor 3px;
+    transition: all 0.15s ease-in-out;
+
+    .footer-link__name {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 1px;
+      opacity: 0;
+      transition: all 0.15s ease-in-out;
+
+      margin: 5px auto;
+      text-align: center;
+    }
 
     a {
       height:40px ;
@@ -39,61 +55,66 @@
 
 
     }
-    .linkedin {
-      background: url('../assets/images/social-media/linkedin.png');
+
+    .footer-link__image {
+      transition: all 0.15s ease-in-out;
       background-size: 40px 40px;
+
+    }
+    .linkedin {
+      background-image: url('../assets/images/social-media/linkedin.png');
+      transition: all 0.15s ease-in-out;
     }
     .angel-list {
-      background: url('../assets/images/social-media/angel-list.png');
-      background-size: 40px 40px;
+      background-image: url('../assets/images/social-media/angel-list.png');
+      transition: all 0.15s ease-in-out;
+
     }
     .github {
-      background: url('../assets/images/social-media/github.png');
-      background-size: 40px 40px;
+      background-image: url('../assets/images/social-media/github.png');
+      transition: all 0.15s ease-in-out;
+
     }
     .mail {
-      background: url('../assets/images/social-media/mail.png');
-      background-size: 40px 40px;
+      background-image: url('../assets/images/social-media/mail.png');
+      transition: all 0.15s ease-in-out;
+
     }
     .resume {
-      background: url('../assets/images/social-media/resume.png');
-      background-size: 40px 40px;
+      background-image: url('../assets/images/social-media/resume.png');
+      transition: all 0.15s ease-in-out;
+
     }
     &:hover {
+      border-bottom: solid $pageColor 3px;
+      border-top: solid $pageColor 0px;
+
       .footer-link__name {
         opacity: 1;
       }
 
+      .footer-link-image {
+
+      }
+
       .linkedin {
-        background: url('../assets/images/social-media/linkedin-hover.png');
-        background-size: 40px 40px;
+        background-image: url('../assets/images/social-media/linkedin-hover.png');
       }
       .angel-list {
-        background: url('../assets/images/social-media/angel-list-hover.png');
-        background-size: 40px 40px;
+        background-image: url('../assets/images/social-media/angel-list-hover.png');
       }
       .github {
-        background: url('../assets/images/social-media/github-hover.png');
-        background-size: 40px 40px;
+        background-image: url('../assets/images/social-media/github-hover.png');
       }
       .mail {
-        background: url('../assets/images/social-media/mail-hover.png');
-        background-size: 40px 40px;
+        background-image: url('../assets/images/social-media/mail-hover.png');
       }
       .resume {
-        background: url('../assets/images/social-media/resume-hover.png');
-        background-size: 40px 40px;
+        background-image: url('../assets/images/social-media/resume-hover.png');
       }
     }
 
-    .footer-link__name {
-      display: block;
-      font-size: 10px;
-      letter-spacing: 1px;
-      opacity: 0;
-      margin: 5px auto;
-      text-align: center;
-    }
+
 
   }
 

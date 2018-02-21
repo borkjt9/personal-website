@@ -1,0 +1,23 @@
+.white-label-apps {
+  .white-label-apps__product__iphone-image {
+
+      margin: auto 20px;
+      width: 30%;
+      height: 50.1%;
+      text-align: center;
+  }
+
+
+  .white-label-apps__product__text {
+    width: 50%;
+    display: inline-block;
+    margin: auto 20px;
+  }
+
+  .white-label-apps__timeline {
+    .white-label-apps__timeline__image {
+      width: calc(100% - 80px);
+      margin: auto 40px;
+    }
+  }
+}

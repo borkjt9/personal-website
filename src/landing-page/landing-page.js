@@ -10,20 +10,20 @@ import About from '../about/about';
 import Footer from '../footer/footer';
 import {connect} from 'react-redux';
 import './landing-page.scss';
-import _ from "lodash"
+import _ from "lodash";
 const duration = 4;
 
 class LandingPage extends Component {
 
   initialPortfolioLoad = true
-  expandWork = true
+  expandPortfolio = true
   constructor(props){
     super(props);
 
     this.state = {
       onInitialLoad: false,
       onRemoveName: true,
-      activeLink: "work"
+      activeLink: "portfolio"
     }
   }
 
@@ -41,11 +41,11 @@ class LandingPage extends Component {
 
 
     switch(activeC) {
-      case "work":
+      case "portfolio":
         this.setState({
-          activeLink: "work"
+          activeLink: "portfolio"
         });
-        this.expandWork = true
+        this.expandPortfolio = true
 
         break
       case "about":
@@ -77,7 +77,7 @@ class LandingPage extends Component {
 
       return (
         <div className={portfolioItemClassNames} style={portfolioItemStyle}>
-            <a href={`work/${item.href}`}>
+            <a href={`portfolio/${item.href}`}>
             {/* <Link to={{
               pathname: '/portfolio',
               selectedPortfolio: item.href,
@@ -127,8 +127,8 @@ class LandingPage extends Component {
               </h2>
             </div>
                   <div className = "links links--landing-page">
-                    <a onClick={this.changeActiveContainer.bind(this, "work")} className={activeLink === 'work' ? "links__link is-active" : "links__link is-inactive"}>
-                      <h4 className="margins--remove-default">Work</h4>
+                    <a onClick={this.changeActiveContainer.bind(this, "portfolio")} className={activeLink === 'portfolio' ? "links__link is-active" : "links__link is-inactive"}>
+                      <h4 className="margins--remove-default">portfolio</h4>
                     </a>
                     <h4 className="links__divide margins--remove-default">|</h4>
                     <a onClick={this.changeActiveContainer.bind(this, "about")} className={ activeLink === 'about'  ? "links__link is-active" : "links__link is-inactive"}>

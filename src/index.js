@@ -14,6 +14,7 @@ import RiaPortal from './portfolio/portfolio-pages/ria-portal/ria-portal';
 import AutoPOOL from './portfolio/portfolio-pages/autopool/autopool';
 import BankOfAmerica from './portfolio/portfolio-pages/bank-of-america/bank-of-america';
 import SunRun from './portfolio/portfolio-pages/sunrun/sunrun';
+import 'normalize.css'; // Note this
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
@@ -23,8 +24,8 @@ ReactDOM.render(
       <div>
         <Switch>
         <Route path="/home" component={App} />
-        <Route path="/work/:portfolioID" component={Portfolio} />
-        <Route path="/work/" component={Portfolio} />
+        <Route path="/portfolio/:portfolioID" component={Portfolio} />
+        <Route path="/portfolio/" component={Portfolio} />
 
         {/* <Route path="/boon-investments" component={BoonInvestments} />
         <Route path="/ria-portal" component={RiaPortal} />

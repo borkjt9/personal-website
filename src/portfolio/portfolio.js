@@ -6,7 +6,7 @@ import SunRun from './portfolio-pages/sunrun/sunrun';
 import RiaPortal from './portfolio-pages/ria-portal/ria-portal';
 import AutoPOOL from './portfolio-pages/autopool/autopool';
 import BoonInvestments from './portfolio-pages/boon-investments/boon-investments';
-import PartnerApps from './portfolio-pages/partner-apps/partner-apps'
+import WhiteLabelApps from './portfolio-pages/white-label-apps/white-label-apps'
 import About from '../about/about';
 import _ from 'lodash';
 import './portfolio.scss';
@@ -18,7 +18,7 @@ class Portfolio extends Component {
   constructor(props) {
     super(props)
     this.handlePortfolioChange = this.handlePortfolioChange.bind(this);
-    this.handleWorkToggle = this.handleWorkToggle.bind(this);
+    this.handlePortfolioToggle = this.handlePortfolioToggle.bind(this);
 
     console.log(props.match.params.portfolioID)
     const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID: "boon-investments"
@@ -42,17 +42,17 @@ class Portfolio extends Component {
     },
     'ria-portal': {
       pref: 'boon-investments',
-      nref: 'partner-apps',
+      nref: 'white-label-apps',
       index: 1,
     },
-    'partner-apps': {
+    'white-label-apps': {
       pref: 'ria-portal',
       nref: 'autoPOOL',
       index: 2,
 
     },
     'autoPOOL': {
-      pref: 'partner-apps',
+      pref: 'white-label-apps',
       nref: 'bank-of-america',
       index: 3,
     },
@@ -87,13 +87,13 @@ class Portfolio extends Component {
       case "autoPOOL":
         return <AutoPOOL />
         break
-        case "partner-apps":
-          return <PartnerApps />
+        case "white-label-apps":
+          return <WhiteLabelApps />
           break
     }
   }
 
-  handleWorkToggle(expanded) {
+  handlePortfolioToggle(expanded) {
     console.log(expanded)
     this.setState({
       'headerExpanded': expanded
@@ -133,7 +133,7 @@ class Portfolio extends Component {
       console.log('rerendering portfolio, index: ', this.state.currentPortfolioIndex)
       return (
         <div className="portfolio">
-          <Header currentPortfolioIndex={this.state.currentPortfolioIndex} onWorkToggle={this.handleWorkToggle} onPortfolioChange={this.handlePortfolioChange}></Header>
+          <Header currentPortfolioIndex={this.state.currentPortfolioIndex} onPortfolioToggle={this.handlePortfolioToggle} onPortfolioChange={this.handlePortfolioChange}></Header>
           {this.renderSelectedPortfolio()}
           {this.state.headerExpanded ? '': this.renderPortfolioNavs()}
 
