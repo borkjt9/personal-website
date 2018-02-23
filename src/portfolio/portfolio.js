@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './header/header';
 import createHistory from 'history/createBrowserHistory'
+import PortfolioGrid from './portfolio-grid/portfolio-grid'
 import BankOfAmerica from './portfolio-pages/bank-of-america/bank-of-america';
 import SunRun from './portfolio-pages/sunrun/sunrun';
 import RiaPortal from './portfolio-pages/ria-portal/ria-portal';
@@ -8,12 +9,12 @@ import AutoPOOL from './portfolio-pages/autopool/autopool';
 import BoonInvestments from './portfolio-pages/boon-investments/boon-investments';
 import WhiteLabelApps from './portfolio-pages/white-label-apps/white-label-apps'
 import About from '../about/about';
+import Footer from '../footer/footer';
 import _ from 'lodash';
 import './portfolio.scss';
 
 
 class Portfolio extends Component {
-
 
   constructor(props) {
     super(props)
@@ -21,14 +22,14 @@ class Portfolio extends Component {
     this.handlePortfolioToggle = this.handlePortfolioToggle.bind(this);
 
     console.log(props.match.params.portfolioID)
-    const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID: "boon-investments"
+    const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID: ""
+
     this.state = {
       'selectedPortfolio': selectedPortfolio,
       'nextPortfolio': this.navRefs[selectedPortfolio].nref,
       'previousPortfolio': this.navRefs[selectedPortfolio].pref,
       'currentPortfolioIndex': this.navRefs[selectedPortfolio].index,
       'headerExpanded': false,
-
     }
   }
 
@@ -66,6 +67,22 @@ class Portfolio extends Component {
       nref: 'boon-investments',
       index: 5,
     },
+    'about': {
+      pref: 'boon-investments',
+      nref: 'boon-investments',
+      index: -1,
+    },
+    '': {
+      pref: 'boon-investments',
+      nref: 'boon-investments',
+      index: -1,
+    },
+  }
+
+  renderAbout() {
+    return (
+      <About />
+    )
   }
   renderSelectedPortfolio() {
     console.log('state 2', this.state)
@@ -87,9 +104,19 @@ class Portfolio extends Component {
       case "autoPOOL":
         return <AutoPOOL />
         break
-        case "white-label-apps":
-          return <WhiteLabelApps />
-          break
+      case "white-label-apps":
+        return <WhiteLabelApps />
+        break
+      case "about":
+        return (
+          <div style={{"marginTop": "75px"}}>
+            <About />
+            <Footer />
+          </div>
+        )
+        break
+      case "":
+      return <PortfolioGrid />
     }
   }
 
@@ -104,12 +131,15 @@ class Portfolio extends Component {
     this.history.push({
       pathname: newPortfolio
     })
-    this.setState({
-      'nextPortfolio': this.navRefs[newPortfolio].nref,
-      'previousPortfolio': this.navRefs[newPortfolio].pref,
-      'currentPortfolioIndex': this.navRefs[newPortfolio].index,
-      'selectedPortfolio': newPortfolio}, ()=>{
-      })
+      this.setState({
+        'headerExpanded': false,
+        'nextPortfolio': this.navRefs[newPortfolio].nref,
+        'previousPortfolio': this.navRefs[newPortfolio].pref,
+        'currentPortfolioIndex': this.navRefs[newPortfolio].index,
+        'selectedPortfolio': newPortfolio}, ()=>{
+        })
+      console.log('state', this.state)
+
   }
 
   renderPortfolioNavs() {
@@ -130,12 +160,12 @@ class Portfolio extends Component {
   }
 
   render() {
-      console.log('rerendering portfolio, index: ', this.state.currentPortfolioIndex)
+      console.log('header expanded:', this.state.headerExpanded, 'selected portfolio: ', this.state.selectedPortfolio)
       return (
         <div className="portfolio">
           <Header currentPortfolioIndex={this.state.currentPortfolioIndex} onPortfolioToggle={this.handlePortfolioToggle} onPortfolioChange={this.handlePortfolioChange}></Header>
           {this.renderSelectedPortfolio()}
-          {this.state.headerExpanded ? '': this.renderPortfolioNavs()}
+          {(this.state.headerExpanded || this.state.selectedPortfolio === 'about' || this.state.selectedPortfolio === '' ) ? '': this.renderPortfolioNavs()}
 
         </div>
 

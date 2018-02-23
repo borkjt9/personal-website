@@ -43,7 +43,10 @@ class Carousel extends Component {
 
     console.log(this.history)
     this.props.onPortfolioChange(selectedPortfolio)
+
   }
+
+
   render() {
 
     var settings = {

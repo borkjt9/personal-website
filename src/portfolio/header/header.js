@@ -12,6 +12,8 @@ class Header extends Component {
   constructor(props){
     super(props);
     console.log('header props', this.props)
+    this.onPortfolioChange = this.onPortfolioChange.bind(this);
+
     this.state = {
       'portfolioShouldExpand': false,
       'initialLoad': true,
@@ -40,10 +42,16 @@ class Header extends Component {
 
   }
 
-  changePortfolioItem(selectedPortfolio) {
+  onPortfolioChange(selectedPortfolio) {
+    this.portfolioLabel = "portfolio"
 
+    this.setState({
+      'portfolioShouldExpand': false,
+    })
     this.props.onPortfolioChange(selectedPortfolio)
   }
+
+
   renderPortfolio() {
     var shouldExpand = false
     if (this.state.portfolioShouldExpand) {
@@ -52,62 +60,47 @@ class Header extends Component {
     const portfolio = this.props.portfolios;
     const portfolioClassNames = shouldExpand ? `portfolio portfolio--wrapped header__portfolio`: 'portfolio portfolio--wrapped header__portfolio';
 
-    const portfolioItemClassNames = shouldExpand ? `transition-border portfolio__item header__portfolio__item is-expanding`: 'portfolio__item header__portfolio__item is-minimizing';
-    const portfolioItemStyle = { border: 1, borderColor: "rgba(52,71,89,0.05)", borderStyle: "solid",  backgroundColor: "#FFFFFF", width: 175,  height:0, boxShadow: "2px 3px 3px rgba(52,71,89,0.15)",  }
-
-    const portfolioItems = _.map(portfolio, item => {
-      const imageStyle = {height: "90%", width: "90%", margin: "auto", marginLeft: "5%"}
-      const descriptionStyle = {bottom: "4px", textAlign: "center", margin: "0px", marginLeft: "5px", width: "calc(100% - 5px)"}
-      return (
-        <div className={portfolioItemClassNames} style={portfolioItemStyle}>
-          <a onClick={this.changePortfolioItem.bind(this, item.href)}>
-          <img style={imageStyle} src={require(`../../assets/images/${item.image}`)}></img>
-          <h5 className="portfolio__item__desc__title" style={descriptionStyle}>{item.name}</h5>
-          </a>
-        </div>
-      )
-    })
-
-    if (!this.state.portfolioShouldExpand) {
-      setTimeout(() => {
-                  this.setState({
-                  initialLoad: true
-                })
-              }, 501)
-    }
-
-
     return (
 
       <div className={portfolioClassNames}>
-        <Carousel  onPortfolioChange={this.props.onPortfolioChange} currentPortfolioIndex={this.props.currentPortfolioIndex} shouldExpand={shouldExpand}/>
-        {/* {portfolioItems} */}
+        <Carousel  onPortfolioChange={this.onPortfolioChange} onPortfolioToggle= {this.onPortfolioToggle} currentPortfolioIndex={this.props.currentPortfolioIndex} shouldExpand={shouldExpand}/>
       </div>
 
     );
 
 
   }
-
-
-
+  expandAbout() {
+    this.portfolioShouldExpand = false
+    this.portfolioLabel = "portfolio"
+    this.setState({
+      'portfolioShouldExpand': this.portfolioShouldExpand,
+    })
+      this.props.onPortfolioChange("about")
+  }
   render() {
-    const portfolioClassName = `links__link ${this.portfolioLabel}`;
     return (
       <div className="header">
         <div className="header__top-bar links">
-          <a className="text__vert-middle header__home-link links__link" href="../home">
-            <h4 className="margins--remove-default" >Home</h4>
+          <a className="text__vert-middle header__home-link home-link--desktop links__link" href="../home">
+            <h4 className="links__header__text margins--remove-default">Home</h4>
+            {/* <img className="links__header__icon" src={require('../../assets/images/portfolio.svg')}/> */}
           </a>
-          <div className="text__vert-middle header__portfolio-links links__link">
-            <a className={portfolioClassName} onClick={this.expandPortfolio.bind(this,"portfolio")}>
-              <h4 className="margins--remove-default">{this.portfolioLabel}</h4>
+          <a className="text__vert-middle header__home-link home-link--mobile links__link" href="../portfolio">
+            {/* <h4 className="links__header__text margins--remove-default">Home</h4> */}
+            <img className="links__header__icon" src={require('../../assets/images/portfolio.svg')}/>
+          </a>
+          <div className="text__vert-middle header__portfolio-links">
+            <a className="links__link" onClick={this.expandPortfolio.bind(this,"portfolio")}>
+              <h4 className="links__header__text margins--remove-default">{this.portfolioLabel}</h4>
             </a>
-            {/* <h4 className="links__divide">|</h4>
-            <a className='links__link' onClick={this.expandPortfolio.bind(this,"about")}>
-              <h4 className="margins--remove-default">About</h4>
-            </a> */}
+            <h4 className="links__divide">|</h4>
+            <a className='links__link' onClick={this.expandAbout.bind(this)}>
+              <h4 className="links__header__text margins--remove-default">About</h4>
+              <img className="links__header__icon" src={require('../../assets/images/about.svg')}/>
+            </a>
           </div>
+
         </div>
         {this.state.initialLoad ? '': this.renderPortfolio()}
       </div>

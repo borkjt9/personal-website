@@ -1,6 +1,5 @@
 $underlineColor: #636363;
 $underlineHeight: 5%;
-$portfolioItemDimension: 250px;
 $pageColor: #FCFCFC;
 
 .landing-page {
@@ -8,29 +7,21 @@ $pageColor: #FCFCFC;
    top: 15%;
 
   .landing-page__portfolio {
-    max-width: 1200px;
+    max-width: 1100px;
+    width: 95%;
     margin-bottom: 40px;
 
     .is-animated {
       white-space: nowrap;
-      font-size: inherit;
     }
 
     .landing-page__portfolio__item {
-      &.is-expanding {
-      animation: PortfolioExpand 0.8s ease-in-out 0.8s;
-      animation-fill-mode: both;
-      font-size: 12px;
-      }
-
-      &.is-expanded {
-        height: $portfolioItemDimension !important;
-        width: $portfolioItemDimension !important;
-        margin: 20px 10px 10px !important;
-        padding: 20px;
-        font-size: 12px;
-
-      }
+      max-width: 250px;
+      max-height: 250px;
+      margin: 20px auto 10px;
+      padding: 20px ;
+      background-color: #FFFFFF;
+      box-shadow: 2px 2px 3px rgba(52,71,89,0.15)
     }
   }
 }

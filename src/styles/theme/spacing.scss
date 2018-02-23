@@ -18,7 +18,12 @@
   justify-content: space-around;
 
 }
-
+.row-wrap {
+  flex-flow: row wrap;
+}
+.row-wrap-reverse {
+  flex-flow: row wrap-reverse;
+}
 .width-is-screen {
   width: 100vw;
 }

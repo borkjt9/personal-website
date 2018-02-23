@@ -64,27 +64,14 @@ class LandingPage extends Component {
   }
   renderPortfolio(type) {
     const portfolio = this.props.portfolios;
-    var shouldExpand = 'is-expanded'
-    // if (this.initialPortfolioLoad) {
-    //   shouldExpand = 'is-expanding'
-    //   this.initialPortfolioLoad = false
-    // }
-    const portfolioItemClassNames = `landing-page__portfolio__item ${shouldExpand}  portfolio__item transition-border max-dimensions-is-screen`;
-    const portfolioItemStyle = { backgroundColor: "#FFFFFF", width: 0, height:0, boxShadow: "2px 2px 3px rgba(52,71,89,0.15)",  }
+    const portfolioItemClassNames = `landing-page__portfolio__item  portfolio__item transition-border max-dimensions-is-screen`;
 
     const portfolioItems = _.map(portfolio, item => {
-      const imageStyle = {height: "82%", width: "100%", margin: "auto"}
 
       return (
-        <div className={portfolioItemClassNames} style={portfolioItemStyle}>
+        <div className={portfolioItemClassNames}>
             <a href={`portfolio/${item.href}`}>
-            {/* <Link to={{
-              pathname: '/portfolio',
-              selectedPortfolio: item.href,
-              nextPortfolio: item.nref,
-              previousPortfolio: item.pref,
-            }}> */}
-            <img style={imageStyle} src={require(`../assets/images/${item.image}`)}></img>
+            <img className="portfolio__item__image" src={require(`../assets/images/${item.image}`)}></img>
             <div className="portfolio__item__desc">
             <div className="portfolio__item__desc__title">
               <h4 className="is-animated">{item.name}</h4>
@@ -107,15 +94,33 @@ class LandingPage extends Component {
 
   }
 
+  renderHeader() {
+    const { activeLink } = this.state;
+
+    return (
+      <div className = "links links--landing-page">
+        <a onClick={this.changeActiveContainer.bind(this, "portfolio")} className={activeLink === 'portfolio' ? "links__link is-active" : "links__link is-inactive"}>
+          <h4 className="links__header__text margins--remove-default">portfolio</h4>
+          <img className="links__header__icon" src={require('../assets/images/portfolio.svg')}/>
+        </a>
+        <h4 className="links__divide margins--remove-default">|</h4>
+        <a onClick={this.changeActiveContainer.bind(this, "about")} className={ activeLink === 'about'  ? "links__link is-active" : "links__link is-inactive"}>
+          <h4 className="links__header__text margins--remove-default">About</h4>
+          <img className="links__header__icon" src={require('../assets/images/about.svg')}/>
+        </a>
+      </div>
+    )
+  }
+
   render() {
     const { onInitialLoad } = this.state;
     const { onRemoveName } = this.state;
-    const { activeLink } = this.state;
     const {onInitialPortfolio } = this.state;
 
     const fadeOutClass = !onRemoveName ? 'fade-out' : ''
     const initialFadeIn = onInitialLoad ? 'fade-in': '';//'links links--landing-page fade-in': 'links links--landing-page';
     const horizontalStyle = {"float": "left"}
+    const { activeLink } = this.state;
 
     return (
       <div className="landing-page width-is-screen vert-center">
@@ -126,16 +131,7 @@ class LandingPage extends Component {
                 john borkowski
               </h2>
             </div>
-                  <div className = "links links--landing-page">
-                    <a onClick={this.changeActiveContainer.bind(this, "portfolio")} className={activeLink === 'portfolio' ? "links__link is-active" : "links__link is-inactive"}>
-                      <h4 className="margins--remove-default">portfolio</h4>
-                    </a>
-                    <h4 className="links__divide margins--remove-default">|</h4>
-                    <a onClick={this.changeActiveContainer.bind(this, "about")} className={ activeLink === 'about'  ? "links__link is-active" : "links__link is-inactive"}>
-                      <h4 className="margins--remove-default">About</h4>
-                    </a>
-                  </div>
-
+            {this.renderHeader()}
             {activeLink != ('') ? this.renderSubSection(activeLink) : ''}
           </div>
           <Footer />

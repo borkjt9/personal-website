@@ -3,7 +3,46 @@ $underlineHeight: 5%;
 $portfolioItemDimension: 250px;
 $pageColor: #FCFCFC;
 
+@media (min-width: 768px)  {
+  .links__header__icon {
+    display: none;
+  }
+  .home-link--mobile {
+    display: none;
+  }
+  .links__link {
+    &::before {
+      width: calc(100% - 16px);
+      margin-left: 8px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .links__header__text {
+    display: none;
+  }
+
+  .home-link--desktop {
+    display: none;
+  }
+
+  .links__divide {
+    opacity: 0;
+    height: 0px;
+
+  }
+
+  .links__link {
+    &::before {
+      width: calc(100% + 8px);
+      margin-left: -4px;
+    }
+  }
+}
+
 .links {
+
 
   .links__link {
     float: left;
@@ -11,11 +50,9 @@ $pageColor: #FCFCFC;
 
     &::before {
       content: "";
-      width: calc(100% - 16px);
-      margin-left: 8px;
       position: absolute;
       height: 1px;
-      bottom: -1px;
+      bottom: -2px;
       left: 0;
       background-color: $underlineColor;
       -webkit-transition: all 0.3s ease-in-out 0s;
@@ -29,8 +66,15 @@ $pageColor: #FCFCFC;
       transform: scaleX(1);
     }
 
-
+    img:hover{
+      opacity: 1;
+    }
     &.is-active {
+
+      img {
+          opacity: 1;
+        }
+
       &::before {
         -webkit-transform: scaleX(1);
         transform: scaleX(1);
@@ -46,6 +90,11 @@ $pageColor: #FCFCFC;
     font-family: "Lato", sans-serif;
     font-weight: 400px;
   }
+
+  .links__header__icon {
+    height: 30px;
+    opacity: 0.5;
+  }
 }
 
 .links--landing-page {
@@ -53,5 +102,8 @@ $pageColor: #FCFCFC;
   margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
-  display: inline-block;
+  display: flex;
+  max-width: 300px;
+  width: 100%;
+  justify-content: space-evenly;
 }

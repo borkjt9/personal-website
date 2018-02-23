@@ -5,13 +5,15 @@ $underlineColor: #636363;
 .boon-investments {
 
   .boon-investments__design__text,  .boon-investments__investment__text{
-    margin: -30px 0px;
-    width: 45%;
+    margin: auto 0px;
+    width: 100%;
+    max-width: 300px;
     display: inline-block;
   }
 
   .boon-investments__wireframe, .boon-investments__investment__white-paper {
-    width: 35%;
+    width: 100%;
+    max-width: 250px;
     transition: all 0.2s ease-in-out;
     margin: auto 0px;
     cursor: pointer;
@@ -33,14 +35,16 @@ $underlineColor: #636363;
   .boon-investments__product__iphone-image {
 
       margin: auto 20px;
-      width: 30%;
-      height: 50.1%;
+      width: 100%;
+      max-width: 200px;
+      max-height: 406px;
       text-align: center;
   }
 
 
   .boon-investments__product__text {
-    width: 50%;
+    width: 100%;
+    max-width: 330px;
     display: inline-block;
     margin: auto 20px;
   }

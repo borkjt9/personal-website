@@ -38,19 +38,23 @@ renderProductSection() {
   return (
     <div className="portfolio-page__section">
       <h1 className="portfolio-page__section__title boon__investments__product">Product</h1>
-      <div className="portfolio-page__section__body">
-        <img className="boon-investments__product__iphone-image" src={require('../../../assets/images/iphone-investment-history.png')}/>
+      <div className="portfolio-page__section__body row-wrap">
+        <div className="boon-investments__product__iphone-image">
+          <img style={{"width": "100%"}} src={require('../../../assets/images/iphone-investment-history.png')}/>
+        </div>
         <div className="boon-investments__product__text">
           <h3>{this.productCaptions[0]}</h3>
           <p>{this.productDescriptions[0]}</p>
         </div>
         </div>
-        <div className="portfolio-page__section__body">
+        <div className="portfolio-page__section__body row-wrap-reverse">
         <div className="boon-investments__product__text">
           <h3>{this.productCaptions[1]}</h3>
           <p>{this.productDescriptions[1]}</p>
         </div>
-        <img className="boon-investments__product__iphone-image" src={require('../../../assets/images/iphone-allocation.png')}/>
+        <div className="boon-investments__product__iphone-image">
+          <img style={{"width": "100%"}} className="boon-investments__product__iphone-image" src={require('../../../assets/images/iphone-allocation.png')}/>
+        </div>
       </div>
     </div>
   )
@@ -79,7 +83,7 @@ renderProductSection() {
     return (
       <div className="portfolio-page__section boon-investments__investment">
         <h1 className="portfolio-page__section__title">Investment</h1>
-        <div className="portfolio-page__section__body">
+        <div className="portfolio-page__section__body row-wrap">
 
           <div className="boon-investments__investment__white-paper">
             <a href={whitePaperPDF} target="_blank">
@@ -199,7 +203,7 @@ renderProductSection() {
 
           {this.renderTimeline()}
           {this.renderSkillsList()}
-          {this.renderSocialMedia()}
+          {/* {this.renderSocialMedia()} */}
         </div>
         {this.renderZoomedWireframe()}
       </div>

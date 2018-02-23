@@ -74,7 +74,7 @@ class BankOfAmerica extends Component {
     return (
       <div className="portfolio-page__section">
         <h1 className="portfolio-page__section__title">Risk Management</h1>
-        <div className="portfolio-page__section__body">
+        <div className="portfolio-page__section__body row-wrap">
           <img className="bac__riskManagement__image" src={require('../../../assets/images/riskManagement.png')}/>
           <p className="bac__riskManagement__text">{this.riskManagementDescription}</p>
         </div>
@@ -86,7 +86,7 @@ class BankOfAmerica extends Component {
     return (
       <div className="portfolio-page__section">
         <h1 className="portfolio-page__section__title">Stress Testing</h1>
-        <div className="portfolio-page__section__body">
+        <div className="portfolio-page__section__body row-wrap-reverse">
           <p className="bac__stressTesting__text">{this.stressTestingDescription}</p>
           <div className="bac__stressTesting__imageGroup">
             <img className="bac__stressTesting__image" src={require('../../../assets/images/janetYellen.png')}/>
@@ -103,14 +103,14 @@ class BankOfAmerica extends Component {
     return (
       <div className="portfolio-page__section">
         <h1 className="portfolio-page__section__title boon__investments__product">Product</h1>
-        <div className="portfolio-page__section__body">
+        <div className="portfolio-page__section__body row-wrap">
           <img className="boon-investments__product__iphone-image" src={require('../../../assets/images/iphone-investment-history.png')}/>
           <div className="boon-investments__product__text">
             <h3>{this.productCaptions[0]}</h3>
             <p>{this.productDescriptions[0]}</p>
           </div>
         </div>
-        <div className="portfolio-page__section__body">
+        <div className="portfolio-page__section__body row-wrap-reverse">
           <div className="boon-investments__product__text">
             <h3>{this.productCaptions[1]}</h3>
             <p>{this.productDescriptions[1]}</p>

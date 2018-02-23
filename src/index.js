@@ -15,6 +15,14 @@ import AutoPOOL from './portfolio/portfolio-pages/autopool/autopool';
 import BankOfAmerica from './portfolio/portfolio-pages/bank-of-america/bank-of-america';
 import SunRun from './portfolio/portfolio-pages/sunrun/sunrun';
 import 'normalize.css'; // Note this
+import './styles/theme/typography.scss';
+import './styles/theme/spacing.scss';
+import './styles/theme/links.scss';
+import './styles/theme/portfolios.scss';
+
+import './styles/base.scss';
+import './styles/animations.scss';
+import './styles/transitions.scss';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 

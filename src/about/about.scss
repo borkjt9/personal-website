@@ -1,5 +1,5 @@
 .about {
-    max-width: 900px;
+    max-width: 1000px;
     min-height: calc(100vh - 90px);
     margin: auto;
     padding-bottom: 20px;
@@ -8,17 +8,17 @@
       display: flex;
       margin: auto auto 40px;
       justify-content: space-between;
+      width: 95%;
 
       .about__section__image {
-        max-width: 320px;
-        margin-top: auto;
-        margin-bottom: auto;
-
+        max-width: 350px;
+        width: 95%;
+        margin: auto;
         .about__section__image__desc {
           margin-top: 5px;
-          font-size: 12px;
-          line-height: 16px;
-          letter-spacing: 1px;
+          font-size: 1.2rem;
+          line-height: 1.5em;
+          letter-spacing: .1em;
           color: #636363;
           font-weight: 300;
 
@@ -26,10 +26,9 @@
       }
 
       .about__section__desc {
-        margin-top: auto;
-        margin-bottom: auto;
+        margin: auto;
         text-align: left;
-        max-width: 400px;
+        max-width: 350px;
       }
     }
 }

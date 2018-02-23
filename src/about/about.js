@@ -3,17 +3,17 @@ import Footer from '../footer/footer';
 import './about.scss';
 
 class About extends Component {
-  professionalDesc = "I am a product designer and developer in the financial space. I have worked for both Fortune 500 companies and startups.\n\nI began my career as an analyst for Bank of America before moving out to San Francisco, where I worked on the corporate finance team for Sunrun in preparation of their IPO. Most recently I was co-founder / CEO of Boon Investments, the first robo-advisor in the United States to accept international clients.\n\nI enjoy working on small, dynamic teams that build products to solve real problems for real people."
+  professionalDesc = "I am a product designer and developer in the financial sector.\n\nMost recently I was co-founder / CEO of Boon Investments, the first robo-advisor in the United States to accept international clients.\n\nI enjoy working on small, dynamic teams that build products to solve real problems for real people."
 
 
-  funDesc = "When not working, I mainly spend my time reading and drinking large amounts of slightly burnt coffee. I tend to read books that end up becoming HBO series in 2 - 5 years.\n\nWhen I stumble upon a week or more of uninterrupted time, I like to travel. Preferably to places with a high probability of getting lost.\n\nTrust the Process."
+  funDesc = "When not working, I spend my time reading and drinking large amounts of burnt coffee.\n\nIf I find myself with a week or more of uninterrupted time, I like to explore. Preferably to places with a high probability of getting lost.\n\nIn all things, Trust the Process."
 
   renderProfessional() {
     const imageWidth = {"width": "100%"}
     const imageDescription = "My last professional headshot. Taken two years ago. A lot has changed.";
 
     return (
-      <div className="about__section">
+      <div className="about__section row-wrap">
         <div className="about__section__image">
         <img  style={imageWidth} src={require('../assets/images/headshot.png')}/>
         <p className="about__section__image__desc">{imageDescription}</p>
@@ -33,7 +33,7 @@ class About extends Component {
 
 
     return(
-      <div className="about__section">
+      <div className="about__section row-wrap-reverse">
         <p className="about__section__desc">
           {this.funDesc}
         </p>

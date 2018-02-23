@@ -5,8 +5,8 @@ h1, h2, h3, h4, h5, a, p {
 
 h1 {
   font-weight: 300;
-  font-size: 30px;
-  letter-spacing: 20px;
+  font-size: 3rem;
+  letter-spacing: .6666667em;
   padding-left: 20px;
   text-transform: lowercase;
   color: #636363;
@@ -15,16 +15,17 @@ h1 {
 
 h2 {
   font-weight: 300;
-  font-size: 26px;
+  font-size: 2.6rem;
   letter-spacing: 22px;
   padding-left: 22px;
+  line-height: 36px;
   text-transform: lowercase;
   color: #636363;
 
 }
 
 h3 {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 300;
   letter-spacing: 3px;
   line-height: 28px;
@@ -40,7 +41,7 @@ h4 {
   font-weight: 400;
   letter-spacing: 8px;
   padding-left: 8px;
-  font-size: 12px;
+  font-size: 1.2rem;
   line-height: 16px;
   text-transform: uppercase;
   color: #636363;
@@ -50,12 +51,12 @@ h5 {
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: 10px;
+  font-size: 1rem;
   color: #636363;
 
 }
 p {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 300;
   white-space: pre-wrap;
   letter-spacing: 2px;
@@ -92,5 +93,74 @@ p {
 }
 
 a {
+
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+  //CSS
+
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  //CSS
+
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  //CSS
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  h1, h2, h3, h4, h5, a, p {
+    text-align: center;
+  }
+  //CSS
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  //CSS
+  h1, h2, h3, h4, h5, a, p {
+    text-align: center;
+  }
 
 }
