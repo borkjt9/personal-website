@@ -33,7 +33,7 @@ class AutoPOOL extends Component {
         <div className="portfolio-page__section__body row-wrap">
           <div className="autopool__product__text">
             <h3>{this.productCaptions[1]}</h3>
-            <p>{this.productDescriptions[1]}</p>
+            <p className="portfolio-page__section__body__description">{this.productDescriptions[1]}</p>
           </div>
           <img className="autopool__product__iphone-image" src={require('../../../assets/images/autopool-create-alert.png')}/>
         </div>
@@ -41,7 +41,7 @@ class AutoPOOL extends Component {
           <img className="autopool__product__iphone-image" src={require('../../../assets/images/autopool-receive-alert.png')}/>
           <div className="autopool__product__text">
             <h3>{this.productCaptions[2]}</h3>
-            <p>{this.productDescriptions[2]}</p>
+            <p className="portfolio-page__section__body__description">{this.productDescriptions[2]}</p>
           </div>
         </div>
       </div>
