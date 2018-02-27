@@ -27,7 +27,7 @@ class AutoPOOL extends Component {
           <img className="autopool__product__iphone-image" src={require('../../../assets/images/autopool-set-ride.png')}/>
           <div className="autopool__product__text">
             <h3>{this.productCaptions[0]}</h3>
-            <p>{this.productDescriptions[0]}</p>
+            <p className="portfolio-page__section__body__description">{this.productDescriptions[0]}</p>
           </div>
         </div>
         <div className="portfolio-page__section__body row-wrap">
