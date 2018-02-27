@@ -28,9 +28,8 @@ $pageColor: #FCFCFC;
   }
 
   .links__divide {
-    opacity: 0;
-    height: 0px;
-
+    
+    display: none;
   }
 
   .links__link {
