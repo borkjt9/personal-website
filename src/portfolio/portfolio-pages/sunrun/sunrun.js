@@ -18,7 +18,7 @@ class SunRun extends Component {
 
   financialModelingDescription = "Managed the integration of Clean Energy Experts, acquired by Sunrun in April 2015,  into Sunrun’s financial planning process.\n\nPartnered with the Project Finance executive to forecast any new expense related to future tax equity deals, securitizations, and warehouse facilities."
 
-  cashFlowDescription = "Helped build and maintain the free cash flow model used by executive leadership to manage the schedule of solar project financingings and capital raises."
+  cashFlowDescription = "Built and maintained the free cash flow model used by executive leadership to manage the schedule of solar project financingings and capital raises."
 
   ipoDescription = "Supported the VP of Finance and CFO on an ad-hoc basis in preparation of and throughout the IPO process."
 
@@ -63,8 +63,10 @@ class SunRun extends Component {
       <div className="portfolio-page__section">
         <h1 className="portfolio-page__section__title">Financial Modeling</h1>
         <div className="portfolio-page__section__body">
-          <p className="sunrun__financial-modeling__text">{this.financialModelingDescription}</p>
           <img className="sunrun__financial-modeling__image" src={require('../../../assets/images/financialModel.png')}/>
+        </div>
+        <div className="portfolio-page__section__body">
+          <p className="sunrun__financial-modeling__text">{this.financialModelingDescription}</p>
         </div>
       </div>
     )
@@ -73,9 +75,11 @@ class SunRun extends Component {
   renderCashFlow() {
     return (
       <div className="portfolio-page__section">
-        <h1 className="portfolio-page__section__title">Cash Flow Forecasting</h1>
+        <h1 className="portfolio-page__section__title">Cash Flow Analysis</h1>
         <div className="portfolio-page__section__body">
           <img className="sunrun__cash-flow__image" src={require('../../../assets/images/cashFlow.png')}/>
+        </div>
+        <div className="portfolio-page__section__body">
           <p className="sunrun__cash-flow__text">{this.cashFlowDescription}</p>
         </div>
       </div>
@@ -85,10 +89,12 @@ class SunRun extends Component {
   renderIPO() {
     return (
       <div className="portfolio-page__section">
-        <h1 className="portfolio-page__section__title">Initial Public Offering</h1>
+        <h1 className="portfolio-page__section__title">IPO</h1>
+        <div className="portfolio-page__section__body">
+          <img className="sunrun__ipo__image" src={require('../../../assets/images/ipo.png')}/>
+        </div>
         <div className="portfolio-page__section__body">
           <p className="sunrun__ipo__text">{this.ipoDescription}</p>
-          <img className="sunrun__ipo__image" src={require('../../../assets/images/ipo.png')}/>
         </div>
       </div>
     )

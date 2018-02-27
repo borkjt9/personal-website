@@ -38,19 +38,19 @@ renderProductSection() {
   return (
     <div className="portfolio-page__section">
       <h1 className="portfolio-page__section__title boon__investments__product">Product</h1>
-      <div className="portfolio-page__section__body row-wrap">
+      <div className="portfolio-page__section__body row-wrap-reverse">
         <div className="boon-investments__product__iphone-image">
           <img style={{"width": "100%"}} src={require('../../../assets/images/iphone-investment-history.png')}/>
         </div>
         <div className="boon-investments__product__text">
           <h3>{this.productCaptions[0]}</h3>
-          <p>{this.productDescriptions[0]}</p>
+          <p className="portfolio-page__section__body__description">{this.productDescriptions[0]}</p>
         </div>
         </div>
-        <div className="portfolio-page__section__body row-wrap-reverse">
+        <div className="portfolio-page__section__body row-wrap">
         <div className="boon-investments__product__text">
           <h3>{this.productCaptions[1]}</h3>
-          <p>{this.productDescriptions[1]}</p>
+          <p className="portfolio-page__section__body__description">{this.productDescriptions[1]}</p>
         </div>
         <div className="boon-investments__product__iphone-image">
           <img style={{"width": "100%"}} className="boon-investments__product__iphone-image" src={require('../../../assets/images/iphone-allocation.png')}/>
@@ -65,10 +65,10 @@ renderProductSection() {
     return (
       <div className="portfolio-page__section boon-investments__design">
         <h1 className="portfolio-page__section__title">Design</h1>
-        <div className="portfolio-page__section__body">
+        <div className="portfolio-page__section__body row-wrap">
           <div className="boon-investments__design__text">
             <h3>{this.designCaption}</h3>
-            <p>{this.designBody}</p>
+            <p className="portfolio-page__section__body__description">{this.designBody}</p>
           </div>
           <div onClick={this.toggleWireframe.bind(this)} className="boon-investments__wireframe">
             <img className="boon-investments__design__wireframe__image transition-border" src={require('../../../assets/images/boon-wireframe.png')}/>
@@ -83,7 +83,7 @@ renderProductSection() {
     return (
       <div className="portfolio-page__section boon-investments__investment">
         <h1 className="portfolio-page__section__title">Investment</h1>
-        <div className="portfolio-page__section__body row-wrap">
+        <div className="portfolio-page__section__body row-wrap-reverse">
 
           <div className="boon-investments__investment__white-paper">
             <a href={whitePaperPDF} target="_blank">
@@ -93,7 +93,7 @@ renderProductSection() {
           </div>
           <div className="boon-investments__investment__text">
             <h3>{this.investmentCaption}</h3>
-            <p>{this.investmentBody}</p>
+            <p className="portfolio-page__section__body__description">{this.investmentBody}</p>
           </div>
       </div>
     </div>
@@ -143,7 +143,9 @@ renderProductSection() {
     return (
       <div className="portfolio-page__section boon-investments__timeline">
         <h1 className="portfolio-page__section__title">Progress</h1>
-        <img class="boon-investments__timeline__image" src={require('../../../assets/images/boon-timeline.png')} />
+        <img class="boon-investments__timeline__image timeline__image--desktop" src={require('../../../assets/images/boon-investments-timeline-desktop.png')} />
+        <img class="boon-investments__timeline__image timeline__image--mobile" src={require('../../../assets/images/boon-investments-timeline-mobile.png')} />
+
       </div>
     )
   }

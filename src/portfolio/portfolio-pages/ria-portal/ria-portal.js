@@ -13,10 +13,10 @@ class RiaPortal extends Component {
     "General": ["Product Management", "Design", "Partnerships", "Contracts"]
   }
 
-  productCaptions = ["Automated Portfolio Management", ""]
+  productCaptions = ["Automated Portfolio Management", "Intuitive Client Interface"]
   productDescriptions = [
-    "Boon offers clients the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then blend these choices with a diversified pool of assets to create a portfolio tailored to each client’s unique financial circumstance.",
-    "Boon clients have the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then combine the clients choices with a diversified portfolio of assets to minimize their risk and maximize their returns."
+    "The partner RIA sets client trade parameters during the onboarding process.\n\nThereafter, the Auto-OMS manages all client transactions, including portfolio rebalancing, dividend reinvestment, and asset sub-allocations.",
+    "Boon provides partners with both top-down and bottom-up reuporting capabilities.\n\nPartners can go from analyzing high level trends to client specific detail in a few clicks."
   ]
 
   designBody = "The Auto-OMS was spun out of Boon's existing technology infrastructure.  It began as an API that connected partners to Boon's internal engine.\n\nVery quickly, the Boon team realized they needed an interface through which partners could more easily interact with the Auto-OMS. The RIA Portal satisfies this need."
@@ -34,17 +34,17 @@ class RiaPortal extends Component {
     return (
       <div className="portfolio-page__section">
         <h1 className="portfolio-page__section__title boon__investments__product">Product</h1>
-        <div className="portfolio-page__section__body">
+        <div className="portfolio-page__section__body row-wrap-reverse">
           <img className="ria-portal__product__portal-image" src={require('../../../assets/images/ria-portal-1.png')}/>
           <div className="ria-portal__product__text">
             <h3>{this.productCaptions[0]}</h3>
-            <p>{this.productDescriptions[0]}</p>
+            <p className="portfolio-page__section__body__description">{this.productDescriptions[0]}</p>
           </div>
           </div>
-          <div className="portfolio-page__section__body">
+          <div className="portfolio-page__section__body row-wrap">
           <div className="ria-portal__product__text">
             <h3>{this.productCaptions[1]}</h3>
-            <p>{this.productDescriptions[1]}</p>
+            <p className="portfolio-page__section__body__description">{this.productDescriptions[1]}</p>
           </div>
           <img className="ria-portal__product__portal-image" src={require('../../../assets/images/ria-portal-2.png')}/>
         </div>
@@ -57,10 +57,10 @@ class RiaPortal extends Component {
       return (
         <div className="portfolio-page__section ria-portal__design">
           <h1 className="portfolio-page__section__title">Design</h1>
-          <div className="portfolio-page__section__body">
+          <div className="portfolio-page__section__body row-wrap">
             <div className="ria-portal__design__text">
               <h3>{this.designCaption}</h3>
-              <p>{this.designBody}</p>
+              <p className="portfolio-page__section__body__description">{this.designBody}</p>
             </div>
             <div onClick={this.toggleWireframe.bind(this)} className="ria-portal__wireframe">
               <img className="ria-portal__design__wireframe__image transition-border" src={require('../../../assets/images/ria-portal-wireframe-thumbnail.png')}/>
@@ -98,7 +98,9 @@ class RiaPortal extends Component {
       return (
         <div className="portfolio-page__section ria-portal__timeline">
           <h1 className="portfolio-page__section__title">Progress</h1>
-          <img class="ria-portal__timeline__image" src={require('../../../assets/images/ria-portal-timeline.png')} />
+          <img class="ria-portal__timeline__image timeline__image--desktop" src={require('../../../assets/images/ria-portal-timeline-desktop.png')} />
+          <img class="ria-portal__timeline__image timeline__image--mobile" src={require('../../../assets/images/ria-portal-timeline-mobile.png')} />
+
         </div>
       )
     }

@@ -1,3 +1,15 @@
+@media (min-width: 768px)  {
+  .about__section__desc {
+    text-align: left;
+  }
+}
+
+@media (max-width: 767px) {
+  .about__section__desc {
+    text-align: center;
+  }
+
+}
 .about {
     max-width: 1000px;
     min-height: calc(100vh - 90px);
@@ -6,7 +18,7 @@
 
     .about__section {
       display: flex;
-      margin: auto auto 40px;
+      margin: 20px auto;
       justify-content: space-between;
       width: 95%;
 
@@ -27,8 +39,8 @@
 
       .about__section__desc {
         margin: auto;
-        text-align: left;
         max-width: 350px;
+        width: 95%;
       }
     }
 }

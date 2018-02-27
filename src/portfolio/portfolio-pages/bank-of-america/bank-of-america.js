@@ -135,7 +135,7 @@ class BankOfAmerica extends Component {
             <ul className="bac__tasks">
               {this.renderTaskList()}
             </ul>
-          </div> */}32
+          </div> */}
           {this.renderAutomation()}
           {this.renderRiskManagement()}
           {this.renderStressTesting()}

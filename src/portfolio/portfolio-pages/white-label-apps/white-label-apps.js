@@ -38,10 +38,10 @@ class WhiteLabelApps extends Component {
   renderOsharesSection() {
     return (
       <div className="portfolio-page__section">
-        <div className="portfolio-page__section__body">
+        <div className="portfolio-page__section__body row-wrap">
           <div className="white-label-apps__product__text">
             <h3>Beanstox by O'Shares</h3>
-            <p>{this.osharesBody}</p>
+            <p className="portfolio-page__section__body__description">{this.osharesBody}</p>
           </div>
           <img className="white-label-apps__product__iphone-image" src={require('../../../assets/images/beanstox-launch-screen.png')}/>
         </div>
@@ -54,12 +54,12 @@ class WhiteLabelApps extends Component {
       <div>
         <div className="portfolio-page__section">
           <h1 className="portfolio-page__section__title">Product</h1>
-          <div className="portfolio-page__section__body">
+          <div className="portfolio-page__section__body row-wrap-reverse">
             <img className="white-label-apps__product__iphone-image" src={require('../../../assets/images/astor-launch-screen.png')}/>
             <div className="white-label-apps__product__text">
               <h3>Astor Investment Mangement</h3>
 
-              <p>{this.astorBody}</p>
+              <p className="portfolio-page__section__body__description">{this.astorBody}</p>
             </div>
           </div>
         </div>
@@ -71,7 +71,9 @@ class WhiteLabelApps extends Component {
     return (
       <div className="portfolio-page__section white-label-apps__timeline">
         <h1 className="portfolio-page__section__title">Progress</h1>
-        <img class="white-label-apps__timeline__image" src={require('../../../assets/images/white-label-apps-timeline.png')} />
+        <img class="white-label-apps__timeline__image timeline__image--desktop" src={require('../../../assets/images/white-label-apps-timeline-desktop.png')} />
+        <img class="white-label-apps__timeline__image timeline__image--mobile" src={require('../../../assets/images/white-label-apps-timeline-mobile.png')} />
+
       </div>
     )
   }

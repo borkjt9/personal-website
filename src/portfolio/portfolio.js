@@ -33,6 +33,12 @@ class Portfolio extends Component {
     }
   }
 
+  componentDidUpdate() {
+    if (!this.state.headerExpanded) {
+      window.scrollTo(0, 0)
+    }
+  }
+
   history = createHistory()
 
   navRefs = {

@@ -5,17 +5,17 @@ $underlineColor: #636363;
 .autopool {
   .autopool__product__iphone-image {
 
-      margin: auto 20px;
-      width: 30%;
-      height: 50.1%;
-      text-align: center;
+    width: 100%;
+    max-width: 200px;
+    max-height: 406px;
+    text-align: center;
   }
 
 
   .autopool__product__text {
-    width: 45%;
-    display: inline-block;
-    margin: auto 20px;
+    width: 100%;
+    max-width: 330px;
+    margin: auto 0px;
   }
 
 
