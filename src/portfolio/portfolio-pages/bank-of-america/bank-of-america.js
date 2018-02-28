@@ -18,12 +18,12 @@ class BankOfAmerica extends Component {
     "Technology": ["VBA", "R", "Excel", "PowerPoint"],
     "Finance": ["Financial Modeling", "Automation", "Forecasting"],
   }
-  automationDescription =  "Developed the VBA portion of a division-wide project to automate balance breakouts by legal entity from general ledger.\n\nImproved daily reporting efficiency by approximately four hours each day through the VBA automation of labor intensive day-to-day processes."
-  riskManagementDescription = "Isolated and analyzed the primary drivers of variances in the NII/NIM forecast out through 2016 over day-over-day, week-over-week, and month-over-month time horizons."
+  automationDescription =  "John dveloped the VBA portion of a division-wide project to automate balance breakouts by legal entity from general ledger.\n\nIn addition, John improved daily reporting efficiency by approximately six hours each day through the VBA automation of labor intensive day-to-day processes."
+  riskManagementDescription = "John isolated and analyzed the primary drivers of BAC's NII/NIM forecast out through 2016 over day-over-day, week-over-week, and month-over-month time horizons."
 
-  stressTestingDescription = "Compiled and analyzed the hypothetical impacts to BAC’s commercial allowance as a result of the Federal Reserve’s Stress Tests.\n\nCalculated and analyzed various allowance metrics for BAC’s $350 billion commercial loan portfolio including non-performing loans, net credit losses, and provision expense."
+  stressTestingDescription = "John compiled and analyzed the hypothetical impacts to BAC’s commercial allowance as a result of the Federal Reserve’s Stress Tests.\n\nIn addition, John calculated and analyzed various allowance metrics for BAC’s $350 billion commercial loan portfolio including non-performing loans, net credit losses, and provision expense."
 
-  summary = "John was a financial analyst for Bank of America from June 2013 to January 2015. During his time at Bank of America, John worked in the Balance Sheet Management and Commercial Allowance divisions. John’s primary contributions include the automation of financial reporting and net interest income analysis."
+  summary = "John was a financial analyst for Bank of America from June 2013 to January 2015. During his time at Bank of America, John worked in the Balance Sheet Management and Commercial Allowance divisions.\n\nJohn’s primary contributions included the automation of financial reporting and net interest income analysis. The running joke in the office during his first year was that he had automated himself out of a job by writing VBA scripts to perform over 3/4 of his daily tasks."
 
   renderTaskList() {
     return _.map(this.tasksArray, task => {

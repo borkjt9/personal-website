@@ -41,14 +41,13 @@ class Carousel extends Component {
   }
   changePortfolioItem(selectedPortfolio) {
 
-    console.log(this.history)
     this.props.onPortfolioChange(selectedPortfolio)
 
   }
 
 
   render() {
-
+    console.log('carousel props', this.props)
     var settings = {
       dots: false,
       arrows: true,
@@ -57,7 +56,6 @@ class Carousel extends Component {
       slidesToShow: 3,
       swipe: false,
       initialSlide: this.props.currentPortfolioIndex-1,
-
     };
 
     const portfolio = this.props.portfolios;

@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import './white-label-apps.scss';
 import _ from 'lodash';
 class WhiteLabelApps extends Component {
-  summary = "Using Boon's branded applications as a proof of concept, Boon developed white-label applications as part of their SaaS offering to traditional investment management firms.\n\nFor each white-label application Boon developed, John was responsible for negotiating contracts, designing and developing the iOS application, and managing the project timeline.";
+  summary = "Using Boon's branded applications as a proof of concept, Boon developed white-label applications as part of their SaaS offering to traditional investment management firms.\n\nJohn was responsible for negotiating contracts, designing and developing the iOS application, and managing the project timeline for each white-label application Boon developed.";
   osharesCaption = "OShares ETF Investment"
-  osharesBody = "Beanstox is an investment application Boon created for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the O'Shares app, John designed a custom user signup process which incorporated OShares' investment methodology and over 100 assets."
+  osharesBody = "Beanstox is an investment application Boon created for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the O'Shares application, John designed a custom user signup process which incorporated OShares' unique investment methodology."
   astorCaption = "Astor Investment Management"
   astorBody = "Astor is a registered investment advisor that provides client services to over $2 billion in client assets.\n\nAstor served as the pilot project for Boon's white label applications."
 

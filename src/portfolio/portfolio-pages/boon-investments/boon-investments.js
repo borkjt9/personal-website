@@ -4,7 +4,7 @@ import './boon-investments.scss';
 import whitePaperPDF from '../../../assets/pdfs/boon-investments-white-paper.pdf'
 class BoonInvestments extends Component {
 
-  summaryBody = "Boon Investments is an S.E.C registered investment advisor that provides non-U.S. residents access to the U.S. investment markets. Boon is the first robo-advisor in the United States to accept international clients.\n\nAs co-founder and CEO of Boon Investments, John's main contributions include leading design for Boon's suite of product, writing the investment algorithms which power Boon's portfolios, developing Boon's flagship iOS application, and closing deals with multiple business partners.";
+  summaryBody = "Boon Investments is an S.E.C registered investment advisor that provides non-U.S. residents access to the U.S. investment markets. Boon is the first robo-advisor in the United States to accept international clients.\n\nAs co-founder and CEO of Boon Investments, John's main contributions include leading design for Boon's suite of products, writing the investment algorithms which power Boon's portfolios, developing Boon's flagship iOS application, and closing deals with multiple business partners.";
 
   skillsDictionary = {
     "Development": ["Python", "Swift", "Javascript", "HTML/CSS"],

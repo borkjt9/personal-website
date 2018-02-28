@@ -3,10 +3,10 @@ import Footer from '../footer/footer';
 import './about.scss';
 
 class About extends Component {
-  professionalDesc = "I am a product designer and developer in the financial sector.\n\nMost recently I was co-founder / CEO of Boon Investments, the first robo-advisor in the United States to accept international clients.\n\nI enjoy working on small, dynamic teams that build products to solve real problems for real people."
+  professionalDesc = "I am a product designer and frontend developer in the financial sector.\n\nMost recently I was co-founder / CEO of Boon Investments, the first robo-advisor in the United States to accept international clients.\n\nI enjoy working on small, dynamic teams that build intuitive products to solve real problems for real people."
 
 
-  funDesc = "When not working, I spend my time reading and drinking large amounts of burnt coffee.\n\nIf I find myself with a week or more of uninterrupted time, I like to explore. Preferably to places with a high probability of getting lost.\n\nIn all things, Trust the Process."
+  funDesc = "When not working, I spend my time reading and drinking large amounts of burnt coffee.\n\nIf I find myself with a week or more of uninterrupted time, I like to explore. Preferably to places with a high probability of getting lost.\n\nAs in all things, Trust the Process."
 
   renderProfessional() {
     const imageWidth = {"width": "100%"}

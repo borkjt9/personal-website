@@ -11,12 +11,11 @@ class Header extends Component {
 
   constructor(props){
     super(props);
-    console.log('header props', this.props)
     this.onPortfolioChange = this.onPortfolioChange.bind(this);
 
     this.state = {
       'portfolioShouldExpand': false,
-      'initialLoad': true,
+      'clearCarousel': true,
     }
   }
 
@@ -36,9 +35,17 @@ class Header extends Component {
 
 
     this.setState({
-      initialLoad: false,
+      clearCarousel: false,
       'portfolioShouldExpand': portfolioShouldExpand,
     })
+    if (portfolioShouldExpand == false) {
+      setTimeout(() => {
+              this.setState({
+              'clearCarousel': true
+            })
+          }, 500);
+    }
+
 
   }
 
@@ -67,9 +74,8 @@ class Header extends Component {
       </div>
 
     );
-
-
   }
+
   expandAbout() {
     this.portfolioShouldExpand = false
     this.portfolioLabel = "portfolio"
@@ -102,7 +108,7 @@ class Header extends Component {
           </div>
 
         </div>
-        {this.state.initialLoad ? '': this.renderPortfolio()}
+        {this.state.clearCarousel ? '': this.renderPortfolio()}
       </div>
     )
   }
