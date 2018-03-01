@@ -4,7 +4,7 @@ import './ria-portal.scss';
 
 class RiaPortal extends Component {
 
-  summaryBody = "The Automated Order Management System (\"Auto-OMS\") is a B2B SaaS product spun out of Boon Investments' existing technology.\n\nThe Auto-OMS enables investment advisors to increase their client without increasing their workload by automating all aspects of the portfolio management process, including dividend reinvestment, asset sub-allocation, and client onboarding.\n\nAs product lead for the Auto-OMS, I managed a small team of developers to design and build the RIA portal, ensure we hit the deadlines communicated to partners, and integrate new partners into the Auto-OMS."
+  summaryBody = "The Automated Order Management System (\"Auto-OMS\") is a B2B SaaS product that was spun out of Boon Investments' existing technology.\n\nThe Auto-OMS enables investment advisors to increase their client base without increasing their workload by automating all aspects of the portfolio management process, including dividend reinvestment, asset sub-allocation, and client onboarding.\n\nAs product lead for the Auto-OMS, I managed a small team of developers to design and build the RIA portal, ensured we hit the deadlines communicated to partners, and integrated new partners into the Auto-OMS."
 
 
   skillsDictionary = {
@@ -16,10 +16,10 @@ class RiaPortal extends Component {
   productCaptions = ["Automated Portfolio Management", "Comprehensive Reporting"]
   productDescriptions = [
     "During onboarding, each partner sets the parameters which tells the Auto-OMS how to manage their clients.\n\nThereafter, the Auto-OMS oversees all client transactions, including portfolio rebalancing, dividend reinvestment, and asset sub-allocations.",
-    "Boon provides partners with both top-down and bottom-up reuporting capabilities.\n\nPartners can go from analyzing high level trends to client specific detail in a few clicks."
+    "The RIA Portal provides partners with both top-down and bottom-up reporting capabilities.\n\nPartners can go from analyzing high level trends to client specific detail in a few clicks."
   ]
 
-  designBody = "The Auto-OMS began purely as an API that connected partners to Boon's internal engine.\n\nVery quickly, I realized (by our partners repeatedly telling me) that they needed an interface through which they could more easily interact with the API. I designed the RIA Portal to satisfy this need."
+  designBody = "The Auto-OMS began as an API that connected partners to Boon's internal engine.\n\nVery quickly, I realized (i.e. our partners repeatedly told me) that they needed an interface through which they could more easily interact with the API. I designed the RIA Portal to satisfy this need."
   designCaption = "From API to GUI"
 
 

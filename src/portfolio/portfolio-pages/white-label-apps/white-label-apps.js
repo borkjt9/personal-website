@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import './white-label-apps.scss';
 import _ from 'lodash';
 class WhiteLabelApps extends Component {
-  summary = "While CEO of Boon Investments, my team developed multiple white-label applications to pair with our SaaS offering for traditional investment management firms.\n\nAs CEO, I was responsible for negotiating contracts, designing and developing the core white-label template for iOS, and managing the project timeline sfor the applications we built for partners.";
+  summary = "While CEO of Boon Investments, my team developed multiple white-label applications to pair with our B2B SaaS offering to traditional investment management firms.\n\nAs CEO, I was responsible for negotiating contracts, designing and developing the core white-label template for iOS, and managing the project timelines for the applications we built for partners.";
   osharesCaption = "OShares ETF Investment"
-  osharesBody = "Beanstox is an application my team built for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the Beanstox app, we designed and developed a custom user signup process which incorporated O'Shares' interal investment methodology."
+  osharesBody = "Beanstox is an application my team built for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the Beanstox app, we designed a custom user signup process which incorporated O'Shares' internal investment methodology."
   astorCaption = "Astor Investment Management"
-  astorBody = "Astor served as the pilot project for Boon's white label applications. They are a registered investment advisor that provides client services to over $2 billion in client assets.\n\nThe first client is always the hardest. For the Astor deal, most of my time was spent getting product deadlines to match partner expectations, and vice versa. In comparison, developing the Astor app was surprisingly easy."
+  astorBody = "Astor served as the pilot project for Boon's white label applications. They are a registered investment advisor that provides client services to over $2 billion in client assets.\n\nThe first client is always the hardest. For the Astor deal, most of my time was spent getting product deadlines to match with partner expectations, and vice versa. Developing the actual app was surprisingly easy in comparison."
 
   skillsDictionary = {
     "Development": ["Swift", "Python"],

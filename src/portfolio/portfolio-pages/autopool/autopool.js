@@ -4,7 +4,7 @@ import './autopool.scss';
 
 class AutoPOOL extends Component {
 
-  summaryBody = "AutoPOOl was a fun app I built to solve an incredibly significant painpoint in today’s society: the highly volatile prices of uberPOOL rides.\n\nAutoPOOL sends users push notifications at intervals they set containing uberPOOL price updates. Once the price is in the user’s desired range, Auto-POOL alerts them with a fun pokemon-themed notifications.\n\nI developed the application in Swift, and used Google's App Engine to schedule cron jobs and send push notifications.";
+  summaryBody = "AutoPOOl was a fun iOS application I built to solve an incredibly significant painpoint in today’s society: the highly volatile prices of UberPOOL rides.\n\nAutoPOOL sends users automatic push notifications containing UberPOOL price updates at time intervals they set. Once the price is in the user’s desired range, Auto-POOL alerts the user with a fun pokemon-themed notifications.\n\nI developed AutoPOOL in Swift, and used Google's App Engine to schedule cron jobs and send push notifications.";
 
 
   skillsDictionary = {
@@ -12,10 +12,10 @@ class AutoPOOL extends Component {
     "Technology": ["Xcode", "Firebase", "App Engine", "Sketch"],
   }
 
-  productCaptions = ["Born out of Pain", "Set and Forget", "Wild uberPOOL was Caught!"]
-  productDescriptions = ["Through large amounts of very scientific research, UberPOOL prices were found to rise and fall upwards of 100% in very short periods of time.\n\nIt was reported from a reliable source (definitely not me) that a ride from San Mateo, CA to Mountain View, CA at 5:00pm can cost $25, and not 5 minutes later cost only $11.50.",
-    "The huge swings uberPOOL prices have been known to cause severe migraines in those affected (again, not me).\n\nAutoPOOL cures this impending epidemic by monitering uberPOOL prices so users don't have to.\n\nAutoPOOL sends users alerts with price updates at intervals they specify in fun pokemon-themed messages.",
-    "Once the uberPOOL price is in the user's desired range, the user will receive a notification with a special pokemon-themed catchphrase.\n\nThe user can then book an uber directly in the application."
+  productCaptions = ["Born out of Pain", "Set and Forget", "Wild UberPOOL was Caught!"]
+  productDescriptions = ["Through large amounts of very scientific research, UberPOOL prices were found to rise and fall upwards of 100% in very short periods of time.\n\nIt was reported from a reliable source (definitely not me) that a ride from San Mateo, CA to Mountain View, CA at 5:00pm would cost $25, and then not 5 minutes later cost only $11.50.",
+    "The huge swings in prices began to cause severe migraines in many UberPOOL users (again, not me).\n\nAutoPOOL solves this serious health risk by monitering UberPOOL prices so users don't have to.\n\nAutoPOOL sends users automatic price alerts at intervals they specify in fun pokemon-themed messages. Epidemic Averted.",
+    "Once the UberPOOL price is in the user's desired range, the user will receive a notification with a special pokemon-themed catchphrase.\n\nThe user can then book an uber directly in the application."
   ]
 
 
