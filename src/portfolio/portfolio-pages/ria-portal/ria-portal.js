@@ -4,7 +4,7 @@ import './ria-portal.scss';
 
 class RiaPortal extends Component {
 
-  summaryBody = "Boon's Automated Order Management System (\"Auto-OMS\") is a B2B SaaS product that helps mid-sized investment advisors bridge the gap to the 21st century.\n\nThe Auto-OMS enables investment advisors to manage thousands of client portfolios with a few clicks by automating all aspects of the portfolio management process, including dividend reinvestment, asset sub-allocation, and client onboarding.\n\nAs product lead for the Auto-OMS, John managed a small team of developers to design and build the RIA portal, as well as integrate new partners into the system."
+  summaryBody = "The Automated Order Management System (\"Auto-OMS\") is a B2B SaaS product spun out of Boon Investments' existing technology.\n\nThe Auto-OMS enables investment advisors to increase their client without increasing their workload by automating all aspects of the portfolio management process, including dividend reinvestment, asset sub-allocation, and client onboarding.\n\nAs product lead for the Auto-OMS, I managed a small team of developers to design and build the RIA portal, ensure we hit the deadlines communicated to partners, and integrate new partners into the Auto-OMS."
 
 
   skillsDictionary = {
@@ -13,13 +13,13 @@ class RiaPortal extends Component {
     "General": ["Product Management", "Design", "Partnerships", "Contracts"]
   }
 
-  productCaptions = ["Automated Portfolio Management", "Intuitive Client Interface"]
+  productCaptions = ["Automated Portfolio Management", "Comprehensive Reporting"]
   productDescriptions = [
-    "The partner RIA sets client trade parameters during the onboarding process.\n\nThereafter, the Auto-OMS manages all client transactions, including portfolio rebalancing, dividend reinvestment, and asset sub-allocations.",
+    "During onboarding, each partner sets the parameters which tells the Auto-OMS how to manage their clients.\n\nThereafter, the Auto-OMS oversees all client transactions, including portfolio rebalancing, dividend reinvestment, and asset sub-allocations.",
     "Boon provides partners with both top-down and bottom-up reuporting capabilities.\n\nPartners can go from analyzing high level trends to client specific detail in a few clicks."
   ]
 
-  designBody = "The Auto-OMS was spun out of Boon's existing technology infrastructure.  It began as an API that connected partners to Boon's internal engine.\n\nVery quickly, the Boon team realized they needed an interface through which partners could more easily interact with the Auto-OMS. The RIA Portal satisfies this need."
+  designBody = "The Auto-OMS began purely as an API that connected partners to Boon's internal engine.\n\nVery quickly, I realized (by our partners repeatedly telling me) that they needed an interface through which they could more easily interact with the API. I designed the RIA Portal to satisfy this need."
   designCaption = "From API to GUI"
 
 

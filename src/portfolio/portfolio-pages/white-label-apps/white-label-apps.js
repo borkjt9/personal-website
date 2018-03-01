@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import './white-label-apps.scss';
 import _ from 'lodash';
 class WhiteLabelApps extends Component {
-  summary = "Using Boon's branded applications as a proof of concept, Boon developed white-label applications as part of their SaaS offering to traditional investment management firms.\n\nJohn was responsible for negotiating contracts, designing and developing the iOS application, and managing the project timeline for each white-label application Boon developed.";
+  summary = "While CEO of Boon Investments, my team developed multiple white-label applications to pair with our SaaS offering for traditional investment management firms.\n\nAs CEO, I was responsible for negotiating contracts, designing and developing the core white-label template for iOS, and managing the project timeline sfor the applications we built for partners.";
   osharesCaption = "OShares ETF Investment"
-  osharesBody = "Beanstox is an investment application Boon created for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the O'Shares application, John designed a custom user signup process which incorporated OShares' unique investment methodology."
+  osharesBody = "Beanstox is an application my team built for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the Beanstox app, we designed and developed a custom user signup process which incorporated O'Shares' interal investment methodology."
   astorCaption = "Astor Investment Management"
-  astorBody = "Astor is a registered investment advisor that provides client services to over $2 billion in client assets.\n\nAstor served as the pilot project for Boon's white label applications."
+  astorBody = "Astor served as the pilot project for Boon's white label applications. They are a registered investment advisor that provides client services to over $2 billion in client assets.\n\nThe first client is always the hardest. For the Astor deal, most of my time was spent getting product deadlines to match partner expectations, and vice versa. In comparison, developing the Astor app was surprisingly easy."
 
   skillsDictionary = {
     "Development": ["Swift", "Python"],
@@ -57,7 +57,7 @@ class WhiteLabelApps extends Component {
           <div className="portfolio-page__section__body row-wrap-reverse">
             <img className="white-label-apps__product__iphone-image" src={require('../../../assets/images/astor-launch-screen.png')}/>
             <div className="white-label-apps__product__text">
-              <h3>Astor Investment Mangement</h3>
+              <h3>Astor Investment Management</h3>
 
               <p className="portfolio-page__section__body__description">{this.astorBody}</p>
             </div>

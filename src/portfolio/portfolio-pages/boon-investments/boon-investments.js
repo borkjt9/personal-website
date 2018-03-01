@@ -4,7 +4,7 @@ import './boon-investments.scss';
 import whitePaperPDF from '../../../assets/pdfs/boon-investments-white-paper.pdf'
 class BoonInvestments extends Component {
 
-  summaryBody = "Boon Investments is an S.E.C registered investment advisor that provides non-U.S. residents access to the U.S. investment markets. Boon is the first robo-advisor in the United States to accept international clients.\n\nAs co-founder and CEO of Boon Investments, John's main contributions include leading design for Boon's suite of products, writing the investment algorithms which power Boon's portfolios, developing Boon's flagship iOS application, and closing deals with multiple business partners.";
+  summaryBody = "Boon Investments is an S.E.C registered investment advisor that provides non-U.S. residents access to the U.S. investment markets. Boon is the first robo-advisor in the United States to accept international clients.\n\n As CEO/Co-founder, my main contributions to Boon include leading design for Boon's suite of products, writing the investment algorithms which power Boon's portfolios, developing Boon's flagship iOS application, and closing deals with multiple business partners.";
 
   skillsDictionary = {
     "Development": ["Python", "Swift", "Javascript", "HTML/CSS"],
@@ -13,17 +13,16 @@ class BoonInvestments extends Component {
     "General": ["Product Management", "Design", "Marketing", "Contracts",  "Regulation", ]
   }
 
-  productCaptions = ["Direct U.S. investment made simple", "Clients pick the companies\nBoon optimizes the portfolios"]
+  productCaptions = ["Direct U.S. investment made simple", "Clients pick the companies\nWe optimize the portfolios"]
   productDescriptions = [
-    "Boon offers clients the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then blend these choices with a diversified pool of assets to create a portfolio tailored to each client’s unique financial circumstance.",
-    "Boon clients have the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then combine the clients choices with a diversified portfolio of assets to minimize their risk and maximize their returns."
-  ]
+    "Boon offers international investors passive, long-term investments in the United States equities, bonds, and real estate markets.\n\nFrom trade execution to asset allocation to portfolio re-balancing, Boon helps clients with all stages of the investment cycle.",
+    "Boon offers clients the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then blend these choices with a diversified pool of assets to create a portfolio tailored to each client’s unique financial circumstance."]
 
-  designBody = "The application was conceived in August 2015 and went through many iterations before launching to the public.\n\nThe application was prototyped in Sketch. For iOS, the application was developed in Swift, Apple’s native programming language. For Android, the application was developed in Java."
+  designBody = "I designed the first prototype of Boon in August 2015. Over the next year, Boon went through many iterations (each incrementally less terrible) before launching to the public.\n\nI used Sketch to design Boon's interface, and developed the application in Swift, Apple’s native programming language."
   designCaption = "From Conception to MVP"
 
   investmentCaption = "Automated Portfolio Management"
-  investmentBody = "Boon employs internally developed algorithms to calculate optimal client investment strategies, rebalance client portfolios, and reinvest dividends. The algorithms were developed in Python, and stored on AWS Lambda."
+  investmentBody = "Each client that signs up for Boon receives a unique investment strategy tailored to their risk preferences.\n\nI developed the algorithms which power this process in Python."
   worldwideCaption = "Available in over 140 countries."
   worldwideBody = "Boon is the first robo-advisor in the United States to accept non-U.S. clients."
 
@@ -88,7 +87,7 @@ renderProductSection() {
           <div className="boon-investments__investment__white-paper">
             <a href={whitePaperPDF} target="_blank">
             <img className="boon-investments__investment__white-paper__image transition-border" src={require('../../../assets/images/white-paper-thumbnail.png')}/>
-            <h5 className="boon-investments__investment__white-paper__description">WHITE PAPER</h5>
+            <h5 className="boon-investments__investment__white-paper__description">INVESTMENT WHITE PAPER</h5>
           </a>
           </div>
           <div className="boon-investments__investment__text">

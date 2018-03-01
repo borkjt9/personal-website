@@ -97,13 +97,14 @@ class Header extends Component {
             <img className="links__header__icon" src={require('../../assets/images/portfolio.svg')}/>
           </a>
           <div className="text__vert-middle header__portfolio-links">
-            <a className="links__link" onClick={this.expandPortfolio.bind(this,"portfolio")}>
-              <h4 className="links__header__text margins--remove-default">{this.portfolioLabel}</h4>
-            </a>
-            <h4 className="links__divide">|</h4>
+
             <a className='links__link' onClick={this.expandAbout.bind(this)}>
               <h4 className="links__header__text margins--remove-default">About</h4>
               <img className="links__header__icon" src={require('../../assets/images/about.svg')}/>
+            </a>
+            <h4 className="links__divide">|</h4>
+            <a className="links__link" onClick={this.expandPortfolio.bind(this,"portfolio")}>
+              <h4 className="links__header__text margins--remove-default">{this.portfolioLabel}</h4>
             </a>
           </div>
 

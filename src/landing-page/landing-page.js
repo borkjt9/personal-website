@@ -23,7 +23,7 @@ class LandingPage extends Component {
     this.state = {
       onInitialLoad: false,
       onRemoveName: true,
-      activeLink: "portfolio"
+      activeLink: "about"
     }
   }
 
@@ -99,14 +99,15 @@ class LandingPage extends Component {
 
     return (
       <div className = "links links--landing-page">
-        <a onClick={this.changeActiveContainer.bind(this, "portfolio")} className={activeLink === 'portfolio' ? "links__link is-active" : "links__link is-inactive"}>
-          <h4 className="links__header__text margins--remove-default">portfolio</h4>
-          <img className="links__header__icon" src={require('../assets/images/portfolio.svg')}/>
-        </a>
-        <h4 className="links__divide margins--remove-default">|</h4>
+
         <a onClick={this.changeActiveContainer.bind(this, "about")} className={ activeLink === 'about'  ? "links__link is-active" : "links__link is-inactive"}>
           <h4 className="links__header__text margins--remove-default">About</h4>
           <img className="links__header__icon" src={require('../assets/images/about.svg')}/>
+        </a>
+        <h4 className="links__divide margins--remove-default">|</h4>
+        <a onClick={this.changeActiveContainer.bind(this, "portfolio")} className={activeLink === 'portfolio' ? "links__link is-active" : "links__link is-inactive"}>
+          <h4 className="links__header__text margins--remove-default">portfolio</h4>
+          <img className="links__header__icon" src={require('../assets/images/portfolio.svg')}/>
         </a>
       </div>
     )

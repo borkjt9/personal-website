@@ -5,7 +5,7 @@ import _ from 'lodash';
 class SunRun extends Component {
   tasksArray =
     [
-      "Managed the integration of Clean Energy Experts, acquired by Sunrun in April 2015,  into Sunrun’s financial planning process.",
+      "Managed the integration of Clean Energy Experts, acquired by Sunrun in April 2015, into Sunrun’s financial planning process.",
       "Helped build and maintain the free cash flow model used by executive leadership to manage the schedule of solar project financingings and capital raises.",
       "Partnered with the Project Finance executive to forecast any new expense related to future tax equity deals, securitizations, and warehouse facilities.",
       "Supported the VP of Finance and CFO on an ad-hoc basis in preparation of and throughout the IPO process."
@@ -16,14 +16,14 @@ class SunRun extends Component {
     "Finance": ["Financial Modeling", "Financial Planning", "Forecasting", "Automation"],
   }
 
-  financialModelingDescription = "John primarily responsibilies included managed the integration of Clean Energy Experts, acquired by Sunrun in April 2015, into Sunrun’s financial planning process.\n\nJohn also partnered with the Project Finance executive to forecast any new expense related to future tax equity deals, securitizations, and warehouse facilities.\n\nLast, John built and maintained the free cash flow model used by executive leadership to manage the schedule of solar project financingings and capital raises."
+  financialModelingDescription = "My primary responsible was to build and maintain the company's free cash flow model. This model was used by executives to plan capital raises and tax equity deals.\n\nIn addition, I managed the integration of Clean Energy Experts, acquired by Sunrun in April 2015, into Sunrun’s financial planning process.\n\nLast, I  partnered with the Project Finance executive to forecast any new expense related to future tax equity deals, securitizations, and warehouse facilities."
 
   cashFlowDescription = "Built and maintained the free cash flow model used by executive leadership to manage the schedule of solar project financingings and capital raises."
 
-  ipoDescription = "John supported the VP of Finance and CFO on an ad-hoc basis in preparation of and throughout the IPO process."
+  ipoDescription = "Sunrun went public in August 2018. I supported the VP of Finance and CFO on an ad-hoc basis throughout the IPO process."
 
-  summary = "John was a financial analyst within Sunrun’s corporate finance division from January 2018 to August 2018. Sunrun is a leading United States-based provider of residential solar, and was considered a late-stage, high growth startup at the time John worked there.\
-            \n\nDuring his time with Sunrun, John was a contributing member of  a lean, fast-paced team whose main task was to build the company's financial models and processes in preparation of its upcoming IPO. Sunrun went public in August 2018."
+  summary = "I was a financial analyst within Sunrun’s corporate finance division from January 2018 to August 2018. Sunrun is a leading United States-based provider of residential solar, and was considered a late-stage, high growth startup at the time John worked there.\
+            \n\nDuring his time with Sunrun, I my main task was to help build the company's financial models and processes in preparation of its impending IPO. Sunrun went public in August 2018."
 
 
   renderTaskList() {
@@ -63,7 +63,9 @@ class SunRun extends Component {
       <div className="portfolio-page__section">
         <h1 className="portfolio-page__section__title">Financial Modeling</h1>
         <div className="portfolio-page__section__body">
-          <img className="sunrun__financial-modeling__image" src={require('../../../assets/images/financialModel.png')}/>
+          <div className="sunrun__financial-modeling__image-group">
+            <img className="sunrun__financial-modeling__image" src={require('../../../assets/images/financialModel.png')}/>
+          </div>
         </div>
         <div className="portfolio-page__section__body">
           <p className="sunrun__financial-modeling__text">{this.financialModelingDescription}</p>
@@ -90,11 +92,15 @@ class SunRun extends Component {
     return (
       <div className="portfolio-page__section">
         <h1 className="portfolio-page__section__title">IPO</h1>
-        <div className="portfolio-page__section__body">
-          <img className="sunrun__ipo__image" src={require('../../../assets/images/ipo.png')}/>
+        <div className="portfolio-page__section__body" style={{"display":"block"}}>
+          <div className="sunrun__ipo__image-group">
+            <img  className="sunrun__ipo__image" src={require('../../../assets/images/ipo.png')}/>
+            <h5 className="sunrun__ipo__image__description">Can't spot me? Keep looking. I'm definitely there.</h5>
+          </div>
         </div>
         <div className="portfolio-page__section__body">
           <p className="sunrun__ipo__text">{this.ipoDescription}</p>
+
         </div>
       </div>
     )

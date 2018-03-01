@@ -18,12 +18,12 @@ class BankOfAmerica extends Component {
     "Technology": ["VBA", "R", "Excel", "PowerPoint"],
     "Finance": ["Financial Modeling", "Automation", "Forecasting"],
   }
-  automationDescription =  "John dveloped the VBA portion of a division-wide project to automate balance breakouts by legal entity from general ledger.\n\nIn addition, John improved daily reporting efficiency by approximately six hours each day through the VBA automation of labor intensive day-to-day processes."
+  automationDescription =  "My main contribution to Bank of America was improving daily reporting efficiency by approximately six hours each day through VBA automation.\n\nI also developed the VBA portion of a division-wide project to automate balance breakouts by legal entity from general ledger. Yes it is as dry as it sounds."
   riskManagementDescription = "John isolated and analyzed the primary drivers of BAC's NII/NIM forecast out through 2016 over day-over-day, week-over-week, and month-over-month time horizons."
 
-  stressTestingDescription = "John compiled and analyzed the hypothetical impacts to BAC’s commercial allowance as a result of the Federal Reserve’s Stress Tests.\n\nIn addition, John calculated and analyzed various allowance metrics for BAC’s $350 billion commercial loan portfolio including non-performing loans, net credit losses, and provision expense."
+  stressTestingDescription = "During my time at Bank of America, I did have some real finance work as well.\n\nIn my first year, I was primarily responsible for analyzing the drivers to variances in BAC's NII/NIM forecast through time. \n\nIn my second year, I calculated the hypothetical impacts to BAC’s commercial allowance as a result of the Federal Reserve’s Stress Tests."
 
-  summary = "John was a financial analyst for Bank of America from June 2013 to January 2015. During his time at Bank of America, John worked in the Balance Sheet Management and Commercial Allowance divisions.\n\nJohn’s primary contributions included the automation of financial reporting and net interest income analysis. The running joke in the office during his first year was that he had automated himself out of a job by writing VBA scripts to perform over 3/4 of his daily tasks."
+  summary = "I worked as a financial analyst in Bank of America's Financial Management Program from June 2013 to January 2015. It was my first job out of college. The people were wonderful, the job so-so.\n\nThe running joke in the office my first year was that I had automated myself out of a job by writing VBA scripts to perform 3/4 of my daily tasks. I was just shocked that before me, BAC had found people to perform these tasks every day for years without going crazy."
 
   renderTaskList() {
     return _.map(this.tasksArray, task => {
@@ -85,10 +85,10 @@ class BankOfAmerica extends Component {
   renderStressTesting() {
     return (
       <div className="portfolio-page__section">
-        <h1 className="portfolio-page__section__title">Stress Testing</h1>
+        <h1 className="portfolio-page__section__title">Financial Reporting</h1>
         <div className="portfolio-page__section__body row-wrap-reverse">
           <p className="bac__stressTesting__text">{this.stressTestingDescription}</p>
-          <div className="bac__stressTesting__imageGroup">
+          <div className="bac__stressTesting__image-group">
             <img className="bac__stressTesting__image" src={require('../../../assets/images/janetYellen.png')}/>
             <h5 className="bac__stressTesting__imageDescription">Janet Yellen. Cultural Icon.</h5>
           </div>
@@ -137,7 +137,7 @@ class BankOfAmerica extends Component {
             </ul>
           </div> */}
           {this.renderAutomation()}
-          {this.renderRiskManagement()}
+          {/* {this.renderRiskManagement()} */}
           {this.renderStressTesting()}
           {this.renderSkillsList()}
         </div>

@@ -21,7 +21,6 @@ class Portfolio extends Component {
     this.handlePortfolioChange = this.handlePortfolioChange.bind(this);
     this.handlePortfolioToggle = this.handlePortfolioToggle.bind(this);
 
-    console.log(props.match.params.portfolioID)
     const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID: ""
 
     this.state = {
