@@ -1,9 +1,9 @@
 h1, h2, h3, h4, h5, a, p {
+  font-family: 'Lato', sans-serif;
   white-space: pre-wrap;
 }
 
 h1 {
-  font-family: "Lato-Light";
   font-weight: 300;
   font-size: 3rem;
   letter-spacing: .6666667em;
@@ -14,7 +14,6 @@ h1 {
 }
 
 h2 {
-  font-family: "Lato-Light";
   font-weight: 300;
   font-size: 2.6rem;
   letter-spacing: 22px;
@@ -27,7 +26,6 @@ h2 {
 
 h3 {
   font-size: 1.8rem;
-  font-family: "Lato-Light";
   font-weight: 300;
   letter-spacing: 3px;
   line-height: 28px;
@@ -39,7 +37,7 @@ h3 {
 }
 
 h4 {
-  font-family: "Lato-Regular";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   letter-spacing: 8px;
   padding-left: 8px;
@@ -50,7 +48,6 @@ h4 {
 }
 
 h5 {
-  font-family: "Lato-Regular";
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -60,7 +57,6 @@ h5 {
 }
 p {
   font-size: 1.4rem;
-  font-family: "Lato-Light";
   font-weight: 300;
   white-space: pre-wrap;
   letter-spacing: 2px;
