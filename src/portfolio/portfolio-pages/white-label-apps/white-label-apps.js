@@ -99,10 +99,14 @@ class WhiteLabelApps extends Component {
   }
 
   render() {
+    console.log('vw: ', document.documentElement.clientWidth)
     return(
       <div className="portfolio-page white-label-apps">
         <div className="portfolio-page__body">
-          <img className="portfolio-page__banner" src={require('../../../assets/images/white-label-apps-banner.png')}/>
+          <img className="portfolio-page__banner" src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-lg.png"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-sm.png 400w, https://s3.amazonaws.com/jtb-personal-website/images/auto-oms-md.png 880w, https://s3.amazonaws.com/jtb-personal-website/images/linkedin-hover.png 1600w"
+            sizes="(max-width: 400px) 100vw, (max-width: 600px) 600px, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+          />
           <div className="portfolio-page__section">
             <h1 className="portfolio-page__section__title">Summary</h1>
             <p className="portfolio-page__section__body">{this.summary}</p>
