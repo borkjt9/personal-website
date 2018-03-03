@@ -20,7 +20,7 @@ class App extends Component {
     return (
 
       <div className="App">
-        <LandingPage></LandingPage>
+        <LandingPage />
       </div>
     );
   }

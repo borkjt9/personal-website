@@ -31,19 +31,20 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-        <Route path="/home" component={App} />
-        <Route path="/portfolio/:portfolioID" component={Portfolio} />
-        <Route path="/portfolio/" component={Portfolio} />
+          <Route path="/home" component={App} />
+          <Route path="/portfolio/:portfolioID" component={Portfolio} />
+          <Route path="/portfolio/" component={Portfolio} />
 
-        {/* <Route path="/boon-investments" component={BoonInvestments} />
+          {/* <Route path="/boon-investments" component={BoonInvestments} />
         <Route path="/ria-portal" component={RiaPortal} />
         <Route path="/autopool" component={AutoPOOL} />
         <Route path="/bank-of-america" component={BankOfAmerica} />
         <Route path="/sunrun" component={SunRun} /> */}
 
-        <Route path="/" component={App} />
+          <Route path="/" component={App} />
         </Switch>
       </div>
     </BrowserRouter>
   </Provider>
-  , document.getElementById('root'));
+  , document.getElementById('root'),
+);

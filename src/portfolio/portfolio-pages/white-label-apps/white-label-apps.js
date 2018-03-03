@@ -1,28 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './white-label-apps.scss';
 import _ from 'lodash';
+
 class WhiteLabelApps extends Component {
-  summary = "While CEO of Boon Investments, my team developed multiple white-label applications to pair with our B2B SaaS offering to traditional investment management firms.\n\nAs CEO, I was responsible for negotiating contracts, designing and developing the core white-label template for iOS, and managing the project timelines for the applications we built for partners.";
-  osharesCaption = "OShares ETF Investment"
+  summary = 'While CEO of Boon Investments, my team developed multiple white-label applications to pair with our B2B SaaS offering to traditional investment management firms.\n\nAs CEO, I was responsible for negotiating contracts, designing and developing the core white-label template for iOS, and managing the project timelines for the applications we built for partners.';
+  osharesCaption = 'OShares ETF Investment'
   osharesBody = "Beanstox is an application my team built for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the Beanstox app, we designed a custom user signup process which incorporated O'Shares' internal investment methodology."
-  astorCaption = "Astor Investment Management"
+  astorCaption = 'Astor Investment Management'
   astorBody = "Astor served as the pilot project for Boon's white label applications. They are a registered investment advisor that provides client services to over $2 billion in client assets.\n\nThe first client is always the hardest. For the Astor deal, most of my time was spent getting product deadlines to match with partner expectations, and vice versa. Developing the actual app was surprisingly easy in comparison."
 
   skillsDictionary = {
-    "Development": ["Swift", "Python"],
-    "Technology": ["Xcode", "Sketch", "AWS Lambda"],
-    "General": ["Product Management", "Design", "Partnerships", "Contracts"]
+    Development: ['Swift', 'Python'],
+    Technology: ['Xcode', 'Sketch', 'AWS Lambda'],
+    General: ['Product Management', 'Design', 'Partnerships', 'Contracts'],
   }
 
   renderSkillsList() {
-    const skillsTable = _.map(this.skillsDictionary, (skills, key) => {
-      return (
-        <div className="portfolio-page__skills__row">
-          <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
-          <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => acc === null ? [x] : [acc, ' | ', x], null)}</p>
-        </div>
-      )
-    })
+    const skillsTable = _.map(this.skillsDictionary, (skills, key) => (
+      <div className="portfolio-page__skills__row">
+        <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
+        <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</p>
+      </div>
+    ));
 
     return (
 
@@ -32,7 +31,7 @@ class WhiteLabelApps extends Component {
           {skillsTable}
         </div>
       </div>
-    )
+    );
   }
 
   renderOsharesSection() {
@@ -43,16 +42,17 @@ class WhiteLabelApps extends Component {
             <h3>Beanstox by O'Shares</h3>
             <p className="portfolio-page__section__body__description">{this.osharesBody}</p>
           </div>
-          <img className="white-label-apps__product__iphone-image"
+          <img
+            className="white-label-apps__product__iphone-image"
             src="https://s3.amazonaws.com/jtb-personal-website/images/beanstox-sign-up-400.jpg"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/beanstox-sign-up-200.jpg 200w,
             https://s3.amazonaws.com/jtb-personal-website/images/beanstox-sign-up-400.jpg 400w,
             https://s3.amazonaws.com/jtb-personal-website/images/beanstox-sign-up-600.jpg 600w"
-            sizes="(max-width: 200px) 95vw, 200px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+            sizes="(max-width: 200px) 95vw, 200px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
           />
         </div>
       </div>
-    )
+    );
   }
 
   renderAstorSection() {
@@ -61,12 +61,13 @@ class WhiteLabelApps extends Component {
         <div className="portfolio-page__section">
           <h2 className="portfolio-page__section__title">Product</h2>
           <div className="portfolio-page__section__body row-wrap-reverse">
-            <img className="white-label-apps__product__iphone-image"
+            <img
+              className="white-label-apps__product__iphone-image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/astor-investment-history-400.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/astor-investment-history-200.jpg 200w,
               https://s3.amazonaws.com/jtb-personal-website/images/astor-investment-history-400.jpg 400w,
               https://s3.amazonaws.com/jtb-personal-website/images/astor-investment-history-600.jpg 600w"
-              sizes="(max-width: 200px) 95vw, 200px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+              sizes="(max-width: 200px) 95vw, 200px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
             />
             <div className="white-label-apps__product__text">
               <h3>Astor Investment Management</h3>
@@ -76,40 +77,40 @@ class WhiteLabelApps extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   renderTimeline() {
     return (
       <div className="portfolio-page__section white-label-apps__timeline">
         <h2 className="portfolio-page__section__title">Progress</h2>
-        <img class="white-label-apps__timeline__image timeline__image--desktop"
+        <img
+          className="white-label-apps__timeline__image timeline__image--desktop"
           src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-desktop-800.jpg"
           srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-desktop-400.jpg 400w,
           https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-desktop-800.jpg 800w,
           https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-desktop-1600.jpg 1600w"
-          sizes="(max-width: 800px) 100vw, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+          sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
         />
-        <img class="white-label-apps__timeline__image timeline__image--mobile"
+        <img
+          className="white-label-apps__timeline__image timeline__image--mobile"
           src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-800.jpg"
           srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-400.jpg 400w,
           https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-800.jpg 800w,
           https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-1600.jpg 1600w"
-          sizes="(max-width: 800px) 100vw, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+          sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
         />
       </div>
-    )
+    );
   }
 
   renderSkillsList() {
-    const skillsTable = _.map(this.skillsDictionary, (skills, key) => {
-      return (
-        <div className="portfolio-page__skills__row">
-          <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
-          <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => acc === null ? [x] : [acc, ' | ', x], null)}</p>
-        </div>
-      )
-    })
+    const skillsTable = _.map(this.skillsDictionary, (skills, key) => (
+      <div className="portfolio-page__skills__row">
+        <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
+        <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</p>
+      </div>
+    ));
 
     return (
       <div className="portfolio-page__section portfolio-page__skills">
@@ -118,22 +119,24 @@ class WhiteLabelApps extends Component {
           {skillsTable}
         </div>
       </div>
-    )
+    );
   }
 
   render() {
-    console.log('vw: ', document.documentElement.clientWidth)
-    return(
+    console.log('vw: ', document.documentElement.clientWidth);
+    return (
       <div className="portfolio-page white-label-apps">
         <div className="portfolio-page__body">
           <div className="portfolio-page__banner">
             <h1 className="portfolio-page__banner__title">White Label Apps</h1>
-            <img className="portfolio-page__banner__image" src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-800.jpg"
+            <img
+              className="portfolio-page__banner__image"
+              src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-800.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-400.jpg 400w,
               https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-800.jpg 800w,
               https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-1200.jpg 1200w,
               https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-1600.jpg 1600w"
-              sizes="(max-width: 800px) 100vw, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+              sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
             />
           </div>
           <div className="portfolio-page__section">
@@ -146,8 +149,8 @@ class WhiteLabelApps extends Component {
           {this.renderSkillsList()}
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default WhiteLabelApps
+export default WhiteLabelApps;

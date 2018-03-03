@@ -7,18 +7,17 @@ import promise from 'redux-promise';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
-window.matchMedia = window.matchMedia || function() {
-    return {
-        matches : false,
-        addListener : function() {},
-        removeListener: function() {}
-    };
+window.matchMedia = window.matchMedia || function () {
+  return {
+    matches: false,
+    addListener() {},
+    removeListener() {},
+  };
 };
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(reducers)}>
-      <App />
-    </Provider>, div);
+  ReactDOM.render(<Provider store={createStoreWithMiddleware(reducers)}>
+    <App />
+                  </Provider>, div);
 });
