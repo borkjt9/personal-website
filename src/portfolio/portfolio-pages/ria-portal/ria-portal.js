@@ -35,6 +35,7 @@ class RiaPortal extends Component {
         <h2 className="portfolio-page__section__title boon__investments__product">Product</h2>
         <div className="portfolio-page__section__body row-wrap-reverse">
           <img
+            alt="the ria portal depicting a client's allocation"
             className="ria-portal__product__portal-image"
             src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-1-600.jpg"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-1-300.jpg 300w,
@@ -53,6 +54,7 @@ class RiaPortal extends Component {
             <p className="portfolio-page__section__body__description">{this.productDescriptions[1]}</p>
           </div>
           <img
+            alt="the ria portal depicting a top-down report of the partner's business"
             className="ria-portal__product__portal-image"
             src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-2-600.jpg"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-2-300.jpg 300w,
@@ -77,6 +79,7 @@ class RiaPortal extends Component {
           </div>
           <div onClick={this.toggleWireframe.bind(this)} className="ria-portal__wireframe">
             <img
+              alt="thumbail of the design wireframe for the ria portal"
               className="ria-portal__design__wireframe__image transition-border"
               src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-600.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-300.jpg 300w,
@@ -103,7 +106,10 @@ class RiaPortal extends Component {
     return (
       <div>
         <div className={wireframeClassNames}>
-          <img className="portfolio-page__wireframe-modal__content" src={require('../../../assets/images/ria-portal-wireframe.png')} />
+          <img
+            alt="design wireframe for the ria portal"
+            className="portfolio-page__wireframe-modal__content"
+            src={require('../../../assets/images/ria-portal-wireframe.png')} />
           <span onClick={this.toggleWireframe.bind(this)} className="portfolio-page__wireframe-modal__close-wrapper">
             <span className="portfolio-page__wireframe-modal__close-wrapper__close">&times;</span>
           </span>
@@ -119,6 +125,7 @@ class RiaPortal extends Component {
       <div className="portfolio-page__section ria-portal__timeline">
         <h2 className="portfolio-page__section__title">Progress</h2>
         <img
+          alt="timeline showing the progress made on the auto-oms over the past year"
           className="ria-portal__timeline__image timeline__image--desktop"
           src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-800.jpg"
           srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-400.jpg 400w,
@@ -127,6 +134,7 @@ class RiaPortal extends Component {
           sizes="(max-width: 800px) 100vw, 800px"
         />
         <img
+          alt="timeline showing the progress made on the auto-oms over the past year"
           className="ria-portal__timeline__image timeline__image--mobile"
           src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-800.jpg"
           srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-400.jpg 400w,
@@ -174,6 +182,7 @@ class RiaPortal extends Component {
           <div className="portfolio-page__banner">
             <h1 className="portfolio-page__banner__title">Auto-OMS</h1>
             <img
+              alt="a person's desktop coputer with the ria portal open on the screen"
               className="portfolio-page__banner__image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-banner-800.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-banner-400.jpg 400w,

@@ -14,6 +14,7 @@ class About extends Component {
         <div className="about__section__image">
           <img
             style={imageWidth}
+            alt="My headshot"
             src="https://s3.amazonaws.com/jtb-personal-website/images/headshot-700.jpg"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/headshot-350.jpg 350w,
             https://s3.amazonaws.com/jtb-personal-website/images/headshot-700.jpg 700w,
@@ -43,6 +44,7 @@ class About extends Component {
         </p>
         <div className="about__section__image" >
           <img
+            alt="Me dancing in Guinea, Africa"
             style={imageWidth}
             src="https://s3.amazonaws.com/jtb-personal-website/images/guinea-700.jpg"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/guinea-350.jpg 350w,

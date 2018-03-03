@@ -40,6 +40,7 @@ class BoonInvestments extends Component {
         <div className="portfolio-page__section__body row-wrap-reverse">
           <div className="boon-investments__product__iphone-image">
             <img
+              alt="boon investments app screen depicting the user's investment history"
               style={{ width: '100%' }}
               src="https://s3.amazonaws.com/jtb-personal-website/images/iphone-investment-history-400.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/iphone-investment-history-200.jpg 200w,
@@ -60,6 +61,7 @@ class BoonInvestments extends Component {
           </div>
           <div className="boon-investments__product__iphone-image">
             <img
+              alt="boon investments app screen depicting the user's allocation"
               style={{ width: '100%' }}
               className="boon-investments__product__iphone-image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/iphone-allocation-400.jpg"
@@ -86,6 +88,7 @@ class BoonInvestments extends Component {
           </div>
           <div onClick={this.toggleWireframe.bind(this)} className="boon-investments__wireframe">
             <img
+              alt= "thumbnail of the design wireframe for the boon investments application"
               className="boon-investments__design__wireframe__image transition-border"
               src="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-500.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-250.jpg 250w,
@@ -109,6 +112,7 @@ class BoonInvestments extends Component {
           <div className="boon-investments__investment__white-paper">
             <a href={whitePaperPDF} target="_blank">
               <img
+                alt="thumbnail of Boon Investment's investment white paper"
                 className="boon-investments__investment__white-paper__image transition-border"
                 src="https://s3.amazonaws.com/jtb-personal-website/images/white-paper-thumbnail-500.jpg"
                 srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-paper-thumbnail-250.jpg 250w,
@@ -140,7 +144,10 @@ class BoonInvestments extends Component {
     return (
       <div>
         <div className={wireframeClassNames}>
-          <img className="portfolio-page__wireframe-modal__content" src={require('../../../assets/images/boon-wireframe.png')} />
+          <img
+            alt="Boon Investments' design wireframe"
+            className="portfolio-page__wireframe-modal__content"
+            src={require('../../../assets/images/boon-wireframe.png')} />
           <span onClick={this.toggleWireframe.bind(this)} className="portfolio-page__wireframe-modal__close-wrapper">
             <span className="portfolio-page__wireframe-modal__close-wrapper__close">&times;</span>
           </span>
@@ -156,6 +163,7 @@ class BoonInvestments extends Component {
       <div className="portfolio-page__section boon-investments__timeline">
         <h2 className="portfolio-page__section__title">Progress</h2>
         <img
+          alt="timeline of Boon Investments' progress over the last year"
           className="boon-investments__timeline__image timeline__image--desktop"
           src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-800.jpg"
           srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-400.jpg 400w,
@@ -164,6 +172,7 @@ class BoonInvestments extends Component {
           sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
         />
         <img
+          alt="timeline of Boon Investments' progress over the last year"
           className="boon-investments__timeline__image timeline__image--mobile"
           src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-800.jpg"
           srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-400.jpg 400w,
@@ -206,16 +215,6 @@ class BoonInvestments extends Component {
     );
   }
 
-  // renderSocialMedia() {
-  //   return (
-  //     <div className="portfolio-page__social-media">
-  //       <a href="https://twitter.com/booninvestments"><img src={require('../../../assets/images/twitter-logo.png')} /></a>
-  //
-  //       <a href="https://facebook.com/booninvestments"><img src={require('../../../assets/images/facebook-logo.png')} /></a>
-  //
-  //     </div>
-  //   )
-  // }
 
   render() {
     return (
@@ -224,6 +223,7 @@ class BoonInvestments extends Component {
           <div className="portfolio-page__banner">
             <h1 className="portfolio-page__banner__title">Boon Investments</h1>
             <img
+              alt="a person holding their iphone with the Boon Investments app open"
               className="portfolio-page__banner__image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-800.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-400.jpg 400w,

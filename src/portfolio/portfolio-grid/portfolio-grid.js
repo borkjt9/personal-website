@@ -5,9 +5,6 @@ import './portfolio-grid.scss';
 
 
 class PortfolioGrid extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   renderPortfolioItems() {
     const portfolio = this.props.portfolios;
@@ -18,6 +15,7 @@ class PortfolioGrid extends Component {
         <a href={`portfolio/${item.href}`}>
           <img
             className="portfolio__item__image"
+            alt={`${item.name}`}
             src={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg`}
             srcSet={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg 250w,
                 https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-500.jpg 500w,

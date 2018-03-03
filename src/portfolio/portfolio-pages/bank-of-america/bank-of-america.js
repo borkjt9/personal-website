@@ -58,6 +58,7 @@ class BankOfAmerica extends Component {
         <h2 className="portfolio-page__section__title">Automation</h2>
         <div className="portfolio-page__section__body">
           <img
+            alt="depicts the automation of labor intensive tasks to code"
             className="bac__automation__image"
             src="https://s3.amazonaws.com/jtb-personal-website/images/automation-800.jpg"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/automation-400.jpg 400w,
@@ -74,17 +75,6 @@ class BankOfAmerica extends Component {
     );
   }
 
-  // renderRiskManagement() {
-  //   return (
-  //     <div className="portfolio-page__section">
-  //       <h2 className="portfolio-page__section__title">Risk Management</h2>
-  //       <div className="portfolio-page__section__body row-wrap">
-  //         <img className="bac__riskManagement__image" src={require('../../../assets/images/riskManagement.png')}/>
-  //         <p className="bac__riskManagement__text">{this.riskManagementDescription}</p>
-  //       </div>
-  //     </div>
-  //   )
-  // }
 
   renderStressTesting() {
     return (
@@ -94,13 +84,14 @@ class BankOfAmerica extends Component {
           <p className="bac__stressTesting__text">{this.stressTestingDescription}</p>
           <div className="bac__stressTesting__image-group">
             <img
+              alt="Janet Yellen. The GOAT."
               className="bac__stressTesting__image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-450.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-225.jpg 225w,
               https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-450.jpg 450w,
               https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-900.jpg 900w,
               https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-1350.jpg 1350w"
-              sizes="(max-width: 450px) 100vw, 450px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+              sizes="(max-width: 450px) 100vw, 450px"
             />
             <h5 className="bac__stressTesting__imageDescription">Janet Yellen. Cultural Icon.</h5>
           </div>
@@ -117,6 +108,7 @@ class BankOfAmerica extends Component {
         <div className="portfolio-page__body">
           <div className="portfolio-page__banner">
             <img
+              alt="The Bank of America logo banner"
               className="portfolio-page__banner__image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-800.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-400.jpg 400w,

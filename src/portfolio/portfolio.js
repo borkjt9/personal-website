@@ -142,8 +142,8 @@ class Portfolio extends Component {
       <div className="portfolio__nav">
         <a onClick={this.handlePortfolioChange.bind(this, this.state.previousPortfolio)} className="portfolio__nav__link portfolio__nav__link--previous">
           <img
-            className="portfolio__nav__chevron"
             alt="When clicked, the view will show the next portfolio page."
+            className="portfolio__nav__chevron"
             src="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-20.png 20w,
             https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png 40w,
@@ -156,8 +156,8 @@ class Portfolio extends Component {
         <a onClick={this.handlePortfolioChange.bind(this, this.state.nextPortfolio)} className="portfolio__nav__link portfolio__nav__link--next">
           <h5 className="portfolio__nav__link__title">Next Project</h5>
           <img
-            className="portfolio__nav__chevron"
             alt="When clicked, the view will show the previous portfolio page."
+            className="portfolio__nav__chevron"
             src="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-20.png 20w,
             https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png 40w,

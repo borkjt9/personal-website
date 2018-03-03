@@ -24,6 +24,7 @@ class AutoPOOL extends Component {
         <h2 className="portfolio-page__section__title boon__investments__product">Product</h2>
         <div className="portfolio-page__section__body row-wrap-reverse">
           <img
+            alt="autopool screen that lets you set your destination and current location"
             className="autopool__product__iphone-image"
             src="https://s3.amazonaws.com/jtb-personal-website/images/autopool-side-ride-400.jpg"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/autopool-set-ride-200.jpg 200w,
@@ -42,6 +43,7 @@ class AutoPOOL extends Component {
             <p className="portfolio-page__section__body__description">{this.productDescriptions[1]}</p>
           </div>
           <img
+            alt="autopool screen that creates your alert"
             className="autopool__product__iphone-image"
             src="https://s3.amazonaws.com/jtb-personal-website/images/autopool-create-alert-400.jpg"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/autopool-create-alert-200.jpg 200w,
@@ -52,6 +54,7 @@ class AutoPOOL extends Component {
         </div>
         <div className="portfolio-page__section__body row-wrap-reverse">
           <img
+            alt="iphone homescreen showing a push notification sent from autopool"
             className="autopool__product__iphone-image"
             src="https://s3.amazonaws.com/jtb-personal-website/images/autopool-receive-alert-400.jpg"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/autopool-receive-alert-200.jpg 200w,
@@ -105,6 +108,7 @@ class AutoPOOL extends Component {
           <div className="portfolio-page__banner">
             <h1 className="portfolio-page__banner__title">AutoPOOL</h1>
             <img
+              alt="a person holding their iphone with the AutoPOOL app open"
               className="portfolio-page__banner__image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/autopool-banner-800.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/autopool-banner-400.jpg 400w,

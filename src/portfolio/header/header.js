@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Slider from 'react-slick';
 import createHistory from 'history/createBrowserHistory';
 import { connect } from 'react-redux';
-import _ from 'lodash';
 import './header.scss';
 import Carousel from '../carousel/carousel';
 
@@ -38,7 +36,7 @@ class Header extends Component {
       clearCarousel: false,
       portfolioShouldExpand,
     });
-    if (portfolioShouldExpand == false) {
+    if (portfolioShouldExpand === false) {
       setTimeout(() => {
         this.setState({
           clearCarousel: true,
@@ -62,9 +60,8 @@ class Header extends Component {
     if (this.state.portfolioShouldExpand) {
       shouldExpand = true;
     }
-    const portfolio = this.props.portfolios;
+    
     const portfolioClassNames = shouldExpand ? 'portfolio portfolio--wrapped header__portfolio' : 'portfolio portfolio--wrapped header__portfolio';
-
     return (
 
       <div className={portfolioClassNames}>
@@ -88,17 +85,15 @@ class Header extends Component {
         <div className="header__top-bar links">
           <a className="text__vert-middle header__home-link home-link--desktop links__link" href="../home">
             <h4 className="links__header__text margins--remove-default">Home</h4>
-            {/* <img className="links__header__icon" src={require('../../assets/images/portfolio.svg')}/> */}
           </a>
           <a className="text__vert-middle header__home-link home-link--mobile links__link" href="../portfolio">
-            {/* <h4 className="links__header__text margins--remove-default">Home</h4> */}
-            <img className="links__header__icon" src={require('../../assets/images/portfolio.svg')} />
+            <img className="links__header__icon" alt="link to portfolio section" src={require('../../assets/images/portfolio.svg')} />
           </a>
           <div className="text__vert-middle header__portfolio-links">
 
             <a className="links__link" onClick={this.expandAbout.bind(this)}>
               <h4 className="links__header__text margins--remove-default">About</h4>
-              <img className="links__header__icon" src={require('../../assets/images/about.svg')} />
+              <img className="links__header__icon" alt="link to about section" src={require('../../assets/images/about.svg')} />
             </a>
             <h4 className="links__divide">|</h4>
             <a className="links__link" onClick={this.expandPortfolio.bind(this, 'portfolio')}>

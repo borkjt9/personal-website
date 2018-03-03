@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 // import {connect} from 'react-redux';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import Transition from 'react-transition-group/Transition';
-import Portfolio from '../portfolio/portfolio';
 import About from '../about/about';
 import Footer from '../footer/footer';
 import { connect } from 'react-redux';
 import './landing-page.scss';
 import _ from 'lodash';
 
-const duration = 4;
 
 class LandingPage extends Component {
   initialPortfolioLoad = true
@@ -22,7 +17,7 @@ class LandingPage extends Component {
 
     this.state = {
       onInitialLoad: false,
-      onRemoveName: true,
+
       activeLink: 'about',
     };
   }
@@ -36,7 +31,6 @@ class LandingPage extends Component {
   }
 
   changeActiveContainer(activeC) {
-    const { onRemoveName } = this.state;
 
 
     switch (activeC) {
@@ -45,13 +39,16 @@ class LandingPage extends Component {
           activeLink: 'portfolio',
         });
         this.expandPortfolio = true;
-
         break;
       case 'about':
         this.setState({
           activeLink: 'about',
         });
         break;
+      default:
+        this.setState({
+          activeLink: 'about',
+        });
     }
   }
   renderSubSection(type) {
@@ -69,6 +66,7 @@ class LandingPage extends Component {
         <a href={`portfolio/${item.href}`}>
           <img
             className="portfolio__item__image"
+            alt={`${item.name}`}
             src={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg`}
             srcSet={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg 250w,
                 https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-500.jpg 500w,
@@ -103,25 +101,18 @@ class LandingPage extends Component {
 
         <a onClick={this.changeActiveContainer.bind(this, 'about')} className={activeLink === 'about' ? 'links__link is-active' : 'links__link is-inactive'}>
           <h4 className="links__header__text margins--remove-default">About</h4>
-          <img className="links__header__icon" src={require('../assets/images/about.svg')} />
+          <img className="links__header__icon" alt="link to about section" src={require('../assets/images/about.svg')} />
         </a>
         <h4 className="links__divide margins--remove-default">|</h4>
         <a onClick={this.changeActiveContainer.bind(this, 'portfolio')} className={activeLink === 'portfolio' ? 'links__link is-active' : 'links__link is-inactive'}>
           <h4 className="links__header__text margins--remove-default">portfolio</h4>
-          <img className="links__header__icon" src={require('../assets/images/portfolio.svg')} />
+          <img className="links__header__icon" alt="link to portfoio section" src={require('../assets/images/portfolio.svg')} />
         </a>
       </div>
     );
   }
 
   render() {
-    const { onInitialLoad } = this.state;
-    const { onRemoveName } = this.state;
-    const { onInitialPortfolio } = this.state;
-
-    const fadeOutClass = !onRemoveName ? 'fade-out' : '';
-    const initialFadeIn = onInitialLoad ? 'fade-in' : '';// 'links links--landing-page fade-in': 'links links--landing-page';
-    const horizontalStyle = { float: 'left' };
     const { activeLink } = this.state;
 
     return (
@@ -134,7 +125,7 @@ class LandingPage extends Component {
               </h2>
             </div>
             {this.renderHeader()}
-            {activeLink != ('') ? this.renderSubSection(activeLink) : ''}
+            {activeLink !== ('') ? this.renderSubSection(activeLink) : ''}
           </div>
           <Footer />
 

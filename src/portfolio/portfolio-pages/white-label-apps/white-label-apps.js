@@ -43,6 +43,7 @@ class WhiteLabelApps extends Component {
             <p className="portfolio-page__section__body__description">{this.osharesBody}</p>
           </div>
           <img
+            alt="Beanstox application showing the allocation screen"
             className="white-label-apps__product__iphone-image"
             src="https://s3.amazonaws.com/jtb-personal-website/images/beanstox-sign-up-400.jpg"
             srcSet="https://s3.amazonaws.com/jtb-personal-website/images/beanstox-sign-up-200.jpg 200w,
@@ -62,6 +63,7 @@ class WhiteLabelApps extends Component {
           <h2 className="portfolio-page__section__title">Product</h2>
           <div className="portfolio-page__section__body row-wrap-reverse">
             <img
+              alt="Astor application showing the investment detail screen"
               className="white-label-apps__product__iphone-image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/astor-investment-history-400.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/astor-investment-history-200.jpg 200w,
@@ -85,6 +87,7 @@ class WhiteLabelApps extends Component {
       <div className="portfolio-page__section white-label-apps__timeline">
         <h2 className="portfolio-page__section__title">Progress</h2>
         <img
+          alt="timeline showing the progress of Boon's white label apps"
           className="white-label-apps__timeline__image timeline__image--desktop"
           src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-desktop-800.jpg"
           srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-desktop-400.jpg 400w,
@@ -93,6 +96,7 @@ class WhiteLabelApps extends Component {
           sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
         />
         <img
+          alt="timeline showing the progress of Boon's white label apps"
           className="white-label-apps__timeline__image timeline__image--mobile"
           src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-800.jpg"
           srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-400.jpg 400w,
@@ -100,24 +104,6 @@ class WhiteLabelApps extends Component {
           https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-1600.jpg 1600w"
           sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
         />
-      </div>
-    );
-  }
-
-  renderSkillsList() {
-    const skillsTable = _.map(this.skillsDictionary, (skills, key) => (
-      <div className="portfolio-page__skills__row">
-        <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
-        <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</p>
-      </div>
-    ));
-
-    return (
-      <div className="portfolio-page__section portfolio-page__skills">
-        <h2 className="portfolio-page__section__title">Skills</h2>
-        <div className="portfolio-page__skills__table">
-          {skillsTable}
-        </div>
       </div>
     );
   }
@@ -130,6 +116,7 @@ class WhiteLabelApps extends Component {
           <div className="portfolio-page__banner">
             <h1 className="portfolio-page__banner__title">White Label Apps</h1>
             <img
+              alt="a person holding their iphone showing the Beanstox app on the screen"
               className="portfolio-page__banner__image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-800.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-400.jpg 400w,

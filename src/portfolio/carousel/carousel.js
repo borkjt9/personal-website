@@ -18,6 +18,7 @@ function SampleNextArrow(props) {
       onClick={onClick}
     >
       <img
+        alt={`Next button for the portfolio carousel.`}
         style={imageStyle}
         src="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png"
         srcSet="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-20.png 20w,
@@ -41,6 +42,7 @@ function SamplePrevArrow(props) {
       onClick={onClick}
     >
       <img
+        alt="Previous button for portfolio carousel."
         style={imageStyle}
         src="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png"
         srcSet="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-20.png 20w,
@@ -53,9 +55,7 @@ function SamplePrevArrow(props) {
 }
 
 class Carousel extends Component {
-  constructor(props) {
-    super(props);
-  }
+
   changePortfolioItem(selectedPortfolio) {
     this.props.onPortfolioChange(selectedPortfolio);
   }
@@ -95,6 +95,7 @@ class Carousel extends Component {
           <div className={portfolioItemClassNames} style={portfolioItemStyle}>
             <a onClick={this.changePortfolioItem.bind(this, item.href)}>
               <img
+                alt={`${item.name}`}
                 style={imageStyle}
                 src={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg`}
                 srcSet={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg 250w,

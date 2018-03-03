@@ -22,8 +22,7 @@ class SunRun extends Component {
 
   ipoDescription = 'Sunrun went public in August 2018. I supported the VP of Finance and CFO on an ad-hoc basis throughout the IPO process.'
 
-  summary = "I was a financial analyst for Sunrun’s corporate finance division from January 2018 to August 2018. Sunrun is a leading United States-based provider of residential solar, and was a late-stage, high growth startup at the time I worked there.\
-            \n\nDuring my time with Sunrun, my main task was to help build the company's financial models and processes in preparation of its impending IPO. Sunrun went public in August 2018."
+  summary = "I was a financial analyst for Sunrun’s corporate finance division from January 2018 to August 2018. Sunrun is a leading United States-based provider of residential solar, and was a late-stage, high growth startup at the time I worked there.\n\nDuring my time with Sunrun, my main task was to help build the company's financial models and processes in preparation of its impending IPO. Sunrun went public in August 2018."
 
 
   renderTaskList() {
@@ -61,6 +60,7 @@ class SunRun extends Component {
         <div className="portfolio-page__section__body">
           <div className="sunrun__financial-modeling__image-group">
             <img
+              alt="an excel model"
               className="sunrun__financial-modeling__image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/financial-model-800.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/financial-model-400.jpg 400w,
@@ -77,20 +77,6 @@ class SunRun extends Component {
     );
   }
 
-  // renderCashFlow() {
-  //   return (
-  //     <div className="portfolio-page__section">
-  //       <h2 className="portfolio-page__section__title">Cash Flow Analysis</h2>
-  //       <div className="portfolio-page__section__body">
-  //         <img className="sunrun__cash-flow__image" src={require('../../../assets/images/cashFlow.png')}/>
-  //       </div>
-  //       <div className="portfolio-page__section__body">
-  //         <p className="sunrun__cash-flow__text">{this.cashFlowDescription}</p>
-  //       </div>
-  //     </div>
-  //   )
-  // }
-
   renderIPO() {
     return (
       <div className="portfolio-page__section">
@@ -98,6 +84,7 @@ class SunRun extends Component {
         <div className="portfolio-page__section__body" style={{ display: 'block' }}>
           <div className="sunrun__ipo__image-group">
             <img
+              alt="sunrun executives at the New York Stock Exchange for the company's ipo "
               className="sunrun__ipo__image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/ipo-800.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ipo-400.jpg 400w,
@@ -110,7 +97,6 @@ class SunRun extends Component {
         </div>
         <div className="portfolio-page__section__body">
           <p className="sunrun__ipo__text">{this.ipoDescription}</p>
-
         </div>
       </div>
     );
@@ -122,6 +108,7 @@ class SunRun extends Component {
         <div className="portfolio-page__body">
           <div className="portfolio-page__banner">
             <img
+              alt="sunrun logo banner"
               className="portfolio-page__banner__image"
               src="https://s3.amazonaws.com/jtb-personal-website/images/sunrun-banner-800.jpg"
               srcSet="https://s3.amazonaws.com/jtb-personal-website/images/sunrun-banner-400.jpg 400w,
@@ -135,14 +122,7 @@ class SunRun extends Component {
             <h2 className="portfolio-page__section__title">Summary</h2>
             <p className="portfolio-page__section__body">{this.summary}</p>
           </div>
-          {/* <div className="portfolio-page__section">
-            <h2 className="portfolio-page__section__title">Tasks</h2>
-            <ul>
-              {this.renderTaskList()}
-            </ul>
-          </div> */}
           {this.renderFinancialModeling()}
-          {/* {this.renderCashFlow()} */}
           {this.renderIPO()}
           {this.renderSkillsList()}
         </div>
