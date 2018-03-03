@@ -33,9 +33,15 @@ class RiaPortal extends Component {
   renderProductSection() {
     return (
       <div className="portfolio-page__section">
-        <h1 className="portfolio-page__section__title boon__investments__product">Product</h1>
+        <h2 className="portfolio-page__section__title boon__investments__product">Product</h2>
         <div className="portfolio-page__section__body row-wrap-reverse">
-          <img className="ria-portal__product__portal-image" src={require('../../../assets/images/ria-portal-1.png')}/>
+          <img className="ria-portal__product__portal-image"
+            src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-1-600.jpg"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-1-300.jpg 300w,
+            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-1-600.jpg 600w,
+            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-1-900.jpg 900w"
+            sizes="(max-width: 300px) 100vw, 300px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+          />
           <div className="ria-portal__product__text">
             <h3>{this.productCaptions[0]}</h3>
             <p className="portfolio-page__section__body__description">{this.productDescriptions[0]}</p>
@@ -46,7 +52,13 @@ class RiaPortal extends Component {
             <h3>{this.productCaptions[1]}</h3>
             <p className="portfolio-page__section__body__description">{this.productDescriptions[1]}</p>
           </div>
-          <img className="ria-portal__product__portal-image" src={require('../../../assets/images/ria-portal-2.png')}/>
+          <img className="ria-portal__product__portal-image"
+            src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-2-600.jpg"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-2-300.jpg 300w,
+            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-2-600.jpg 600w,
+            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-2-900.jpg 900w"
+            sizes="(max-width: 300px) 100vw, 300px"
+          />
         </div>
       </div>
     )
@@ -56,14 +68,20 @@ class RiaPortal extends Component {
     renderDesignSection() {
       return (
         <div className="portfolio-page__section ria-portal__design">
-          <h1 className="portfolio-page__section__title">Design</h1>
+          <h2 className="portfolio-page__section__title">Design</h2>
           <div className="portfolio-page__section__body row-wrap">
             <div className="ria-portal__design__text">
               <h3>{this.designCaption}</h3>
               <p className="portfolio-page__section__body__description">{this.designBody}</p>
             </div>
             <div onClick={this.toggleWireframe.bind(this)} className="ria-portal__wireframe">
-              <img className="ria-portal__design__wireframe__image transition-border" src={require('../../../assets/images/ria-portal-wireframe-thumbnail.png')}/>
+              <img className="ria-portal__design__wireframe__image transition-border"
+                src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-600.jpg"
+                srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-300.jpg 300w,
+                https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-600.jpg 600w,
+                https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-900.jpg 900w"
+                sizes="(max-width: 300px) 100vw, 300px"
+              />
               <h5 className="ria-portal__design__wireframe__description">Click to expand</h5>
             </div>
         </div>
@@ -97,10 +115,21 @@ class RiaPortal extends Component {
     renderTimeline() {
       return (
         <div className="portfolio-page__section ria-portal__timeline">
-          <h1 className="portfolio-page__section__title">Progress</h1>
-          <img class="ria-portal__timeline__image timeline__image--desktop" src={require('../../../assets/images/ria-portal-timeline-desktop.png')} />
-          <img class="ria-portal__timeline__image timeline__image--mobile" src={require('../../../assets/images/ria-portal-timeline-mobile.png')} />
-
+          <h2 className="portfolio-page__section__title">Progress</h2>
+          <img class="ria-portal__timeline__image timeline__image--desktop"
+            src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-800.jpg"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-400.jpg 400w,
+            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-800.jpg 800w,
+            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-1600.jpg 1600w"
+            sizes="(max-width: 800px) 100vw, 800px"
+          />
+          <img class="ria-portal__timeline__image timeline__image--mobile"
+            src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-800.jpg"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-400.jpg 400w,
+            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-800.jpg 800w,
+            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-1600.jpg 1600w"
+            sizes="(max-width: 800px) 100vw, 800px"
+          />
         </div>
       )
     }
@@ -108,7 +137,7 @@ class RiaPortal extends Component {
     renderSummarySection() {
       return (
         <div className="portfolio-page__section portfolio-page__summary">
-          <h1 className="portfolio-page__section__title">Summary</h1>
+          <h2 className="portfolio-page__section__title">Summary</h2>
           <p className="portfolio-page__section__body">
             {this.summaryBody}
           </p>
@@ -129,7 +158,7 @@ class RiaPortal extends Component {
       return (
 
         <div className="portfolio-page__section portfolio-page__skills">
-          <h1 className="portfolio-page__section__title">Skills</h1>
+          <h2 className="portfolio-page__section__title">Skills</h2>
           <div className="portfolio-page__skills__table">
             {skillsTable}
           </div>
@@ -140,7 +169,17 @@ class RiaPortal extends Component {
     return (
       <div className="portfolio-page ria-portal">
         <div className="portfolio-page__body">
-          <img className="portfolio-page__banner" src={require('../../../assets/images/ria-portal-banner.png')}/>
+          <div className="portfolio-page__banner">
+            <h1 className="portfolio-page__banner__title">Auto-OMS</h1>
+            <img className="portfolio-page__banner__image"
+              src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-banner-800.jpg"
+              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-banner-400.jpg 400w,
+              https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-banner-800.jpg 800w,
+              https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-banner-1200.jpg 1200w,
+              https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-banner-1600.jpg 1600w"
+              sizes="(max-width: 800px) 100vw, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+            />
+          </div>
           {this.renderSummarySection()}
           {this.renderDesignSection()}
           {this.renderProductSection()}

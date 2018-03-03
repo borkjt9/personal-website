@@ -48,7 +48,7 @@ class BankOfAmerica extends Component {
     return (
 
       <div className="portfolio-page__section portfolio-page__skills">
-        <h1 className="portfolio-page__section__title">Skills</h1>
+        <h2 className="portfolio-page__section__title">Skills</h2>
         <div className="portfolio-page__skills__table">
           {skillsTable}
         </div>
@@ -59,9 +59,16 @@ class BankOfAmerica extends Component {
   renderAutomation() {
     return (
       <div className="portfolio-page__section">
-        <h1 className="portfolio-page__section__title">Automation</h1>
+        <h2 className="portfolio-page__section__title">Automation</h2>
         <div className="portfolio-page__section__body">
-          <img className="bac__automation__image" src={require('../../../assets/images/automation.png')}/>
+          <img className="bac__automation__image"
+            src="https://s3.amazonaws.com/jtb-personal-website/images/automation-800.jpg"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/automation-400.jpg 400w,
+            https://s3.amazonaws.com/jtb-personal-website/images/automation-800.jpg 800w,
+            https://s3.amazonaws.com/jtb-personal-website/images/automation-1200.jpg 1200w,
+            https://s3.amazonaws.com/jtb-personal-website/images/automation-1600.jpg 1600w"
+            sizes="(max-width: 800px) 100vw, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+          />
         </div>
         <div className=" portfolio-page__section__body bac__automation__text">
           <p>{this.automationDescription}</p>
@@ -70,26 +77,33 @@ class BankOfAmerica extends Component {
     )
   }
 
-  renderRiskManagement() {
-    return (
-      <div className="portfolio-page__section">
-        <h1 className="portfolio-page__section__title">Risk Management</h1>
-        <div className="portfolio-page__section__body row-wrap">
-          <img className="bac__riskManagement__image" src={require('../../../assets/images/riskManagement.png')}/>
-          <p className="bac__riskManagement__text">{this.riskManagementDescription}</p>
-        </div>
-      </div>
-    )
-  }
+  // renderRiskManagement() {
+  //   return (
+  //     <div className="portfolio-page__section">
+  //       <h2 className="portfolio-page__section__title">Risk Management</h2>
+  //       <div className="portfolio-page__section__body row-wrap">
+  //         <img className="bac__riskManagement__image" src={require('../../../assets/images/riskManagement.png')}/>
+  //         <p className="bac__riskManagement__text">{this.riskManagementDescription}</p>
+  //       </div>
+  //     </div>
+  //   )
+  // }
 
   renderStressTesting() {
     return (
       <div className="portfolio-page__section">
-        <h1 className="portfolio-page__section__title">Financial Reporting</h1>
+        <h2 className="portfolio-page__section__title">Financial Reporting</h2>
         <div className="portfolio-page__section__body row-wrap-reverse">
           <p className="bac__stressTesting__text">{this.stressTestingDescription}</p>
           <div className="bac__stressTesting__image-group">
-            <img className="bac__stressTesting__image" src={require('../../../assets/images/janetYellen.png')}/>
+            <img className="bac__stressTesting__image"
+              src="https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-450.jpg"
+              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-225.jpg 225w,
+              https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-450.jpg 450w,
+              https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-900.jpg 900w,
+              https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-1350.jpg 1350w"
+              sizes="(max-width: 450px) 100vw, 450px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+            />
             <h5 className="bac__stressTesting__imageDescription">Janet Yellen. Cultural Icon.</h5>
           </div>
 
@@ -99,39 +113,26 @@ class BankOfAmerica extends Component {
     )
   }
 
-  renderProductSection() {
-    return (
-      <div className="portfolio-page__section">
-        <h1 className="portfolio-page__section__title boon__investments__product">Product</h1>
-        <div className="portfolio-page__section__body row-wrap">
-          <img className="boon-investments__product__iphone-image" src={require('../../../assets/images/iphone-investment-history.png')}/>
-          <div className="boon-investments__product__text">
-            <h3>{this.productCaptions[0]}</h3>
-            <p>{this.productDescriptions[0]}</p>
-          </div>
-        </div>
-        <div className="portfolio-page__section__body row-wrap-reverse">
-          <div className="boon-investments__product__text">
-            <h3>{this.productCaptions[1]}</h3>
-            <p>{this.productDescriptions[1]}</p>
-          </div>
-        <img className="boon-investments__product__iphone-image" src={require('../../../assets/images/iphone-allocation.png')}/>
-        </div>
-      </div>
-    )
-  }
-
   render() {
     return (
       <div className="portfolio-page bac">
         <div className="portfolio-page__body">
-          <img className="portfolio-page__banner" src={require('../../../assets/images/bac-banner.png')}/>
+          <div className="portfolio-page__banner">
+            <img className="portfolio-page__banner__image"
+              src="https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-800.jpg"
+              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-400.jpg 400w,
+              https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-800.jpg 800w,
+              https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-1200.jpg 1200w,
+              https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-1600.jpg 1600w"
+              sizes="(max-width: 800px) 100vw, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+            />
+          </div>
           <div className="portfolio-page__section">
-            <h1 className="portfolio-page__section__title">Summary</h1>
+            <h2 className="portfolio-page__section__title">Summary</h2>
             <p className="portfolio-page__section__body">{this.summary}</p>
           </div>
           {/* <div className="portfolio-page__section">
-            <h1 className="portfolio-page__section__title">Tasks</h1>
+            <h2 className="portfolio-page__section__title">Tasks</h2>
             <ul className="bac__tasks">
               {this.renderTaskList()}
             </ul>

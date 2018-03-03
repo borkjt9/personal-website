@@ -2,7 +2,7 @@ export default function() {
   return  [
         {
         name: "Boon Investments",
-        image: "boon-investments.png",
+        image: "boon-investments",
         skills: ["UI/UX", "Swift", "Python"],
         href: "boon-investments",
         nref: "ria-portal",
@@ -10,7 +10,7 @@ export default function() {
         },
         {
           name: "RIA Portal",
-          image: "auto-oms.png",
+          image: "auto-oms",
           skills: ["UI/UX", "Angular", "AWS"],
           href: "ria-portal",
           nref: "white-label-apps",
@@ -19,7 +19,7 @@ export default function() {
         },
         {
         name: "White Label Apps",
-        image: "oshares.png",
+        image: "oshares",
         skills: ["Swift", "Partnerships"],
         href: "white-label-apps",
         nref: "autoPOOL",
@@ -27,7 +27,7 @@ export default function() {
       },
         {
         name: "AutoPOOL",
-        image: "autopool.png",
+        image: "autopool",
         skills: ["UI/UX", "Swift", "App Engine" ],
         href: "autoPOOL",
         nref: "bank-of-america",
@@ -35,7 +35,7 @@ export default function() {
       },
       {
       name: "Bank of America",
-      image: "bank-of-america.png",
+      image: "bank-of-america",
       skills: ["Modeling", "Forecasting"],
       href: "bank-of-america",
       nref: "sunrun",
@@ -43,7 +43,7 @@ export default function() {
       },
       {
         name: "SunRun",
-        image: "sunrun.png",
+        image: "sunrun",
         skills: ["FP&A", "IPO"],
         href: "sunrun",
         nref: "boon-investments",

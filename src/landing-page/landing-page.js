@@ -71,7 +71,13 @@ class LandingPage extends Component {
       return (
         <div className={portfolioItemClassNames}>
             <a href={`portfolio/${item.href}`}>
-            <img className="portfolio__item__image" src={require(`../assets/images/${item.image}`)}></img>
+            <img className="portfolio__item__image"
+                src={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg`}
+                srcSet={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg 250w,
+                https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-500.jpg 500w,
+                https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-750.jpg 750w`}
+                sizes="(max-width: 250px) 95vw, 250px"
+              ></img>
             <div className="portfolio__item__desc">
             <div className="portfolio__item__desc__title">
               <h4 className="is-animated">{item.name}</h4>

@@ -15,7 +15,12 @@ class About extends Component {
     return (
       <div className="about__section row-wrap">
         <div className="about__section__image">
-        <img  style={imageWidth} src={require('../assets/images/headshot.png')}/>
+          <img style={imageWidth} src="https://s3.amazonaws.com/jtb-personal-website/images/headshot-700.jpg"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/headshot-350.jpg 350w,
+            https://s3.amazonaws.com/jtb-personal-website/images/headshot-700.jpg 700w,
+            https://s3.amazonaws.com/jtb-personal-website/images/headshot-1050.jpg 1050w"
+            sizes="(max-width: 350px) 95vw, 350px"
+          />
         <p className="about__section__image__desc">{imageDescription}</p>
 
         </div>
@@ -38,7 +43,12 @@ class About extends Component {
           {this.funDesc}
         </p>
         <div className="about__section__image" >
-          <img style={imageWidth} src={require('../assets/images/guinea.png')}/>
+          <img style={imageWidth} src="https://s3.amazonaws.com/jtb-personal-website/images/guinea-700.jpg"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/guinea-350.jpg 350w,
+            https://s3.amazonaws.com/jtb-personal-website/images/guinea-700.jpg 700w,
+            https://s3.amazonaws.com/jtb-personal-website/images/guinea-1050.jpg 1050w"
+            sizes="(max-width: 350px) 95vw, 350px"
+          />
           <p className="about__section__image__desc">{imageDescription}</p>
 
         </div>

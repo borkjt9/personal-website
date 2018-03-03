@@ -49,7 +49,7 @@ class SunRun extends Component {
     return (
 
       <div className="portfolio-page__section portfolio-page__skills">
-        <h1 className="portfolio-page__section__title">Skills</h1>
+        <h2 className="portfolio-page__section__title">Skills</h2>
         <div className="portfolio-page__skills__table">
           {skillsTable}
         </div>
@@ -61,10 +61,16 @@ class SunRun extends Component {
   renderFinancialModeling() {
     return (
       <div className="portfolio-page__section">
-        <h1 className="portfolio-page__section__title">Financial Modeling</h1>
+        <h2 className="portfolio-page__section__title">Financial Modeling</h2>
         <div className="portfolio-page__section__body">
           <div className="sunrun__financial-modeling__image-group">
-            <img className="sunrun__financial-modeling__image" src={require('../../../assets/images/financialModel.png')}/>
+            <img className="sunrun__financial-modeling__image"
+              src="https://s3.amazonaws.com/jtb-personal-website/images/financial-model-800.jpg"
+              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/financial-model-400.jpg 400w,
+              https://s3.amazonaws.com/jtb-personal-website/images/financial-model-800.jpg 800w,
+              https://s3.amazonaws.com/jtb-personal-website/images/financial-model-1200.jpg 1200w"
+              sizes="(max-width: 400px) 100vw, 400px"
+            />
           </div>
         </div>
         <div className="portfolio-page__section__body">
@@ -77,7 +83,7 @@ class SunRun extends Component {
   // renderCashFlow() {
   //   return (
   //     <div className="portfolio-page__section">
-  //       <h1 className="portfolio-page__section__title">Cash Flow Analysis</h1>
+  //       <h2 className="portfolio-page__section__title">Cash Flow Analysis</h2>
   //       <div className="portfolio-page__section__body">
   //         <img className="sunrun__cash-flow__image" src={require('../../../assets/images/cashFlow.png')}/>
   //       </div>
@@ -91,10 +97,16 @@ class SunRun extends Component {
   renderIPO() {
     return (
       <div className="portfolio-page__section">
-        <h1 className="portfolio-page__section__title">IPO</h1>
+        <h2 className="portfolio-page__section__title">IPO</h2>
         <div className="portfolio-page__section__body" style={{"display":"block"}}>
           <div className="sunrun__ipo__image-group">
-            <img  className="sunrun__ipo__image" src={require('../../../assets/images/ipo.png')}/>
+            <img  className="sunrun__ipo__image"
+              src="https://s3.amazonaws.com/jtb-personal-website/images/ipo-800.jpg"
+              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ipo-400.jpg 400w,
+              https://s3.amazonaws.com/jtb-personal-website/images/ipo-800.jpg 800w,
+              https://s3.amazonaws.com/jtb-personal-website/images/ipo-1200.jpg 1200w"
+              sizes="(max-width: 400px) 100vw, 400px"
+            />
             <h5 className="sunrun__ipo__image__description">Can't spot me? Just keep looking. I'm definitely there.</h5>
           </div>
         </div>
@@ -110,13 +122,22 @@ class SunRun extends Component {
     return (
       <div className="sunrun portfolio-page">
         <div className="portfolio-page__body">
-          <img className="portfolio-page__banner" src={require('../../../assets/images/sunrun-banner.png')}/>
+          <div className="portfolio-page__banner">
+            <img className="portfolio-page__banner__image"
+              src="https://s3.amazonaws.com/jtb-personal-website/images/sunrun-banner-800.jpg"
+              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/sunrun-banner-400.jpg 400w,
+              https://s3.amazonaws.com/jtb-personal-website/images/sunrun-banner-800.jpg 800w,
+              https://s3.amazonaws.com/jtb-personal-website/images/sunner-banner-1200.jpg 1200w,
+              https://s3.amazonaws.com/jtb-personal-website/images/sunrun-banner-1600.jpg 1600w"
+              sizes="(max-width: 800px) 100vw, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+            />
+          </div>
           <div className="portfolio-page__section">
-            <h1 className="portfolio-page__section__title">Summary</h1>
+            <h2 className="portfolio-page__section__title">Summary</h2>
             <p className="portfolio-page__section__body">{this.summary}</p>
           </div>
           {/* <div className="portfolio-page__section">
-            <h1 className="portfolio-page__section__title">Tasks</h1>
+            <h2 className="portfolio-page__section__title">Tasks</h2>
             <ul>
               {this.renderTaskList()}
             </ul>

@@ -28,6 +28,7 @@ $pageColor: #FCFCFC;
 .header {
   background: white;
   position: fixed;
+  z-index: 2;
   width: 100%;
   .header__top-bar {
     height: 75px;

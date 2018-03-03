@@ -36,10 +36,16 @@ class BoonInvestments extends Component {
 renderProductSection() {
   return (
     <div className="portfolio-page__section">
-      <h1 className="portfolio-page__section__title boon__investments__product">Product</h1>
+      <h2 className="portfolio-page__section__title boon__investments__product">Product</h2>
       <div className="portfolio-page__section__body row-wrap-reverse">
         <div className="boon-investments__product__iphone-image">
-          <img style={{"width": "100%"}} src={require('../../../assets/images/iphone-investment-history.png')}/>
+          <img style={{"width": "100%"}}
+            src="https://s3.amazonaws.com/jtb-personal-website/images/iphone-investment-history-400.jpg"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/iphone-investment-history-200.jpg 200w,
+            https://s3.amazonaws.com/jtb-personal-website/images/iphone-investment-history-400.jpg 400w,
+            https://s3.amazonaws.com/jtb-personal-website/images/iphone-investment-history-600.jpg 600w"
+            sizes="(max-width: 200px) 95vw, 200px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+          />
         </div>
         <div className="boon-investments__product__text">
           <h3>{this.productCaptions[0]}</h3>
@@ -52,7 +58,13 @@ renderProductSection() {
           <p className="portfolio-page__section__body__description">{this.productDescriptions[1]}</p>
         </div>
         <div className="boon-investments__product__iphone-image">
-          <img style={{"width": "100%"}} className="boon-investments__product__iphone-image" src={require('../../../assets/images/iphone-allocation.png')}/>
+          <img style={{"width": "100%"}} className="boon-investments__product__iphone-image"
+            src="https://s3.amazonaws.com/jtb-personal-website/images/iphone-allocation-400.jpg"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/iphone-allocation-200.jpg 200w,
+            https://s3.amazonaws.com/jtb-personal-website/images/iphone-allocation-400.jpg 400w,
+            https://s3.amazonaws.com/jtb-personal-website/images/iphone-allocation-600.jpg 600w"
+            sizes="(max-width: 200px) 95vw, 200px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+          />
         </div>
       </div>
     </div>
@@ -63,14 +75,20 @@ renderProductSection() {
   renderDesignSection() {
     return (
       <div className="portfolio-page__section boon-investments__design">
-        <h1 className="portfolio-page__section__title">Design</h1>
+        <h2 className="portfolio-page__section__title">Design</h2>
         <div className="portfolio-page__section__body row-wrap">
           <div className="boon-investments__design__text">
             <h3>{this.designCaption}</h3>
             <p className="portfolio-page__section__body__description">{this.designBody}</p>
           </div>
           <div onClick={this.toggleWireframe.bind(this)} className="boon-investments__wireframe">
-            <img className="boon-investments__design__wireframe__image transition-border" src={require('../../../assets/images/boon-wireframe.png')}/>
+            <img className="boon-investments__design__wireframe__image transition-border"
+              src="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-500.jpg"
+              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-250.jpg 250w,
+              https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-500.jpg 500w,
+              https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-750.jpg 750w"
+              sizes="(max-width: 250px) 95vw, 250px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+            />
             <h5 className="boon-investments__design__wireframe__description">Click to expand</h5>
           </div>
       </div>
@@ -81,12 +99,18 @@ renderProductSection() {
   renderInvestmentSection() {
     return (
       <div className="portfolio-page__section boon-investments__investment">
-        <h1 className="portfolio-page__section__title">Investment</h1>
+        <h2 className="portfolio-page__section__title">Investment</h2>
         <div className="portfolio-page__section__body row-wrap-reverse">
 
           <div className="boon-investments__investment__white-paper">
             <a href={whitePaperPDF} target="_blank">
-            <img className="boon-investments__investment__white-paper__image transition-border" src={require('../../../assets/images/white-paper-thumbnail.png')}/>
+            <img className="boon-investments__investment__white-paper__image transition-border"
+              src="https://s3.amazonaws.com/jtb-personal-website/images/white-paper-thumbnail-500.jpg"
+              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-paper-thumbnail-250.jpg 250w,
+              https://s3.amazonaws.com/jtb-personal-website/images/white-paper-thumbnail-500.jpg 500w,
+              https://s3.amazonaws.com/jtb-personal-website/images/white-paper-thumbnail-750.jpg 750w"
+              sizes="(max-width: 250px) 95vw, 250px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+            />
             <h5 className="boon-investments__investment__white-paper__description">INVESTMENT WHITE PAPER</h5>
           </a>
           </div>
@@ -122,28 +146,24 @@ renderProductSection() {
     )
   }
 
-  renderWorldwideAccess() {
-    const textStyle = {"margin": "auto"}
-    return (
-      <div className="portfolio-page__section section-worldwide">
-        <h1 className="portfolio-page__section__title">Access</h1>
-        <div className="section-body">
-          <img src={require('../../../assets/images/worldwide-access-map.png')} />
-          <div style={textStyle}>
-            <h3>{this.worldwideCaption}</h3>
-            <p>{this.worldwideBody}</p>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
   renderTimeline() {
     return (
       <div className="portfolio-page__section boon-investments__timeline">
-        <h1 className="portfolio-page__section__title">Progress</h1>
-        <img class="boon-investments__timeline__image timeline__image--desktop" src={require('../../../assets/images/boon-investments-timeline-desktop.png')} />
-        <img class="boon-investments__timeline__image timeline__image--mobile" src={require('../../../assets/images/boon-investments-timeline-mobile.png')} />
+        <h2 className="portfolio-page__section__title">Progress</h2>
+        <img class="boon-investments__timeline__image timeline__image--desktop"
+          src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-800.jpg"
+          srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-400.jpg 400w,
+          https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-800.jpg 800w,
+          https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-1600.jpg 1600w"
+          sizes="(max-width: 800px) 100vw, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+        />
+        <img class="boon-investments__timeline__image timeline__image--mobile"
+          src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-800.jpg"
+          srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-400.jpg 400w,
+          https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-800.jpg 800w,
+          https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-1600.jpg 1600w"
+          sizes="(max-width: 800px) 100vw, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+        />
 
       </div>
     )
@@ -152,7 +172,7 @@ renderProductSection() {
   renderSummarySection() {
     return (
       <div className="portfolio-page__section portfolio-page__summary">
-        <h1 className="portfolio-page__section__title">Summary</h1>
+        <h2 className="portfolio-page__section__title">Summary</h2>
         <p className="portfolio-page__section__body">
           {this.summaryBody}
         </p>
@@ -173,7 +193,7 @@ renderProductSection() {
     return (
 
       <div className="portfolio-page__section portfolio-page__skills">
-        <h1 className="portfolio-page__section__title">Skills</h1>
+        <h2 className="portfolio-page__section__title">Skills</h2>
         <div className="portfolio-page__skills__table">
           {skillsTable}
         </div>
@@ -181,22 +201,32 @@ renderProductSection() {
     )
   }
 
-  renderSocialMedia() {
-    return (
-      <div className="portfolio-page__social-media">
-        <a href="https://twitter.com/booninvestments"><img src={require('../../../assets/images/twitter-logo.png')} /></a>
-
-        <a href="https://facebook.com/booninvestments"><img src={require('../../../assets/images/facebook-logo.png')} /></a>
-
-      </div>
-    )
-  }
+  // renderSocialMedia() {
+  //   return (
+  //     <div className="portfolio-page__social-media">
+  //       <a href="https://twitter.com/booninvestments"><img src={require('../../../assets/images/twitter-logo.png')} /></a>
+  //
+  //       <a href="https://facebook.com/booninvestments"><img src={require('../../../assets/images/facebook-logo.png')} /></a>
+  //
+  //     </div>
+  //   )
+  // }
 
   render() {
     return (
       <div className="portfolio-page boon-investments">
         <div className="portfolio-page__body">
-          <img className="portfolio-page__banner" src={require('../../../assets/images/boon-investments-banner.png')}/>
+          <div className="portfolio-page__banner">
+            <h1 className="portfolio-page__banner__title">Boon Investments</h1>
+            <img className="portfolio-page__banner__image"
+              src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-800.jpg"
+              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-400.jpg 400w,
+              https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-800.jpg 800w,
+              https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-1200.jpg 1200w,
+              https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-1600.jpg 1600w"
+              sizes="(max-width: 800px) 100vw, 800px"//"https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
+            />
+        </div>
           {this.renderSummarySection()}
           {this.renderDesignSection()}
           {this.renderProductSection()}

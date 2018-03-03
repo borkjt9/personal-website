@@ -15,7 +15,13 @@ function SampleNextArrow(props) {
       style={{ ...style, display: "block"}}
       onClick={onClick}
       >
-        <img style={imageStyle} src={require("../../assets/images/right-chevron.png")}/>
+        <img style={imageStyle}
+          src="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png"
+          srcSet="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-20.png 20w,
+          https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png 40w,
+          https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-60.png 60w"
+          sizes="20px"
+        />
     </div>
   );
 }
@@ -26,10 +32,16 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", backgroundImage: "../../assets/images/left-chevron.png"}}
+      style={{ ...style, display: "block"}}
       onClick={onClick}
       >
-      <img style={imageStyle} src={require("../../assets/images/left-chevron.png")}/>
+      <img style={imageStyle}
+        src="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png"
+        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-20.png 20w,
+        https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png 40w,
+        https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-60.png 60w"
+        sizes="20px"
+      />
     </div>
   );
 }
@@ -73,7 +85,13 @@ class Carousel extends Component {
         <div style={slickSlideStyle} >
           <div className={portfolioItemClassNames} style={portfolioItemStyle}>
             <a onClick={this.changePortfolioItem.bind(this, item.href)}>
-            <img style={imageStyle} src={require(`../../assets/images/${item.image}`)}></img>
+            <img style={imageStyle}
+                src={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg`}
+                srcSet={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg 250w,
+                https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-500.jpg 500w,
+                https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-750.jpg 750w`}
+                sizes="160px"
+              ></img>
             <h5 className="portfolio__item__desc__title" style={descriptionStyle}>{item.name}</h5>
             </a>
           </div>

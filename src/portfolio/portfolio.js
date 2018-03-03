@@ -152,13 +152,25 @@ class Portfolio extends Component {
     return(
       <div className="portfolio__nav">
         <a onClick={this.handlePortfolioChange.bind(this, this.state.previousPortfolio)} className="portfolio__nav__link portfolio__nav__link--previous">
-          <img className="portfolio__nav__chevron" src={require("../assets/images/left-chevron.png")}/>
+          <img className="portfolio__nav__chevron"
+            src="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-20.png 20w,
+            https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png 40w,
+            https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-60.png 60w"
+            sizes="20px"
+          />
           <h5 className="portfolio__nav__link__title">Previous Project</h5>
         </a>
 
         <a onClick={this.handlePortfolioChange.bind(this, this.state.nextPortfolio)} className="portfolio__nav__link portfolio__nav__link--next">
           <h5 className="portfolio__nav__link__title">Next Project</h5>
-          <img className="portfolio__nav__chevron" src={require("../assets/images/right-chevron.png")}/>
+          <img className="portfolio__nav__chevron"
+            src="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png"
+            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-20.png 20w,
+            https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png 40w,
+            https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-60.png 60w"
+            sizes="20px"
+          />
         </a>
       </div>
     )
