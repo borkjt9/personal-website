@@ -22,7 +22,7 @@ class AutoPOOL extends Component {
     return (
       <div className="portfolio-page__section">
         <h2 className="portfolio-page__section__title boon__investments__product">Product</h2>
-        <div className="portfolio-page__section__body row-wrap-reverse">
+        <div className="portfolio-page__section__body row-wrap">
           <img
             alt="autopool screen that lets you set your destination and current location"
             className="autopool__product__iphone-image"
@@ -37,7 +37,7 @@ class AutoPOOL extends Component {
             <p className="portfolio-page__section__body__description">{this.productDescriptions[0]}</p>
           </div>
         </div>
-        <div className="portfolio-page__section__body row-wrap">
+        <div className="portfolio-page__section__body row-wrap-reverse">
           <div className="autopool__product__text">
             <h3>{this.productCaptions[1]}</h3>
             <p className="portfolio-page__section__body__description">{this.productDescriptions[1]}</p>
@@ -52,7 +52,7 @@ class AutoPOOL extends Component {
             sizes="(max-width: 200px) 95vw, 200px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
           />
         </div>
-        <div className="portfolio-page__section__body row-wrap-reverse">
+        <div className="portfolio-page__section__body row-wrap">
           <img
             alt="iphone homescreen showing a push notification sent from autopool"
             className="autopool__product__iphone-image"

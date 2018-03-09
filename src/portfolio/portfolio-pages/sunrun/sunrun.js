@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './sunrun.scss';
 import _ from 'lodash';
+
+import './sunrun.scss';
 
 class SunRun extends Component {
   tasksArray =
@@ -78,6 +79,8 @@ class SunRun extends Component {
   }
 
   renderIPO() {
+    const ipoDescriptionText = "Can't spot me? Just keep looking. I'm definitely there.";
+
     return (
       <div className="portfolio-page__section">
         <h2 className="portfolio-page__section__title">IPO</h2>
@@ -92,7 +95,9 @@ class SunRun extends Component {
               https://s3.amazonaws.com/jtb-personal-website/images/ipo-1200.jpg 1200w"
               sizes="(max-width: 400px) 100vw, 400px"
             />
-            <h5 className="sunrun__ipo__image__description">Can't spot me? Just keep looking. I'm definitely there.</h5>
+            <h5 className="sunrun__ipo__image__description">
+              {ipoDescriptionText}
+            </h5>
           </div>
         </div>
         <div className="portfolio-page__section__body">

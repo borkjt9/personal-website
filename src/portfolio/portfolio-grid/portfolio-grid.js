@@ -1,37 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import _ from 'lodash';
+
+import PortfolioItem from '../portfolio-item/portfolio-item';
 import './portfolio-grid.scss';
 
 
 class PortfolioGrid extends Component {
 
+  constructor(props) {
+    super(props);
+    this.changePortfolioItem = this.changePortfolioItem.bind(this);
+  }
+
+  changePortfolioItem(selectedPortfolio) {
+    this.props.onPortfolioChange(selectedPortfolio);
+  }
+
   renderPortfolioItems() {
     const portfolio = this.props.portfolios;
-    const portfolioItemClassNames = 'landing-page__portfolio__item  portfolio__item transition-border max-dimensions-is-screen';
 
     const portfolioItems = _.map(portfolio, item => (
-      <div className={portfolioItemClassNames}>
-        <a href={`portfolio/${item.href}`}>
-          <img
-            className="portfolio__item__image"
-            alt={`${item.name}`}
-            src={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg`}
-            srcSet={`https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-250.jpg 250w,
-                https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-500.jpg 500w,
-                https://s3.amazonaws.com/jtb-personal-website/images/${item.image}-750.jpg 750w`}
-            sizes="(max-width: 250px) 95vw, 250px"
-          />
-          <div className="portfolio__item__desc">
-            <div className="portfolio__item__desc__title">
-              <h4 className="is-animated">{item.name}</h4>
-            </div>
-            <div className="portfolio__item__desc__skills ">
-              <h5 className="">{item.skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</h5>
-            </div>
-          </div>
-        </a>
-      </div>
+      <PortfolioItem
+        changePortfolioItem={this.changePortfolioItem}
+        item={item}
+      />
     ));
 
     return (
@@ -49,6 +43,11 @@ class PortfolioGrid extends Component {
     );
   }
 }
+
+PortfolioGrid.propTypes = {
+  portfolios: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
+};
+
 function mapStateToProps(state) {
   return { portfolios: state.portfolios };
 }

@@ -1,9 +1,43 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+
 import './boon-investments.scss';
-import whitePaperPDF from '../../../assets/pdfs/boon-investments-white-paper.pdf';
+
+function renderTimeline() {
+  return (
+    <div className="portfolio-page__section boon-investments__timeline">
+      <h2 className="portfolio-page__section__title">Progress</h2>
+      <img
+        alt="timeline of Boon Investments' progress over the last year"
+        className="boon-investments__timeline__image timeline__image--desktop"
+        src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-800.jpg"
+        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-400.jpg 400w,
+        https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-800.jpg 800w,
+        https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-1600.jpg 1600w"
+        sizes="(max-width: 800px) 100vw, 800px"
+      />
+      <img
+        alt="timeline of Boon Investments' progress over the last year"
+        className="boon-investments__timeline__image timeline__image--mobile"
+        src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-800.jpg"
+        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-400.jpg 400w,
+        https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-800.jpg 800w,
+        https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-1600.jpg 1600w"
+        sizes="(max-width: 800px) 100vw, 800px"
+      />
+    </div>
+  );
+}
 
 class BoonInvestments extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expandWireframe: false,
+    };
+    this.toggleWireframe = this.toggleWireframe.bind(this);
+  }
+
   summaryBody = "Boon Investments is an S.E.C registered investment advisor that provides non-U.S. residents access to the U.S. investment markets. Boon is the first robo-advisor in the United States to accept international clients.\n\n As CEO/Co-founder of Boon, my main responsibilities included leading design for Boon's suite of products, writing the investment algorithms which power Boon's portfolios, developing Boon's flagship iOS application, and closing deals with multiple business partners.";
 
   skillsDictionary = {
@@ -26,18 +60,17 @@ class BoonInvestments extends Component {
   worldwideCaption = 'Available in over 140 countries.'
   worldwideBody = 'Boon is the first robo-advisor in the United States to accept non-U.S. clients.'
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      expandWireframe: false,
-    };
+  toggleWireframe() {
+    this.setState({
+      expandWireframe: !this.state.expandWireframe,
+    });
   }
 
   renderProductSection() {
     return (
       <div className="portfolio-page__section">
         <h2 className="portfolio-page__section__title boon__investments__product">Product</h2>
-        <div className="portfolio-page__section__body row-wrap-reverse">
+        <div className="portfolio-page__section__body row-wrap">
           <div className="boon-investments__product__iphone-image">
             <img
               alt="boon investments app screen depicting the user's investment history"
@@ -54,7 +87,7 @@ class BoonInvestments extends Component {
             <p className="portfolio-page__section__body__description">{this.productDescriptions[0]}</p>
           </div>
         </div>
-        <div className="portfolio-page__section__body row-wrap">
+        <div className="portfolio-page__section__body row-wrap-reverse">
           <div className="boon-investments__product__text">
             <h3>{this.productCaptions[1]}</h3>
             <p className="portfolio-page__section__body__description">{this.productDescriptions[1]}</p>
@@ -76,27 +109,29 @@ class BoonInvestments extends Component {
     );
   }
 
-
   renderDesignSection() {
     return (
       <div className="portfolio-page__section boon-investments__design">
         <h2 className="portfolio-page__section__title">Design</h2>
-        <div className="portfolio-page__section__body row-wrap">
+        <div className="portfolio-page__section__body row-wrap-reverse">
           <div className="boon-investments__design__text">
             <h3>{this.designCaption}</h3>
             <p className="portfolio-page__section__body__description">{this.designBody}</p>
           </div>
-          <div onClick={this.toggleWireframe.bind(this)} className="boon-investments__wireframe">
-            <img
-              alt= "thumbnail of the design wireframe for the boon investments application"
-              className="boon-investments__design__wireframe__image transition-border"
-              src="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-500.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-250.jpg 250w,
-              https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-500.jpg 500w,
-              https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-750.jpg 750w"
-              sizes="(max-width: 250px) 95vw, 250px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
-            />
-            <h5 className="boon-investments__design__wireframe__description">Click to expand</h5>
+          <div class="boon-investments__wireframe">
+            <a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe.jpg">
+            {/* onClick={this.toggleWireframe} className="boon-investments__wireframe"> */}
+              <img
+                alt="thumbnail of the design wireframe for the boon investments application"
+                className="boon-investments__design__wireframe__image transition-border"
+                src="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-500.jpg"
+                srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-250.jpg 250w,
+                https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-500.jpg 500w,
+                https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-750.jpg 750w"
+                sizes="(max-width: 250px) 95vw, 250px"
+              />
+              <h5 className="boon-investments__design__wireframe__description">Click to expand</h5>
+            </a>
           </div>
         </div>
       </div>
@@ -107,10 +142,10 @@ class BoonInvestments extends Component {
     return (
       <div className="portfolio-page__section boon-investments__investment">
         <h2 className="portfolio-page__section__title">Investment</h2>
-        <div className="portfolio-page__section__body row-wrap-reverse">
+        <div className="portfolio-page__section__body row-wrap">
 
           <div className="boon-investments__investment__white-paper">
-            <a href={whitePaperPDF} target="_blank">
+            <a href="https://s3.amazonaws.com/jtb-personal-website/pdfs/boon-investments-white-paper.pdf" target="_blank" rel="noopener noreferrer">
               <img
                 alt="thumbnail of Boon Investment's investment white paper"
                 className="boon-investments__investment__white-paper__image transition-border"
@@ -132,13 +167,6 @@ class BoonInvestments extends Component {
     );
   }
 
-  toggleWireframe() {
-    this.setState({
-      expandWireframe: !this.state.expandWireframe,
-    });
-  }
-
-
   renderZoomedWireframe() {
     const wireframeClassNames = this.state.expandWireframe ? 'portfolio-page__wireframe-modal is-expanded' : 'portfolio-page__wireframe-modal modal is-minimized';
     return (
@@ -147,41 +175,15 @@ class BoonInvestments extends Component {
           <img
             alt="Boon Investments' design wireframe"
             className="portfolio-page__wireframe-modal__content"
-            src={require('../../../assets/images/boon-wireframe.png')} />
-          <span onClick={this.toggleWireframe.bind(this)} className="portfolio-page__wireframe-modal__close-wrapper">
+            src="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe.png"
+          />
+          <button onClick={this.toggleWireframe} className="portfolio-page__wireframe-modal__close-wrapper">
             <span className="portfolio-page__wireframe-modal__close-wrapper__close">&times;</span>
-          </span>
+          </button>
           <div id="caption" />
         </div>
       </div>
 
-    );
-  }
-
-  renderTimeline() {
-    return (
-      <div className="portfolio-page__section boon-investments__timeline">
-        <h2 className="portfolio-page__section__title">Progress</h2>
-        <img
-          alt="timeline of Boon Investments' progress over the last year"
-          className="boon-investments__timeline__image timeline__image--desktop"
-          src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-800.jpg"
-          srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-400.jpg 400w,
-          https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-800.jpg 800w,
-          https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-1600.jpg 1600w"
-          sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
-        />
-        <img
-          alt="timeline of Boon Investments' progress over the last year"
-          className="boon-investments__timeline__image timeline__image--mobile"
-          src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-800.jpg"
-          srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-400.jpg 400w,
-          https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-800.jpg 800w,
-          https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-1600.jpg 1600w"
-          sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
-        />
-
-      </div>
     );
   }
 
@@ -237,10 +239,8 @@ class BoonInvestments extends Component {
           {this.renderDesignSection()}
           {this.renderProductSection()}
           {this.renderInvestmentSection()}
-
-          {this.renderTimeline()}
+          {renderTimeline()}
           {this.renderSkillsList()}
-          {/* {this.renderSocialMedia()} */}
         </div>
         {this.renderZoomedWireframe()}
       </div>

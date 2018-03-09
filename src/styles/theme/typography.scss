@@ -1,24 +1,15 @@
-h1, h2, h3, h4, h5, a, p {
+h1, h2, h3, h4, h5, a, button, p {
   font-family: 'Lato', sans-serif;
-  white-space: pre-wrap;
 }
 
 h1 {
   font-weight: 300;
-  font-size: 3.5rem;
-  letter-spacing: .69em;
-  padding-left: .69em;
-  line-height: 1.1em;
   text-transform: uppercase;
   color: #636363;
 }
 
 h2 {
   font-weight: 300;
-  font-size: 3rem;
-  letter-spacing: .7em;
-  padding-left: .7em;
-  line-height: 1.2em;
   text-transform: lowercase;
   color: #636363;
 }
@@ -28,18 +19,14 @@ h3 {
   font-weight: 300;
   letter-spacing: 3px;
   line-height: 28px;
-  line-height: 36px;
   color: #595959;
-
-
-
 }
 
 h4 {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   letter-spacing: 8px;
-  padding-left: 8px;
+  text-indent: 8px;
   font-size: 1.2rem;
   line-height: 16px;
   text-transform: uppercase;
@@ -54,6 +41,9 @@ h5 {
   color: #636363;
 
 }
+
+
+
 p {
   font-size: 1.4rem;
   font-weight: 300;
@@ -61,34 +51,6 @@ p {
   letter-spacing: 2px;
   color: #333333;
   line-height: 22px;
-
-
-  // booninvestments.scss
-  // font-size: 12px;
-  // font-weight: 300;
-  // white-space: pre-wrap;
-  // letter-spacing: 2px;
-  // color: #636363;
-  // text-transform: none;
-  // line-height: 22px;
-
-  // sunrun.scss
-  // text-transform: none;
-  // letter-spacing: 1.5px;
-  // font-family: "Lato", sans-serif;
-  // font-weight: 400;
-  // font-size: 12px;
-  // line-height: 18px;
-
-  //
-  //header.scss
-  // display: table-cell;
-  // vertical-align: middle;
-  //
-  // margin: 0px auto;
-  // font-size: 9px;
-  // letter-spacing: 10px;
-  // line-height: 12px;
 }
 
 a {
@@ -138,10 +100,16 @@ a {
   ##Device = Low Resolution Tablets, Mobiles (Landscape)
   ##Screen = B/w 481px to 767px
 */
+@media (min-width: 767px) {
+  h1, h2, h3, h4, h5, a, p {
+    white-space: normal;
 
+  }
+}
 @media  (max-width: 767px) {
   h1, h2, h3, h4, h5, a, p {
     text-align: center;
+
   }
 
 }
@@ -151,10 +119,48 @@ a {
   ##Screen = B/w 320px to 479px
 */
 
+@media (min-width: 481px) {
+  h1 {
+    font-size: 3.5rem;
+    letter-spacing: .7em;
+    line-height: 1.3em;
+    text-transform: uppercase;
+    color: #636363;
+  }
+
+  h2 {
+    font-size: 3.0rem;
+    line-height: 1.2em;
+    letter-spacing: .7em;
+    text-indent: .7em;
+
+    text-transform: lowercase;
+    color: #636363;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
 
   h1, h2, h3, h4, h5, a, p {
     text-align: center;
+  }
+  h3 {
+    text-indent: 3px;
+  }
+  h1 {
+    font-size: 3.0rem;
+    letter-spacing: .5em;
+    white-space: normal;
+    line-height: 1.3em;
+
+
+  }
+  h2 {
+    font-size: 3.0rem;
+    letter-spacing: .5em;
+    white-space: normal;
+    text-indent: .5em;
+
   }
 
 }

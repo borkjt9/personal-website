@@ -21,7 +21,7 @@ $underlineColor: #636363;
     cursor: pointer;
 
     .boon-investments__design__wireframe__image, .boon-investments__investment__white-paper__image {
-      width: 100%;
+      width: calc(100% - 6px);
       border: solid 1px $borderColor;
       padding: 2px;
       box-shadow: 1px 1px 2px $borderColor;

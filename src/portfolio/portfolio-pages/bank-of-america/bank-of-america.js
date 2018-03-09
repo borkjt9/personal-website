@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './bank-of-america.scss';
 import _ from 'lodash';
+
+import './bank-of-america.scss';
 
 class BankOfAmerica extends Component {
   tasksArray =

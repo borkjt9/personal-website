@@ -1,8 +1,43 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
+
 import './ria-portal.scss';
 
+function renderTimeline() {
+  return (
+    <div className="portfolio-page__section ria-portal__timeline">
+      <h2 className="portfolio-page__section__title">Progress</h2>
+      <img
+        alt="timeline showing the progress made on the auto-oms over the past year"
+        className="ria-portal__timeline__image timeline__image--desktop"
+        src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-800.jpg"
+        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-400.jpg 400w,
+          https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-800.jpg 800w,
+          https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-1600.jpg 1600w"
+        sizes="(max-width: 800px) 100vw, 800px"
+      />
+      <img
+        alt="timeline showing the progress made on the auto-oms over the past year"
+        className="ria-portal__timeline__image timeline__image--mobile"
+        src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-800.jpg"
+        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-400.jpg 400w,
+          https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-800.jpg 800w,
+          https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-1600.jpg 1600w"
+        sizes="(max-width: 800px) 100vw, 800px"
+      />
+    </div>
+  );
+}
+
 class RiaPortal extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      expandWireframe: false,
+    };
+    this.toggleWireframe = this.toggleWireframe.bind(this);
+  }
+
   summaryBody = "The Automated Order Management System (\"Auto-OMS\") is a B2B SaaS product that was spun out of Boon Investments' existing technology.\n\nThe Auto-OMS enables investment advisors to increase their client base without increasing their workload by automating all aspects of the portfolio management process, including dividend reinvestment, asset sub-allocation, and client onboarding.\n\nAs product lead for the Auto-OMS, I managed a small team of developers to design and build the RIA portal, ensured we hit the deadlines communicated to partners, and integrated new partners into the Auto-OMS."
 
 
@@ -21,19 +56,17 @@ class RiaPortal extends Component {
   designBody = "The Auto-OMS began as an API that connected partners to Boon's internal engine.\n\nVery quickly, I realized (i.e. our partners repeatedly told me) that they needed an interface through which they could more easily interact with the API. I designed the RIA Portal to satisfy this need."
   designCaption = 'From API to GUI'
 
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      expandWireframe: false,
-    };
+  toggleWireframe() {
+    this.setState({
+      expandWireframe: !this.state.expandWireframe,
+    });
   }
 
   renderProductSection() {
     return (
       <div className="portfolio-page__section">
         <h2 className="portfolio-page__section__title boon__investments__product">Product</h2>
-        <div className="portfolio-page__section__body row-wrap-reverse">
+        <div className="portfolio-page__section__body row-wrap">
           <img
             alt="the ria portal depicting a client's allocation"
             className="ria-portal__product__portal-image"
@@ -48,7 +81,7 @@ class RiaPortal extends Component {
             <p className="portfolio-page__section__body__description">{this.productDescriptions[0]}</p>
           </div>
         </div>
-        <div className="portfolio-page__section__body row-wrap">
+        <div className="portfolio-page__section__body row-wrap-reverse">
           <div className="ria-portal__product__text">
             <h3>{this.productCaptions[1]}</h3>
             <p className="portfolio-page__section__body__description">{this.productDescriptions[1]}</p>
@@ -72,34 +105,29 @@ class RiaPortal extends Component {
     return (
       <div className="portfolio-page__section ria-portal__design">
         <h2 className="portfolio-page__section__title">Design</h2>
-        <div className="portfolio-page__section__body row-wrap">
+        <div className="portfolio-page__section__body row-wrap-reverse">
           <div className="ria-portal__design__text">
             <h3>{this.designCaption}</h3>
             <p className="portfolio-page__section__body__description">{this.designBody}</p>
           </div>
-          <div onClick={this.toggleWireframe.bind(this)} className="ria-portal__wireframe">
-            <img
-              alt="thumbail of the design wireframe for the ria portal"
-              className="ria-portal__design__wireframe__image transition-border"
-              src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-600.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-300.jpg 300w,
-                https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-600.jpg 600w,
-                https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-900.jpg 900w"
-              sizes="(max-width: 300px) 100vw, 300px"
-            />
-            <h5 className="ria-portal__design__wireframe__description">Click to expand</h5>
+          <div className="ria-portal__wireframe">
+            <a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe.jpg">
+              <img
+                alt="thumbail of the design wireframe for the ria portal"
+                className="ria-portal__design__wireframe__image transition-border"
+                src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-600.jpg"
+                srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-300.jpg 300w,
+                  https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-600.jpg 600w,
+                  https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-900.jpg 900w"
+                sizes="(max-width: 300px) 100vw, 300px"
+              />
+              <h5 className="ria-portal__design__wireframe__description">Click to expand</h5>
+            </a>
           </div>
         </div>
       </div>
     );
   }
-
-  toggleWireframe() {
-    this.setState({
-      expandWireframe: !this.state.expandWireframe,
-    });
-  }
-
 
   renderZoomedWireframe() {
     const wireframeClassNames = this.state.expandWireframe ? 'portfolio-page__wireframe-modal is-expanded' : 'portfolio-page__wireframe-modal modal is-minimized';
@@ -109,40 +137,15 @@ class RiaPortal extends Component {
           <img
             alt="design wireframe for the ria portal"
             className="portfolio-page__wireframe-modal__content"
-            src={require('../../../assets/images/ria-portal-wireframe.png')} />
-          <span onClick={this.toggleWireframe.bind(this)} className="portfolio-page__wireframe-modal__close-wrapper">
+            src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe.png"
+          />
+          <button onClick={this.toggleWireframe} className="portfolio-page__wireframe-modal__close-wrapper">
             <span className="portfolio-page__wireframe-modal__close-wrapper__close">&times;</span>
-          </span>
+          </button>
           <div id="caption" />
         </div>
       </div>
 
-    );
-  }
-
-  renderTimeline() {
-    return (
-      <div className="portfolio-page__section ria-portal__timeline">
-        <h2 className="portfolio-page__section__title">Progress</h2>
-        <img
-          alt="timeline showing the progress made on the auto-oms over the past year"
-          className="ria-portal__timeline__image timeline__image--desktop"
-          src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-800.jpg"
-          srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-400.jpg 400w,
-            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-800.jpg 800w,
-            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-desktop-1600.jpg 1600w"
-          sizes="(max-width: 800px) 100vw, 800px"
-        />
-        <img
-          alt="timeline showing the progress made on the auto-oms over the past year"
-          className="ria-portal__timeline__image timeline__image--mobile"
-          src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-800.jpg"
-          srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-400.jpg 400w,
-            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-800.jpg 800w,
-            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-timeline-mobile-1600.jpg 1600w"
-          sizes="(max-width: 800px) 100vw, 800px"
-        />
-      </div>
     );
   }
 
@@ -195,7 +198,7 @@ class RiaPortal extends Component {
           {this.renderSummarySection()}
           {this.renderDesignSection()}
           {this.renderProductSection()}
-          {this.renderTimeline()}
+          {renderTimeline()}
           {this.renderSkillsList()}
         </div>
         {this.renderZoomedWireframe()}

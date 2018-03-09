@@ -22,6 +22,7 @@
     <title>John Borkowski</title>
   </head>
   <body>
+    <div id="root"></div>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
@@ -31,7 +32,7 @@
       <link href="https://fonts.googleapis.com/css?family=Lato:100,200,300,400,700,900" rel="stylesheet">
 
     </noscript>
-    <script>
+    <script defer="true">
       var loadDeferredStyles = function() {
         var addStylesNode = document.getElementById("deferred-styles");
         var replacement = document.createElement("div");
@@ -44,7 +45,6 @@
       if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
       else window.addEventListener('load', loadDeferredStyles);
     </script>
-    <div id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

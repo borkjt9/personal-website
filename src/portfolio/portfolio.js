@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Header from './header/header';
+import PropTypes from 'prop-types';
 import createHistory from 'history/createBrowserHistory';
+
+import Header from './header/header';
 import PortfolioGrid from './portfolio-grid/portfolio-grid';
 import BankOfAmerica from './portfolio-pages/bank-of-america/bank-of-america';
 import SunRun from './portfolio-pages/sunrun/sunrun';
@@ -16,6 +18,8 @@ import './portfolio.scss';
 class Portfolio extends Component {
   constructor(props) {
     super(props);
+    this.handleNextPortfolio = this.handleNextPortfolio.bind(this);
+    this.handlePreviousPortfolio = this.handlePreviousPortfolio.bind(this);
     this.handlePortfolioChange = this.handlePortfolioChange.bind(this);
     this.handlePortfolioToggle = this.handlePortfolioToggle.bind(this);
 
@@ -34,6 +38,34 @@ class Portfolio extends Component {
     if (!this.state.headerExpanded) {
       window.scrollTo(0, 0);
     }
+  }
+
+  handlePortfolioToggle(expanded) {
+    this.setState({
+      headerExpanded: expanded,
+    });
+  }
+
+  handleNextPortfolio() {
+    this.handlePortfolioChange(this.state.nextPortfolio);
+  }
+
+  handlePreviousPortfolio() {
+    this.handlePortfolioChange(this.state.previousPortfolio);
+  }
+
+  handlePortfolioChange(newPortfolio) {
+    this.history.push({
+      pathname: newPortfolio,
+    });
+    this.setState({
+      headerExpanded: false,
+      nextPortfolio: this.navRefs[newPortfolio].nref,
+      previousPortfolio: this.navRefs[newPortfolio].pref,
+      currentPortfolioIndex: this.navRefs[newPortfolio].index,
+      selectedPortfolio: newPortfolio,
+    }, () => {
+    });
   }
 
   history = createHistory()
@@ -82,14 +114,8 @@ class Portfolio extends Component {
     },
   }
 
-  renderAbout() {
-    return (
-      <About />
-    );
-  }
   renderSelectedPortfolio() {
-    console.log('state 2', this.state);
-    const selectedPortfolio = this.state.selectedPortfolio;
+    const { selectedPortfolio } = this.state;
     switch (selectedPortfolio) {
       case 'bank-of-america':
         return <BankOfAmerica />;
@@ -105,42 +131,26 @@ class Portfolio extends Component {
         return <WhiteLabelApps />;
       case 'about':
         return (
-          <div style={{ marginTop: '75px' }}>
+          <div className="margin-top-is-header">
             <About />
             <Footer />
           </div>
         );
       default:
-        return <PortfolioGrid />;
+        return (
+          <div className="margin-top-is-header">
+            <PortfolioGrid
+              onPortfolioChange={this.handlePortfolioChange}/>
+            <Footer />
+          </div>
+        );
     }
-  }
-
-  handlePortfolioToggle(expanded) {
-    console.log(expanded);
-    this.setState({
-      headerExpanded: expanded,
-    });
-  }
-
-  handlePortfolioChange(newPortfolio) {
-    this.history.push({
-      pathname: newPortfolio,
-    });
-    this.setState({
-      headerExpanded: false,
-      nextPortfolio: this.navRefs[newPortfolio].nref,
-      previousPortfolio: this.navRefs[newPortfolio].pref,
-      currentPortfolioIndex: this.navRefs[newPortfolio].index,
-      selectedPortfolio: newPortfolio,
-    }, () => {
-    });
-    console.log('state', this.state);
   }
 
   renderPortfolioNavs() {
     return (
       <div className="portfolio__nav">
-        <a onClick={this.handlePortfolioChange.bind(this, this.state.previousPortfolio)} className="portfolio__nav__link portfolio__nav__link--previous">
+        <button onClick={this.handleNextPortfolio} className="portfolio__nav__link portfolio__nav__link--previous">
           <img
             alt="When clicked, the view will show the next portfolio page."
             className="portfolio__nav__chevron"
@@ -151,9 +161,9 @@ class Portfolio extends Component {
             sizes="20px"
           />
           <h5 className="portfolio__nav__link__title">Previous Project</h5>
-        </a>
+        </button>
 
-        <a onClick={this.handlePortfolioChange.bind(this, this.state.nextPortfolio)} className="portfolio__nav__link portfolio__nav__link--next">
+        <button onClick={this.handlePreviousPortfolio} className="portfolio__nav__link portfolio__nav__link--next">
           <h5 className="portfolio__nav__link__title">Next Project</h5>
           <img
             alt="When clicked, the view will show the previous portfolio page."
@@ -164,16 +174,19 @@ class Portfolio extends Component {
             https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-60.png 60w"
             sizes="20px"
           />
-        </a>
+        </button>
       </div>
     );
   }
 
   render() {
-    console.log('header expanded:', this.state.headerExpanded, 'selected portfolio: ', this.state.selectedPortfolio);
     return (
       <div className="portfolio">
-        <Header currentPortfolioIndex={this.state.currentPortfolioIndex} onPortfolioToggle={this.handlePortfolioToggle} onPortfolioChange={this.handlePortfolioChange} />
+        <Header
+          currentPortfolioIndex={this.state.currentPortfolioIndex}
+          onPortfolioToggle={this.handlePortfolioToggle}
+          onPortfolioChange={this.handlePortfolioChange}
+        />
         {this.renderSelectedPortfolio()}
         {(this.state.headerExpanded || this.state.selectedPortfolio === 'about' || this.state.selectedPortfolio === '') ? '' : this.renderPortfolioNavs()}
 
@@ -183,48 +196,12 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+Portfolio.defaultProps = {
+  match: {},
+};
 
-// portfolios = {
-//   "technology": [
-//     {
-//     name: "Boon Investments",
-//     image: "boon-investments.png",
-//     skills: ["UI/UX", "Swift", "Python"],
-//     href: this.techRefs[0],
-//     nref: this.techRefs[1],
-//     lref: this.techRefs[2],
-//     },
-//     {
-//       name: "RIA Portal",
-//       image: "auto-oms.png",
-//       skills: ["UI/UX", "Angular", "AWS"],
-//       href: "ria-portal"
-//
-//     },
-//     {
-//     name: "UberPOOL",
-//     image: "boon-investments.png",
-//     skills: ["UI/UX", "Swift", "App Engine" ],
-//     href: "uberPOOL"
-//     }],
-//   "finance": [
-//     {
-//     name: "Bank of America",
-//     image: "bank-of-america.png",
-//     skills: ["Modeling", "Forecasting"],
-//     href: "bank-of-america"
-//     },
-//     {
-//       name: "SunRun",
-//       image: "sunrun.png",
-//       skills: ["FP&A", "IPO"],
-//       href: "sunrun"
-//     },
-//     {
-//     name: "Boon Investments",
-//     image: "boon-investments.png",
-//     skills: ["Investments", "B2B Sales"],
-//     href: "boon-investments"
-//     }]
-// }
+Portfolio.propTypes = {
+  match: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
+};
+
+export default Portfolio;

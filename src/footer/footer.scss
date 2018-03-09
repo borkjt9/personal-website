@@ -1,5 +1,39 @@
 $pageColor: #FCFCFC;
 
+@media (min-width: 768px) {
+  a {
+
+    &:hover {
+      border-bottom: solid $pageColor 3px;
+      border-top: solid $pageColor 0px;
+
+      .footer-link__name {
+        opacity: 1;
+      }
+
+      .footer-link-image {
+
+      }
+
+      .linkedin {
+        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/linkedin-hover-80.jpg');
+      }
+      .angel-list {
+        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/angel-list-hover-80.jpg');
+      }
+      .github {
+        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/github-hover-80.jpg');
+      }
+      .mail {
+        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/mail-hover-80.jpg');
+      }
+      .resume {
+        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/resume-hover-80.jpg');
+      }
+    }
+  }
+}
+
 .footer {
   position: relative;
   bottom: 0;
@@ -85,34 +119,7 @@ $pageColor: #FCFCFC;
       transition: all 0.15s ease-in-out;
 
     }
-    &:hover {
-      border-bottom: solid $pageColor 3px;
-      border-top: solid $pageColor 0px;
 
-      .footer-link__name {
-        opacity: 1;
-      }
-
-      .footer-link-image {
-
-      }
-
-      .linkedin {
-        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/linkedin-hover-80.jpg');
-      }
-      .angel-list {
-        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/angel-list-hover-80.jpg');
-      }
-      .github {
-        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/github-hover-80.jpg');
-      }
-      .mail {
-        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/mail-hover-80.jpg');
-      }
-      .resume {
-        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/resume-hover-80.jpg');
-      }
-    }
 
 
 

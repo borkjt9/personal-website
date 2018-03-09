@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import createHistory from 'history/createBrowserHistory';
 import { connect } from 'react-redux';
 import './header.scss';
 import Carousel from '../carousel/carousel';
 
 class Header extends Component {
-  history = createHistory()
-
   constructor(props) {
     super(props);
     this.onPortfolioChange = this.onPortfolioChange.bind(this);
+    this.expandPortfolio = this.expandPortfolio.bind(this);
+    this.expandAbout = this.expandAbout.bind(this);
 
     this.state = {
       portfolioShouldExpand: false,
@@ -17,10 +18,33 @@ class Header extends Component {
     };
   }
 
-  portfolioLabel = 'portfolio';
+
+  onPortfolioChange(selectedPortfolio) {
+    this.portfolioLabel = 'portfolio';
+
+    this.setState({
+      portfolioShouldExpand: false,
+    });
+    setTimeout(() => {
+      this.setState({
+        clearCarousel: true,
+      });
+    }, 500);
+    this.props.onPortfolioChange(selectedPortfolio);
+  }
   aboutLabel = 'about';
 
-  expandPortfolio(portfolio, props) {
+  portfolioLabel = 'portfolio';
+
+  expandAbout() {
+    this.portfolioLabel = 'portfolio';
+    this.setState({
+      portfolioShouldExpand: false,
+    });
+    this.props.onPortfolioChange('about');
+  }
+
+  expandPortfolio() {
     let portfolioShouldExpand = true;
     if (this.portfolioLabel === 'portfolio') {
       this.portfolioLabel = 'close';
@@ -45,40 +69,31 @@ class Header extends Component {
     }
   }
 
-  onPortfolioChange(selectedPortfolio) {
-    this.portfolioLabel = 'portfolio';
 
-    this.setState({
-      portfolioShouldExpand: false,
-    });
-    this.props.onPortfolioChange(selectedPortfolio);
-  }
-
+  history = createHistory()
 
   renderPortfolio() {
     let shouldExpand = false;
     if (this.state.portfolioShouldExpand) {
       shouldExpand = true;
     }
-    
+
     const portfolioClassNames = shouldExpand ? 'portfolio portfolio--wrapped header__portfolio' : 'portfolio portfolio--wrapped header__portfolio';
     return (
 
       <div className={portfolioClassNames}>
-        <Carousel onPortfolioChange={this.onPortfolioChange} onPortfolioToggle={this.onPortfolioToggle} currentPortfolioIndex={this.props.currentPortfolioIndex} shouldExpand={shouldExpand} />
+        <Carousel
+          onPortfolioChange={this.onPortfolioChange}
+          onPortfolioToggle={this.onPortfolioToggle}
+          currentPortfolioIndex={this.props.currentPortfolioIndex}
+          shouldExpand={shouldExpand}
+        />
       </div>
 
     );
   }
 
-  expandAbout() {
-    this.portfolioShouldExpand = false;
-    this.portfolioLabel = 'portfolio';
-    this.setState({
-      portfolioShouldExpand: this.portfolioShouldExpand,
-    });
-    this.props.onPortfolioChange('about');
-  }
+
   render() {
     return (
       <div className="header">
@@ -87,26 +102,30 @@ class Header extends Component {
             <h4 className="links__header__text margins--remove-default">Home</h4>
           </a>
           <a className="text__vert-middle header__home-link home-link--mobile links__link" href="../portfolio">
-            <img className="links__header__icon" alt="link to portfolio section" src={require('../../assets/images/portfolio.svg')} />
+            <img className="links__header__icon" alt="link to portfolio section" src="https://s3.amazonaws.com/jtb-personal-website/images/portfolio.svg" />
           </a>
           <div className="text__vert-middle header__portfolio-links">
-
-            <a className="links__link" onClick={this.expandAbout.bind(this)}>
+            <button className="links__link" onClick={this.expandAbout}>
               <h4 className="links__header__text margins--remove-default">About</h4>
-              <img className="links__header__icon" alt="link to about section" src={require('../../assets/images/about.svg')} />
-            </a>
+              <img className="links__header__icon" alt="link to about section" src="https://s3.amazonaws.com/jtb-personal-website/images/about.svg" />
+            </button>
             <h4 className="links__divide">|</h4>
-            <a className="links__link" onClick={this.expandPortfolio.bind(this, 'portfolio')}>
+            <button className="links__link" onClick={this.expandPortfolio}>
               <h4 className="links__header__text margins--remove-default">{this.portfolioLabel}</h4>
-            </a>
+            </button>
           </div>
-
         </div>
         {this.state.clearCarousel ? '' : this.renderPortfolio()}
       </div>
     );
   }
 }
+
+Header.propTypes = {
+  onPortfolioChange: PropTypes.func.isRequired,
+  onPortfolioToggle: PropTypes.func.isRequired,
+  currentPortfolioIndex: PropTypes.number.isRequired,
+};
 
 function mapStateToProps(state) {
   return { portfolios: state.portfolios };

@@ -30,6 +30,10 @@ $pageColor: #FCFCFC;
   position: fixed;
   z-index: 2;
   width: 100%;
+  .header__home-link {
+    display: inline-block;
+    position: relative;
+  }
   .header__top-bar {
     height: 75px;
     width: 100%;

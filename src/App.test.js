@@ -20,5 +20,5 @@ it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<Provider store={createStoreWithMiddleware(reducers)}>
     <App />
-    </Provider>, div);
+  </Provider>, div);
 });

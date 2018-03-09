@@ -1,66 +1,47 @@
 import React, { Component } from 'react';
-
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-// import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+import { connect } from 'react-redux';
 import About from '../about/about';
 import Footer from '../footer/footer';
-import { connect } from 'react-redux';
 import './landing-page.scss';
-import _ from 'lodash';
-
 
 class LandingPage extends Component {
-  initialPortfolioLoad = true
-  expandPortfolio = true
   constructor(props) {
     super(props);
-
     this.state = {
-      onInitialLoad: false,
-
       activeLink: 'about',
     };
+    this.changeToAbout = this.changeToAbout.bind(this);
+    this.changeToPortfolio = this.changeToPortfolio.bind(this);
   }
 
-  componentDidMount() {
-    const ANIMATION_TIMEOUT = 50;
+  initialPortfolioLoad = true
+  expandPortfolio = true
 
-    requestAnimationFrame(() => {
-      this.setState({ onInitialLoad: true });
-    }, ANIMATION_TIMEOUT);
+  changeToAbout() {
+    this.setState({
+      activeLink: 'about',
+    });
   }
 
-  changeActiveContainer(activeC) {
-
-
-    switch (activeC) {
-      case 'portfolio':
-        this.setState({
-          activeLink: 'portfolio',
-        });
-        this.expandPortfolio = true;
-        break;
-      case 'about':
-        this.setState({
-          activeLink: 'about',
-        });
-        break;
-      default:
-        this.setState({
-          activeLink: 'about',
-        });
-    }
+  changeToPortfolio() {
+    this.setState({
+      activeLink: 'portfolio',
+    });
+    this.expandPortfolio = true;
   }
+
   renderSubSection(type) {
     if (type === 'about') {
       return <About />;
     }
-    return this.renderPortfolio(type);
+    return this.renderPortfolio();
   }
-  renderPortfolio(type) {
-    const portfolio = this.props.portfolios;
-    const portfolioItemClassNames = 'landing-page__portfolio__item  portfolio__item transition-border max-dimensions-is-screen';
 
+  renderPortfolio() {
+    const portfolioItemClassNames = 'landing-page__portfolio__item  portfolio__item transition-border max-dimensions-is-screen';
+    const portfolio = this.props.portfolios;
     const portfolioItems = _.map(portfolio, item => (
       <div className={portfolioItemClassNames}>
         <a href={`portfolio/${item.href}`}>
@@ -98,16 +79,15 @@ class LandingPage extends Component {
 
     return (
       <div className="links links--landing-page">
-
-        <a onClick={this.changeActiveContainer.bind(this, 'about')} className={activeLink === 'about' ? 'links__link is-active' : 'links__link is-inactive'}>
+        <button onClick={this.changeToAbout} className={activeLink === 'about' ? 'links__link is-active' : 'links__link is-inactive'}>
           <h4 className="links__header__text margins--remove-default">About</h4>
-          <img className="links__header__icon" alt="link to about section" src={require('../assets/images/about.svg')} />
-        </a>
+          <img className="links__header__icon" alt="link to about section" src="https://s3.amazonaws.com/jtb-personal-website/images/about.svg" />
+        </button>
         <h4 className="links__divide margins--remove-default">|</h4>
-        <a onClick={this.changeActiveContainer.bind(this, 'portfolio')} className={activeLink === 'portfolio' ? 'links__link is-active' : 'links__link is-inactive'}>
+        <button onClick={this.changeToPortfolio} className={activeLink === 'portfolio' ? 'links__link is-active' : 'links__link is-inactive'}>
           <h4 className="links__header__text margins--remove-default">portfolio</h4>
-          <img className="links__header__icon" alt="link to portfoio section" src={require('../assets/images/portfolio.svg')} />
-        </a>
+          <img className="links__header__icon" alt="link to portfoio section" src="https://s3.amazonaws.com/jtb-personal-website/images/portfolio.svg" />
+        </button>
       </div>
     );
   }
@@ -135,6 +115,10 @@ class LandingPage extends Component {
     );
   }
 }
+
+LandingPage.propTypes = {
+  portfolios: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
+};
 
 function mapStateToProps(state) {
   return { portfolios: state.portfolios };
