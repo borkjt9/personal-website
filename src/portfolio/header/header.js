@@ -104,9 +104,7 @@ class Header extends Component {
               <h4 className="links__header__text margins--remove-default">Home</h4>
               </button>
             </a>
-            <a className="home-link--mobile links__link" href="../portfolio">
-              <img className="links__header__icon" alt="link to portfolio section" src="https://s3.amazonaws.com/jtb-personal-website/images/portfolio.svg" />
-            </a>
+
           </div>
           <div className="text__vert-middle header__portfolio-links">
             <button className="links__link" onClick={this.expandAbout}>
@@ -117,6 +115,9 @@ class Header extends Component {
             <button className="links__link" onClick={this.expandPortfolio}>
               <h4 className="links__header__text margins--remove-default">{this.portfolioLabel}</h4>
             </button>
+            <a className="home-link--mobile links__link" href="../portfolio">
+              <img className="links__header__icon" alt="link to portfolio section" src="https://s3.amazonaws.com/jtb-personal-website/images/portfolio.svg" />
+            </a>
           </div>
         </div>
         {this.state.clearCarousel ? '' : this.renderPortfolio()}

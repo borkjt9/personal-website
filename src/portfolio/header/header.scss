@@ -4,24 +4,31 @@ $underlineHeight: 5%;
 $portfolioItemDimension: 200px;
 $pageColor: #FCFCFC;
 
-@media (min-width: 482px)  {
+@media (min-width: 768px)  {
   .header__home-link {
     left: 10%;
+    display: inline-block;
   }
   .header__portfolio-links {
     right: 10%;
+    margin: 0px auto;
+    display: inline-block;
+    position: relative;
+    float: right;
   }
 
 }
 
-@media (max-width: 481px) {
+@media (max-width: 767px) {
   .header__home-link {
-    left: 20%;
+    display: flex;
   }
   .header__portfolio-links {
-    display: None;
-    width: 0px;
-    right: 20%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+
   }
 }
 
@@ -31,7 +38,6 @@ $pageColor: #FCFCFC;
   z-index: 2;
   width: 100%;
   .header__home-link {
-    display: inline-block;
     position: relative;
   }
   .header__top-bar {
@@ -40,12 +46,6 @@ $pageColor: #FCFCFC;
     border-bottom: 1px solid $borderColor;
   }
 
-    .header__portfolio-links {
-      margin: 0px auto;
-      display: inline-block;
-      position: relative;
-      float: right;
-    }
 
     .header__portfolio {
       box-shadow: #D9D9D9 0px 1px 5px;
