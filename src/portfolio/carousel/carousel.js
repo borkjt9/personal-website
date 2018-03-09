@@ -85,7 +85,7 @@ class Carousel extends Component {
   }
 
   changePortfolioItem(selectedPortfolio) {
-    this.props.onPortfolioChange(selectedPortfolio);
+    this.props.changePortfolioItem(selectedPortfolio);
   }
 
   render() {
@@ -125,7 +125,7 @@ class Carousel extends Component {
 
 Carousel.propTypes = {
   portfolios: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
-  onPortfolioChange: PropTypes.func.isRequired,
+  changePortfolioItem: PropTypes.func.isRequired,
   currentPortfolioIndex: PropTypes.number.isRequired,
   shouldExpand: PropTypes.bool.isRequired,
 };

@@ -20,7 +20,7 @@ class Portfolio extends Component {
     super(props);
     this.handleNextPortfolio = this.handleNextPortfolio.bind(this);
     this.handlePreviousPortfolio = this.handlePreviousPortfolio.bind(this);
-    this.handlePortfolioChange = this.handlePortfolioChange.bind(this);
+    this.changePortfolioItem = this.changePortfolioItem.bind(this);
     this.handlePortfolioToggle = this.handlePortfolioToggle.bind(this);
 
     const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID : '';
@@ -47,14 +47,14 @@ class Portfolio extends Component {
   }
 
   handleNextPortfolio() {
-    this.handlePortfolioChange(this.state.nextPortfolio);
+    this.changePortfolioItem(this.state.nextPortfolio);
   }
 
   handlePreviousPortfolio() {
-    this.handlePortfolioChange(this.state.previousPortfolio);
+    this.changePortfolioItem(this.state.previousPortfolio);
   }
 
-  handlePortfolioChange(newPortfolio) {
+  changePortfolioItem(newPortfolio) {
     this.history.push({
       pathname: newPortfolio,
     });
@@ -140,7 +140,7 @@ class Portfolio extends Component {
         return (
           <div className="margin-top-is-header">
             <PortfolioGrid
-              onPortfolioChange={this.handlePortfolioChange}
+              changePortfolioItem={this.changePortfolioItem}
             />
             <Footer />
           </div>
@@ -186,7 +186,7 @@ class Portfolio extends Component {
         <Header
           currentPortfolioIndex={this.state.currentPortfolioIndex}
           onPortfolioToggle={this.handlePortfolioToggle}
-          onPortfolioChange={this.handlePortfolioChange}
+          changePortfolioItem={this.changePortfolioItem}
         />
         {this.renderSelectedPortfolio()}
         {(this.state.headerExpanded || this.state.selectedPortfolio === 'about' || this.state.selectedPortfolio === '') ? '' : this.renderPortfolioNavs()}

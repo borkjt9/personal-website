@@ -8,7 +8,7 @@ import Carousel from '../carousel/carousel';
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.onPortfolioChange = this.onPortfolioChange.bind(this);
+    this.changePortfolioItem = this.changePortfolioItem.bind(this);
     this.expandPortfolio = this.expandPortfolio.bind(this);
     this.expandAbout = this.expandAbout.bind(this);
 
@@ -19,7 +19,7 @@ class Header extends Component {
   }
 
 
-  onPortfolioChange(selectedPortfolio) {
+  changePortfolioItem(selectedPortfolio) {
     this.portfolioLabel = 'portfolio';
 
     this.setState({
@@ -30,7 +30,7 @@ class Header extends Component {
         clearCarousel: true,
       });
     }, 500);
-    this.props.onPortfolioChange(selectedPortfolio);
+    this.props.changePortfolioItem(selectedPortfolio);
   }
   aboutLabel = 'about';
 
@@ -41,7 +41,7 @@ class Header extends Component {
     this.setState({
       portfolioShouldExpand: false,
     });
-    this.props.onPortfolioChange('about');
+    this.props.changePortfolioItem('about');
   }
 
   expandPortfolio() {
@@ -83,7 +83,7 @@ class Header extends Component {
 
       <div className={portfolioClassNames}>
         <Carousel
-          onPortfolioChange={this.onPortfolioChange}
+          changePortfolioItem={this.changePortfolioItem}
           onPortfolioToggle={this.onPortfolioToggle}
           currentPortfolioIndex={this.props.currentPortfolioIndex}
           shouldExpand={shouldExpand}
@@ -99,14 +99,15 @@ class Header extends Component {
       <div className="header">
         <div className="header__top-bar links">
           <div className="text__vert-middle header__home-link">
-            <button className="home-link--desktop links__link" href="../home">
+            <a  href="../home">
+            <button className="home-link--desktop links__link">
               <h4 className="links__header__text margins--remove-default">Home</h4>
-            </button>
-            <button className="home-link--mobile links__link" href="../portfolio">
+              </button>
+            </a>
+            <a className="home-link--mobile links__link" href="../portfolio">
               <img className="links__header__icon" alt="link to portfolio section" src="https://s3.amazonaws.com/jtb-personal-website/images/portfolio.svg" />
-            </button>
+            </a>
           </div>
-
           <div className="text__vert-middle header__portfolio-links">
             <button className="links__link" onClick={this.expandAbout}>
               <h4 className="links__header__text margins--remove-default">About</h4>
@@ -125,7 +126,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  onPortfolioChange: PropTypes.func.isRequired,
+  changePortfolioItem: PropTypes.func.isRequired,
   onPortfolioToggle: PropTypes.func.isRequired,
   currentPortfolioIndex: PropTypes.number.isRequired,
 };

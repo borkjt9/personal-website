@@ -14,7 +14,7 @@ class PortfolioGrid extends Component {
   }
 
   changePortfolioItem(selectedPortfolio) {
-    this.props.onPortfolioChange(selectedPortfolio);
+    this.props.changePortfolioItem(selectedPortfolio);
   }
 
   renderPortfolioItems() {
@@ -52,6 +52,6 @@ function mapStateToProps(state) {
 }
 
 PortfolioGrid.propTypes = {
-  onPortfolioChange: PropTypes.func.isRequired,
+  changePortfolioItem: PropTypes.func.isRequired,
 };
 export default connect(mapStateToProps)(PortfolioGrid);
