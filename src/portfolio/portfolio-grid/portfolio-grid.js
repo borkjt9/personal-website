@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import map from 'lodash/map';
 
 import PortfolioItem from '../portfolio-item/portfolio-item';
+import portfolioArr from '../../public-objects/portfolio-arr';
 import './portfolio-grid.scss';
 
 
@@ -18,9 +18,7 @@ class PortfolioGrid extends Component {
   }
 
   renderPortfolioItems() {
-    const portfolio = this.props.portfolios;
-
-    const portfolioItems = _.map(portfolio, item => (
+    const portfolioItems = map(portfolioArr, item => (
       <PortfolioItem
         changePortfolioItem={this.changePortfolioItem}
         item={item}
@@ -44,14 +42,6 @@ class PortfolioGrid extends Component {
 }
 
 PortfolioGrid.propTypes = {
-  portfolios: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
-};
-
-function mapStateToProps(state) {
-  return { portfolios: state.portfolios };
-}
-
-PortfolioGrid.propTypes = {
   changePortfolioItem: PropTypes.func.isRequired,
 };
-export default connect(mapStateToProps)(PortfolioGrid);
+export default PortfolioGrid;

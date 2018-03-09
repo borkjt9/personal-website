@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
-import { connect } from 'react-redux';
-import _ from 'lodash';
-import './carousel.scss';
+import map from 'lodash/map';
 import PortfolioItem from '../portfolio-item/portfolio-item';
+import portfolioArr from '../../public-objects/portfolio-arr';
+import './carousel.scss';
+
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -89,13 +90,12 @@ class Carousel extends Component {
   }
 
   render() {
-    const portfolio = this.props.portfolios;
     let shouldExpand = false;
     if (this.props.shouldExpand) {
       shouldExpand = true;
     }
 
-    const portfolioItems = _.map(portfolio, item => (
+    const portfolioItems = map(portfolioArr, item => (
       <div>
         <PortfolioItem
           changePortfolioItem={this.changePortfolioItem}
@@ -124,13 +124,9 @@ class Carousel extends Component {
 }
 
 Carousel.propTypes = {
-  portfolios: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
   changePortfolioItem: PropTypes.func.isRequired,
   currentPortfolioIndex: PropTypes.number.isRequired,
   shouldExpand: PropTypes.bool.isRequired,
 };
 
-function mapStateToProps(state) {
-  return { portfolios: state.portfolios };
-}
-export default connect(mapStateToProps)(Carousel);
+export default Carousel;

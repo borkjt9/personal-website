@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import { connect } from 'react-redux';
+import map from 'lodash/map';
 import About from '../about/about';
 import Footer from '../footer/footer';
+import portfolioArr from '../public-objects/portfolio-arr';
 import './landing-page.scss';
 
 class LandingPage extends Component {
@@ -18,6 +17,7 @@ class LandingPage extends Component {
 
   initialPortfolioLoad = true
   expandPortfolio = true
+  portfolio = portfolioArr;
 
   changeToAbout() {
     this.setState({
@@ -41,8 +41,7 @@ class LandingPage extends Component {
 
   renderPortfolio() {
     const portfolioItemClassNames = 'landing-page__portfolio__item  portfolio__item transition-border max-dimensions-is-screen';
-    const portfolio = this.props.portfolios;
-    const portfolioItems = _.map(portfolio, item => (
+    const portfolioItems = map(this.portfolio, item => (
       <div className={portfolioItemClassNames}>
         <a href={`portfolio/${item.href}`}>
           <img
@@ -116,16 +115,4 @@ class LandingPage extends Component {
   }
 }
 
-LandingPage.propTypes = {
-  portfolios: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)).isRequired,
-};
-
-function mapStateToProps(state) {
-  return { portfolios: state.portfolios };
-}
-
-export default connect(mapStateToProps)(LandingPage);
-// function mapStateToProps(state) {
-//   return {portfolios: state.portfolios };
-// }
-// export default connect(mapStateToProps)(LandingPage);
+export default LandingPage;

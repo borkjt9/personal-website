@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import map from 'lodash/map';
 
 import './bank-of-america.scss';
 
@@ -27,7 +27,7 @@ class BankOfAmerica extends Component {
   summary = "I worked as a financial analyst in Bank of America's Financial Management Program from June 2013 to January 2015. It was my first job out of college. The people were wonderful, the job so-so.\n\nThe running joke in the office my first year was that I had automated myself out of a job by writing VBA scripts to perform 3/4 of my daily tasks. I was just shocked that before me, BAC had found people to perform these tasks every day for years without going crazy."
 
   renderTaskList() {
-    return _.map(this.tasksArray, task => (
+    return map(this.tasksArray, task => (
       <li>
         <p>{task}</p>
       </li>
@@ -35,7 +35,7 @@ class BankOfAmerica extends Component {
   }
 
   renderSkillsList() {
-    const skillsTable = _.map(this.skillsDictionary, (skills, key) => (
+    const skillsTable = map(this.skillsDictionary, (skills, key) => (
       <div className="portfolio-page__skills__row">
         <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
         <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</p>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import map from 'lodash/map';
 
 import './sunrun.scss';
 
@@ -27,7 +27,7 @@ class SunRun extends Component {
 
 
   renderTaskList() {
-    return _.map(this.tasksArray, task => (
+    return map(this.tasksArray, task => (
       <li>
         <p className="portfolio-page__tasks">{task}</p>
       </li>
@@ -35,7 +35,7 @@ class SunRun extends Component {
   }
 
   renderSkillsList() {
-    const skillsTable = _.map(this.skillsDictionary, (skills, key) => (
+    const skillsTable = map(this.skillsDictionary, (skills, key) => (
       <div className="portfolio-page__skills__row">
         <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
         <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</p>

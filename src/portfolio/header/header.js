@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import createHistory from 'history/createBrowserHistory';
-import { connect } from 'react-redux';
-import './header.scss';
 import Carousel from '../carousel/carousel';
+import './header.scss';
 
 class Header extends Component {
   constructor(props) {
@@ -99,9 +98,9 @@ class Header extends Component {
       <div className="header">
         <div className="header__top-bar links">
           <div className="text__vert-middle header__home-link">
-            <a  href="../home">
-            <button className="home-link--desktop links__link">
-              <h4 className="links__header__text margins--remove-default">Home</h4>
+            <a href="../home">
+              <button className="home-link--desktop links__link">
+                <h4 className="links__header__text margins--remove-default">Home</h4>
               </button>
             </a>
 
@@ -132,7 +131,4 @@ Header.propTypes = {
   currentPortfolioIndex: PropTypes.number.isRequired,
 };
 
-function mapStateToProps(state) {
-  return { portfolios: state.portfolios };
-}
-export default connect(mapStateToProps)(Header);
+export default Header;

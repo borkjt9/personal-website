@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
+import map from 'lodash/map';
 
 import './ria-portal.scss';
 
@@ -161,7 +161,7 @@ class RiaPortal extends Component {
   }
 
   renderSkillsList() {
-    const skillsTable = _.map(this.skillsDictionary, (skills, key) => (
+    const skillsTable = map(this.skillsDictionary, (skills, key) => (
       <div className="portfolio-page__skills__row">
         <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
         <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</p>
