@@ -140,7 +140,8 @@ class Portfolio extends Component {
         return (
           <div className="margin-top-is-header">
             <PortfolioGrid
-              onPortfolioChange={this.handlePortfolioChange}/>
+              onPortfolioChange={this.handlePortfolioChange}
+            />
             <Footer />
           </div>
         );

@@ -4,7 +4,7 @@ import './portfolio-item.scss';
 
 const PortfolioItem = (props) => {
   function changePortfolioItem() {
-    console.log('portfolio item props', props)
+    console.log('portfolio item props', props);
     props.changePortfolioItem(props.item.href);
   }
   function renderPortfolioItemText() {

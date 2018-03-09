@@ -8,7 +8,6 @@ import './portfolio-grid.scss';
 
 
 class PortfolioGrid extends Component {
-
   constructor(props) {
     super(props);
     this.changePortfolioItem = this.changePortfolioItem.bind(this);
@@ -51,4 +50,8 @@ PortfolioGrid.propTypes = {
 function mapStateToProps(state) {
   return { portfolios: state.portfolios };
 }
+
+PortfolioGrid.propTypes = {
+  onPortfolioChange: PropTypes.func.isRequired,
+};
 export default connect(mapStateToProps)(PortfolioGrid);

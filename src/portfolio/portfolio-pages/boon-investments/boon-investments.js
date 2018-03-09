@@ -118,9 +118,9 @@ class BoonInvestments extends Component {
             <h3>{this.designCaption}</h3>
             <p className="portfolio-page__section__body__description">{this.designBody}</p>
           </div>
-          <div class="boon-investments__wireframe">
+          <div className="boon-investments__wireframe">
             <a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe.jpg">
-            {/* onClick={this.toggleWireframe} className="boon-investments__wireframe"> */}
+              {/* onClick={this.toggleWireframe} className="boon-investments__wireframe"> */}
               <img
                 alt="thumbnail of the design wireframe for the boon investments application"
                 className="boon-investments__design__wireframe__image transition-border"

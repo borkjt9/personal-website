@@ -98,12 +98,15 @@ class Header extends Component {
     return (
       <div className="header">
         <div className="header__top-bar links">
-          <a className="text__vert-middle header__home-link home-link--desktop links__link" href="../home">
-            <h4 className="links__header__text margins--remove-default">Home</h4>
-          </a>
-          <a className="text__vert-middle header__home-link home-link--mobile links__link" href="../portfolio">
-            <img className="links__header__icon" alt="link to portfolio section" src="https://s3.amazonaws.com/jtb-personal-website/images/portfolio.svg" />
-          </a>
+          <div className="text__vert-middle header__home-link">
+            <button className="home-link--desktop links__link" href="../home">
+              <h4 className="links__header__text margins--remove-default">Home</h4>
+            </button>
+            <button className="home-link--mobile links__link" href="../portfolio">
+              <img className="links__header__icon" alt="link to portfolio section" src="https://s3.amazonaws.com/jtb-personal-website/images/portfolio.svg" />
+            </button>
+          </div>
+
           <div className="text__vert-middle header__portfolio-links">
             <button className="links__link" onClick={this.expandAbout}>
               <h4 className="links__header__text margins--remove-default">About</h4>
