@@ -99,9 +99,8 @@ class Header extends Component {
         <div className="header__top-bar links">
           <div className="text__vert-middle header__home-link">
             <a href="../home">
-              <button className="home-link--desktop links__link">
-                <h4 className="links__header__text margins--remove-default">Home</h4>
-              </button>
+                {/* <h4 className="links__header__text margins--remove-default">Home</h4> */}
+                <img className="links__header__home" alt="link to about section" src="https://s3.amazonaws.com/jtb-personal-website/images/home.svg"/>
             </a>
 
           </div>

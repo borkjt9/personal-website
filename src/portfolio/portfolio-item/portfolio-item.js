@@ -4,7 +4,6 @@ import './portfolio-item.scss';
 
 const PortfolioItem = (props) => {
   function changePortfolioItem() {
-    console.log('portfolio item props', props);
     props.changePortfolioItem(props.item.href);
   }
   function renderPortfolioItemText() {
@@ -55,10 +54,14 @@ const PortfolioItem = (props) => {
   } : {};
 
   const slickSlideStyle = props.isCarousel ? { minHeight: '0' } : {};
+  let itemLink = `${props.item.href}`
+  if (props.fromLandingPage) {
+    itemLink = `portfolio/${props.item.href}`
+  }
   return (
     <div style={slickSlideStyle} >
       <div className={portfolioItemClassNames} style={portfolioItemStyle} >
-        <button onClick={changePortfolioItem} >
+        <a href={itemLink} >
           <img
             alt={`${props.item.name}`}
             className="portfolio__item__image"
@@ -69,7 +72,7 @@ const PortfolioItem = (props) => {
             sizes="(max-width: 250px) 95vw, 250px"
           />
           {renderPortfolioItemText()}
-        </button>
+        </a>
       </div>
     </div>
   );

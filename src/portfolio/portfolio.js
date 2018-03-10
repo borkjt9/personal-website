@@ -24,7 +24,7 @@ class Portfolio extends Component {
     this.handlePortfolioToggle = this.handlePortfolioToggle.bind(this);
 
     const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID : '';
-
+    console.log('selected portfolio: ', selectedPortfolio)
     this.state = {
       selectedPortfolio,
       nextPortfolio: this.navRefs[selectedPortfolio].nref,
@@ -32,6 +32,7 @@ class Portfolio extends Component {
       currentPortfolioIndex: this.navRefs[selectedPortfolio].index,
       headerExpanded: false,
     };
+    console.log('state next portfolio: ', this.state.nextPortfolio)
   }
 
   componentDidUpdate() {
@@ -47,6 +48,7 @@ class Portfolio extends Component {
   }
 
   handleNextPortfolio() {
+    console.log('this state, ', this.state.nextPortfolio)
     this.changePortfolioItem(this.state.nextPortfolio);
   }
 
@@ -55,6 +57,7 @@ class Portfolio extends Component {
   }
 
   changePortfolioItem(newPortfolio) {
+    console.log('new portfolio', newPortfolio)
     this.history.push({
       pathname: newPortfolio,
     });
@@ -149,9 +152,10 @@ class Portfolio extends Component {
   }
 
   renderPortfolioNavs() {
+    console.log('re rendering navs: ')
     return (
       <div className="portfolio__nav">
-        <button onClick={this.handleNextPortfolio} className="portfolio__nav__link portfolio__nav__link--previous">
+        <button onClick={this.handlePreviousPortfolio} className="portfolio__nav__link portfolio__nav__link--previous">
           <img
             alt="When clicked, the view will show the next portfolio page."
             className="portfolio__nav__chevron"
@@ -164,7 +168,7 @@ class Portfolio extends Component {
           <h5 className="portfolio__nav__link__title">Previous Project</h5>
         </button>
 
-        <button onClick={this.handlePreviousPortfolio} className="portfolio__nav__link portfolio__nav__link--next">
+        <button onClick={this.handleNextPortfolio} className="portfolio__nav__link portfolio__nav__link--next">
           <h5 className="portfolio__nav__link__title">Next Project</h5>
           <img
             alt="When clicked, the view will show the previous portfolio page."

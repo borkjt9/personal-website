@@ -7,6 +7,7 @@ $pageColor: #FCFCFC;
   .links__header__icon {
     display: none;
   }
+
   .home-link--mobile {
     display: none;
   }
@@ -40,7 +41,7 @@ $pageColor: #FCFCFC;
     img:hover{
       opacity: 1;
     }
-    
+
     &.is-active {
       img {
           opacity: 1;
@@ -60,6 +61,10 @@ $pageColor: #FCFCFC;
   }
 
   .home-link--desktop {
+    display: none;
+  }
+
+  .links__header__home {
     display: none;
   }
 
@@ -107,6 +112,13 @@ $pageColor: #FCFCFC;
   .links__header__icon {
     height: 30px;
     opacity: 0.5;
+  }
+  .links__header__home{
+    height: 35px;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 

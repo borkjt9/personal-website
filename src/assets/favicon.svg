@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51px" height="51px" viewBox="0 0 51 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>favicon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="favicon">
+            <rect id="Rectangle-6" fill="#FCFCFC" x="0" y="0" width="51" height="51" rx="8"></rect>
+            <text id="B" font-family="Avenir-Heavy, Avenir" font-size="54" font-weight="600" letter-spacing="14" fill="#636363">
+                <tspan x="15" y="40.8999996">B</tspan>
+            </text>
+            <text id="J" font-family="Avenir-Heavy, Avenir" font-size="54" font-weight="600" letter-spacing="14" fill="#636363">
+                <tspan x="3.05000019" y="47.6999998">J</tspan>
+            </text>
+            <rect id="Rectangle-7" fill="#636363" x="10" y="2.67000008" width="12" height="5.80000019"></rect>
+        </g>
+    </g>
+</svg>

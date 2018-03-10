@@ -10,6 +10,7 @@ import './portfolio-grid.scss';
 class PortfolioGrid extends Component {
   constructor(props) {
     super(props);
+    console.log('portfolio grid props', props.fromLandingPage);
     this.changePortfolioItem = this.changePortfolioItem.bind(this);
   }
 
@@ -22,6 +23,7 @@ class PortfolioGrid extends Component {
       <PortfolioItem
         changePortfolioItem={this.changePortfolioItem}
         item={item}
+        fromLandingPage={this.props.fromLandingPage}
       />
     ));
 
@@ -41,7 +43,11 @@ class PortfolioGrid extends Component {
   }
 }
 
+PortfolioGrid.defaultProps = {
+  fromLandingPage: false,
+}
 PortfolioGrid.propTypes = {
   changePortfolioItem: PropTypes.func.isRequired,
+  fromLandingPage: PropTypes.bool
 };
 export default PortfolioGrid;
