@@ -1,36 +1,13 @@
 import React, { Component } from 'react';
-import map from 'lodash/map';
+import renderSkillsList from '../common-objects/skills-list';
+import renderTimeline from '../common-objects/timeline';
+import renderSummary from '../common-objects/summary';
+import renderBanner from '../common-objects/banner';
 
 import './white-label-apps.scss';
 
-function renderTimeline() {
-  return (
-    <div className="portfolio-page__section white-label-apps__timeline">
-      <h2 className="portfolio-page__section__title">Progress</h2>
-      <img
-        alt="timeline showing the progress of Boon's white label apps"
-        className="white-label-apps__timeline__image timeline__image--desktop"
-        src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-desktop-800.jpg"
-        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-desktop-400.jpg 400w,
-        https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-desktop-800.jpg 800w,
-        https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-desktop-1600.jpg 1600w"
-        sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
-      />
-      <img
-        alt="timeline showing the progress of Boon's white label apps"
-        className="white-label-apps__timeline__image timeline__image--mobile"
-        src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-800.jpg"
-        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-400.jpg 400w,
-        https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-800.jpg 800w,
-        https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-timeline-mobile-1600.jpg 1600w"
-        sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
-      />
-    </div>
-  );
-}
-
 class WhiteLabelApps extends Component {
-  summary = 'While CEO of Boon Investments, my team developed multiple white-label applications to pair with our B2B SaaS offering to traditional investment management firms.\n\nAs CEO, I was responsible for negotiating contracts, designing and developing the core white-label template for iOS, and managing the project timelines for the applications we built for partners.';
+  summaryBody = 'While CEO of Boon Investments, my team developed multiple white-label applications to pair with our B2B SaaS offering to traditional investment management firms.\n\nAs CEO, I was responsible for negotiating contracts, designing and developing the core white-label template for iOS, and managing the project timelines for the applications we built for partners.';
   osharesCaption = 'OShares ETF Investment';
   osharesBody = "Beanstox is an application my team built for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the Beanstox app, we designed a custom user signup process which incorporated O'Shares' internal investment methodology.";
   astorCaption = 'Astor Investment Management';
@@ -41,25 +18,6 @@ class WhiteLabelApps extends Component {
     Technology: ['Xcode', 'Sketch', 'AWS Lambda'],
     General: ['Product Management', 'Design', 'Partnerships', 'Contracts'],
   };
-
-  renderSkillsList() {
-    const skillsTable = map(this.skillsDictionary, (skills, key) => (
-      <div className="portfolio-page__skills__row">
-        <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
-        <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</p>
-      </div>
-    ));
-
-    return (
-
-      <div className="portfolio-page__section portfolio-page__skills">
-        <h2 className="portfolio-page__section__title">Skills</h2>
-        <div className="portfolio-page__skills__table">
-          {skillsTable}
-        </div>
-      </div>
-    );
-  }
 
   renderOsharesSection() {
     const oSharesTitle = "Beanstox by O'Shares";
@@ -116,27 +74,12 @@ class WhiteLabelApps extends Component {
     return (
       <div className="portfolio-page white-label-apps">
         <div className="portfolio-page__body">
-          <div className="portfolio-page__banner">
-            <h1 className="portfolio-page__banner__title">White Label Apps</h1>
-            <img
-              alt="a person holding their iphone showing the Beanstox app on the screen"
-              className="portfolio-page__banner__image"
-              src="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-800.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-400.jpg 400w,
-              https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-800.jpg 800w,
-              https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-1200.jpg 1200w,
-              https://s3.amazonaws.com/jtb-personal-website/images/white-label-apps-banner-1600.jpg 1600w"
-              sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
-            />
-          </div>
-          <div className="portfolio-page__section">
-            <h2 className="portfolio-page__section__title">Summary</h2>
-            <p className="portfolio-page__section__body">{this.summary}</p>
-          </div>
+          {renderBanner('white-label-apps', 'white label apps')}
+          {renderSummary(this.summaryBody)}
           {this.renderAstorSection()}
           {this.renderOsharesSection()}
-          {renderTimeline()}
-          {this.renderSkillsList()}
+          {renderTimeline('white-label-apps')}
+          {renderSkillsList(this.skillsDictionary)}
         </div>
       </div>
     );

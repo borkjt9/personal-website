@@ -1,33 +1,9 @@
 import React, { Component } from 'react';
-import map from 'lodash/map';
-
+import renderSkillsList from '../common-objects/skills-list';
+import renderTimeline from '../common-objects/timeline';
+import renderSummary from '../common-objects/summary';
+import renderBanner from '../common-objects/banner';
 import './boon-investments.scss';
-
-function renderTimeline() {
-  return (
-    <div className="portfolio-page__section boon-investments__timeline">
-      <h2 className="portfolio-page__section__title">Progress</h2>
-      <img
-        alt="timeline of Boon Investments' progress over the last year"
-        className="boon-investments__timeline__image timeline__image--desktop"
-        src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-800.jpg"
-        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-400.jpg 400w,
-        https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-800.jpg 800w,
-        https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-desktop-1600.jpg 1600w"
-        sizes="(max-width: 800px) 100vw, 800px"
-      />
-      <img
-        alt="timeline of Boon Investments' progress over the last year"
-        className="boon-investments__timeline__image timeline__image--mobile"
-        src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-800.jpg"
-        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-400.jpg 400w,
-        https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-800.jpg 800w,
-        https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-timeline-mobile-1600.jpg 1600w"
-        sizes="(max-width: 800px) 100vw, 800px"
-      />
-    </div>
-  );
-}
 
 class BoonInvestments extends Component {
   constructor(props) {
@@ -187,60 +163,17 @@ class BoonInvestments extends Component {
     );
   }
 
-  renderSummarySection() {
-    return (
-      <div className="portfolio-page__section portfolio-page__summary">
-        <h2 className="portfolio-page__section__title">Summary</h2>
-        <p className="portfolio-page__section__body">
-          {this.summaryBody}
-        </p>
-      </div>
-    );
-  }
-
-  renderSkillsList() {
-    const skillsTable = map(this.skillsDictionary, (skills, key) => (
-      <div className="portfolio-page__skills__row">
-        <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
-        <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</p>
-      </div>
-    ));
-
-    return (
-
-      <div className="portfolio-page__section portfolio-page__skills">
-        <h2 className="portfolio-page__section__title">Skills</h2>
-        <div className="portfolio-page__skills__table">
-          {skillsTable}
-        </div>
-      </div>
-    );
-  }
-
-
   render() {
     return (
       <div className="portfolio-page boon-investments">
         <div className="portfolio-page__body">
-          <div className="portfolio-page__banner">
-            <h1 className="portfolio-page__banner__title">Boon Investments</h1>
-            <img
-              alt="a person holding their iphone with the Boon Investments app open"
-              className="portfolio-page__banner__image"
-              src="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-800.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-400.jpg 400w,
-              https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-800.jpg 800w,
-              https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-1200.jpg 1200w,
-              https://s3.amazonaws.com/jtb-personal-website/images/boon-investments-banner-1600.jpg 1600w"
-              sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
-            />
-          </div>
-          {this.renderSummarySection()}
+          {renderBanner('boon-investments', 'boon investments')}
+          {renderSummary(this.summaryBody)}
           {this.renderDesignSection()}
           {this.renderProductSection()}
           {this.renderInvestmentSection()}
-          {renderTimeline()}
-          {this.renderSkillsList()}
+          {renderTimeline('boon-investments')}
+          {renderSkillsList(this.skillsDictionary)}
         </div>
         {this.renderZoomedWireframe()}
       </div>

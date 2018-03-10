@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import map from 'lodash/map';
+import renderSkillsList from '../common-objects/skills-list';
+import renderSummary from '../common-objects/summary';
+import renderBanner from '../common-objects/banner';
 
 import './bank-of-america.scss';
 
@@ -24,34 +26,7 @@ class BankOfAmerica extends Component {
 
   stressTestingDescription = "During my time at Bank of America, I did have some real finance work as well.\n\nIn my first year, I was primarily responsible for analyzing the drivers to variances in BAC's NII/NIM forecast through time. \n\nIn my second year, I calculated the hypothetical impacts to BAC’s commercial allowance as a result of the Federal Reserve’s Stress Tests."
 
-  summary = "I worked as a financial analyst in Bank of America's Financial Management Program from June 2013 to January 2015. It was my first job out of college. The people were wonderful, the job so-so.\n\nThe running joke in the office my first year was that I had automated myself out of a job by writing VBA scripts to perform 3/4 of my daily tasks. I was just shocked that before me, BAC had found people to perform these tasks every day for years without going crazy."
-
-  renderTaskList() {
-    return map(this.tasksArray, task => (
-      <li>
-        <p>{task}</p>
-      </li>
-    ));
-  }
-
-  renderSkillsList() {
-    const skillsTable = map(this.skillsDictionary, (skills, key) => (
-      <div className="portfolio-page__skills__row">
-        <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
-        <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</p>
-      </div>
-    ));
-
-    return (
-
-      <div className="portfolio-page__section portfolio-page__skills">
-        <h2 className="portfolio-page__section__title">Skills</h2>
-        <div className="portfolio-page__skills__table">
-          {skillsTable}
-        </div>
-      </div>
-    );
-  }
+  summaryBody = "I worked as a financial analyst in Bank of America's Financial Management Program from June 2013 to January 2015. It was my first job out of college. The people were wonderful, the job so-so.\n\nThe running joke in the office my first year was that I had automated myself out of a job by writing VBA scripts to perform 3/4 of my daily tasks. I was just shocked that before me, BAC had found people to perform these tasks every day for years without going crazy."
 
   renderAutomation() {
     return (
@@ -107,32 +82,11 @@ class BankOfAmerica extends Component {
     return (
       <div className="portfolio-page bac">
         <div className="portfolio-page__body">
-          <div className="portfolio-page__banner">
-            <img
-              alt="The Bank of America logo banner"
-              className="portfolio-page__banner__image"
-              src="https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-800.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-400.jpg 400w,
-              https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-800.jpg 800w,
-              https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-1200.jpg 1200w,
-              https://s3.amazonaws.com/jtb-personal-website/images/bank-of-america-banner-1600.jpg 1600w"
-              sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
-            />
-          </div>
-          <div className="portfolio-page__section">
-            <h2 className="portfolio-page__section__title">Summary</h2>
-            <p className="portfolio-page__section__body">{this.summary}</p>
-          </div>
-          {/* <div className="portfolio-page__section">
-            <h2 className="portfolio-page__section__title">Tasks</h2>
-            <ul className="bac__tasks">
-              {this.renderTaskList()}
-            </ul>
-          </div> */}
+          {renderBanner('bank-of-america')}
+          {renderSummary(this.summaryBody)}
           {this.renderAutomation()}
-          {/* {this.renderRiskManagement()} */}
           {this.renderStressTesting()}
-          {this.renderSkillsList()}
+          {renderSkillsList(this.skillsDictionary)}
         </div>
       </div>
     );
