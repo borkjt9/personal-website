@@ -28,15 +28,16 @@ class PortfolioGrid extends Component {
     ));
 
     return (
-      <div className="portfolio portfolio--wrapped landing-page__portfolio justify-content-around">
+      <div className="portfolio portfolio--wrapped portfolio-grid justify-content-around">
         {portfolioItems}
       </div>
     );
   }
 
   render() {
+    const portfolioGridStyle = this.props.fromLandingPage ? {}: {marginTop: '115px'}
     return (
-      <div className="portfolio-grid" style={{ marginTop: '75px' }}>
+      <div className="portfolio-grid" style={portfolioGridStyle}>
         {this.renderPortfolioItems()}
       </div>
     );

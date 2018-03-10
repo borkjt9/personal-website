@@ -39,7 +39,7 @@ const PortfolioItem = (props) => {
       portfolioItemClassNames += ' is-minimizing';
     }
   } else {
-    portfolioItemClassNames += ' landing-page__portfolio__item';
+    portfolioItemClassNames += ' portfolio-grid__portfolio__item';
   }
 
   const portfolioItemStyle = props.isCarousel ? {
