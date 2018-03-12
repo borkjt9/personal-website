@@ -24,7 +24,6 @@ class Portfolio extends Component {
     this.handlePortfolioToggle = this.handlePortfolioToggle.bind(this);
 
     const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID : '';
-    console.log('selected portfolio: ', selectedPortfolio)
     this.state = {
       selectedPortfolio,
       nextPortfolio: this.navRefs[selectedPortfolio].nref,
@@ -32,7 +31,6 @@ class Portfolio extends Component {
       currentPortfolioIndex: this.navRefs[selectedPortfolio].index,
       headerExpanded: false,
     };
-    console.log('state next portfolio: ', this.state.nextPortfolio)
   }
 
   componentDidUpdate() {

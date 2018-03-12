@@ -2,7 +2,68 @@ $underlineColor: #636363;
 $underlineHeight: 5%;
 $pageColor: #FCFCFC;
 
+.landingPage--isScrolling {
+  padding-top: 125px;
+
+}
+
 .landing-page {
+
+  top: 125px;
   position: absolute;
-   top: 15%;
+   .landing-page__header--notScrolling {
+     .landing-page__header__home__icon {
+       display: none;
+     }
+
+     .landing-page__header__links {
+       margin-top: 40px;
+       margin-bottom: 40px;
+       margin-left: auto;
+       margin-right: auto;
+       display: flex;
+       right: 10%;
+       max-width: 300px;
+       width: 100%;
+       justify-content: space-around;
+     }
+   }
+
+   .landing-page__header {
+     .landing-page__header__links {
+       transition: all 0.2s ease-in-out;
+
+     }
+   }
+
+   .landing-page__header--isScrolling {
+     background: white;
+     border-bottom: 1px solid #D9D9D9;
+     height: 75px;
+
+     .landing-page__header__home__link {
+       display: inline;
+       left: 10%;
+       text-align: left;
+       position: absolute;
+       cursor: pointer;
+       opacity: 0.8;
+       &:hover {
+         opacity: 1.0;
+       }
+       .landing-page__header__home__icon {
+         width: 35px;
+       }
+       .landing-page__header__home__text {
+         display: none;
+       }
+     }
+
+     .landing-page__header__links {
+       margin: auto;
+       position: absolute;
+       right: 10%;
+     }
+
+   }
 }

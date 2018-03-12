@@ -1,3 +1,10 @@
+.fixed {
+  width: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+}
 .vert-center {
   display: table;
 
