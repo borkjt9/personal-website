@@ -78,7 +78,7 @@ class AutoPOOL extends Component {
     return (
       <div className="portfolio-page autopool">
         <div className="portfolio-page__body">
-          {renderBanner('autopool')}
+          {renderBanner('autopool', 'autoPOOL')}
           {renderSummary(this.summaryBody)}
           {this.renderProductSection()}
           {renderSkillsList(this.skillsDictionary)}

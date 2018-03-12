@@ -84,7 +84,7 @@ class SunRun extends Component {
     return (
       <div className="sunrun portfolio-page">
         <div className="portfolio-page__body">
-          {renderBanner('sunrun', 'sunrun')}
+          {renderBanner('sunrun')}
           {renderSummary(this.summaryBody)}
           {this.renderFinancialModeling()}
           {this.renderIPO()}
