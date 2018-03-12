@@ -9,7 +9,7 @@ $pageColor: #FCFCFC;
   transition: box-shadow ease-in-out 0.1s, border-top ease-in-out 0.1s, border-bottom ease-in-out 0.1s;
   &:hover {
     box-shadow: #999 0 3px 15px !important;
-    border-bottom: solid $underlineColor 3px;
-    border-top: solid $pageColor 0px !important;
+    border-bottom: solid white 3px;
+    border-top: solid white 0px !important;
   }
 }

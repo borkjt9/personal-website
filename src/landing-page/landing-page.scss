@@ -39,6 +39,8 @@ $pageColor: #FCFCFC;
    .landing-page__header--isScrolling {
      background: white;
      border-bottom: 1px solid #D9D9D9;
+     box-shadow: #D9D9D9 0px 0px 5px;
+
      height: 75px;
 
      .landing-page__header__home__link {
