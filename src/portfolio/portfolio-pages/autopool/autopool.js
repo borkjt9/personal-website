@@ -29,10 +29,10 @@ class AutoPOOL extends Component {
           <img
             alt="autopool screen that lets you set your destination and current location"
             className="autopool__product__iphone-image"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/autopool-side-ride-400.jpg"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/autopool-set-ride-200.jpg 200w,
-              https://s3.amazonaws.com/jtb-personal-website/images/autopool-set-ride-400.jpg 400w,
-              https://s3.amazonaws.com/jtb-personal-website/images/autopool-set-ride-600.jpg 600w"
+            src="https://johnborkowski.me/images/autopool-side-ride-400.jpg"
+            srcSet="https://johnborkowski.me/images/autopool-set-ride-200.jpg 200w,
+              https://johnborkowski.me/images/autopool-set-ride-400.jpg 400w,
+              https://johnborkowski.me/images/autopool-set-ride-600.jpg 600w"
             sizes="(max-width: 200px) 95vw, 200px"
           />
           <div className="autopool__product__text">
@@ -48,10 +48,10 @@ class AutoPOOL extends Component {
           <img
             alt="autopool screen that creates your alert"
             className="autopool__product__iphone-image"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/autopool-create-alert-400.jpg"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/autopool-create-alert-200.jpg 200w,
-            https://s3.amazonaws.com/jtb-personal-website/images/autopool-create-alert-400.jpg 400w,
-            https://s3.amazonaws.com/jtb-personal-website/images/autopool-create-alert-600.jpg 600w"
+            src="https://johnborkowski.me/images/autopool-create-alert-400.jpg"
+            srcSet="https://johnborkowski.me/images/autopool-create-alert-200.jpg 200w,
+            https://johnborkowski.me/images/autopool-create-alert-400.jpg 400w,
+            https://johnborkowski.me/images/autopool-create-alert-600.jpg 600w"
             sizes="(max-width: 200px) 95vw, 200px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
           />
         </div>
@@ -59,10 +59,10 @@ class AutoPOOL extends Component {
           <img
             alt="iphone homescreen showing a push notification sent from autopool"
             className="autopool__product__iphone-image"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/autopool-receive-alert-400.jpg"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/autopool-receive-alert-200.jpg 200w,
-            https://s3.amazonaws.com/jtb-personal-website/images/autopool-receive-alert-400.jpg 400w,
-            https://s3.amazonaws.com/jtb-personal-website/images/autopool-receive-alert-600.jpg 600w"
+            src="https://johnborkowski.me/images/autopool-receive-alert-400.jpg"
+            srcSet="https://johnborkowski.me/images/autopool-receive-alert-200.jpg 200w,
+            https://johnborkowski.me/images/autopool-receive-alert-400.jpg 400w,
+            https://johnborkowski.me/images/autopool-receive-alert-600.jpg 600w"
             sizes="(max-width: 200px) 95vw, 200px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
           />
           <div className="autopool__product__text">

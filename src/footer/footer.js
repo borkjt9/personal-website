@@ -13,7 +13,7 @@ const Footer = () => (
         <h5 className="footer-link__name">LinkedIn</h5>
       </span>
       <span className="footer-link">
-        <a className="resume footer-link__image" href="https://s3.amazonaws.com/jtb-personal-website/pdfs/resume-john-borkowski.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a className="resume footer-link__image" href="https://johnborkowski.me/pdfs/resume-john-borkowski.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
         <h5 className="footer-link__name">Resume</h5>
       </span>
       <span className="footer-link">

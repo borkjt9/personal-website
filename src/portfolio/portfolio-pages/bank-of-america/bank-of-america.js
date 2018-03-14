@@ -36,11 +36,11 @@ class BankOfAmerica extends Component {
           <img
             alt="depicts the automation of labor intensive tasks to code"
             className="bac__automation__image"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/automation-800.jpg"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/automation-400.jpg 400w,
-            https://s3.amazonaws.com/jtb-personal-website/images/automation-800.jpg 800w,
-            https://s3.amazonaws.com/jtb-personal-website/images/automation-1200.jpg 1200w,
-            https://s3.amazonaws.com/jtb-personal-website/images/automation-1600.jpg 1600w"
+            src="https://johnborkowski.me/images/automation-800.jpg"
+            srcSet="https://johnborkowski.me/images/automation-400.jpg 400w,
+            https://johnborkowski.me/images/automation-800.jpg 800w,
+            https://johnborkowski.me/images/automation-1200.jpg 1200w,
+            https://johnborkowski.me/images/automation-1600.jpg 1600w"
             sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
           />
         </div>
@@ -62,11 +62,11 @@ class BankOfAmerica extends Component {
             <img
               alt="Janet Yellen. The GOAT."
               className="bac__stressTesting__image"
-              src="https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-450.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-225.jpg 225w,
-              https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-450.jpg 450w,
-              https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-900.jpg 900w,
-              https://s3.amazonaws.com/jtb-personal-website/images/janet-yellen-1350.jpg 1350w"
+              src="https://johnborkowski.me/images/janet-yellen-450.jpg"
+              srcSet="https://johnborkowski.me/images/janet-yellen-225.jpg 225w,
+              https://johnborkowski.me/images/janet-yellen-450.jpg 450w,
+              https://johnborkowski.me/images/janet-yellen-900.jpg 900w,
+              https://johnborkowski.me/images/janet-yellen-1350.jpg 1350w"
               sizes="(max-width: 450px) 100vw, 450px"
             />
             <h5 className="bac__stressTesting__imageDescription">Janet Yellen. Cultural Icon.</h5>

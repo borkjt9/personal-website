@@ -47,10 +47,10 @@ class RiaPortal extends Component {
           <img
             alt="the ria portal depicting a client's allocation"
             className="ria-portal__product__portal-image"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-1-600.jpg"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-1-300.jpg 300w,
-            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-1-600.jpg 600w,
-            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-1-900.jpg 900w"
+            src="https://johnborkowski.me/images/ria-portal-1-600.jpg"
+            srcSet="https://johnborkowski.me/images/ria-portal-1-300.jpg 300w,
+            https://johnborkowski.me/images/ria-portal-1-600.jpg 600w,
+            https://johnborkowski.me/images/ria-portal-1-900.jpg 900w"
             sizes="(max-width: 300px) 100vw, 300px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
           />
           <div className="ria-portal__product__text">
@@ -66,10 +66,10 @@ class RiaPortal extends Component {
           <img
             alt="the ria portal depicting a top-down report of the partner's business"
             className="ria-portal__product__portal-image"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-2-600.jpg"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-2-300.jpg 300w,
-            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-2-600.jpg 600w,
-            https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-2-900.jpg 900w"
+            src="https://johnborkowski.me/images/ria-portal-2-600.jpg"
+            srcSet="https://johnborkowski.me/images/ria-portal-2-300.jpg 300w,
+            https://johnborkowski.me/images/ria-portal-2-600.jpg 600w,
+            https://johnborkowski.me/images/ria-portal-2-900.jpg 900w"
             sizes="(max-width: 300px) 100vw, 300px"
           />
         </div>
@@ -88,14 +88,14 @@ class RiaPortal extends Component {
             <p className="portfolio-page__section__body__description">{this.designBody}</p>
           </div>
           <div className="ria-portal__wireframe">
-            <a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe.jpg">
+            <a target="_blank" rel="noopener noreferrer" href="https://johnborkowski.me/images/ria-portal-wireframe.jpg">
               <img
                 alt="thumbail of the design wireframe for the ria portal"
                 className="ria-portal__design__wireframe__image transition-border"
-                src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-600.jpg"
-                srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-300.jpg 300w,
-                  https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-600.jpg 600w,
-                  https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe-thumbnail-900.jpg 900w"
+                src="https://johnborkowski.me/images/ria-portal-wireframe-thumbnail-600.jpg"
+                srcSet="https://johnborkowski.me/images/ria-portal-wireframe-thumbnail-300.jpg 300w,
+                  https://johnborkowski.me/images/ria-portal-wireframe-thumbnail-600.jpg 600w,
+                  https://johnborkowski.me/images/ria-portal-wireframe-thumbnail-900.jpg 900w"
                 sizes="(max-width: 300px) 100vw, 300px"
               />
               <h5 className="ria-portal__design__wireframe__description">Click to expand</h5>
@@ -114,7 +114,7 @@ class RiaPortal extends Component {
           <img
             alt="design wireframe for the ria portal"
             className="portfolio-page__wireframe-modal__content"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/ria-portal-wireframe.png"
+            src="https://johnborkowski.me/images/ria-portal-wireframe.png"
           />
           <button onClick={this.toggleWireframe} className="portfolio-page__wireframe-modal__close-wrapper">
             <span className="portfolio-page__wireframe-modal__close-wrapper__close">&times;</span>

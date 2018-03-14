@@ -46,7 +46,7 @@ class Portfolio extends Component {
   }
 
   handleNextPortfolio() {
-    console.log('this state, ', this.state.nextPortfolio)
+    console.log('this state, ', this.state.nextPortfolio);
     this.changePortfolioItem(this.state.nextPortfolio);
   }
 
@@ -55,7 +55,7 @@ class Portfolio extends Component {
   }
 
   changePortfolioItem(newPortfolio) {
-    console.log('new portfolio', newPortfolio)
+    console.log('new portfolio', newPortfolio);
     this.history.push({
       pathname: newPortfolio,
     });
@@ -150,17 +150,17 @@ class Portfolio extends Component {
   }
 
   renderPortfolioNavs() {
-    console.log('re rendering navs: ')
+    console.log('re rendering navs: ');
     return (
       <div className="portfolio__nav">
         <button onClick={this.handlePreviousPortfolio} className="portfolio__nav__link portfolio__nav__link--previous">
           <img
             alt="When clicked, the view will show the next portfolio page."
             className="portfolio__nav__chevron"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-20.png 20w,
-            https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png 40w,
-            https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-60.png 60w"
+            src="https://johnborkowski.me/images/left-chevron-40.png"
+            srcSet="https://johnborkowski.me/images/left-chevron-20.png 20w,
+            https://johnborkowski.me/images/left-chevron-40.png 40w,
+            https://johnborkowski.me/images/left-chevron-60.png 60w"
             sizes="20px"
           />
           <h5 className="portfolio__nav__link__title">Previous Project</h5>
@@ -171,10 +171,10 @@ class Portfolio extends Component {
           <img
             alt="When clicked, the view will show the previous portfolio page."
             className="portfolio__nav__chevron"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-20.png 20w,
-            https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png 40w,
-            https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-60.png 60w"
+            src="https://johnborkowski.me/images/right-chevron-40.png"
+            srcSet="https://johnborkowski.me/images/right-chevron-20.png 20w,
+            https://johnborkowski.me/images/right-chevron-40.png 40w,
+            https://johnborkowski.me/images/right-chevron-60.png 60w"
             sizes="20px"
           />
         </button>

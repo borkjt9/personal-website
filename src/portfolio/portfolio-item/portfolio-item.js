@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import './portfolio-item.scss';
 
 const PortfolioItem = (props) => {
-  function changePortfolioItem() {
-    props.changePortfolioItem(props.item.href);
-  }
   function renderPortfolioItemText() {
     if (props.isCarousel) {
       const descriptionStyle = {
@@ -54,9 +51,9 @@ const PortfolioItem = (props) => {
   } : {};
 
   const slickSlideStyle = props.isCarousel ? { minHeight: '0' } : {};
-  let itemLink = `${props.item.href}`
+  let itemLink = `${props.item.href}`;
   if (props.fromLandingPage) {
-    itemLink = `portfolio/${props.item.href}`
+    itemLink = `portfolio/${props.item.href}`;
   }
   return (
     <div style={slickSlideStyle} >
@@ -65,10 +62,10 @@ const PortfolioItem = (props) => {
           <img
             alt={`${props.item.name}`}
             className="portfolio__item__image"
-            src={`https://s3.amazonaws.com/jtb-personal-website/images/${props.item.image}-250.jpg`}
-            srcSet={`https://s3.amazonaws.com/jtb-personal-website/images/${props.item.image}-250.jpg 250w,
-            https://s3.amazonaws.com/jtb-personal-website/images/${props.item.image}-500.jpg 500w,
-            https://s3.amazonaws.com/jtb-personal-website/images/${props.item.image}-750.jpg 750w`}
+            src={`https://johnborkowski.me/images/${props.item.image}-250.jpg`}
+            srcSet={`https://johnborkowski.me/images/${props.item.image}-250.jpg 250w,
+            https://johnborkowski.me/images/${props.item.image}-500.jpg 500w,
+            https://johnborkowski.me/images/${props.item.image}-750.jpg 750w`}
             sizes="(max-width: 250px) 95vw, 250px"
           />
           {renderPortfolioItemText()}
@@ -81,13 +78,14 @@ const PortfolioItem = (props) => {
 PortfolioItem.defaultProps = {
   isCarousel: false,
   shouldExpand: true,
+  fromLandingPage: false,
 };
 
 PortfolioItem.propTypes = {
-  changePortfolioItem: PropTypes.func.isRequired,
   item: PropTypes.objectOf(PropTypes.any).isRequired,
   shouldExpand: PropTypes.bool,
   isCarousel: PropTypes.bool,
+  fromLandingPage: PropTypes.bool,
 };
 
 export default PortfolioItem;

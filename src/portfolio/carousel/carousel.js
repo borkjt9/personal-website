@@ -22,10 +22,10 @@ function SampleNextArrow(props) {
       <img
         alt="Next button for the portfolio carousel."
         style={imageStyle}
-        src="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png"
-        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-20.png 20w,
-          https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-40.png 40w,
-          https://s3.amazonaws.com/jtb-personal-website/images/right-chevron-60.png 60w"
+        src="https://johnborkowski.me/images/right-chevron-40.png"
+        srcSet="https://johnborkowski.me/images/right-chevron-20.png 20w,
+          https://johnborkowski.me/images/right-chevron-40.png 40w,
+          https://johnborkowski.me/images/right-chevron-60.png 60w"
         sizes="20px"
       />
     </button>
@@ -58,10 +58,10 @@ function SamplePrevArrow(props) {
       <img
         alt="Previous button for portfolio carousel."
         style={imageStyle}
-        src="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png"
-        srcSet="https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-20.png 20w,
-        https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-40.png 40w,
-        https://s3.amazonaws.com/jtb-personal-website/images/left-chevron-60.png 60w"
+        src="https://johnborkowski.me/images/left-chevron-40.png"
+        srcSet="https://johnborkowski.me/images/left-chevron-20.png 20w,
+        https://johnborkowski.me/images/left-chevron-40.png 40w,
+        https://johnborkowski.me/images/left-chevron-60.png 60w"
         sizes="20px"
       />
     </button>

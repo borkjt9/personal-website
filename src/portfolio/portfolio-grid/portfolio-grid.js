@@ -35,7 +35,7 @@ class PortfolioGrid extends Component {
   }
 
   render() {
-    const portfolioGridStyle = this.props.fromLandingPage ? {}: {marginTop: '115px'}
+    const portfolioGridStyle = this.props.fromLandingPage ? {} : { marginTop: '115px' };
     return (
       <div className="portfolio-grid" style={portfolioGridStyle}>
         {this.renderPortfolioItems()}
@@ -46,9 +46,9 @@ class PortfolioGrid extends Component {
 
 PortfolioGrid.defaultProps = {
   fromLandingPage: false,
-}
+};
 PortfolioGrid.propTypes = {
   changePortfolioItem: PropTypes.func.isRequired,
-  fromLandingPage: PropTypes.bool
+  fromLandingPage: PropTypes.bool,
 };
 export default PortfolioGrid;

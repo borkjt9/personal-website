@@ -1,39 +1,5 @@
 $pageColor: #FCFCFC;
 
-@media (min-width: 768px) {
-  a {
-
-    &:hover {
-      border-bottom: solid $pageColor 3px;
-      border-top: solid $pageColor 0px;
-
-      .footer-link__name {
-        opacity: 1;
-      }
-
-      .footer-link-image {
-
-      }
-
-      .linkedin {
-        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/linkedin-hover-80.jpg');
-      }
-      .angel-list {
-        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/angel-list-hover-80.jpg');
-      }
-      .github {
-        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/github-hover-80.jpg');
-      }
-      .mail {
-        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/mail-hover-80.jpg');
-      }
-      .resume {
-        background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/resume-hover-80.jpg');
-      }
-    }
-  }
-}
-
 .footer {
   position: relative;
   bottom: 0;
@@ -50,22 +16,6 @@ $pageColor: #FCFCFC;
     justify-content: space-between;
     width: 90%;
     max-width: 800px;
-  }
-  .footer-link {
-    float: left;
-    border-bottom: solid $pageColor 0px;
-    border-top: solid $pageColor 3px;
-    transition: all 0.15s ease-in-out;
-
-    .footer-link__name {
-      display: block;
-      font-size: 10px;
-      letter-spacing: 1px;
-      opacity: 0;
-      transition: all 0.15s ease-in-out;
-      margin: 5px auto;
-      text-align: center;
-    }
 
     a {
       color: rgba(0,0,0,0);
@@ -78,17 +28,6 @@ $pageColor: #FCFCFC;
       letter-spacing: 3px;
       font-weight: 400;
       display: block;
-      //
-      // &:hover::after {
-      //   position: relative;
-      //   width: calc(100% + 3px);
-      //   font-size: 8px;
-      //   color: #636363;
-      //   display: block;
-      //   content: "LinkedIn"
-      // }
-
-
     }
 
     .footer-link__image {
@@ -97,33 +36,86 @@ $pageColor: #FCFCFC;
 
     }
     .linkedin {
-      background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/linkedin-80.jpg');
+      background-image: url('https://johnborkowski.me/images/linkedin-80.jpg');
       transition: all 0.15s ease-in-out;
     }
     .angel-list {
-      background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/angel-list-80.jpg');
+      background-image: url('https://johnborkowski.me/images/angel-list-80.jpg');
       transition: all 0.15s ease-in-out;
 
     }
     .github {
-      background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/github-80.jpg');
+      background-image: url('https://johnborkowski.me/images/github-80.jpg');
       transition: all 0.15s ease-in-out;
 
     }
     .mail {
-      background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/mail-80.jpg');
+      background-image: url('https://johnborkowski.me/images/mail-80.jpg');
       transition: all 0.15s ease-in-out;
 
     }
     .resume {
-      background-image: url('https://s3.amazonaws.com/jtb-personal-website/images/resume-80.jpg');
+      background-image: url('https://johnborkowski.me/images/resume-80.jpg');
       transition: all 0.15s ease-in-out;
 
     }
 
-
-
-
+    .footer-link__name {
+      display: none;
+    }
   }
+}
 
+@media (min-width: 768px) {
+
+
+  .footer {
+
+    .footer-link {
+      float: left;
+      border-bottom: solid $pageColor 0px;
+      border-top: solid $pageColor 3px;
+      transition: all 0.15s ease-in-out;
+      &:hover {
+        border-bottom: solid $pageColor 3px;
+        border-top: solid $pageColor 0px;
+
+        .footer-link__name {
+          opacity: 1;
+        }
+
+        .linkedin {
+          background-image: url('https://johnborkowski.me/images/linkedin-hover-80.jpg');
+        }
+        .angel-list {
+          background-image: url('https://johnborkowski.me/images/angel-list-hover-80.jpg');
+        }
+        .github {
+          background-image: url('https://johnborkowski.me/images/github-hover-80.jpg');
+        }
+        .mail{
+          background-image: url('https://johnborkowski.me/images/mail-hover-80.jpg');
+        }
+        .resume {
+          background-image: url('https://johnborkowski.me/images/resume-hover-80.jpg');
+        }
+      }
+
+      .footer-link__name {
+        display: block;
+        font-size: 10px;
+        letter-spacing: 1px;
+        opacity: 0;
+        transition: all 0.15s ease-in-out;
+        margin: 5px auto;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 767) {
+  .footer-link__name {
+    display: none;
+  }
 }

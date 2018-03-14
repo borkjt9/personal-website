@@ -34,10 +34,10 @@ class WhiteLabelApps extends Component {
           <img
             alt="Beanstox application showing the allocation screen"
             className="white-label-apps__product__iphone-image"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/beanstox-sign-up-400.jpg"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/beanstox-sign-up-200.jpg 200w,
-            https://s3.amazonaws.com/jtb-personal-website/images/beanstox-sign-up-400.jpg 400w,
-            https://s3.amazonaws.com/jtb-personal-website/images/beanstox-sign-up-600.jpg 600w"
+            src="https://johnborkowski.me/images/beanstox-sign-up-400.jpg"
+            srcSet="https://johnborkowski.me/images/beanstox-sign-up-200.jpg 200w,
+            https://johnborkowski.me/images/beanstox-sign-up-400.jpg 400w,
+            https://johnborkowski.me/images/beanstox-sign-up-600.jpg 600w"
             sizes="(max-width: 200px) 95vw, 200px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
           />
         </div>
@@ -54,10 +54,10 @@ class WhiteLabelApps extends Component {
             <img
               alt="Astor application showing the investment detail screen"
               className="white-label-apps__product__iphone-image"
-              src="https://s3.amazonaws.com/jtb-personal-website/images/astor-investment-history-400.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/astor-investment-history-200.jpg 200w,
-              https://s3.amazonaws.com/jtb-personal-website/images/astor-investment-history-400.jpg 400w,
-              https://s3.amazonaws.com/jtb-personal-website/images/astor-investment-history-600.jpg 600w"
+              src="https://johnborkowski.me/images/astor-investment-history-400.jpg"
+              srcSet="https://johnborkowski.me/images/astor-investment-history-200.jpg 200w,
+              https://johnborkowski.me/images/astor-investment-history-400.jpg 400w,
+              https://johnborkowski.me/images/astor-investment-history-600.jpg 600w"
               sizes="(max-width: 200px) 95vw, 200px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
             />
             <div className="white-label-apps__product__text">

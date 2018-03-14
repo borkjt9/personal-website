@@ -15,10 +15,10 @@ class About extends Component {
           <img
             style={imageWidth}
             alt="My headshot"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/headshot-700.jpg"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/headshot-350.jpg 350w,
-            https://s3.amazonaws.com/jtb-personal-website/images/headshot-700.jpg 700w,
-            https://s3.amazonaws.com/jtb-personal-website/images/headshot-1050.jpg 1050w"
+            src="https://johnborkowski.me/images/headshot-700.jpg"
+            srcSet="https://johnborkowski.me/images/headshot-350.jpg 350w,
+            https://johnborkowski.me/images/headshot-700.jpg 700w,
+            https://johnborkowski.me/images/headshot-1050.jpg 1050w"
             sizes="(max-width: 350px) 95vw, 350px"
           />
           <p className="about__section__image__desc">{imageDescription}</p>
@@ -46,10 +46,10 @@ class About extends Component {
           <img
             alt="Me dancing in Guinea, Africa"
             style={imageWidth}
-            src="https://s3.amazonaws.com/jtb-personal-website/images/guinea-700.jpg"
-            srcSet="https://s3.amazonaws.com/jtb-personal-website/images/guinea-350.jpg 350w,
-            https://s3.amazonaws.com/jtb-personal-website/images/guinea-700.jpg 700w,
-            https://s3.amazonaws.com/jtb-personal-website/images/guinea-1050.jpg 1050w"
+            src="https://johnborkowski.me/images/guinea-700.jpg"
+            srcSet="https://johnborkowski.me/images/guinea-350.jpg 350w,
+            https://johnborkowski.me/images/guinea-700.jpg 700w,
+            https://johnborkowski.me/images/guinea-1050.jpg 1050w"
             sizes="(max-width: 350px) 95vw, 350px"
           />
           <p className="about__section__image__desc">{imageDescription}</p>

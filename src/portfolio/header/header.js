@@ -99,22 +99,21 @@ class Header extends Component {
         <div className="header__top-bar links">
           <div className="text__vert-middle header__home-link">
             <a href="../home">
-                {/* <h4 className="links__header__text margins--remove-default">Home</h4> */}
-                <img className="links__header__home" alt="link to about section" src="https://s3.amazonaws.com/jtb-personal-website/images/home.svg"/>
+              <img className="links__header__home" alt="link to about section" src="https://johnborkowski.me/images/home.svg" />
             </a>
 
           </div>
           <div className="text__vert-middle header__portfolio-links">
             <button className="links__link" onClick={this.expandAbout}>
               <h4 className="links__header__text margins--remove-default">About</h4>
-              <img className="links__header__icon" alt="link to about section" src="https://s3.amazonaws.com/jtb-personal-website/images/about.svg" />
+              <img className="links__header__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
             </button>
             <h4 className="links__divide">|</h4>
             <button className="links__link" onClick={this.expandPortfolio}>
               <h4 className="links__header__text margins--remove-default">{this.portfolioLabel}</h4>
             </button>
             <a className="home-link--mobile links__link" href="../portfolio">
-              <img className="links__header__icon" alt="link to portfolio section" src="https://s3.amazonaws.com/jtb-personal-website/images/portfolio.svg" />
+              <img className="links__header__icon" alt="link to portfolio section" src="https://johnborkowski.me/images/portfolio.svg" />
             </a>
           </div>
         </div>

@@ -3,6 +3,29 @@ $underlineHeight: 5%;
 $pageColor: #FCFCFC;
 $borderColor: #D9D9D9;
 
+
+@media (min-width: 768px) {
+
+  .landing-page__header__links {
+    right: 10%;
+  }
+  .landing-page__header__home__link {
+     display: inline;
+  }
+}
+@media (max-width: 767px) {
+
+  .landing-page__header--isScrolling {
+    .landing-page__header__home__link {
+      display: none;
+    }
+  }
+  .landing-page__header__links {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
 .landingPage--isScrolling {
   padding-top: 125px;
 
@@ -45,7 +68,7 @@ $borderColor: #D9D9D9;
      height: 75px;
 
      .landing-page__header__home__link {
-       display: inline;
+
        left: 10%;
        text-align: left;
        position: absolute;
@@ -65,7 +88,6 @@ $borderColor: #D9D9D9;
      .landing-page__header__links {
        margin: auto;
        position: absolute;
-       right: 10%;
      }
 
    }

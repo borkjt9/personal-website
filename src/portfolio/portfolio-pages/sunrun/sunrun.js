@@ -36,10 +36,10 @@ class SunRun extends Component {
             <img
               alt="an excel model"
               className="sunrun__financial-modeling__image"
-              src="https://s3.amazonaws.com/jtb-personal-website/images/financial-model-800.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/financial-model-400.jpg 400w,
-              https://s3.amazonaws.com/jtb-personal-website/images/financial-model-800.jpg 800w,
-              https://s3.amazonaws.com/jtb-personal-website/images/financial-model-1200.jpg 1200w"
+              src="https://johnborkowski.me/images/financial-model-800.jpg"
+              srcSet="https://johnborkowski.me/images/financial-model-400.jpg 400w,
+              https://johnborkowski.me/images/financial-model-800.jpg 800w,
+              https://johnborkowski.me/images/financial-model-1200.jpg 1200w"
               sizes="(max-width: 400px) 100vw, 400px"
             />
           </div>
@@ -62,10 +62,10 @@ class SunRun extends Component {
             <img
               alt="sunrun executives at the New York Stock Exchange for the company's ipo "
               className="sunrun__ipo__image"
-              src="https://s3.amazonaws.com/jtb-personal-website/images/ipo-800.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/ipo-400.jpg 400w,
-              https://s3.amazonaws.com/jtb-personal-website/images/ipo-800.jpg 800w,
-              https://s3.amazonaws.com/jtb-personal-website/images/ipo-1200.jpg 1200w"
+              src="https://johnborkowski.me/images/ipo-800.jpg"
+              srcSet="https://johnborkowski.me/images/ipo-400.jpg 400w,
+              https://johnborkowski.me/images/ipo-800.jpg 800w,
+              https://johnborkowski.me/images/ipo-1200.jpg 1200w"
               sizes="(max-width: 400px) 100vw, 400px"
             />
             <h5 className="sunrun__ipo__image__description">

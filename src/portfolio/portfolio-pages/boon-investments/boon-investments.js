@@ -51,10 +51,10 @@ class BoonInvestments extends Component {
             <img
               alt="boon investments app screen depicting the user's investment history"
               style={{ width: '100%' }}
-              src="https://s3.amazonaws.com/jtb-personal-website/images/iphone-investment-history-400.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/iphone-investment-history-200.jpg 200w,
-            https://s3.amazonaws.com/jtb-personal-website/images/iphone-investment-history-400.jpg 400w,
-            https://s3.amazonaws.com/jtb-personal-website/images/iphone-investment-history-600.jpg 600w"
+              src="https://johnborkowski.me/images/iphone-investment-history-400.jpg"
+              srcSet="https://johnborkowski.me/images/iphone-investment-history-200.jpg 200w,
+            https://johnborkowski.me/images/iphone-investment-history-400.jpg 400w,
+            https://johnborkowski.me/images/iphone-investment-history-600.jpg 600w"
               sizes="(max-width: 200px) 95vw, 200px"
             />
           </div>
@@ -73,10 +73,10 @@ class BoonInvestments extends Component {
               alt="boon investments app screen depicting the user's allocation"
               style={{ width: '100%' }}
               className="boon-investments__product__iphone-image"
-              src="https://s3.amazonaws.com/jtb-personal-website/images/iphone-allocation-400.jpg"
-              srcSet="https://s3.amazonaws.com/jtb-personal-website/images/iphone-allocation-200.jpg 200w,
-            https://s3.amazonaws.com/jtb-personal-website/images/iphone-allocation-400.jpg 400w,
-            https://s3.amazonaws.com/jtb-personal-website/images/iphone-allocation-600.jpg 600w"
+              src="https://johnborkowski.me/images/iphone-allocation-400.jpg"
+              srcSet="https://johnborkowski.me/images/iphone-allocation-200.jpg 200w,
+            https://johnborkowski.me/images/iphone-allocation-400.jpg 400w,
+            https://johnborkowski.me/images/iphone-allocation-600.jpg 600w"
               sizes="(max-width: 200px) 95vw, 200px"
             />
           </div>
@@ -95,15 +95,15 @@ class BoonInvestments extends Component {
             <p className="portfolio-page__section__body__description">{this.designBody}</p>
           </div>
           <div className="boon-investments__wireframe">
-            <a target="_blank" rel="noopener noreferrer" href="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe.jpg">
+            <a target="_blank" rel="noopener noreferrer" href="https://johnborkowski.me/images/boon-wireframe.jpg">
               {/* onClick={this.toggleWireframe} className="boon-investments__wireframe"> */}
               <img
                 alt="thumbnail of the design wireframe for the boon investments application"
                 className="boon-investments__design__wireframe__image transition-border"
-                src="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-500.jpg"
-                srcSet="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-250.jpg 250w,
-                https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-500.jpg 500w,
-                https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe-750.jpg 750w"
+                src="https://johnborkowski.me/images/boon-wireframe-500.jpg"
+                srcSet="https://johnborkowski.me/images/boon-wireframe-250.jpg 250w,
+                https://johnborkowski.me/images/boon-wireframe-500.jpg 500w,
+                https://johnborkowski.me/images/boon-wireframe-750.jpg 750w"
                 sizes="(max-width: 250px) 95vw, 250px"
               />
               <h5 className="boon-investments__design__wireframe__description">Click to expand</h5>
@@ -121,14 +121,14 @@ class BoonInvestments extends Component {
         <div className="portfolio-page__section__body row-wrap">
 
           <div className="boon-investments__investment__white-paper">
-            <a href="https://s3.amazonaws.com/jtb-personal-website/pdfs/boon-investments-white-paper.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="https://johnborkowski.me/pdfs/boon-investments-white-paper.pdf" target="_blank" rel="noopener noreferrer">
               <img
                 alt="thumbnail of Boon Investment's investment white paper"
                 className="boon-investments__investment__white-paper__image transition-border"
-                src="https://s3.amazonaws.com/jtb-personal-website/images/white-paper-thumbnail-500.jpg"
-                srcSet="https://s3.amazonaws.com/jtb-personal-website/images/white-paper-thumbnail-250.jpg 250w,
-              https://s3.amazonaws.com/jtb-personal-website/images/white-paper-thumbnail-500.jpg 500w,
-              https://s3.amazonaws.com/jtb-personal-website/images/white-paper-thumbnail-750.jpg 750w"
+                src="https://johnborkowski.me/images/white-paper-thumbnail-500.jpg"
+                srcSet="https://johnborkowski.me/images/white-paper-thumbnail-250.jpg 250w,
+              https://johnborkowski.me/images/white-paper-thumbnail-500.jpg 500w,
+              https://johnborkowski.me/images/white-paper-thumbnail-750.jpg 750w"
                 sizes="(max-width: 250px) 95vw, 250px"
               />
               <h5 className="boon-investments__investment__white-paper__description">INVESTMENT WHITE PAPER</h5>
@@ -151,7 +151,7 @@ class BoonInvestments extends Component {
           <img
             alt="Boon Investments' design wireframe"
             className="portfolio-page__wireframe-modal__content"
-            src="https://s3.amazonaws.com/jtb-personal-website/images/boon-wireframe.png"
+            src="https://johnborkowski.me/images/boon-wireframe.png"
           />
           <button onClick={this.toggleWireframe} className="portfolio-page__wireframe-modal__close-wrapper">
             <span className="portfolio-page__wireframe-modal__close-wrapper__close">&times;</span>
