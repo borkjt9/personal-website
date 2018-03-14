@@ -24,6 +24,8 @@ class LandingPage extends Component {
     this.changeToAbout = this.changeToAbout.bind(this);
     this.changeToPortfolio = this.changeToPortfolio.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
+    this.scrollToTop = this.scrollToTop.bind(this);
+
   }
 
   componentDidMount() {
@@ -61,6 +63,16 @@ class LandingPage extends Component {
     }
   }
 
+  scrollToTop() {
+    if (this.state.activeLink == 'portfolio') {
+      localStorage.setItem('activeLandingPageSection', 'about');
+      this.setState({
+        activeLink: 'about',
+      });
+    }
+    window.scrollTo(0, 125)
+  }
+
   changeToPortfolio() {
     if (this.state.activeLink === 'about') {
       if (this.state.scrollPositionY > this.scrollThreshold) {
@@ -87,7 +99,9 @@ class LandingPage extends Component {
             <h2 className="landing-page__header__home__text">
               john borkowski
             </h2>
-            <img className="landing-page__header__home__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
+            <button onClick={this.scrollToTop}>
+              <img className="landing-page__header__home__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
+            </button>
           </div>
           <div className="landing-page__header__links links--landing-page text__vert-middle">
             <button onClick={this.changeToAbout} className={activeLink === 'about' ? 'links__link is-active' : 'links__link is-inactive'}>
