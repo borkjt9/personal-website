@@ -1,5 +1,6 @@
 h1, h2, h3, h4, h5, a, button, p {
   font-family: 'Lato', sans-serif;
+  font-variant-ligatures: no-common-ligatures;
 }
 
 h1 {
@@ -12,6 +13,7 @@ h2 {
   font-weight: 300;
   text-transform: lowercase;
   color: #636363;
+
 }
 
 h3 {

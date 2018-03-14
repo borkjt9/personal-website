@@ -24,9 +24,9 @@ class BankOfAmerica extends Component {
   automationDescription = 'My main contribution to Bank of America was improving daily reporting efficiency by approximately six hours each day through VBA automation.\n\nI also developed the VBA portion of a division-wide project to automate balance breakouts by legal entity from general ledger. Yes it is as dry as it sounds.'
   riskManagementDescription = "John isolated and analyzed the primary drivers of BAC's NII/NIM forecast out through 2016 over day-over-day, week-over-week, and month-over-month time horizons."
 
-  stressTestingDescription = "During my time at Bank of America, I did have some real finance work as well.\n\nIn my first year, I was primarily responsible for analyzing the drivers to variances in BAC's NII/NIM forecast through time. \n\nIn my second year, I calculated the hypothetical impacts to BAC’s commercial allowance as a result of the Federal Reserve’s Stress Tests."
+  stressTestingDescription = "During my time at Bank of America, I did have some real finance work as well.\n\nIn my first year, I was responsible for analyzing the drivers to variances in BAC's NII/NIM forecast through time.\n\nIn my second year, I calculated the hypothetical impacts to BAC’s commercial allowance as a result of the Federal Reserve’s Stress Tests."
 
-  summaryBody = "I worked as a financial analyst in Bank of America's Financial Management Program from June 2013 to January 2015. It was my first job out of college. The people were wonderful, the job so-so.\n\nThe running joke in the office my first year was that I had automated myself out of a job by writing VBA scripts to perform 3/4 of my daily tasks. I was just shocked that before me, BAC had found people to perform these tasks every day for years without going crazy."
+  summaryBody = "I worked as a financial analyst in Bank of America's Financial Management Program from June 2013 to January 2015. It was my first job out of college.\n\nThe running joke in the office my first year was that I had automated myself out of a job by writing VBA scripts to perform 3/4 of my daily tasks. I was just shocked that before me, BAC had found people to perform these tasks every day for years without going crazy."
 
   renderAutomation() {
     return (

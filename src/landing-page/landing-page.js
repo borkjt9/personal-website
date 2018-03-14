@@ -16,14 +16,16 @@ const debounce = (func, wait) => {
 class LandingPage extends Component {
   constructor(props) {
     super(props);
+    const activeLink = localStorage.getItem('activeLandingPageSection') || 'about';
     this.state = {
-      activeLink: 'about',
+      activeLink,
       scrollPositionY: 0,
     };
     this.changeToAbout = this.changeToAbout.bind(this);
     this.changeToPortfolio = this.changeToPortfolio.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
   }
+
   componentDidMount() {
     // 32 is the number of milliseconds to debounce
     // I picked this because it's approx 1 frame (ie: 16.7ms)
@@ -48,22 +50,28 @@ class LandingPage extends Component {
   }
 
   changeToAbout() {
-    if (this.state.scrollPositionY > this.scrollThreshold) {
-      window.scrollTo(0, 125);
+    if (this.state.activeLink === 'portfolio') {
+      if (this.state.scrollPositionY > this.scrollThreshold) {
+        window.scrollTo(0, 125);
+      }
+      localStorage.setItem('activeLandingPageSection', 'about');
+      this.setState({
+        activeLink: 'about',
+      });
     }
-    this.setState({
-      activeLink: 'about',
-    });
   }
 
   changeToPortfolio() {
-    if (this.state.scrollPositionY > this.scrollThreshold) {
-      window.scrollTo(0, 125);
+    if (this.state.activeLink === 'about') {
+      if (this.state.scrollPositionY > this.scrollThreshold) {
+        window.scrollTo(0, 125);
+      }
+      localStorage.setItem('activeLandingPageSection', 'portfolio');
+      this.setState({
+        activeLink: 'portfolio',
+      });
+      this.expandPortfolio = true;
     }
-    this.setState({
-      activeLink: 'portfolio',
-    });
-    this.expandPortfolio = true;
   }
 
   renderHeader() {

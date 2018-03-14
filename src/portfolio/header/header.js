@@ -4,6 +4,10 @@ import createHistory from 'history/createBrowserHistory';
 import Carousel from '../carousel/carousel';
 import './header.scss';
 
+function resetLandingPageState() {
+  localStorage.setItem('activeLandingPageSection', 'about');
+}
+
 class Header extends Component {
   constructor(props) {
     super(props);
@@ -68,7 +72,6 @@ class Header extends Component {
     }
   }
 
-
   history = createHistory()
 
   renderPortfolio() {
@@ -98,7 +101,7 @@ class Header extends Component {
       <div className="header">
         <div className="header__top-bar links">
           <div className="text__vert-middle header__home-link">
-            <a href="../home">
+            <a onClick={resetLandingPageState} href="../home">
               <img className="links__header__home" alt="link to about section" src="https://johnborkowski.me/images/home.svg" />
             </a>
 

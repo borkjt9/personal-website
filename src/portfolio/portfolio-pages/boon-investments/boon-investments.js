@@ -14,7 +14,7 @@ class BoonInvestments extends Component {
     this.toggleWireframe = this.toggleWireframe.bind(this);
   }
 
-  summaryBody = "Boon Investments is an S.E.C registered investment advisor that provides non-U.S. residents access to the U.S. investment markets. Boon is the first robo-advisor in the United States to accept international clients.\n\nAs CEO/Co-founder of Boon, my main responsibilities included leading design for Boon's suite of products, writing the investment algorithms which power Boon's portfolios, developing Boon's flagship iOS application, and closing deals with multiple business partners.";
+  summaryBody = "Boon Investments is an S.E.C. registered investment advisor that provides non-U.S. residents access to the U.S. investment markets. Boon is the first robo-advisor in the United States to accept international clients.\n\nAs CEO/Co-founder of Boon, my main responsibilities included leading design for Boon's suite of products, writing the investment algorithms which power Boon's portfolios, developing Boon's flagship iOS application, and closing deals with multiple business partners.";
 
   skillsDictionary = {
     Development: ['Python', 'Swift', 'Javascript', 'HTML/CSS'],
