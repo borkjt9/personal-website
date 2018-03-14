@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import {withRouter} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 import About from '../about/about';
 import Footer from '../footer/footer';
 import PortfolioGrid from '../portfolio/portfolio-grid/portfolio-grid';
 import portfolioArr from '../public-objects/portfolio-arr';
 import './landing-page.scss';
+
 
 const debounce = (func, wait) => {
   let timeout;
@@ -13,10 +16,13 @@ const debounce = (func, wait) => {
   };
 };
 
+const history = createHistory()
+
 class LandingPage extends Component {
   constructor(props) {
     super(props);
-    const activeLink = localStorage.getItem('activeLandingPageSection') || 'about';
+    const activeLink = props.match.params.activeLink ? props.match.params.activeLink : 'about';
+    console.log('lp props params: ', props.match.params)
     this.state = {
       activeLink,
       scrollPositionY: 0,
@@ -25,6 +31,7 @@ class LandingPage extends Component {
     this.changeToPortfolio = this.changeToPortfolio.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
     this.scrollToTop = this.scrollToTop.bind(this);
+    this.changePortfolioItem = this.changePortfolioItem.bind(this);
 
   }
 
@@ -51,21 +58,27 @@ class LandingPage extends Component {
     this.setState({ scrollPositionY });
   }
 
+  changePortfolioItem(newPortfolio) {
+      this.props.history.push(`../portfolio/${newPortfolio}`);
+  }
+
+
+
   changeToAbout() {
     if (this.state.activeLink === 'portfolio') {
       if (this.state.scrollPositionY > this.scrollThreshold) {
         window.scrollTo(0, 125);
       }
-      localStorage.setItem('activeLandingPageSection', 'about');
       this.setState({
         activeLink: 'about',
       });
+      history.push(`../home/about`);
+
     }
   }
 
   scrollToTop() {
     if (this.state.activeLink == 'portfolio') {
-      localStorage.setItem('activeLandingPageSection', 'about');
       this.setState({
         activeLink: 'about',
       });
@@ -78,10 +91,11 @@ class LandingPage extends Component {
       if (this.state.scrollPositionY > this.scrollThreshold) {
         window.scrollTo(0, 125);
       }
-      localStorage.setItem('activeLandingPageSection', 'portfolio');
       this.setState({
         activeLink: 'portfolio',
       });
+      history.push(`../home/portfolio`);
+
       this.expandPortfolio = true;
     }
   }
@@ -126,7 +140,10 @@ class LandingPage extends Component {
       <div className={`landing-page ${isScrolling} width-is-screen vert-center`}>
         <div className="" >
           {this.renderHeader()}
-          {activeLink === ('about') ? <About /> : <PortfolioGrid fromLandingPage />}
+          {activeLink === ('about') ? <About /> : <PortfolioGrid
+            changePortfolioItem={this.changePortfolioItem}
+            fromLandingPage/>
+          }
           <Footer />
         </div>
       </div>
@@ -134,4 +151,4 @@ class LandingPage extends Component {
   }
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);

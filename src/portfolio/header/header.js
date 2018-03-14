@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import createHistory from 'history/createBrowserHistory';
 import Carousel from '../carousel/carousel';
 import './header.scss';
 
-function resetLandingPageState() {
-  localStorage.setItem('activeLandingPageSection', 'about');
-}
 
 class Header extends Component {
   constructor(props) {
@@ -72,8 +68,6 @@ class Header extends Component {
     }
   }
 
-  history = createHistory()
-
   renderPortfolio() {
     let shouldExpand = false;
     if (this.state.portfolioShouldExpand) {
@@ -101,16 +95,16 @@ class Header extends Component {
       <div className="header">
         <div className="header__top-bar links">
           <div className="text__vert-middle header__home-link">
-            <a onClick={resetLandingPageState} href="../home">
-              <img className="links__header__home" alt="link to about section" src="https://johnborkowski.me/images/home.svg" />
+            <a href="../home">
+              <img className="links__header__home" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
             </a>
 
           </div>
           <div className="text__vert-middle header__portfolio-links">
-            <button className="links__link" onClick={this.expandAbout}>
+            <a onClick={this.expandAbout} className="links__link">
               <h4 className="links__header__text margins--remove-default">About</h4>
               <img className="links__header__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
-            </button>
+            </a>
             <h4 className="links__divide">|</h4>
             <button className="links__link" onClick={this.expandPortfolio}>
               <h4 className="links__header__text margins--remove-default">{this.portfolioLabel}</h4>

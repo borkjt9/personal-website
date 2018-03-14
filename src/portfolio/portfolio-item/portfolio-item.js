@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import './portfolio-item.scss';
 
 const PortfolioItem = (props) => {
+
+  function changePortfolioItem() {
+    console.log('trying to change', props)
+    props.changePortfolioItem(props.item.href)
+  }
+
   function renderPortfolioItemText() {
     if (props.isCarousel) {
       const descriptionStyle = {
@@ -51,14 +57,14 @@ const PortfolioItem = (props) => {
   } : {};
 
   const slickSlideStyle = props.isCarousel ? { minHeight: '0' } : {};
-  let itemLink = `${props.item.href}`;
-  if (props.fromPortfolioGrid) {
+  let itemLink = `../portfolio/${props.item.href}`;
+  if (props.addPortfolioPrefix) {
     itemLink = `portfolio/${props.item.href}`;
   }
   return (
     <div style={slickSlideStyle} >
       <div className={portfolioItemClassNames} style={portfolioItemStyle} >
-        <a href={itemLink} >
+        <button onClick={changePortfolioItem} >
           <img
             alt={`${props.item.name}`}
             className="portfolio__item__image"
@@ -69,7 +75,7 @@ const PortfolioItem = (props) => {
             sizes="(max-width: 250px) 95vw, 250px"
           />
           {renderPortfolioItemText()}
-        </a>
+        </button>
       </div>
     </div>
   );
@@ -78,14 +84,15 @@ const PortfolioItem = (props) => {
 PortfolioItem.defaultProps = {
   isCarousel: false,
   shouldExpand: true,
-  fromPortfolioGrid: false,
+  addPortfolioPrefix: false,
 };
 
 PortfolioItem.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
   shouldExpand: PropTypes.bool,
   isCarousel: PropTypes.bool,
-  fromPortfolioGrid: PropTypes.bool,
+  addPortfolioPrefix: PropTypes.bool,
+  changePortfolioItem: PropTypes.func.isRequired,
 };
 
 export default PortfolioItem;

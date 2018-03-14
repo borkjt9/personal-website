@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
+
 import 'normalize.css'; // Note this
 
 import App from './App';
@@ -15,14 +17,19 @@ import './styles/animations.scss';
 import './styles/transitions.scss';
 
 
+
 ReactDOM.render(
   <BrowserRouter>
     <div>
       <Switch>
+        <Route path="/home/:activeLink" component={App} />
         <Route path="/home" component={App} />
         <Route path="/portfolio/:portfolioID" component={Portfolio} />
+        <Route path="/:portfolioID" component={Portfolio} />
         <Route path="/portfolio/" component={Portfolio} />
-        <Route path="/" component={App} />
+        <Route path="/" render={() => (
+          <Redirect to="/home"/>
+        )}/>
       </Switch>
     </div>
   </BrowserRouter>

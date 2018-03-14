@@ -24,7 +24,7 @@ class PortfolioGrid extends Component {
       <PortfolioItem
         changePortfolioItem={this.changePortfolioItem}
         item={item}
-        fromPortfolioGrid
+        addPortfolioPrefix
       />
     ));
 
