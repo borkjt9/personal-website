@@ -52,7 +52,7 @@ const PortfolioItem = (props) => {
 
   const slickSlideStyle = props.isCarousel ? { minHeight: '0' } : {};
   let itemLink = `${props.item.href}`;
-  if (props.fromLandingPage) {
+  if (props.fromPortfolioGrid) {
     itemLink = `portfolio/${props.item.href}`;
   }
   return (
@@ -78,14 +78,14 @@ const PortfolioItem = (props) => {
 PortfolioItem.defaultProps = {
   isCarousel: false,
   shouldExpand: true,
-  fromLandingPage: false,
+  fromPortfolioGrid: false,
 };
 
 PortfolioItem.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
   shouldExpand: PropTypes.bool,
   isCarousel: PropTypes.bool,
-  fromLandingPage: PropTypes.bool,
+  fromPortfolioGrid: PropTypes.bool,
 };
 
 export default PortfolioItem;

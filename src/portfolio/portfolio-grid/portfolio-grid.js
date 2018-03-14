@@ -15,6 +15,7 @@ class PortfolioGrid extends Component {
   }
 
   changePortfolioItem(selectedPortfolio) {
+    console.log('this props', this.props.changePortfolioItem)
     this.props.changePortfolioItem(selectedPortfolio);
   }
 
@@ -23,7 +24,7 @@ class PortfolioGrid extends Component {
       <PortfolioItem
         changePortfolioItem={this.changePortfolioItem}
         item={item}
-        fromLandingPage={this.props.fromLandingPage}
+        fromPortfolioGrid
       />
     ));
 
@@ -45,10 +46,10 @@ class PortfolioGrid extends Component {
 }
 
 PortfolioGrid.defaultProps = {
-  fromLandingPage: false,
-};
+  fromLandingPage: false
+}
 PortfolioGrid.propTypes = {
   changePortfolioItem: PropTypes.func.isRequired,
-  fromLandingPage: PropTypes.bool,
+  fromLandingPage: PropTypes.bool
 };
 export default PortfolioGrid;
