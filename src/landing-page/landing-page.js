@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
+import PropTypes from 'prop-types';
+
 import About from '../about/about';
 import Footer from '../footer/footer';
 import PortfolioGrid from '../portfolio/portfolio-grid/portfolio-grid';
@@ -16,13 +18,13 @@ const debounce = (func, wait) => {
   };
 };
 
-const history = createHistory()
+const history = createHistory();
 
 class LandingPage extends Component {
   constructor(props) {
     super(props);
     const activeLink = props.match.params.activeLink ? props.match.params.activeLink : 'about';
-    console.log('lp props params: ', props.match.params)
+    console.log('lp props params: ', props.match.params);
     this.state = {
       activeLink,
       scrollPositionY: 0,
@@ -32,7 +34,6 @@ class LandingPage extends Component {
     this.handleScroll = this.handleScroll.bind(this);
     this.scrollToTop = this.scrollToTop.bind(this);
     this.changePortfolioItem = this.changePortfolioItem.bind(this);
-
   }
 
   componentDidMount() {
@@ -59,9 +60,8 @@ class LandingPage extends Component {
   }
 
   changePortfolioItem(newPortfolio) {
-      this.props.history.push(`../portfolio/${newPortfolio}`);
+    this.props.history.push(`../portfolio/${newPortfolio}`);
   }
-
 
 
   changeToAbout() {
@@ -72,18 +72,19 @@ class LandingPage extends Component {
       this.setState({
         activeLink: 'about',
       });
-      history.push(`../home/about`);
-
+      history.push('../home/about');
     }
   }
 
   scrollToTop() {
-    if (this.state.activeLink == 'portfolio') {
+    if (this.state.activeLink === 'portfolio') {
       this.setState({
         activeLink: 'about',
       });
+
     }
-    window.scrollTo(0, 125)
+    history.push('../home/');
+    window.scrollTo(0, 0);
   }
 
   changeToPortfolio() {
@@ -94,7 +95,7 @@ class LandingPage extends Component {
       this.setState({
         activeLink: 'portfolio',
       });
-      history.push(`../home/portfolio`);
+      history.push('../home/portfolio');
 
       this.expandPortfolio = true;
     }
@@ -142,7 +143,8 @@ class LandingPage extends Component {
           {this.renderHeader()}
           {activeLink === ('about') ? <About /> : <PortfolioGrid
             changePortfolioItem={this.changePortfolioItem}
-            fromLandingPage/>
+            fromLandingPage
+          />
           }
           <Footer />
         </div>
@@ -150,5 +152,16 @@ class LandingPage extends Component {
     );
   }
 }
+
+LandingPage.defaultProps = {
+  match: {},
+  history: {},
+
+};
+
+LandingPage.propTypes = {
+  history: PropTypes.objectOf(PropTypes.any),
+  match: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
+};
 
 export default withRouter(LandingPage);

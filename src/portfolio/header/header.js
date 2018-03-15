@@ -101,10 +101,10 @@ class Header extends Component {
 
           </div>
           <div className="text__vert-middle header__portfolio-links">
-            <a onClick={this.expandAbout} className="links__link">
+            <button onClick={this.expandAbout} className="links__link">
               <h4 className="links__header__text margins--remove-default">About</h4>
               <img className="links__header__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
-            </a>
+            </button>
             <h4 className="links__divide">|</h4>
             <button className="links__link" onClick={this.expandPortfolio}>
               <h4 className="links__header__text margins--remove-default">{this.portfolioLabel}</h4>

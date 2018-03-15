@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
 
 import 'normalize.css'; // Note this
 
@@ -17,7 +16,6 @@ import './styles/animations.scss';
 import './styles/transitions.scss';
 
 
-
 ReactDOM.render(
   <BrowserRouter>
     <div>
@@ -27,9 +25,12 @@ ReactDOM.render(
         <Route path="/portfolio/:portfolioID" component={Portfolio} />
         <Route path="/:portfolioID" component={Portfolio} />
         <Route path="/portfolio/" component={Portfolio} />
-        <Route path="/" render={() => (
-          <Redirect to="/home"/>
-        )}/>
+        <Route
+          path="/"
+          render={() => (
+            <Redirect to="/home" />
+        )}
+        />
       </Switch>
     </div>
   </BrowserRouter>

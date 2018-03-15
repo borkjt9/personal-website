@@ -24,7 +24,7 @@ class Portfolio extends Component {
     this.handlePortfolioToggle = this.handlePortfolioToggle.bind(this);
 
     const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID : 'portfolio';
-    console.log('props params', props.match.params)
+    console.log('props params', props.match.params);
     this.state = {
       selectedPortfolio,
       nextPortfolio: this.navRefs[selectedPortfolio].nref,
@@ -47,7 +47,6 @@ class Portfolio extends Component {
   }
 
   handleNextPortfolio() {
-    console.log('this state, ', this.state.nextPortfolio);
     this.changePortfolioItem(this.state.nextPortfolio);
   }
 
@@ -56,8 +55,7 @@ class Portfolio extends Component {
   }
 
   changePortfolioItem(newPortfolio) {
-    console.log('history', this.history)
-    if (newPortfolio == 'about') {
+    if (newPortfolio === 'about') {
       this.history.push({
         pathname: `../${newPortfolio}`,
       });
@@ -116,7 +114,7 @@ class Portfolio extends Component {
       nref: 'boon-investments',
       index: -1,
     },
-    'portfolio': {
+    portfolio: {
       pref: 'boon-investments',
       nref: 'boon-investments',
       index: -1,
