@@ -1,104 +1,18 @@
-$underlineColor: #636363;
-$underlineHeight: 5%;
-$pageColor: #FCFCFC;
-$borderColor: #D9D9D9;
-
-
 @media (min-width: 768px) {
-
   .landing-page {
     top: 125px;
-  }
-
-
-  .landing-page__header__links {
-    right: 10%;
-  }
-  .landing-page__header__home__link {
-     display: inline;
-  }
-  .landing-page__header__links {
-    margin: 20px auto;
+    &.is-scrolling {
+      padding-top: 125px;
+    }
   }
 }
-@media (max-width: 767px) {
 
+@media (max-width: 767px) {
   .landing-page {
     top: 75px;
   }
-
-
-  .landing-page__header--isScrolling {
-    .landing-page__header__home__link {
-      display: none;
-    }
-  }
-  .landing-page__header__links {
-    margin: auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-  }
 }
-
-.landingPage--isScrolling {
-  padding-top: 125px;
-}
-
 
 .landing-page {
-
   position: absolute;
-   .landing-page__header--notScrolling {
-     .landing-page__header__home__icon {
-       display: none;
-     }
-
-     .landing-page__header__links {
-       display: flex;
-       right: 10%;
-       max-width: 300px;
-       width: 100%;
-       justify-content: space-around;
-     }
-   }
-
-   .landing-page__header {
-     .landing-page__header__links {
-       transition: all 0.2s ease-in-out;
-
-     }
-   }
-
-   .landing-page__header--isScrolling {
-     background: white;
-     border-bottom: 1px solid $borderColor;
-     box-shadow: $borderColor 0px 0px 5px;
-
-     height: 75px;
-
-     .landing-page__header__home__link {
-
-       left: 10%;
-       text-align: left;
-       position: absolute;
-       cursor: pointer;
-       opacity: 0.8;
-       &:hover {
-         opacity: 1.0;
-       }
-       .landing-page__header__home__icon {
-         width: 35px;
-       }
-       .landing-page__header__home__text {
-         display: none;
-       }
-     }
-
-     .landing-page__header__links {
-       margin: auto;
-       position: absolute;
-     }
-
-   }
 }

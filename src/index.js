@@ -8,7 +8,7 @@ import App from './App';
 import Portfolio from './portfolio/portfolio';
 import './styles/theme/typography.scss';
 import './styles/theme/spacing.scss';
-import './styles/theme/links.scss';
+import './styles/theme/header.scss';
 import './styles/theme/portfolios.scss';
 
 import './styles/base.scss';

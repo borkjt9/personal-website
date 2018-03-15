@@ -4,7 +4,7 @@ import 'normalize.css'; // Note this
 import './App.scss';
 import './styles/theme/typography.scss';
 import './styles/theme/spacing.scss';
-import './styles/theme/links.scss';
+import './styles/theme/header.scss';
 import './styles/theme/portfolios.scss';
 
 import './styles/base.scss';

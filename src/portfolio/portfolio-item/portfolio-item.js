@@ -34,7 +34,7 @@ const PortfolioItem = (props) => {
   let portfolioItemClassNames = 'transition-border portfolio__item max-dimensions-is-screen';
 
   if (props.isCarousel) {
-    portfolioItemClassNames += ' header__portfolio__item';
+    portfolioItemClassNames += ' header__carousel__item';
     if (props.shouldExpand) {
       portfolioItemClassNames += ' is-expanding';
     } else {

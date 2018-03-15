@@ -32,7 +32,6 @@ class Header extends Component {
     this.props.changePortfolioItem(selectedPortfolio);
   }
   aboutLabel = 'about';
-
   portfolioLabel = 'portfolio';
 
   expandAbout() {
@@ -47,6 +46,7 @@ class Header extends Component {
     let portfolioShouldExpand = true;
     if (this.portfolioLabel === 'portfolio') {
       this.portfolioLabel = 'close';
+
     } else {
       this.portfolioLabel = 'portfolio';
       portfolioShouldExpand = false;
@@ -74,7 +74,7 @@ class Header extends Component {
       shouldExpand = true;
     }
 
-    const portfolioClassNames = shouldExpand ? 'portfolio portfolio--wrapped header__portfolio' : 'portfolio portfolio--wrapped header__portfolio';
+    const portfolioClassNames = shouldExpand ? 'portfolio portfolio--wrapped header__carousel' : 'portfolio portfolio--wrapped header__carousel';
     return (
 
       <div className={portfolioClassNames}>
@@ -91,29 +91,29 @@ class Header extends Component {
 
 
   render() {
-    return (
-      <div className="header">
-        <div className="header__top-bar links">
-          <div className="text__vert-middle header__home-link">
-            <a href="../home">
-              <img className="links__header__home" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
-            </a>
 
-          </div>
-          <div className="text__vert-middle header__portfolio-links">
-            <button onClick={this.expandAbout} className="links__link">
-              <h4 className="links__header__text margins--remove-default">About</h4>
-              <img className="links__header__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
-            </button>
-            <h4 className="links__divide">|</h4>
-            <button className="links__link" onClick={this.expandPortfolio}>
-              <h4 className="links__header__text margins--remove-default">{this.portfolioLabel}</h4>
-            </button>
-            <a className="home-link--mobile links__link" href="../portfolio">
-              <img className="links__header__icon" alt="link to portfolio section" src="https://johnborkowski.me/images/portfolio.svg" />
+    return (
+        <div className="header is-top-bar position-is-fixed">
+          <div className="header__top-bar">
+          <div className="header__home-link text__vert-middle">
+            <a href="../home">
+              <img className="header__home-link__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
             </a>
           </div>
-        </div>
+          <div className="header__section-links text__vert-middle">
+            <button onClick={this.expandAbout} className="header__section-link">
+              <h4 className="header__section-link__text margins--remove-default">About</h4>
+              <img className="header__section-link__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
+            </button>
+            <h4 className="header__divide margins--remove-default">|</h4>
+            <button onClick={this.expandPortfolio} className="header__section-link is-desktop">
+              <h4 className="header__section-link__text margins--remove-default">{this.portfolioLabel}</h4>
+            </button>
+            <a  href="../portfolio" className="header__section-link is-mobile">
+              <img className="header__section-link__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
+            </a>
+          </div>
+          </div>
         {this.state.clearCarousel ? '' : this.renderPortfolio()}
       </div>
     );

@@ -63,7 +63,6 @@ class LandingPage extends Component {
     this.props.history.push(`../portfolio/${newPortfolio}`);
   }
 
-
   changeToAbout() {
     if (this.state.activeLink === 'portfolio') {
       if (this.state.scrollPositionY > this.scrollThreshold) {
@@ -106,27 +105,27 @@ class LandingPage extends Component {
     // !! coerces value to be a Boolean
     // we want it to be true or false (true if scrollPositionY> 0)
     // it works because scrollPositionY=== 0 is falsy
-    const isScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'fixed  landing-page__header landing-page__header--isScrolling' : 'landing-page__header landing-page__header--notScrolling';
+    const isScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'header is-top-bar position-is-fixed' : 'header not-top-bar';
     return (
       <div className={isScrolling}>
-        <div className="links">
-          <div className="landing-page__header__home__link text__vert-middle">
-            <h2 className="landing-page__header__home__text">
+        <div className="header">
+          <div className="header__home-link text__vert-middle">
+            <h2 className="header__home-link__text">
               john borkowski
             </h2>
             <button onClick={this.scrollToTop}>
-              <img className="landing-page__header__home__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
+              <img className="header__home-link__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
             </button>
           </div>
-          <div className="landing-page__header__links links--landing-page text__vert-middle">
-            <button onClick={this.changeToAbout} className={activeLink === 'about' ? 'links__link is-active' : 'links__link is-inactive'}>
-              <h4 className="links__header__text margins--remove-default">About</h4>
-              <img className="links__header__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
+          <div className="header__section-links text__vert-middle">
+            <button onClick={this.changeToAbout} className={activeLink === 'about' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
+              <h4 className="header__section-link__text margins--remove-default">About</h4>
+              <img className="header__section-link__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
             </button>
-            <h4 className="links__divide margins--remove-default">|</h4>
-            <button onClick={this.changeToPortfolio} className={activeLink === 'portfolio' ? 'links__link is-active' : 'links__link is-inactive'}>
-              <h4 className="links__header__text margins--remove-default">portfolio</h4>
-              <img className="links__header__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
+            <h4 className="header__divide margins--remove-default">|</h4>
+            <button onClick={this.changeToPortfolio} className={activeLink === 'portfolio' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
+              <h4 className="header__section-link__text margins--remove-default">portfolio</h4>
+              <img className="header__section-link__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
             </button>
           </div>
         </div>
@@ -136,7 +135,7 @@ class LandingPage extends Component {
 
   render() {
     const { activeLink } = this.state;
-    const isScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'landingPage--isScrolling' : '';
+    const isScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'is-scrolling' : '';
     return (
       <div className={`landing-page ${isScrolling} width-is-screen vert-center`}>
         <div className="" >
