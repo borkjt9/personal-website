@@ -13,7 +13,7 @@ class BoonInvestments extends Component {
     };
     this.toggleWireframe = this.toggleWireframe.bind(this);
   }
-
+  console.log("test")
   summaryBody = "Boon Investments is the first S.E.C. registered investment advisor in the U.S> to accept international clients.\n\nAs CEO/Co-founder of Boon, my main responsibilities included leading design for Boon's suite of products, writing the investment algorithms which power Boon's portfolios, developing Boon's flagship iOS application, and closing deals with multiple business partners.";
 
   skillsDictionary = {
