@@ -24,7 +24,6 @@ class LandingPage extends Component {
   constructor(props) {
     super(props);
     const activeLink = props.match.params.activeLink ? props.match.params.activeLink : 'about';
-    console.log('lp props params: ', props.match.params);
     this.state = {
       activeLink,
       scrollPositionY: 0,
@@ -107,8 +106,7 @@ class LandingPage extends Component {
     // it works because scrollPositionY=== 0 is falsy
     const isScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'header is-top-bar position-is-fixed' : 'header not-top-bar';
     return (
-      <div className={isScrolling}>
-        <div className="header">
+        <div className={isScrolling}>
           <div className="header__home-link text__vert-middle">
             <h2 className="header__home-link__text">
               john borkowski
@@ -129,7 +127,6 @@ class LandingPage extends Component {
             </button>
           </div>
         </div>
-      </div>
     );
   }
 
@@ -160,7 +157,7 @@ LandingPage.defaultProps = {
 
 LandingPage.propTypes = {
   history: PropTypes.objectOf(PropTypes.any),
-  match: PropTypes.objectOf(PropTypes.objectOf(PropTypes.string)),
+  match: PropTypes.objectOf(PropTypes.any),
 };
 
 export default withRouter(LandingPage);

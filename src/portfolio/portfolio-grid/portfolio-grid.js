@@ -10,18 +10,17 @@ import './portfolio-grid.scss';
 class PortfolioGrid extends Component {
   constructor(props) {
     super(props);
-    console.log('portfolio grid props', props.fromLandingPage);
     this.changePortfolioItem = this.changePortfolioItem.bind(this);
   }
 
   changePortfolioItem(selectedPortfolio) {
-    console.log('this props', this.props.changePortfolioItem);
     this.props.changePortfolioItem(selectedPortfolio);
   }
 
   renderPortfolioItems() {
     const portfolioItems = map(portfolioArr, item => (
       <PortfolioItem
+        key={item.name}
         changePortfolioItem={this.changePortfolioItem}
         item={item}
       />

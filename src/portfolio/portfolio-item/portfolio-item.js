@@ -24,8 +24,8 @@ const PortfolioItem = (props) => {
         <div className="portfolio__item__desc__title">
           <h4 className="is-animated">{props.item.name}</h4>
         </div>
-        <div className="portfolio__item__desc__skills ">
-          <h5 className="">{props.item.skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</h5>
+        <div className="portfolio__item__desc__skills">
+          <h5 className="">{props.item.skills.join(' | ')}</h5>
         </div>
       </div>
     );

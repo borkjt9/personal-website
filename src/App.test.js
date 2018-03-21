@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
 import App from './App';
 
@@ -14,7 +15,9 @@ window.matchMedia = window.matchMedia || function () {
 it('renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
     , div,
   );
 });
