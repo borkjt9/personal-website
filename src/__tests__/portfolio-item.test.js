@@ -11,10 +11,17 @@ import map from 'lodash/map';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-
-function changePortfolioItem() {
-  console.log('filler')
-}
+function changePortfolioItem(newPortfolio) {
+    if (newPortfolio === 'about') {
+      this.history.push({
+        pathname: `../${newPortfolio}`,
+      });
+    } else {
+      this.history.push({
+        pathname: `../portfolio/${newPortfolio}`,
+      });
+    }
+  };
 
 // class Wrapper extends Component {
 //     render() {

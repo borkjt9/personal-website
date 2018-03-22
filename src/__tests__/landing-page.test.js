@@ -7,8 +7,10 @@ import TestUtils from 'react-dom/test-utils'; // ES6
 import { BrowserRouter} from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import LandingPage from '../landing-page/landing-page';
+import Enzyme, {shallow} from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-// Enzyme.configure({ adapter: new Adapter() });
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('Landing Page', () => {
 
@@ -38,6 +40,23 @@ describe('Landing Page', () => {
     // const wrapper = shallow(name_class)
     expect(name_class.textContent).toEqual('john borkowski');
     // expect(component).toContain('john borkowski')
+  });
+
+  it('switches to correct section on click', () => {
+    const header = TestUtils.findRenderedDOMComponentWithClass(renderedPage, 'header')
+    const buttons = TestUtils.scryRenderedDOMComponentsWithTag(renderedPage, 'button')
+    buttons.forEach((button) => {
+      TestUtils.Simulate.click(button);
+      const portfolioSection = TestUtils.scryRenderedDOMComponentsWithClass(renderedPage, 'portfolio')
+      const aboutSection = TestUtils.scryRenderedDOMComponentsWithClass(renderedPage, 'about')
+        if (button.textContent === 'Portfolio') {
+        expect(portfolioSection.length).toEqual(1)
+        expect(aboutSection.length).toEqual(0)
+        } else {
+          expect(portfolioSection.length).toEqual(0)
+          expect(aboutSection.length).toEqual(1)
+        }
+    });
   });
 
   it('renders header', () => {

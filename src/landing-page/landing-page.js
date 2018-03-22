@@ -122,7 +122,7 @@ class LandingPage extends Component {
             </button>
             <h4 className="header__divide margins--remove-default">|</h4>
             <button onClick={this.changeToPortfolio} className={activeLink === 'portfolio' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
-              <h4 className="header__section-link__text margins--remove-default">portfolio</h4>
+              <h4 className="header__section-link__text margins--remove-default">Portfolio</h4>
               <img className="header__section-link__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
             </button>
           </div>
