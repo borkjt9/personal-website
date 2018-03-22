@@ -6,19 +6,45 @@ import Header from '../header/header';
 Enzyme.configure({ adapter: new Adapter() });
 
 function changePortfolioItem(newPortfolio) {
-  console.log('filler')
+  //filler
 }
 function onPortfolioToggle() {
-  console.log('filler');
+  //filler
 }
+
 describe('header', () => {
-  it('switches to about on click', () => {
-    const component1 = shallow(
-      <div>
-        <Header
-          changePortfolioItem={changePortfolioItem}
-          onPortfolioToggle={onPortfolioToggle}
-          currentPortfolioIndex={1}/>
-      </div>);
+
+  let component;
+
+  beforeEach(() => {
+    component = shallow(
+      <Header
+        changePortfolioItem={changePortfolioItem}
+        onPortfolioToggle={onPortfolioToggle}
+        currentPortfolioIndex={0}/>
+      );
+  });
+
+  it('portfolio expands/shrinks on click', () => {
+    const buttons = component.find('button')
+    buttons.forEach((button) => {
+      if (button.text() === 'portfolio') {
+        button.simulate('click')
+        expect(component.state('portfolioShouldExpand')).toBe(true);
+        button.simulate('click')
+        expect(component.state('portfolioShouldExpand')).toBe(false);
+      } else {
+        component.setState({'portfolioShouldExpand': true})
+        button.simulate('click')
+        expect(component.state('portfolioShouldExpand')).toBe(false);
+      }
+    });
+  });
+
+  it('carousel resets after portfolio expands and shrinks', () => {
+    component.setState({'portfolioShouldExpand': true, clearCarousel: true});
+    const portfolioButton = component.findWhere(n => n.name() === 'button' && n.text() === 'portfolio');
+    portfolioButton.simulate('click')
+    expect(component.state('clearCarousel')).toBe(false)
   });
 });
