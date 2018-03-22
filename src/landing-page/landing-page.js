@@ -44,7 +44,7 @@ class LandingPage extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', debounce(this.handleScroll, 0));
+    document.removeEventListener('scroll', debounce(this.handleScroll, 0));
   }
 
   initialPortfolioLoad = true
@@ -79,7 +79,6 @@ class LandingPage extends Component {
       this.setState({
         activeLink: 'about',
       });
-
     }
     history.push('../home/');
     window.scrollTo(0, 0);
@@ -106,27 +105,27 @@ class LandingPage extends Component {
     // it works because scrollPositionY=== 0 is falsy
     const isScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'header is-top-bar position-is-fixed' : 'header not-top-bar';
     return (
-        <div className={isScrolling}>
-          <div className="header__home-link text__vert-middle">
-            <h2 className="header__home-link__text">
+      <div className={isScrolling}>
+        <div className="header__home-link text__vert-middle">
+          <h2 className="header__home-link__text">
               john borkowski
-            </h2>
-            <button onClick={this.scrollToTop}>
-              <img className="header__home-link__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
-            </button>
-          </div>
-          <div className="header__section-links text__vert-middle">
-            <button onClick={this.changeToAbout} className={activeLink === 'about' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
-              <h4 className="header__section-link__text margins--remove-default">About</h4>
-              <img className="header__section-link__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
-            </button>
-            <h4 className="header__divide margins--remove-default">|</h4>
-            <button onClick={this.changeToPortfolio} className={activeLink === 'portfolio' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
-              <h4 className="header__section-link__text margins--remove-default">Portfolio</h4>
-              <img className="header__section-link__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
-            </button>
-          </div>
+          </h2>
+          <button onClick={this.scrollToTop}>
+            <img className="header__home-link__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
+          </button>
         </div>
+        <div className="header__section-links text__vert-middle">
+          <button onClick={this.changeToAbout} className={activeLink === 'about' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
+            <h4 className="header__section-link__text margins--remove-default">About</h4>
+            <img className="header__section-link__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
+          </button>
+          <h4 className="header__divide margins--remove-default">|</h4>
+          <button onClick={this.changeToPortfolio} className={activeLink === 'portfolio' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
+            <h4 className="header__section-link__text margins--remove-default">Portfolio</h4>
+            <img className="header__section-link__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
+          </button>
+        </div>
+      </div>
     );
   }
 

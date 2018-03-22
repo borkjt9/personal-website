@@ -46,7 +46,6 @@ class Header extends Component {
     let portfolioShouldExpand = true;
     if (this.portfolioLabel === 'portfolio') {
       this.portfolioLabel = 'close';
-
     } else {
       this.portfolioLabel = 'portfolio';
       portfolioShouldExpand = false;
@@ -91,10 +90,9 @@ class Header extends Component {
 
 
   render() {
-
     return (
-        <div className="header is-top-bar position-is-fixed">
-          <div className="header__top-bar">
+      <div className="header is-top-bar position-is-fixed">
+        <div className="header__top-bar">
           <div className="header__home-link text__vert-middle">
             <a href="../home">
               <img className="header__home-link__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
@@ -109,11 +107,11 @@ class Header extends Component {
             <button onClick={this.expandPortfolio} className="header__section-link is-desktop">
               <h4 className="header__section-link__text margins--remove-default">{this.portfolioLabel}</h4>
             </button>
-            <a  href="../portfolio" className="header__section-link is-mobile">
+            <a href="../portfolio" className="header__section-link is-mobile">
               <img className="header__section-link__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
             </a>
           </div>
-          </div>
+        </div>
         {this.state.clearCarousel ? '' : this.renderPortfolio()}
       </div>
     );
