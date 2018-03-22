@@ -12,6 +12,7 @@ function changePortfolioItem() {
 }
 
 let wrapper;
+
 beforeEach(() => {
   wrapper = shallow(<PortfolioGrid changePortfolioItem={changePortfolioItem} />);
 });

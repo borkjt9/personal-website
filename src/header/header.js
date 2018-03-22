@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Carousel from '../carousel/carousel';
+import Carousel from '../portfolio/carousel/carousel';
 import './header.scss';
 
 

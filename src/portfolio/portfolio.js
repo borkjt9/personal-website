@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import createHistory from 'history/createBrowserHistory';
 
-import Header from './header/header';
+import Header from '../header/header';
 import PortfolioGrid from './portfolio-grid/portfolio-grid';
 import BankOfAmerica from './portfolio-pages/bank-of-america/bank-of-america';
 import SunRun from './portfolio-pages/sunrun/sunrun';
