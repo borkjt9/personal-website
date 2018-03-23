@@ -1,6 +1,7 @@
 const portfolioArr = [
   {
     name: 'Boon Investments',
+    component:'BoonInvestments',
     image: 'boon-investments',
     skills: ['UI/UX', 'Swift', 'Python'],
     href: 'boon-investments',
@@ -9,6 +10,7 @@ const portfolioArr = [
   },
   {
     name: 'RIA Portal',
+    component:'RIAPortal',
     image: 'auto-oms',
     skills: ['UI/UX', 'Angular', 'AWS'],
     href: 'ria-portal',
@@ -18,6 +20,7 @@ const portfolioArr = [
   },
   {
     name: 'White Label Apps',
+    component:'WhiteLabelApps',
     image: 'oshares',
     skills: ['Swift', 'Partnerships'],
     href: 'white-label-apps',
@@ -26,6 +29,7 @@ const portfolioArr = [
   },
   {
     name: 'AutoPOOL',
+    component:'AutoPOOL',
     image: 'autopool',
     skills: ['UI/UX', 'Swift', 'App Engine'],
     href: 'autoPOOL',
@@ -34,6 +38,7 @@ const portfolioArr = [
   },
   {
     name: 'Bank of America',
+    component:'BankOfAmerica',
     image: 'bank-of-america',
     skills: ['Modeling', 'Forecasting'],
     href: 'bank-of-america',
@@ -41,7 +46,8 @@ const portfolioArr = [
     pref: 'autoPOOL',
   },
   {
-    name: 'SunRun',
+    name: 'Sunrun',
+    component:'Sunrun',
     image: 'sunrun',
     skills: ['FP&A', 'IPO'],
     href: 'sunrun',

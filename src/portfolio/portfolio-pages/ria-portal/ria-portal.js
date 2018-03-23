@@ -6,7 +6,7 @@ import renderBanner from '../common-objects/banner';
 
 import './ria-portal.scss';
 
-class RiaPortal extends Component {
+class RIAPortal extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -143,4 +143,4 @@ class RiaPortal extends Component {
   }
 }
 
-export default RiaPortal;
+export default RIAPortal;

@@ -5,7 +5,7 @@ import renderBanner from '../common-objects/banner';
 
 import './sunrun.scss';
 
-class SunRun extends Component {
+class Sunrun extends Component {
   tasksArray =
     [
       'Managed the integration of Clean Energy Experts, acquired by Sunrun in April 2015, into Sunrun’s financial planning process.',
@@ -95,4 +95,4 @@ class SunRun extends Component {
   }
 }
 
-export default SunRun;
+export default Sunrun;
