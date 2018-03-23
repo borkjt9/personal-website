@@ -1,10 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
-
-Below you will find some information on how to perform common tasks.<br>
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
-
 # Personal Website
-The place where I go to write about all the things I have done in my life: (https://johnborkowski.me)
+The place where I go to write about all the things I have done in my life: https://johnborkowski.me.
 
 The website was written using Facebook's React.js framework.
 
@@ -21,7 +16,7 @@ Feel free to use this website as a template for your own. To install:
 
 Then open http://localhost:3000/ to see your website.
 
-This website was built using Facebook's create-react-app template as a base. For additional detail on how to install new packages, test react applications, etc, please visit: (https://github.com/facebook/create-react-app)
+This website was built using Facebook's create-react-app template as a base. For additional detail on how to install new packages, test react applications, etc, please visit: https://github.com/facebook/create-react-app.
 
 ### Testing
 
@@ -42,7 +37,7 @@ I use .scss files in lieu of .css files. I find the nesting and variable assignm
 #### Organization
 To organize my styles, I use the Blocks, Elements, and Modifiers (BEM) methodology. While the naming convention may seem verbose at times,  I find it makes components easier to understand and debug.
 
-For more detail on the BEM method, visit: (http://getbem.com/introduction/).
+For more detail on the BEM method, visit: http://getbem.com/introduction/.
 
 ## Deployment
 
