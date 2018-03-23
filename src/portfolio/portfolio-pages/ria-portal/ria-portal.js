@@ -17,7 +17,6 @@ class RIAPortal extends Component {
 
   summaryBody = "The Automated Order Management System (\"Auto-OMS\") is a B2B SaaS product that was spun out of Boon Investments' existing technology.\n\nThe Auto-OMS enables investment advisors to increase their client base without increasing their workload by automating all aspects of the portfolio management process, including dividend reinvestment, asset sub-allocation, and client onboarding.\n\nAs product lead for the Auto-OMS, I managed a small team of developers to design and build the RIA portal, ensured we hit the deadlines communicated to partners, and integrated new partners into the Auto-OMS."
 
-
   skillsDictionary = {
     Development: ['TypeScript', 'HTML/CSS', 'AngularJS', 'RESTful APIs'],
     Technology: ['Sketch', 'AWS Lambda'],
