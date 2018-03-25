@@ -20,7 +20,7 @@ ReactDOM.render(
   <BrowserRouter>
     <div>
       <Switch>
-        <Route path="/home/:activeLink" component={App} />
+        <Route path="/home/:activeSection" component={App} />
         <Route path="/home" component={App} />
         <Route path="/portfolio/:portfolioID" component={Portfolio} />
         <Route path="/:portfolioID" component={Portfolio} />

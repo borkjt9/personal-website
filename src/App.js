@@ -16,7 +16,8 @@ import LandingPage from './landing-page/landing-page';
 
 const App = () => (
   <div className="App">
-    <LandingPage />
+    <LandingPage
+    />
   </div>
 );
 

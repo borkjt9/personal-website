@@ -10,18 +10,18 @@ import './portfolio-grid.scss';
 class PortfolioGrid extends Component {
   constructor(props) {
     super(props);
-    this.changePortfolioItem = this.changePortfolioItem.bind(this);
+    this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
   }
 
-  changePortfolioItem(selectedPortfolio) {
-    this.props.changePortfolioItem(selectedPortfolio);
+  selectPortfolioItem(selectedPortfolio) {
+    this.props.selectPortfolioItem(selectedPortfolio);
   }
 
   renderPortfolioItems() {
     const portfolioItems = map(portfolioArr, item => (
       <PortfolioItem
         key={item.name}
-        changePortfolioItem={this.changePortfolioItem}
+        selectPortfolioItem={this.selectPortfolioItem}
         item={item}
       />
     ));
@@ -47,7 +47,7 @@ PortfolioGrid.defaultProps = {
   fromLandingPage: false,
 };
 PortfolioGrid.propTypes = {
-  changePortfolioItem: PropTypes.func.isRequired,
+  selectPortfolioItem: PropTypes.func.isRequired,
   fromLandingPage: PropTypes.bool,
 };
 export default PortfolioGrid;

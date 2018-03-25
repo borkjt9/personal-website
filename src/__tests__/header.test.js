@@ -5,7 +5,7 @@ import Header from '../header/header';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-function changePortfolioItem(newPortfolio) {
+function selectPortfolioItem() {
   //filler
 }
 function onPortfolioToggle() {
@@ -19,7 +19,7 @@ describe('header', () => {
   beforeEach(() => {
     component = shallow(
       <Header
-        changePortfolioItem={changePortfolioItem}
+        selectPortfolioItem={selectPortfolioItem}
         onPortfolioToggle={onPortfolioToggle}
         currentPortfolioIndex={0}/>
       );

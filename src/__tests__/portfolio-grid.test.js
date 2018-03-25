@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, {mount, shallow } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import PortfolioGrid from '../portfolio/portfolio-grid/portfolio-grid';
@@ -7,14 +7,14 @@ import portfolioArr from '../public-objects/portfolio-arr';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-function changePortfolioItem() {
-  console.log('filler');
+function selectPortfolioItem() {
+  // console.log('filler');
 }
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<PortfolioGrid changePortfolioItem={changePortfolioItem} />);
+  wrapper = shallow(<PortfolioGrid selectPortfolioItem={selectPortfolioItem} />);
 });
 
 describe('PortfolioGrid', () => {
@@ -27,7 +27,7 @@ describe('PortfolioGrid', () => {
   });
 
   it('includes all the portfolio items', () => {
-    const renderedItemNames = wrapper.find('PortfolioItem')// = TestUtils.scryRenderedDOMComponentsWithClass(renderedPage, 'portfolio__item__desc__title');
+    const renderedItemNames = wrapper.find('PortfolioItem');// = TestUtils.scryRenderedDOMComponentsWithClass(renderedPage, 'portfolio__item__desc__title');
     renderedItemNames.forEach((item, i) => {
       expect(item.key()).toEqual(portfolioArr[i].name);
     });

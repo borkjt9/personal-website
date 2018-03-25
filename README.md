@@ -5,7 +5,7 @@ The website was written using Facebook's React.js framework.
 
 ### Installation
 
-Feel free to use this website as a template for your own. To install:
+Feel free to use this website as a template to build your own. To install:
 
 ```
   git clone https://github.com/borkjt9/personal-website.git personal-website

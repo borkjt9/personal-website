@@ -82,11 +82,11 @@ SamplePrevArrow.propTypes = {
 class Carousel extends Component {
   constructor(props) {
     super(props);
-    this.changePortfolioItem = this.changePortfolioItem.bind(this);
+    this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
   }
 
-  changePortfolioItem(selectedPortfolio) {
-    this.props.changePortfolioItem(selectedPortfolio);
+  selectPortfolioItem(selectedPortfolio) {
+    this.props.selectPortfolioItem(selectedPortfolio);
   }
 
   render() {
@@ -98,7 +98,7 @@ class Carousel extends Component {
     const portfolioItems = map(portfolioArr, item => (
       <div>
         <PortfolioItem
-          changePortfolioItem={this.changePortfolioItem}
+          selectPortfolioItem={this.selectPortfolioItem}
           shouldExpand={shouldExpand}
           item={item}
           isCarousel
@@ -124,7 +124,7 @@ class Carousel extends Component {
 }
 
 Carousel.propTypes = {
-  changePortfolioItem: PropTypes.func.isRequired,
+  selectPortfolioItem: PropTypes.func.isRequired,
   currentPortfolioIndex: PropTypes.number.isRequired,
   shouldExpand: PropTypes.bool.isRequired,
 };

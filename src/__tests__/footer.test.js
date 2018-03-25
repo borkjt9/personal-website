@@ -1,9 +1,9 @@
 import React from 'react';
-import Enzyme, {shallow, mount} from 'enzyme'
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Footer from '../footer/footer';
 
-Enzyme.configure({'adapter': new Adapter()});
+Enzyme.configure({ adapter: new Adapter() });
 
 const items = [
   { name: 'Email', href: 'mailto:borkjt9@gmail.com' },
@@ -16,25 +16,25 @@ const items = [
 describe('footer', () => {
   let component;
   beforeEach(() => {
-    component = shallow(<Footer />)
+    component = shallow(<Footer />);
   });
 
   it('renders all items', () => {
     items.forEach((item) => {
-      component.contains(
-        <span className="footer-link">
-          <a
-            className={`${item.name.toLowerCase()} footer-link__image`}
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer">{item.name}
-          </a>
-          <h5 className="footer-link__name">{item.name}</h5>
-      </span>)
+      component.contains(<span className="footer-link">
+        <a
+          className={`${item.name.toLowerCase()} footer-link__image`}
+          href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >{item.name}
+        </a>
+        <h5 className="footer-link__name">{item.name}</h5>
+                         </span>);
     });
 
     it('item images change on hover', () => {
 
     });
   });
-})
+});

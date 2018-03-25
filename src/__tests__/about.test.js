@@ -1,12 +1,11 @@
 import React from 'react';
-import Enzyme, {shallow, mount } from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import About from '../about/about';
 
-Enzyme.configure({'adapter': new Adapter()});
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('about', () => {
-
   let component;
 
   beforeEach(() => {
@@ -14,6 +13,6 @@ describe('about', () => {
   });
 
   it('filler', () => {
-    //there's nothing really to test. it's a static page.
-  })
+    // there's nothing really to test. it's a static page.
+  });
 });

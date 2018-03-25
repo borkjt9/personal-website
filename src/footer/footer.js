@@ -3,7 +3,6 @@ import map from 'lodash/map';
 import './footer.scss';
 
 
-
 function Footer() {
   const items = [
     { name: 'Email', href: 'mailto:borkjt9@gmail.com' },
@@ -12,7 +11,7 @@ function Footer() {
     { name: 'Github', href: 'https://github.com/borkjt9' },
     { name: 'Angelist', href: 'https://angel.co/john-borkowski-1' },
   ];
-  
+
   const renderedItems = map(items, item => (
     <span key={item.name} className="footer-link">
       <a className={`${item.name.toLowerCase()} footer-link__image`} href={item.href} target="_blank" rel="noopener noreferrer">{item.name}</a>
@@ -28,4 +27,4 @@ function Footer() {
   );
 }
 
-export default Footer
+export default Footer;

@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import LandingPage from '../landing-page/landing-page';
-import Enzyme, { shallow, mount, simulate } from 'enzyme';
+import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+
+import LandingPage from '../landing-page/landing-page';
 
 Enzyme.configure({ adapter: new Adapter() });
 
@@ -10,9 +11,7 @@ describe('Landing Page', () => {
   let component;
 
   beforeEach(() => {
-    component = mount(<BrowserRouter>
-      <LandingPage />
-                      </BrowserRouter>);
+    component = mount(<BrowserRouter><LandingPage /></BrowserRouter>);
   });
 
   it('renders john borkowski', () => {

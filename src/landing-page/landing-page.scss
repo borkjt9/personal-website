@@ -1,7 +1,9 @@
 @media (min-width: 768px) {
   .landing-page {
+    //125px is top bar height
     top: 125px;
     &.is-scrolling {
+      //the header becomes a top bar with absolute positioning so we need to the padding to replace it
       padding-top: 125px;
     }
   }
@@ -9,6 +11,7 @@
 
 @media (max-width: 767px) {
   .landing-page {
+    //75px is top bar height
     top: 75px;
   }
 }

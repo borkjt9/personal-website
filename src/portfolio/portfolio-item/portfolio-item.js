@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import './portfolio-item.scss';
 
 const PortfolioItem = (props) => {
-  function changePortfolioItem() {
-    console.log('trying to change', props);
-    props.changePortfolioItem(props.item.href);
+  function selectPortfolioItem() {
+    props.selectPortfolioItem(props.item.href);
   }
 
   function renderPortfolioItemText() {
@@ -63,7 +62,7 @@ const PortfolioItem = (props) => {
   return (
     <div style={slickSlideStyle} >
       <div className={portfolioItemClassNames} style={portfolioItemStyle} >
-        <button onClick={changePortfolioItem} >
+        <button onClick={selectPortfolioItem} >
           <img
             alt={`${props.item.name}`}
             className="portfolio__item__image"
@@ -89,7 +88,7 @@ PortfolioItem.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
   shouldExpand: PropTypes.bool,
   isCarousel: PropTypes.bool,
-  changePortfolioItem: PropTypes.func.isRequired,
+  selectPortfolioItem: PropTypes.func.isRequired,
 };
 
 export default PortfolioItem;

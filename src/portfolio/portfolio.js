@@ -17,12 +17,11 @@ import portfolioNavRefs from '../public-objects/portfolio-nav-refs';
 import './portfolio.scss';
 
 class Portfolio extends Component {
-
   constructor(props) {
     super(props);
     this.handleNextPortfolio = this.handleNextPortfolio.bind(this);
     this.handlePreviousPortfolio = this.handlePreviousPortfolio.bind(this);
-    this.changePortfolioItem = this.changePortfolioItem.bind(this);
+    this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
     this.handlePortfolioToggle = this.handlePortfolioToggle.bind(this);
     const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID : 'portfolio';
     this.state = {
@@ -47,20 +46,20 @@ class Portfolio extends Component {
   }
 
   handleNextPortfolio() {
-    this.changePortfolioItem(this.state.nextPortfolio);
+    this.selectPortfolioItem(this.state.nextPortfolio);
   }
 
   handlePreviousPortfolio() {
-    this.changePortfolioItem(this.state.previousPortfolio);
+    this.selectPortfolioItem(this.state.previousPortfolio);
   }
 
-  changePortfolioItem(newPortfolio) {
+  selectPortfolioItem(newPortfolio) {
     if (newPortfolio === 'about') {
-      this.history.push({
+      this.browserHistory.push({
         pathname: `../${newPortfolio}`,
       });
     } else {
-      this.history.push({
+      this.browserHistory.push({
         pathname: `../portfolio/${newPortfolio}`,
       });
     }
@@ -75,7 +74,7 @@ class Portfolio extends Component {
     });
   }
 
-  history = createHistory();
+  browserHistory = createHistory();
 
   renderSelectedPortfolio() {
     const { selectedPortfolio } = this.state;
@@ -103,7 +102,7 @@ class Portfolio extends Component {
         return (
           <div className="margin-top-is-header">
             <PortfolioGrid
-              changePortfolioItem={this.changePortfolioItem}
+              selectPortfolioItem={this.selectPortfolioItem}
             />
             <Footer />
           </div>
@@ -149,7 +148,7 @@ class Portfolio extends Component {
         <Header
           currentPortfolioIndex={this.state.currentPortfolioIndex}
           onPortfolioToggle={this.handlePortfolioToggle}
-          changePortfolioItem={this.changePortfolioItem}
+          selectPortfolioItem={this.selectPortfolioItem}
         />
         {this.renderSelectedPortfolio()}
         {(this.state.headerExpanded || this.state.selectedPortfolio === 'about' || this.state.selectedPortfolio === '') ? '' : this.renderPortfolioNavs()}
@@ -163,8 +162,8 @@ class Portfolio extends Component {
 Portfolio.defaultProps = {
   match: {
     params: {
-      portfolioID: "portfolio"
-    }
+      portfolioID: 'portfolio',
+    },
   },
 };
 

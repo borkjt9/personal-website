@@ -7,7 +7,7 @@ import './header.scss';
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.changePortfolioItem = this.changePortfolioItem.bind(this);
+    this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
     this.expandPortfolio = this.expandPortfolio.bind(this);
     this.expandAbout = this.expandAbout.bind(this);
 
@@ -18,7 +18,7 @@ class Header extends Component {
   }
 
 
-  changePortfolioItem(selectedPortfolio) {
+  selectPortfolioItem(selectedPortfolio) {
     this.portfolioLabel = 'portfolio';
 
     this.setState({
@@ -29,7 +29,7 @@ class Header extends Component {
         clearCarousel: true,
       });
     }, 500);
-    this.props.changePortfolioItem(selectedPortfolio);
+    this.props.selectPortfolioItem(selectedPortfolio);
   }
   aboutLabel = 'about';
   portfolioLabel = 'portfolio';
@@ -39,7 +39,7 @@ class Header extends Component {
     this.setState({
       portfolioShouldExpand: false,
     });
-    this.props.changePortfolioItem('about');
+    this.props.selectPortfolioItem('about');
   }
 
   expandPortfolio() {
@@ -78,7 +78,7 @@ class Header extends Component {
 
       <div className={portfolioClassNames}>
         <Carousel
-          changePortfolioItem={this.changePortfolioItem}
+          selectPortfolioItem={this.selectPortfolioItem}
           onPortfolioToggle={this.onPortfolioToggle}
           currentPortfolioIndex={this.props.currentPortfolioIndex}
           shouldExpand={shouldExpand}
@@ -119,7 +119,7 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  changePortfolioItem: PropTypes.func.isRequired,
+  selectPortfolioItem: PropTypes.func.isRequired,
   onPortfolioToggle: PropTypes.func.isRequired,
   currentPortfolioIndex: PropTypes.number.isRequired,
 };

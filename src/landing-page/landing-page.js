@@ -9,7 +9,7 @@ import PortfolioGrid from '../portfolio/portfolio-grid/portfolio-grid';
 import portfolioArr from '../public-objects/portfolio-arr';
 import './landing-page.scss';
 
-
+//used below to handle scroll events
 const debounce = (func, wait) => {
   let timeout;
   return (...args) => {
@@ -18,109 +18,101 @@ const debounce = (func, wait) => {
   };
 };
 
-const history = createHistory();
+//this variable doesn't actually do anything other than adding 'portfolio' or 'aboutt to the browser.
+//I found that with users, if it wasn't added after it was clicked, it became confusing.
+const fakeBrowserHistory = createHistory();
 
 class LandingPage extends Component {
   constructor(props) {
     super(props);
-    const activeLink = props.match.params.activeLink ? props.match.params.activeLink : 'about';
+    const activeSection = props.match.params.activeSection ? props.match.params.activeSection : 'about';
     this.state = {
-      activeLink,
+      activeSection,
       scrollPositionY: 0,
     };
-    this.changeToAbout = this.changeToAbout.bind(this);
-    this.changeToPortfolio = this.changeToPortfolio.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
-    this.scrollToTop = this.scrollToTop.bind(this);
-    this.changePortfolioItem = this.changePortfolioItem.bind(this);
+    this.changeToAboutSection = this.changeToAboutSection.bind(this);
+    this.changeToPortfolioSection = this.changeToPortfolioSection.bind(this);
+    this.handleScrollEvent = this.handleScrollEvent.bind(this);
+    this.resetPage = this.resetPage.bind(this);
+    this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
   }
 
   componentDidMount() {
-    // 32 is the number of milliseconds to debounce
-    // I picked this because it's approx 1 frame (ie: 16.7ms)
-    // You'll want to modulate that to your taste.
-    // Add console.logs in handleScroll function to check if its flooding.
-    document.addEventListener('scroll', debounce(this.handleScroll, 0));
+    document.addEventListener('scroll', debounce(this.handleScrollEvent, 0));
   }
 
   componentWillUnmount() {
-    document.removeEventListener('scroll', debounce(this.handleScroll, 0));
+    document.removeEventListener('scroll', debounce(this.handleScrollEvent, 0));
   }
 
-  initialPortfolioLoad = true
-  expandPortfolio = true
-  portfolio = portfolioArr;
   scrollThreshold = 40;
 
-  handleScroll() {
+  handleScrollEvent() {
     // + is unary operator, same as Number(window.scrollY)
-    const scrollPositionY = +window.scrollY;
+    const scrollPositionY = Number(window.scrollY);
     this.setState({ scrollPositionY });
   }
 
-  changePortfolioItem(newPortfolio) {
-    this.props.history.push(`../portfolio/${newPortfolio}`);
+  selectPortfolioItem(portfolioItem) {
+    this.props.history.push(`../portfolio/${portfolioItem}`);
   }
 
-  changeToAbout() {
-    if (this.state.activeLink === 'portfolio') {
+  changeToAboutSection() {
+    if (this.state.activeSection === 'portfolio') {
       if (this.state.scrollPositionY > this.scrollThreshold) {
         window.scrollTo(0, 125);
       }
       this.setState({
-        activeLink: 'about',
+        activeSection: 'about',
       });
-      history.push('../home/about');
+      fakeBrowserHistory.push('../home/about');
     }
   }
 
-  scrollToTop() {
-    if (this.state.activeLink === 'portfolio') {
+  changeToPortfolioSection() {
+    if (this.state.activeSection === 'about') {
+      if (this.state.scrollPositionY > this.scrollThreshold) {
+        window.scrollTo(0, 125);
+      }
       this.setState({
-        activeLink: 'about',
+        activeSection: 'portfolio',
+      });
+      fakeBrowserHistory.push('../home/portfolio');
+
+    }
+  }
+
+  resetPage() {
+    if (this.state.activeSection === 'portfolio') {
+      this.setState({
+        activeSection: 'about',
       });
     }
-    history.push('../home/');
+    fakeBrowserHistory.push('../home/');
     window.scrollTo(0, 0);
   }
-
-  changeToPortfolio() {
-    if (this.state.activeLink === 'about') {
-      if (this.state.scrollPositionY > this.scrollThreshold) {
-        window.scrollTo(0, 125);
-      }
-      this.setState({
-        activeLink: 'portfolio',
-      });
-      history.push('../home/portfolio');
-
-      this.expandPortfolio = true;
-    }
-  }
-
+  //While below seems similar to the header class, but with some extra classNames, headers.
+  //Rather than make the header class overclomplicated, I just made a landing-page specific header. Long term it will read better
   renderHeader() {
-    const { activeLink } = this.state;
-    // !! coerces value to be a Boolean
-    // we want it to be true or false (true if scrollPositionY> 0)
-    // it works because scrollPositionY=== 0 is falsy
-    const isScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'header is-top-bar position-is-fixed' : 'header not-top-bar';
+    const { activeSection } = this.state;
+    const pageIsScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'header is-top-bar position-is-fixed' : 'header not-top-bar';
     return (
-      <div className={isScrolling}>
+      <div className={pageIsScrolling}>
         <div className="header__home-link text__vert-middle">
           <h2 className="header__home-link__text">
               john borkowski
           </h2>
-          <button onClick={this.scrollToTop}>
+          <button onClick={this.resetPage}>
             <img className="header__home-link__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
           </button>
         </div>
         <div className="header__section-links text__vert-middle">
-          <button onClick={this.changeToAbout} className={activeLink === 'about' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
+          <button onClick={this.changeToAboutSection} className={activeSection === 'about' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
             <h4 className="header__section-link__text margins--remove-default">About</h4>
             <img className="header__section-link__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
           </button>
           <h4 className="header__divide margins--remove-default">|</h4>
-          <button onClick={this.changeToPortfolio} className={activeLink === 'portfolio' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
+          <button onClick={this.changeToPortfolioSection} className={activeSection === 'portfolio' ? 'header__section-link is-active' : 'header__section-link is-inactive'}>
             <h4 className="header__section-link__text margins--remove-default">Portfolio</h4>
             <img className="header__section-link__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
           </button>
@@ -130,14 +122,14 @@ class LandingPage extends Component {
   }
 
   render() {
-    const { activeLink } = this.state;
-    const isScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'is-scrolling' : '';
+    const { activeSection } = this.state;
+    const pageIsScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'is-scrolling' : '';
     return (
-      <div className={`landing-page ${isScrolling} width-is-screen vert-center`}>
+      <div className={`landing-page ${pageIsScrolling} width-is-screen vert-center`}>
         <div className="" >
           {this.renderHeader()}
-          {activeLink === ('about') ? <About /> : <PortfolioGrid
-            changePortfolioItem={this.changePortfolioItem}
+          {activeSection === ('about') ? <About /> : <PortfolioGrid
+            selectPortfolioItem={this.selectPortfolioItem}
             fromLandingPage
           />
           }
@@ -151,7 +143,6 @@ class LandingPage extends Component {
 LandingPage.defaultProps = {
   match: {},
   history: {},
-
 };
 
 LandingPage.propTypes = {
