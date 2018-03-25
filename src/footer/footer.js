@@ -4,24 +4,31 @@ import './footer.scss';
 
 
 function Footer() {
-  const items = [
-    { name: 'Email', href: 'mailto:borkjt9@gmail.com' },
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/john-borkowski-cfa-8533bb25/' },
-    { name: 'Resume', href: 'https://johnborkowski.me/pdfs/resume-john-borkowski.pdf' },
-    { name: 'Github', href: 'https://github.com/borkjt9' },
-    { name: 'Angelist', href: 'https://angel.co/john-borkowski-1' },
+  const links = [
+    { title: 'Email', href: 'mailto:borkjt9@gmail.com' },
+    { title: 'LinkedIn', href: 'https://www.linkedin.com/in/john-borkowski-cfa-8533bb25/' },
+    { title: 'Resume', href: 'https://johnborkowski.me/pdfs/resume-john-borkowski.pdf' },
+    { title: 'Github', href: 'https://github.com/borkjt9' },
+    { title: 'Angelist', href: 'https://angel.co/john-borkowski-1' },
   ];
 
-  const renderedItems = map(items, item => (
-    <span key={item.name} className="footer-link">
-      <a className={`${item.name.toLowerCase()} footer-link__image`} href={item.href} target="_blank" rel="noopener noreferrer">{item.name}</a>
-      <h5 className="footer-link__name">{item.name}</h5>
+  const renderLinks = map(links, link => (
+    <span key={link.title} className="footer-link">
+      <a
+        className={`${link.title.toLowerCase()} footer-link__image`}
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer">
+        {link.title}
+      </a>
+      <h5 className="footer-link__name">{link.title}</h5>
     </span>
   ));
+
   return (
     <div className="footer">
       <div className="footer-links">
-        {renderedItems}
+        {renderLinks}
       </div>
     </div>
   );
