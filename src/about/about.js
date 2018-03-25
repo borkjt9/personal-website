@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './about.scss';
 
-class About extends Component {
-  renderWorkSection() {
+function About() {
+
+  function renderWorkSection() {
     const workDesc = 'I am a product designer and front-end developer in the financial sector.\n\nMost recently I was co-founder / CEO of Boon Investments, the first robo-advisor in the United States to accept international clients.\n\nI enjoy working on small, dynamic teams that build intuitive products to solve real problems for real people.'
     const imageCaption = 'My last professional headshot. Taken two years ago.\nA lot has changed.';
 
@@ -26,7 +27,7 @@ class About extends Component {
     );
   }
 
-  renderHobbiesSection() {
+function renderHobbiesSection() {
     const hobbiesDesc = 'When not working, I spend my time reading and drinking large amounts of burnt coffee.\n\nIf I find myself with a week or more of uninterrupted time, I like to explore. Preferably to places with a high probability of getting lost.\n\nIn all things, Trust the Process.'
     const imageCaption = 'Performing a hunting dance on a recent trip to Guinea. This was my least awkward photo.';
 
@@ -52,14 +53,13 @@ class About extends Component {
     );
   }
 
-  render() {
-    return (
-      <div className="about">
-        {this.renderWorkSection()}
-        {this.renderHobbiesSection()}
-      </div>
-    );
-  }
+  return (
+    <div className="about">
+      {renderWorkSection()}
+      {renderHobbiesSection()}
+    </div>
+  );
+
 }
 
 export default About;
