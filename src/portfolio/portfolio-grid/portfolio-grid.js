@@ -1,6 +1,5 @@
 import React from 'react';
 import map from 'lodash/map';
-
 import PortfolioItem from '../portfolio-item/portfolio-item';
 import portfolioArr from '../../public-objects/portfolio-arr';
 import './portfolio-grid.scss';
