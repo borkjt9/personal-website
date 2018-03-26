@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import renderSkillsList from '../common-objects/skills-list';
 import renderTimeline from '../common-objects/timeline';
 import renderSummary from '../common-objects/summary';
@@ -17,27 +17,27 @@ function WhiteLabelApps() {
 
   const productSections = [
     {
-      caption:"OShares ETF Investment",
+      caption: 'OShares ETF Investment',
       description: "Beanstox is an application my team built for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the Beanstox app, we designed a custom user signup process which incorporated O'Shares' internal investment methodology.",
       img: {
-        alt:"Beanstox application showing the allocation screen",
-        classNames:"white-label-apps__product__iphone-image",
-        src:"https://johnborkowski.me/images/beanstox-sign-up-400.jpg",
-        srcSet:"https://johnborkowski.me/images/beanstox-sign-up-200.jpg 200w, https://johnborkowski.me/images/beanstox-sign-up-400.jpg 400w, https://johnborkowski.me/images/beanstox-sign-up-600.jpg 600w",
-        sizes:"(max-width: 200px) 95vw, 200px"
-      }
+        alt: 'Beanstox application showing the allocation screen',
+        classNames: 'white-label-apps__product__iphone-image',
+        src: 'https://johnborkowski.me/images/beanstox-sign-up-400.jpg',
+        srcSet: 'https://johnborkowski.me/images/beanstox-sign-up-200.jpg 200w, https://johnborkowski.me/images/beanstox-sign-up-400.jpg 400w, https://johnborkowski.me/images/beanstox-sign-up-600.jpg 600w',
+        sizes: '(max-width: 200px) 95vw, 200px',
+      },
     },
     {
-      caption: "Astor Investment Management",
+      caption: 'Astor Investment Management',
       description: "Astor served as the pilot project for Boon's white label applications. They are a registered investment advisor that provides client services to over $2 billion in client assets.\n\nThe first client is always the hardest. For the Astor deal, most of my time was spent getting product deadlines to match with partner expectations, and vice versa. Developing the actual app was surprisingly easy in comparison.",
       img: {
-        alt: "Astor application showing the investment detail screen",
-        classNames: "white-label-apps__product__iphone-image",
-        src: "https://johnborkowski.me/images/astor-investment-history-400.jpg",
-        srcSet: "https://johnborkowski.me/images/astor-investment-history-200.jpg 200w, https://johnborkowski.me/images/astor-investment-history-400.jpg 400w, https://johnborkowski.me/images/astor-investment-history-600.jpg 600w",
-        sizes: "(max-width: 200px) 95vw, 200px"
-      }
-    }
+        alt: 'Astor application showing the investment detail screen',
+        classNames: 'white-label-apps__product__iphone-image',
+        src: 'https://johnborkowski.me/images/astor-investment-history-400.jpg',
+        srcSet: 'https://johnborkowski.me/images/astor-investment-history-200.jpg 200w, https://johnborkowski.me/images/astor-investment-history-400.jpg 400w, https://johnborkowski.me/images/astor-investment-history-600.jpg 600w',
+        sizes: '(max-width: 200px) 95vw, 200px',
+      },
+    },
   ];
 
   return (

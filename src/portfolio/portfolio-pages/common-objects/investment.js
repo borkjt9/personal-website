@@ -9,7 +9,8 @@ function renderInvestment(input) {
           <a
             href={input.href}
             target="_blank"
-            rel="noopener noreferrer">
+            rel="noopener noreferrer"
+          >
             <img
               alt={input.img.alt}
               className={input.img.classNames}
@@ -26,7 +27,7 @@ function renderInvestment(input) {
         </div>
       </div>
     </div>
-  )
-};
+  );
+}
 
 export default renderInvestment;

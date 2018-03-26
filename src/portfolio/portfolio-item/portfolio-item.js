@@ -2,12 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './portfolio-item.scss';
 
-function PortfolioItem(props){
-
-  //I researched to find better ways to get around using a handler.
-  //The most efficient way was to create a function directly in JSX.
-  //But this creates a new function every time the component is rendered.
-  //This is worse from a memory perspective. So we keek the handler from now on.
+function PortfolioItem(props) {
+  // I researched to find better ways to get around using a handler.
+  // The most efficient way was to create a function directly in JSX.
+  // But this creates a new function every time the component is rendered.
+  // This is worse from a memory perspective. So we keek the handler from now on.
   function selectPortfolioItemHandler() {
     props.selectPortfolioItem(props.item.href);
   }
@@ -78,7 +77,7 @@ function PortfolioItem(props){
       </div>
     </div>
   );
-};
+}
 
 PortfolioItem.defaultProps = {
   isCarousel: false,

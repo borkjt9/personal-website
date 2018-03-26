@@ -21,16 +21,20 @@ describe('footer', () => {
 
   it('renders all items', () => {
     items.forEach((item) => {
-      component.contains(<span className="footer-link">
-        <a
-          className={`${item.name.toLowerCase()} footer-link__image`}
-          href={item.href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >{item.name}
-        </a>
-        <h5 className="footer-link__name">{item.name}</h5>
-                         </span>);
+      const componentSlice = (
+        <span className="footer-link">
+          <a
+            className={`${item.name.toLowerCase()} footer-link__image`}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {item.name}
+          </a>
+          <h5 className="footer-link__name">{item.name}</h5>
+        </span>
+      );
+      component.contains(componentSlice);
     });
 
     it('item images change on hover', () => {

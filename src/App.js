@@ -4,7 +4,6 @@ import 'normalize.css'; // Note this
 import './App.scss';
 import './styles/theme/typography.scss';
 import './styles/theme/spacing.scss';
-import './styles/theme/portfolios.scss';
 
 import './styles/base.scss';
 import './styles/animations.scss';
@@ -15,8 +14,7 @@ import LandingPage from './landing-page/landing-page';
 
 const App = () => (
   <div className="App">
-    <LandingPage
-    />
+    <LandingPage />
   </div>
 );
 

@@ -23,7 +23,7 @@ function renderDesign(input) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default renderDesign;

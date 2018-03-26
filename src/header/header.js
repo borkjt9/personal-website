@@ -8,11 +8,13 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
-    this.toggleCarousel= this.toggleCarousel.bind(this);
+    this.toggleCarousel = this.toggleCarousel.bind(this);
     this.selectAboutSection = this.selectAboutSection.bind(this);
 
-    //clearCarousel is needed to reset the carousel after it closes.
-    //If carousel is closed, need to clear carousel after delay, which means setting state after delay a second time.
+    // clearCarousel is needed to reset the carousel after it closes.
+    // If carousel is closed, need to clear carousel after delay,
+    // which means setting state after delay a second time.
+
     this.state = {
       carouselShouldExpand: false,
       clearCarousel: true,
@@ -46,13 +48,13 @@ class Header extends Component {
       this.setState({
         clearCarousel: true,
       });
-    }, collapseDuration)
-  };
+    }, collapseDuration);
+  }
   // toggleCarousel onlyimplements the animation.
   // Rendering is done in renderCarousel below.
   toggleCarousel() {
     const carouselShouldExpand = !this.state.carouselShouldExpand;
-    this.portfolioLabel = carouselShouldExpand ? 'close': 'portfolio';
+    this.portfolioLabel = carouselShouldExpand ? 'close' : 'portfolio';
     this.props.onPortfolioToggle(carouselShouldExpand);
 
     this.setState({
@@ -67,12 +69,10 @@ class Header extends Component {
   }
 
   renderCarousel() {
-
     if (this.state.clearCarousel) {
-      return
+      return '';
     }
-
-    const {carouselShouldExpand} = this.state;
+    const { carouselShouldExpand } = this.state;
     const carouselWrapperClassNames = 'portfolio portfolio--wrapped header__carousel';
     return (
       <div className={carouselWrapperClassNames}>
@@ -84,8 +84,7 @@ class Header extends Component {
         />
       </div>
     );
-  };
-
+  }
 
   render() {
     return (

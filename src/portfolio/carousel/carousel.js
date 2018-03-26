@@ -6,8 +6,8 @@ import PortfolioItem from '../portfolio-item/portfolio-item';
 import portfolioArr from '../../public-objects/portfolio-arr';
 import './carousel.scss';
 
-//below is an implementation of react-slick library.
-//See https://github.com/akiran/react-slick for full details.
+// below is an implementation of react-slick library.
+// See https://github.com/akiran/react-slick for full details.
 function NextArrow(props) {
   const { className, style, onClick } = props;
   const portfolioImageStyle = {

@@ -18,7 +18,8 @@ function Footer() {
         className={`${link.title.toLowerCase()} footer-link__image`}
         href={link.href}
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+      >
         {link.title}
       </a>
       <h5 className="footer-link__name">{link.title}</h5>

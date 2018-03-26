@@ -53,11 +53,11 @@ class Portfolio extends Component {
 
   browserHistory = createHistory();
 
-  //Pushes the name, then the name gets dropped into props in the constructor
-  //May not be most efficient speedwise, but makes sense to users for it to match & is efficient way to directly link to each portfolio page
+  // Pushes the name, then the name gets dropped into props in the constructor
+  // May not be most efficient speedwise, but makes sense to users for it to match
+  // and is an efficient way to directly link to each portfolio page
 
   selectSubSection(selectedSubSection) {
-
     if (selectedSubSection === 'about') {
       this.browserHistory.push({
         pathname: `../${selectedSubSection}`,
@@ -73,7 +73,7 @@ class Portfolio extends Component {
       nextPortfolio: portfolioNavRefs[selectedSubSection].nref,
       previousPortfolio: portfolioNavRefs[selectedSubSection].pref,
       currentPortfolioIndex: portfolioNavRefs[selectedSubSection].index,
-      selectedSubSection: selectedSubSection,
+      selectedSubSection,
     }, () => {
     });
   }
@@ -113,10 +113,10 @@ class Portfolio extends Component {
     }
   }
 
-  //when portfolio is set to about or carousel is expanded, these do not appear
+  // when portfolio is set to about or carousel is expanded, these do not appear
   renderPortfolioNavs() {
     if (this.state.carouselExpanded || this.state.selectedSubSection === 'about') {
-      return
+      return '';
     }
     return (
       <div className="portfolio__nav">

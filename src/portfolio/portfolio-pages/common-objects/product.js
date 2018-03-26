@@ -1,9 +1,10 @@
 import React from 'react';
+
 function renderProduct(rows) {
-  let subSections = [];
-  rows.forEach((row,  index) => {
+  const subSections = [];
+  rows.forEach((row, index) => {
     if (index % 2) {
-      subSections.push(
+      const subSection = (
         <div className="portfolio-page__section__body row-wrap-reverse">
           <div className="portfolio-page__product__iphone-text">
             <h3>{row.caption}</h3>
@@ -18,9 +19,10 @@ function renderProduct(rows) {
             sizes={row.img.sizes}
           />
         </div>
-      )
+      );
+      subSections.push(subSection);
     } else {
-      subSections.push(
+      const subSection = (
         <div className="portfolio-page__section__body row-wrap">
           <img
             alt={row.img.alt}
@@ -34,7 +36,9 @@ function renderProduct(rows) {
             <p className="portfolio-page__section__body__description">{row.description}</p>
           </div>
         </div>
-      )
+      );
+
+      subSections.push(subSection);
     }
   });
 
@@ -43,7 +47,7 @@ function renderProduct(rows) {
       <h2 className="portfolio-page__section__title boon__investments__product">Product</h2>
       {subSections}
     </div>
-  )
+  );
 }
 
 export default renderProduct;

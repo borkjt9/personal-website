@@ -2,9 +2,8 @@ import React from 'react';
 import './about.scss';
 
 function About() {
-
   function renderWorkSection() {
-    const workDesc = 'I am a product designer and front-end developer in the financial sector.\n\nMost recently I was co-founder / CEO of Boon Investments, the first robo-advisor in the United States to accept international clients.\n\nI enjoy working on small, dynamic teams that build intuitive products to solve real problems for real people.'
+    const workDesc = 'I am a product designer and front-end developer in the financial sector.\n\nMost recently I was co-founder / CEO of Boon Investments, the first robo-advisor in the United States to accept international clients.\n\nI enjoy working on small, dynamic teams that build intuitive products to solve real problems for real people.';
     const imageCaption = 'My last professional headshot. Taken two years ago.\nA lot has changed.';
 
     return (
@@ -27,8 +26,8 @@ function About() {
     );
   }
 
-function renderHobbiesSection() {
-    const hobbiesDesc = 'When not working, I spend my time reading and drinking large amounts of burnt coffee.\n\nIf I find myself with a week or more of uninterrupted time, I like to explore. Preferably to places with a high probability of getting lost.\n\nIn all things, Trust the Process.'
+  function renderHobbiesSection() {
+    const hobbiesDesc = 'When not working, I spend my time reading and drinking large amounts of burnt coffee.\n\nIf I find myself with a week or more of uninterrupted time, I like to explore. Preferably to places with a high probability of getting lost.\n\nIn all things, Trust the Process.';
     const imageCaption = 'Performing a hunting dance on a recent trip to Guinea. This was my least awkward photo.';
 
     return (
@@ -59,7 +58,6 @@ function renderHobbiesSection() {
       {renderHobbiesSection()}
     </div>
   );
-
 }
 
 export default About;

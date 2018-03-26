@@ -6,11 +6,10 @@ import PropTypes from 'prop-types';
 import About from '../about/about';
 import Footer from '../footer/footer';
 import PortfolioGrid from '../portfolio/portfolio-grid/portfolio-grid';
-import portfolioArr from '../public-objects/portfolio-arr';
 import './landing-page.scss';
 import '../header/header.scss';
 
-//used below to handle scroll events
+// used below to handle scroll events
 const debounce = (func, wait) => {
   let timeout;
   return (...args) => {
@@ -19,8 +18,9 @@ const debounce = (func, wait) => {
   };
 };
 
-//this variable doesn't actually do anything other than adding 'portfolio' or 'aboutt to the browser.
-//I found that with users, if it wasn't added after it was clicked, it became confusing.
+// This variable doesn't do anything other than add 'portfolio' or 'about' to the browser.
+// I found that with users, if it wasn't added after it was clicked, it became confusing.
+
 const fakeBrowserHistory = createHistory();
 
 class LandingPage extends Component {
@@ -79,7 +79,6 @@ class LandingPage extends Component {
         activeSection: 'portfolio',
       });
       fakeBrowserHistory.push('../home/portfolio');
-
     }
   }
 
@@ -92,8 +91,11 @@ class LandingPage extends Component {
     fakeBrowserHistory.push('../home/');
     window.scrollTo(0, 0);
   }
-  //While below seems similar to the header class, but with some extra classNames, headers.
-  //Rather than make the header class overclomplicated, I just made a landing-page specific header. Long term it will read better
+
+  // While below seems similar to the header class, but with some extra classNames, headers.
+  // Rather than make the header class overclomplicated, I just made a landing-page specific header.
+  // Long term it will read better.
+
   renderHeader() {
     const { activeSection } = this.state;
     const pageIsScrolling = (this.state.scrollPositionY > this.scrollThreshold) ? 'header is-top-bar position-is-fixed' : 'header not-top-bar';
