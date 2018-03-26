@@ -64,8 +64,12 @@ $borderColor: #D9D9D9;
   }
 }
 
-
 .portfolio {
+  overflow: hidden;
+  &.portfolio--wrapped {
+    flex-flow: row wrap;
+  }
+
   .portfolio__nav {
     .portfolio__nav__link--next {
       right: -1px;

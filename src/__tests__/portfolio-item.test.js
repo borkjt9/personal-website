@@ -25,16 +25,16 @@ describe('Portfolio Item', () => {
         item={item}
         isCarousel={false}
       />);
-      const renderedTitle = component.find('.portfolio__item__desc__title');
+      const renderedTitle = component.find('.portfolio-item__desc__title');
       const expectedTitle = item.name;
       expect(renderedTitle.text()).toEqual(expectedTitle);
 
-      const renderedSkills = component.find('.portfolio__item__desc__skills');
+      const renderedSkills = component.find('.portfolio-item__desc__skills');
       const expectedSkills = item.skills.join(' | ');
 
       expect(renderedSkills.text()).toEqual(expectedSkills);
 
-      const renderedImageSrc = component.find('.portfolio__item__image').prop('src');
+      const renderedImageSrc = component.find('.portfolio-item__image').prop('src');
       const expectedImageSrc = `https://johnborkowski.me/images/${item.image}-250.jpg`;
       expect(renderedImageSrc).toEqual(expectedImageSrc);
     });
@@ -53,10 +53,10 @@ describe('Portfolio Item', () => {
       const expectedTitle = item.name;
       expect(renderedTitle).toEqual(expectedTitle);
 
-      const renderedSkills = component.find('.portfolio__item__desc__skills');
+      const renderedSkills = component.find('.portfolio-item__desc__skills');
       expect(renderedSkills.exists()).toBe(false);
 
-      const renderedImageSrc = component.find('.portfolio__item__image').prop('src');
+      const renderedImageSrc = component.find('.portfolio-item__image').prop('src');
       const expectedImageSrc = `https://johnborkowski.me/images/${item.image}-250.jpg`;
       expect(renderedImageSrc).toEqual(expectedImageSrc);
     });

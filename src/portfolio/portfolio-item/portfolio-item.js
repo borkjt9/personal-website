@@ -5,7 +5,7 @@ import './portfolio-item.scss';
 function PortfolioItem(props){
 
   //I researched to find better ways to get around using a handler.
-  //The msot efficient way was to create a function directly in JSX.
+  //The most efficient way was to create a function directly in JSX.
   //But this creates a new function every time the component is rendered.
   //This is worse from a memory perspective. So we keek the handler from now on.
   function selectPortfolioItemHandler() {
@@ -18,24 +18,24 @@ function PortfolioItem(props){
         bottom: '6px', textAlign: 'center', margin: '0px', marginLeft: '5px', width: 'calc(100% - 5px)',
       };
       return (
-        <h5 className="portfolio__item__desc__title" style={descriptionStyle}>
+        <h5 className="portfolio-item__desc__title" style={descriptionStyle}>
           {props.item.name}
         </h5>
       );
     }
     return (
-      <div className="portfolio__item__desc">
-        <div className="portfolio__item__desc__title">
+      <div className="portfolio-item__desc">
+        <div className="portfolio-item__desc__title">
           <h4 className="is-animated">{props.item.name}</h4>
         </div>
-        <div className="portfolio__item__desc__skills">
+        <div className="portfolio-item__desc__skills">
           <h5 className="">{props.item.skills.join(' | ')}</h5>
         </div>
       </div>
     );
   }
 
-  let portfolioItemClassNames = 'transition-border portfolio__item max-dimensions-is-screen';
+  let portfolioItemClassNames = 'transition-border portfolio-item max-dimensions-is-screen';
   if (props.isCarousel) {
     portfolioItemClassNames += ' header__carousel__item';
     if (props.shouldExpand) {
@@ -66,7 +66,7 @@ function PortfolioItem(props){
         <button onClick={selectPortfolioItemHandler} >
           <img
             alt={`${props.item.name}`}
-            className="portfolio__item__image"
+            className="portfolio-item__image"
             src={`https://johnborkowski.me/images/${props.item.image}-250.jpg`}
             srcSet={`https://johnborkowski.me/images/${props.item.image}-250.jpg 250w,
             https://johnborkowski.me/images/${props.item.image}-500.jpg 500w,

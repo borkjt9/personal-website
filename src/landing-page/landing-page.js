@@ -8,6 +8,7 @@ import Footer from '../footer/footer';
 import PortfolioGrid from '../portfolio/portfolio-grid/portfolio-grid';
 import portfolioArr from '../public-objects/portfolio-arr';
 import './landing-page.scss';
+import '../header/header.scss';
 
 //used below to handle scroll events
 const debounce = (func, wait) => {

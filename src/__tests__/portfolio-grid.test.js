@@ -27,7 +27,7 @@ describe('PortfolioGrid', () => {
   });
 
   it('includes all the portfolio items', () => {
-    const renderedItemNames = wrapper.find('PortfolioItem');// = TestUtils.scryRenderedDOMComponentsWithClass(renderedPage, 'portfolio__item__desc__title');
+    const renderedItemNames = wrapper.find('PortfolioItem');
     renderedItemNames.forEach((item, i) => {
       expect(item.key()).toEqual(portfolioArr[i].name);
     });
