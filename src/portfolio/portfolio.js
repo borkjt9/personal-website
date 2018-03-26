@@ -5,7 +5,7 @@ import Header from '../header/header';
 import PortfolioGrid from './portfolio-grid/portfolio-grid';
 import BankOfAmerica from './portfolio-pages/bank-of-america/bank-of-america';
 import Sunrun from './portfolio-pages/sunrun/sunrun';
-import RIAPortal from './portfolio-pages/ria-portal/ria-portal';
+import AutoOMS from './portfolio-pages/auto-oms/auto-oms';
 import AutoPOOL from './portfolio-pages/autopool/autopool';
 import BoonInvestments from './portfolio-pages/boon-investments/boon-investments';
 import WhiteLabelApps from './portfolio-pages/white-label-apps/white-label-apps';
@@ -85,7 +85,7 @@ class Portfolio extends Component {
       case 'bank-of-america':
         return <BankOfAmerica />;
       case 'ria-portal':
-        return <RIAPortal />;
+        return <AutoOMS />;
       case 'boon-investments':
         return <BoonInvestments />;
       case 'sunrun':

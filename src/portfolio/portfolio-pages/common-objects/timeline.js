@@ -2,7 +2,7 @@ import React from 'react';
 
 function renderTimeline(portfolio) {
   return (
-    <div className="portfolio-page__section ria-portal__timeline">
+    <div className="portfolio-page__section portfolio-page__timeline">
       <h2 className="portfolio-page__section__title">Progress</h2>
       <img
         alt="timeline showing the progress made on the auto-oms over the past year"

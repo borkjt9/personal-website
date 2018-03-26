@@ -3,7 +3,7 @@
     //125px is top bar height
     top: 125px;
     &.is-scrolling {
-      //the header becomes a top bar with absolute positioning so we need to the padding to replace it
+      //the header becomes a top bar with fixed positioning so we need to the padding to replace it
       padding-top: 125px;
     }
   }

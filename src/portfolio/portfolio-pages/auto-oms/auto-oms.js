@@ -4,9 +4,9 @@ import renderTimeline from '../common-objects/timeline';
 import renderSummary from '../common-objects/summary';
 import renderBanner from '../common-objects/banner';
 
-import './ria-portal.scss';
+import './auto-oms.scss';
 
-class RIAPortal extends Component {
+class AutoOMS extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -142,4 +142,4 @@ class RIAPortal extends Component {
   }
 }
 
-export default RIAPortal;
+export default AutoOMS;

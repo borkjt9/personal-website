@@ -9,23 +9,14 @@ const portfolioArr = [
     pref: 'autoPOOL',
   },
   {
-    name: 'RIA Portal',
-    component: 'RIAPortal',
+    name: 'Auto-OMS',
+    component: 'AutoOMS',
     image: 'auto-oms',
     skills: ['UI/UX', 'Angular', 'AWS'],
     href: 'ria-portal',
     nref: 'white-label-apps',
     pref: 'boon-investments',
 
-  },
-  {
-    name: 'White Label Apps',
-    component: 'WhiteLabelApps',
-    image: 'oshares',
-    skills: ['Swift', 'Partnerships'],
-    href: 'white-label-apps',
-    nref: 'autoPOOL',
-    pref: 'ria-portal',
   },
   {
     name: 'AutoPOOL',
@@ -35,6 +26,15 @@ const portfolioArr = [
     href: 'autoPOOL',
     nref: 'bank-of-america',
     pref: 'white-label-apps',
+  },
+  {
+    name: 'White Label Apps',
+    component: 'WhiteLabelApps',
+    image: 'oshares',
+    skills: ['Swift', 'Partnerships'],
+    href: 'white-label-apps',
+    nref: 'autoPOOL',
+    pref: 'ria-portal',
   },
   {
     name: 'Bank of America',

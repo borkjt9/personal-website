@@ -223,6 +223,12 @@ $borderColor: #D9D9D9;
 
     }
 
+    .portfolio-page__timeline {
+      .portfolio-page__timeline__image {
+        width: 100%;
+      }
+    }
+
     .portfolio-page__body {
         max-width: 800px;
         min-height: calc(100vh - 90px);

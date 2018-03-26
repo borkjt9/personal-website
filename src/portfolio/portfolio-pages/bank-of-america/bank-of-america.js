@@ -44,7 +44,7 @@ class BankOfAmerica extends Component {
             sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
           />
         </div>
-        <div className=" portfolio-page__section__body bac__automation__text">
+        <div className="portfolio-page__section__body bac__automation__text">
           <p>{this.automationDescription}</p>
         </div>
       </div>
