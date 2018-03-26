@@ -6,7 +6,6 @@ import PortfolioItem from '../portfolio-item/portfolio-item';
 import portfolioArr from '../../public-objects/portfolio-arr';
 import './carousel.scss';
 
-
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   const imageStyle = {

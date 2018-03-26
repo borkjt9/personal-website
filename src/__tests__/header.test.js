@@ -5,9 +5,10 @@ import Header from '../header/header';
 
 Enzyme.configure({ adapter: new Adapter() });
 
-function selectPortfolioItem() {
+function selectSubSection() {
   //filler
 }
+
 function onPortfolioToggle() {
   //filler
 }
@@ -19,7 +20,7 @@ describe('header', () => {
   beforeEach(() => {
     component = shallow(
       <Header
-        selectPortfolioItem={selectPortfolioItem}
+        selectSubSection={selectSubSection}
         onPortfolioToggle={onPortfolioToggle}
         currentPortfolioIndex={0}/>
       );
@@ -30,13 +31,13 @@ describe('header', () => {
     buttons.forEach((button) => {
       if (button.text() === 'portfolio') {
         button.simulate('click')
-        expect(component.state('portfolioShouldExpand')).toBe(true);
+        expect(component.state('carouselShouldExpand')).toBe(true);
         button.simulate('click')
-        expect(component.state('portfolioShouldExpand')).toBe(false);
+        expect(component.state('carouselShouldExpand')).toBe(false);
       } else {
-        component.setState({'portfolioShouldExpand': true})
+        component.setState({'carouselShouldExpand': true})
         button.simulate('click')
-        expect(component.state('portfolioShouldExpand')).toBe(false);
+        expect(component.state('carouselShouldExpand')).toBe(false);
       }
     });
   });

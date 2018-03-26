@@ -7,7 +7,7 @@ const PortfolioItem = (props) => {
     props.selectPortfolioItem(props.item.href);
   }
 
-  function renderPortfolioItemText() {
+  function selectPortfolioItemText() {
     if (props.isCarousel) {
       const descriptionStyle = {
         bottom: '6px', textAlign: 'center', margin: '0px', marginLeft: '5px', width: 'calc(100% - 5px)',
@@ -72,7 +72,7 @@ const PortfolioItem = (props) => {
             https://johnborkowski.me/images/${props.item.image}-750.jpg 750w`}
             sizes="(max-width: 250px) 95vw, 250px"
           />
-          {renderPortfolioItemText()}
+          {selectPortfolioItemText()}
         </button>
       </div>
     </div>

@@ -8,85 +8,83 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
-    this.expandPortfolio = this.expandPortfolio.bind(this);
-    this.expandAbout = this.expandAbout.bind(this);
+    this.toggleCarousel= this.toggleCarousel.bind(this);
+    this.selectAboutSection = this.selectAboutSection.bind(this);
 
+    //clearCarousel is needed to reset the carousel after it closes.
+    //If carousel is closed, need to clear carousel after delay, which means setting state after delay a second time.
     this.state = {
-      portfolioShouldExpand: false,
+      carouselShouldExpand: false,
       clearCarousel: true,
     };
   }
 
+  aboutLabel = 'about';
+  portfolioLabel = 'portfolio';
 
   selectPortfolioItem(selectedPortfolio) {
     this.portfolioLabel = 'portfolio';
 
     this.setState({
-      portfolioShouldExpand: false,
+      carouselShouldExpand: false,
+      clearCarousel: true,
+
     });
+    this.props.selectSubSection(selectedPortfolio);
+  }
+
+  selectAboutSection() {
+    this.portfolioLabel = 'portfolio';
+    this.setState({
+      carouselShouldExpand: false,
+    });
+    this.props.selectSubSection('about');
+  }
+
+  collapseCarousel(collapseDuration) {
     setTimeout(() => {
       this.setState({
         clearCarousel: true,
       });
-    }, 500);
-    this.props.selectPortfolioItem(selectedPortfolio);
-  }
-  aboutLabel = 'about';
-  portfolioLabel = 'portfolio';
-
-  expandAbout() {
-    this.portfolioLabel = 'portfolio';
-    this.setState({
-      portfolioShouldExpand: false,
-    });
-    this.props.selectPortfolioItem('about');
-  }
-
-  expandPortfolio() {
-    let portfolioShouldExpand = true;
-    if (this.portfolioLabel === 'portfolio') {
-      this.portfolioLabel = 'close';
-    } else {
-      this.portfolioLabel = 'portfolio';
-      portfolioShouldExpand = false;
-    }
-
-    this.props.onPortfolioToggle(portfolioShouldExpand);
-
+    }, collapseDuration)
+  };
+  // toggleCarousel onlyimplements the animation.
+  // Rendering is done in renderCarousel below.
+  toggleCarousel() {
+    const carouselShouldExpand = !this.state.carouselShouldExpand;
+    this.portfolioLabel = carouselShouldExpand ? 'close': 'portfolio';
+    this.props.onPortfolioToggle(carouselShouldExpand);
 
     this.setState({
       clearCarousel: false,
-      portfolioShouldExpand,
+      carouselShouldExpand,
     });
-    if (portfolioShouldExpand === false) {
-      setTimeout(() => {
-        this.setState({
-          clearCarousel: true,
-        });
-      }, 500);
+
+    if (!carouselShouldExpand) {
+      const collapseDuration = 500;
+      this.collapseCarousel(collapseDuration);
     }
   }
 
-  renderPortfolio() {
-    let shouldExpand = false;
-    if (this.state.portfolioShouldExpand) {
-      shouldExpand = true;
+  renderCarousel() {
+
+    if (this.state.clearCarousel) {
+      return
     }
 
-    const portfolioClassNames = shouldExpand ? 'portfolio portfolio--wrapped header__carousel' : 'portfolio portfolio--wrapped header__carousel';
+    const {carouselShouldExpand} = this.state;
+    const carouselWrapperClassNames = 'portfolio portfolio--wrapped header__carousel';
     return (
-
-      <div className={portfolioClassNames}>
+      <div className={carouselWrapperClassNames}>
         <Carousel
           selectPortfolioItem={this.selectPortfolioItem}
           onPortfolioToggle={this.onPortfolioToggle}
           currentPortfolioIndex={this.props.currentPortfolioIndex}
-          shouldExpand={shouldExpand}
+          shouldExpand={carouselShouldExpand}
         />
       </div>
-
     );
-  }
+  };
 
 
   render() {
@@ -99,12 +97,12 @@ class Header extends Component {
             </a>
           </div>
           <div className="header__section-links text__vert-middle">
-            <button onClick={this.expandAbout} className="header__section-link">
+            <button onClick={this.selectAboutSection} className="header__section-link">
               <h4 className="header__section-link__text margins--remove-default">about</h4>
               <img className="header__section-link__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
             </button>
             <h4 className="header__divide margins--remove-default">|</h4>
-            <button onClick={this.expandPortfolio} className="header__section-link is-desktop">
+            <button onClick={this.toggleCarousel} className="header__section-link is-desktop">
               <h4 className="header__section-link__text margins--remove-default">{this.portfolioLabel}</h4>
             </button>
             <a href="../portfolio" className="header__section-link is-mobile">
@@ -112,14 +110,14 @@ class Header extends Component {
             </a>
           </div>
         </div>
-        {this.state.clearCarousel ? '' : this.renderPortfolio()}
+        {this.renderCarousel()}
       </div>
     );
   }
 }
 
 Header.propTypes = {
-  selectPortfolioItem: PropTypes.func.isRequired,
+  selectSubSection: PropTypes.func.isRequired,
   onPortfolioToggle: PropTypes.func.isRequired,
   currentPortfolioIndex: PropTypes.number.isRequired,
 };

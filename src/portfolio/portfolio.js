@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import createHistory from 'history/createBrowserHistory';
-
 import Header from '../header/header';
 import PortfolioGrid from './portfolio-grid/portfolio-grid';
 import BankOfAmerica from './portfolio-pages/bank-of-america/bank-of-america';
@@ -10,7 +9,6 @@ import RIAPortal from './portfolio-pages/ria-portal/ria-portal';
 import AutoPOOL from './portfolio-pages/autopool/autopool';
 import BoonInvestments from './portfolio-pages/boon-investments/boon-investments';
 import WhiteLabelApps from './portfolio-pages/white-label-apps/white-label-apps';
-
 import About from '../about/about';
 import Footer from '../footer/footer';
 import portfolioNavRefs from '../public-objects/portfolio-nav-refs';
@@ -21,64 +19,69 @@ class Portfolio extends Component {
     super(props);
     this.handleNextPortfolio = this.handleNextPortfolio.bind(this);
     this.handlePreviousPortfolio = this.handlePreviousPortfolio.bind(this);
-    this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
+    this.selectSubSection = this.selectSubSection.bind(this);
     this.handlePortfolioToggle = this.handlePortfolioToggle.bind(this);
-    const selectedPortfolio = props.match.params.portfolioID ? props.match.params.portfolioID : 'portfolio';
+    const selectedSubSection = props.match.params.portfolioID ? props.match.params.portfolioID : 'portfolio';
     this.state = {
-      selectedPortfolio,
-      nextPortfolio: portfolioNavRefs[selectedPortfolio].nref,
-      previousPortfolio: portfolioNavRefs[selectedPortfolio].pref,
-      currentPortfolioIndex: portfolioNavRefs[selectedPortfolio].index,
-      headerExpanded: false,
+      selectedSubSection,
+      nextPortfolio: portfolioNavRefs[selectedSubSection].nref,
+      previousPortfolio: portfolioNavRefs[selectedSubSection].pref,
+      currentPortfolioIndex: portfolioNavRefs[selectedSubSection].index,
+      carouselExpanded: false,
     };
   }
 
   componentDidUpdate() {
-    if (!this.state.headerExpanded) {
+    if (!this.state.carouselExpanded) {
       window.scrollTo(0, 0);
     }
   }
 
   handlePortfolioToggle(expanded) {
     this.setState({
-      headerExpanded: expanded,
+      carouselExpanded: expanded,
     });
   }
 
   handleNextPortfolio() {
-    this.selectPortfolioItem(this.state.nextPortfolio);
+    this.selectSubSection(this.state.nextPortfolio);
   }
 
   handlePreviousPortfolio() {
-    this.selectPortfolioItem(this.state.previousPortfolio);
-  }
-
-  selectPortfolioItem(newPortfolio) {
-    if (newPortfolio === 'about') {
-      this.browserHistory.push({
-        pathname: `../${newPortfolio}`,
-      });
-    } else {
-      this.browserHistory.push({
-        pathname: `../portfolio/${newPortfolio}`,
-      });
-    }
-
-    this.setState({
-      headerExpanded: false,
-      nextPortfolio: portfolioNavRefs[newPortfolio].nref,
-      previousPortfolio: portfolioNavRefs[newPortfolio].pref,
-      currentPortfolioIndex: portfolioNavRefs[newPortfolio].index,
-      selectedPortfolio: newPortfolio,
-    }, () => {
-    });
+    this.selectSubSection(this.state.previousPortfolio);
   }
 
   browserHistory = createHistory();
 
-  renderSelectedPortfolio() {
-    const { selectedPortfolio } = this.state;
-    switch (selectedPortfolio) {
+  //Pushes the name, then the name gets dropped into props in the constructor
+  //May not be most efficient speedwise, but makes sense to users for it to match & is efficient way to directly link to each portfolio page
+
+  selectSubSection(selectedSubSection) {
+
+    if (selectedSubSection === 'about') {
+      this.browserHistory.push({
+        pathname: `../${selectedSubSection}`,
+      });
+    } else {
+      this.browserHistory.push({
+        pathname: `../portfolio/${selectedSubSection}`,
+      });
+    }
+
+    this.setState({
+      carouselExpanded: false,
+      nextPortfolio: portfolioNavRefs[selectedSubSection].nref,
+      previousPortfolio: portfolioNavRefs[selectedSubSection].pref,
+      currentPortfolioIndex: portfolioNavRefs[selectedSubSection].index,
+      selectedSubSection: selectedSubSection,
+    }, () => {
+    });
+  }
+
+
+  renderSubSection() {
+    const { selectedSubSection } = this.state;
+    switch (selectedSubSection) {
       case 'bank-of-america':
         return <BankOfAmerica />;
       case 'ria-portal':
@@ -102,7 +105,7 @@ class Portfolio extends Component {
         return (
           <div className="margin-top-is-header">
             <PortfolioGrid
-              selectPortfolioItem={this.selectPortfolioItem}
+              selectPortfolioItem={this.selectSubSection}
             />
             <Footer />
           </div>
@@ -110,7 +113,11 @@ class Portfolio extends Component {
     }
   }
 
+  //when portfolio is set to about or carousel is expanded, these do not appear
   renderPortfolioNavs() {
+    if (this.state.carouselExpanded || this.state.selectedSubSection === 'about') {
+      return
+    }
     return (
       <div className="portfolio__nav">
         <button onClick={this.handlePreviousPortfolio} className="portfolio__nav__link portfolio__nav__link--previous">
@@ -125,7 +132,6 @@ class Portfolio extends Component {
           />
           <h5 className="portfolio__nav__link__title">Previous Project</h5>
         </button>
-
         <button onClick={this.handleNextPortfolio} className="portfolio__nav__link portfolio__nav__link--next">
           <h5 className="portfolio__nav__link__title">Next Project</h5>
           <img
@@ -148,11 +154,10 @@ class Portfolio extends Component {
         <Header
           currentPortfolioIndex={this.state.currentPortfolioIndex}
           onPortfolioToggle={this.handlePortfolioToggle}
-          selectPortfolioItem={this.selectPortfolioItem}
+          selectSubSection={this.selectSubSection}
         />
-        {this.renderSelectedPortfolio()}
-        {(this.state.headerExpanded || this.state.selectedPortfolio === 'about' || this.state.selectedPortfolio === '') ? '' : this.renderPortfolioNavs()}
-
+        {this.renderSubSection()}
+        {this.renderPortfolioNavs()}
       </div>
 
     );

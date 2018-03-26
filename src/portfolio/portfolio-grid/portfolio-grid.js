@@ -13,8 +13,8 @@ class PortfolioGrid extends Component {
     this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
   }
 
-  selectPortfolioItem(selectedPortfolio) {
-    this.props.selectPortfolioItem(selectedPortfolio);
+  selectPortfolioItem(portfolioItem) {
+    this.props.selectPortfolioItem(portfolioItem);
   }
 
   renderPortfolioItems() {
