@@ -27,7 +27,6 @@ function renderProduct(rows) {
             className="portfolio-page__product__iphone-image"
             src={row.img.src}
             srcSet={row.img.srcSet}
-
             sizes={row.img.sizes}
           />
           <div className="portfolio-page__product__iphone-text">
