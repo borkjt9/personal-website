@@ -6,12 +6,12 @@ function renderProduct(rows) {
       subSections.push(
         <div className="portfolio-page__section__body row-wrap-reverse">
           <div className="portfolio-page__product__iphone-text">
-            <h3>{row.productCaption}</h3>
-            <p className="portfolio-page__section__body__description">{row.productDescription}</p>
+            <h3>{row.caption}</h3>
+            <p className="portfolio-page__section__body__description">{row.description}</p>
           </div>
           <img
             alt={row.img.alt}
-            className="portfolio-page__product__iphone-image"
+            className={row.img.classNames}
             src={row.img.src}
             srcSet={row.img.srcSet}
 
@@ -24,14 +24,14 @@ function renderProduct(rows) {
         <div className="portfolio-page__section__body row-wrap">
           <img
             alt={row.img.alt}
-            className="portfolio-page__product__iphone-image"
+            className={row.img.classNames}
             src={row.img.src}
             srcSet={row.img.srcSet}
             sizes={row.img.sizes}
           />
           <div className="portfolio-page__product__iphone-text">
-            <h3>{row.productCaption}</h3>
-            <p className="portfolio-page__section__body__description">{row.productDescription}</p>
+            <h3>{row.caption}</h3>
+            <p className="portfolio-page__section__body__description">{row.description}</p>
           </div>
         </div>
       )

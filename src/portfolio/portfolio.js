@@ -84,7 +84,7 @@ class Portfolio extends Component {
     switch (selectedSubSection) {
       case 'bank-of-america':
         return <BankOfAmerica />;
-      case 'ria-portal':
+      case 'auto-oms':
         return <AutoOMS />;
       case 'boon-investments':
         return <BoonInvestments />;

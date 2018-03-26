@@ -1,16 +1,16 @@
 const portfolioNavRefs = {
   'boon-investments': {
     pref: 'sunrun',
-    nref: 'ria-portal',
+    nref: 'auto-oms',
     index: 0,
   },
-  'ria-portal': {
+  'auto-oms': {
     pref: 'boon-investments',
     nref: 'white-label-apps',
     index: 1,
   },
   'white-label-apps': {
-    pref: 'ria-portal',
+    pref: 'auto-oms',
     nref: 'autoPOOL',
     index: 2,
 

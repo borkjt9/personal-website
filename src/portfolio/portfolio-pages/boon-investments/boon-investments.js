@@ -18,10 +18,10 @@ function BoonInvestments() {
     General: ['Product Management', 'Design', 'Marketing', 'Contracts', 'Regulation'],
   }
 
-  const productSections = [
+  const productInputs = [
     {
-      productCaption: 'Direct U.S. investment made simple',
-      productDescription: 'Boon offers international investors passive, long-term investments in the United States equities, bonds, and real estate markets.\n\nFrom trade execution to asset allocation to portfolio re-balancing, Boon helps clients with all stages of the investment cycle.',
+      caption: 'Direct U.S. investment made simple',
+      description: 'Boon offers international investors passive, long-term investments in the United States equities, bonds, and real estate markets.\n\nFrom trade execution to asset allocation to portfolio re-balancing, Boon helps clients with all stages of the investment cycle.',
       img: {
         alt: "boon investments app screen depicting the user's investment history",
         classNames: "portfolio-page__product__iphone-image",
@@ -31,8 +31,8 @@ function BoonInvestments() {
       }
     },
     {
-      productCaption: 'Clients pick the companies\nWe optimize the portfolios',
-      productDescription: 'Boon offers clients the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then blend these choices with a diversified pool of assets to create a portfolio tailored to each client’s unique financial circumstance.',
+      caption: 'Clients pick the companies\nWe optimize the portfolios',
+      description: 'Boon offers clients the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then blend these choices with a diversified pool of assets to create a portfolio tailored to each client’s unique financial circumstance.',
       img: {
         alt: "boon investments app screen depicting the user's allocation",
         classNames: "portfolio-page__product__iphone-image",
@@ -75,7 +75,7 @@ function BoonInvestments() {
         {renderBanner('boon-investments', 'boon investments')}
         {renderSummary(summaryBody)}
         {renderDesign(designInput)}
-        {renderProduct(productSections)}
+        {renderProduct(productInputs)}
         {renderInvestment(investmentInput)}
         {renderTimeline('boon-investments')}
         {renderSkillsList(skillsDictionary)}

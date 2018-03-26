@@ -5,7 +5,7 @@ const portfolioArr = [
     image: 'boon-investments',
     skills: ['UI/UX', 'Swift', 'Python'],
     href: 'boon-investments',
-    nref: 'ria-portal',
+    nref: 'auto-oms',
     pref: 'autoPOOL',
   },
   {
@@ -13,7 +13,7 @@ const portfolioArr = [
     component: 'AutoOMS',
     image: 'auto-oms',
     skills: ['UI/UX', 'Angular', 'AWS'],
-    href: 'ria-portal',
+    href: 'auto-oms',
     nref: 'white-label-apps',
     pref: 'boon-investments',
 
@@ -34,7 +34,7 @@ const portfolioArr = [
     skills: ['Swift', 'Partnerships'],
     href: 'white-label-apps',
     nref: 'autoPOOL',
-    pref: 'ria-portal',
+    pref: 'auto-oms',
   },
   {
     name: 'Bank of America',

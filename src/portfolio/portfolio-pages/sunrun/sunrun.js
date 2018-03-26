@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import renderSkillsList from '../common-objects/skills-list';
 import renderSummary from '../common-objects/summary';
 import renderBanner from '../common-objects/banner';
 
 import './sunrun.scss';
 
-class Sunrun extends Component {
-  tasksArray =
+function Sunrun() {
+
+  const tasksArray =
     [
       'Managed the integration of Clean Energy Experts, acquired by Sunrun in April 2015, into Sunrun’s financial planning process.',
       'Helped build and maintain the free cash flow model used by executive leadership to manage the schedule of solar project financingings and capital raises.',
@@ -14,20 +15,20 @@ class Sunrun extends Component {
       'Supported the VP of Finance and CFO on an ad-hoc basis in preparation of and throughout the IPO process.',
     ]
 
-  skillsDictionary = {
+  const skillsDictionary = {
     Technology: ['VBA', 'Excel', 'PowerPoint', 'SalesForce', 'GoogleSheets'],
     Finance: ['Financial Modeling', 'Financial Planning', 'Forecasting', 'Automation'],
   }
 
-  financialModelingDescription = "My primary task was to build and maintain Sunrun's free cash flow model. This model was used by executives to plan capital raises and tax equity deals.\n\nIn addition, I managed the integration of Clean Energy Experts, acquired by Sunrun in April 2015, into Sunrun’s financial planning process.\n\nLast, I partnered with the Project Finance executive to forecast any new expense related to future tax equity deals, securitizations, and warehouse facilities."
+  const financialModelingDescription = "My primary task was to build and maintain Sunrun's free cash flow model. This model was used by executives to plan capital raises and tax equity deals.\n\nIn addition, I managed the integration of Clean Energy Experts, acquired by Sunrun in April 2015, into Sunrun’s financial planning process.\n\nLast, I partnered with the Project Finance executive to forecast any new expense related to future tax equity deals, securitizations, and warehouse facilities."
 
-  cashFlowDescription = 'Built and maintained the free cash flow model used by executive leadership to manage the schedule of solar project financingings and capital raises.'
+  const cashFlowDescription = 'Built and maintained the free cash flow model used by executive leadership to manage the schedule of solar project financingings and capital raises.'
 
-  ipoDescription = 'Sunrun went public in August 2018. I supported the VP of Finance and CFO on an ad-hoc basis throughout the IPO process.'
+  const ipoDescription = 'Sunrun went public in August 2018. I supported the VP of Finance and CFO on an ad-hoc basis throughout the IPO process.'
 
-  summaryBody = "I was a financial analyst for Sunrun’s corporate finance division from January 2018 to August 2018. Sunrun is a leading United States-based provider of residential solar, and was a late-stage, high growth startup at the time I worked there.\n\nDuring my time with Sunrun, my main task was to help build the company's financial models and processes in preparation of its impending IPO. Sunrun went public in August 2018."
+  const summaryBody = "I was a financial analyst for Sunrun’s corporate finance division from January 2018 to August 2018. Sunrun is a leading United States-based provider of residential solar, and was a late-stage, high growth startup at the time I worked there.\n\nDuring my time with Sunrun, my main task was to help build the company's financial models and processes in preparation of its impending IPO. Sunrun went public in August 2018."
 
-  renderFinancialModeling() {
+  function renderFinancialModeling() {
     return (
       <div className="portfolio-page__section">
         <h2 className="portfolio-page__section__title">Financial Modeling</h2>
@@ -45,13 +46,13 @@ class Sunrun extends Component {
           </div>
         </div>
         <div className="portfolio-page__section__body">
-          <p className="sunrun__financial-modeling__text">{this.financialModelingDescription}</p>
+          <p className="sunrun__financial-modeling__text">{financialModelingDescription}</p>
         </div>
       </div>
     );
   }
 
-  renderIPO() {
+  function renderIPO() {
     const ipoDescriptionText = "Can't spot me? Just keep looking. I'm definitely there.";
 
     return (
@@ -74,25 +75,23 @@ class Sunrun extends Component {
           </div>
         </div>
         <div className="portfolio-page__section__body">
-          <p className="sunrun__ipo__text">{this.ipoDescription}</p>
+          <p className="sunrun__ipo__text">{ipoDescription}</p>
         </div>
       </div>
     );
   }
 
-  render() {
-    return (
-      <div className="sunrun portfolio-page">
-        <div className="portfolio-page__body">
-          {renderBanner('sunrun')}
-          {renderSummary(this.summaryBody)}
-          {this.renderFinancialModeling()}
-          {this.renderIPO()}
-          {renderSkillsList(this.skillsDictionary)}
-        </div>
+  return (
+    <div className="sunrun portfolio-page">
+      <div className="portfolio-page__body">
+        {renderBanner('sunrun')}
+        {renderSummary(summaryBody)}
+        {renderFinancialModeling()}
+        {renderIPO()}
+        {renderSkillsList(skillsDictionary)}
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Sunrun;

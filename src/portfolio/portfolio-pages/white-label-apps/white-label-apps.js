@@ -17,8 +17,8 @@ function WhiteLabelApps() {
 
   const productSections = [
     {
-      productCaption:"OShares ETF Investment",
-      productDescription: "Beanstox is an application my team built for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the Beanstox app, we designed a custom user signup process which incorporated O'Shares' internal investment methodology.",
+      caption:"OShares ETF Investment",
+      description: "Beanstox is an application my team built for O'Shares, the ETF company run by Kevin O'Leary.\n\nFor the Beanstox app, we designed a custom user signup process which incorporated O'Shares' internal investment methodology.",
       img: {
         alt:"Beanstox application showing the allocation screen",
         classNames:"white-label-apps__product__iphone-image",
@@ -28,8 +28,8 @@ function WhiteLabelApps() {
       }
     },
     {
-      productCaption: "Astor Investment Management",
-      productDescription: "Astor served as the pilot project for Boon's white label applications. They are a registered investment advisor that provides client services to over $2 billion in client assets.\n\nThe first client is always the hardest. For the Astor deal, most of my time was spent getting product deadlines to match with partner expectations, and vice versa. Developing the actual app was surprisingly easy in comparison.",
+      caption: "Astor Investment Management",
+      description: "Astor served as the pilot project for Boon's white label applications. They are a registered investment advisor that provides client services to over $2 billion in client assets.\n\nThe first client is always the hardest. For the Astor deal, most of my time was spent getting product deadlines to match with partner expectations, and vice versa. Developing the actual app was surprisingly easy in comparison.",
       img: {
         alt: "Astor application showing the investment detail screen",
         classNames: "white-label-apps__product__iphone-image",

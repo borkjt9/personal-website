@@ -2,37 +2,37 @@ $pageColor: #FAFAFA;
 $borderColor: #D9D9D9;
 $underlineColor: #636363;
 
-.ria-portal {
+.auto-oms {
 
-  .ria-portal__design__text,  .ria-portal__investment__text{
+  .auto-oms__design__text,  .auto-oms__investment__text{
     margin: auto 0px;
     width: 100%;
     max-width: 300px;
     display: inline-block;
   }
 
-  .ria-portal__wireframe {
+  .auto-oms__wireframe {
     width: 100%;
     max-width: 288px;
     transition: all 0.2s ease-in-out;
     margin: auto 0px;
     cursor: pointer;
 
-    .ria-portal__design__wireframe__image {
+    .auto-oms__design__wireframe__image {
       width: 100%;
       border: solid 1px $borderColor;
       padding: 2px;
       box-shadow: 1px 1px 2px $borderColor;
     }
 
-     .ria-portal__design__wireframe__description {
+     .auto-oms__design__wireframe__description {
       margin: 4px auto;
       transition: all 0.1s ease-in-out;
       text-align: center;
     }
   }
 
-  .ria-portal__product__portal-image {
+  .auto-oms__product__portal-image {
 
     width: 100%;
     max-width: 288px;
@@ -42,16 +42,12 @@ $underlineColor: #636363;
   }
 
 
-  .ria-portal__product__text {
+  .auto-oms__product__text {
     width: 100%;
     max-width: 325px;
     margin: auto 0px;
   }
 
-  .ria-portal__timeline {
-    .ria-portal__timeline__image {
-      width: 100%;
-    }
-  }
+
 
 }

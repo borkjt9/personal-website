@@ -15,8 +15,8 @@ function AutoPOOL() {
 
   const productInputs = [
     {
-      productCaption:'Born out of Pain',
-      productDescription: 'Through large amounts of very scientific research, UberPOOL prices were found to rise and fall upwards of 100% in very short periods of time.\n\nIt was reported from a reliable source (definitely not me) that a ride from San Mateo, CA to Mountain View, CA at 5:00pm would cost $25, and then not 5 minutes later cost only $11.50.',
+      caption:'Born out of Pain',
+      description: 'Through large amounts of very scientific research, UberPOOL prices were found to rise and fall upwards of 100% in very short periods of time.\n\nIt was reported from a reliable source (definitely not me) that a ride from San Mateo, CA to Mountain View, CA at 5:00pm would cost $25, and then not 5 minutes later cost only $11.50.',
       img: {
         alt:"autopool screen that lets you set your destination and current location",
         className:"autopool__product__iphone-image",
@@ -26,8 +26,8 @@ function AutoPOOL() {
       }
     },
     {
-      productCaption: 'Set and Forget',
-      productDescription: "The huge swings in prices began to cause severe migraines in many UberPOOL users (again, not me).\n\nAutoPOOL solves this serious health risk by monitering UberPOOL prices so users don't have to.\n\nAutoPOOL sends users automatic price alerts at intervals they specify in fun pokemon-themed messages. Epidemic Averted.",
+      caption: 'Set and Forget',
+      description: "The huge swings in prices began to cause severe migraines in many UberPOOL users (again, not me).\n\nAutoPOOL solves this serious health risk by monitering UberPOOL prices so users don't have to.\n\nAutoPOOL sends users automatic price alerts at intervals they specify in fun pokemon-themed messages. Epidemic Averted.",
       img: {
         alt: "autopool screen that creates your alert",
         className: "autopool__product__iphone-image",
@@ -37,8 +37,8 @@ function AutoPOOL() {
       }
     },
     {
-      productCaption: 'Wild UberPOOL was Caught!',
-      productDescription: "Once the UberPOOL price is in the user's desired range, the user will receive a notification with a special pokemon-themed catchphrase.\n\nThe user can then book an uber directly in the application.",
+      caption: 'Wild UberPOOL was Caught!',
+      description: "Once the UberPOOL price is in the user's desired range, the user will receive a notification with a special pokemon-themed catchphrase.\n\nThe user can then book an uber directly in the application.",
       img: {
         alt: "iphone homescreen showing a push notification sent from autopool",
         classNames: "autopool__product__iphone-image",
