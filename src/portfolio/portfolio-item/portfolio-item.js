@@ -2,12 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './portfolio-item.scss';
 
-const PortfolioItem = (props) => {
-  function selectPortfolioItem() {
+function PortfolioItem(props){
+
+  //I researched to find better ways to get around using a handler.
+  //The msot efficient way was to create a function directly in JSX.
+  //But this creates a new function every time the component is rendered.
+  //This is worse from a memory perspective. So we keek the handler from now on.
+  function selectPortfolioItemHandler() {
     props.selectPortfolioItem(props.item.href);
   }
 
-  function selectPortfolioItemText() {
+  function renderPortfolioItemText() {
     if (props.isCarousel) {
       const descriptionStyle = {
         bottom: '6px', textAlign: 'center', margin: '0px', marginLeft: '5px', width: 'calc(100% - 5px)',
@@ -31,7 +36,6 @@ const PortfolioItem = (props) => {
   }
 
   let portfolioItemClassNames = 'transition-border portfolio__item max-dimensions-is-screen';
-
   if (props.isCarousel) {
     portfolioItemClassNames += ' header__carousel__item';
     if (props.shouldExpand) {
@@ -55,14 +59,11 @@ const PortfolioItem = (props) => {
   } : {};
 
   const slickSlideStyle = props.isCarousel ? { minHeight: '0' } : {};
-  // let itemLink = `../portfolio/${props.item.href}`;
-  // if (props.addPortfolioPrefix) {
-  //   itemLink = `portfolio/${props.item.href}`;
-  // }
+
   return (
     <div style={slickSlideStyle} >
       <div className={portfolioItemClassNames} style={portfolioItemStyle} >
-        <button onClick={selectPortfolioItem} >
+        <button onClick={selectPortfolioItemHandler} >
           <img
             alt={`${props.item.name}`}
             className="portfolio__item__image"
@@ -72,7 +73,7 @@ const PortfolioItem = (props) => {
             https://johnborkowski.me/images/${props.item.image}-750.jpg 750w`}
             sizes="(max-width: 250px) 95vw, 250px"
           />
-          {selectPortfolioItemText()}
+          {renderPortfolioItemText()}
         </button>
       </div>
     </div>

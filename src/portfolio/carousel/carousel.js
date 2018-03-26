@@ -6,9 +6,11 @@ import PortfolioItem from '../portfolio-item/portfolio-item';
 import portfolioArr from '../../public-objects/portfolio-arr';
 import './carousel.scss';
 
-function SampleNextArrow(props) {
+//below is an implementation of react-slick library.
+//See https://github.com/akiran/react-slick for full details.
+function NextArrow(props) {
   const { className, style, onClick } = props;
-  const imageStyle = {
+  const portfolioImageStyle = {
     width: '100%', top: 0, left: 0, position: 'absolute', opacity: 0.55,
   };
 
@@ -20,7 +22,7 @@ function SampleNextArrow(props) {
     >
       <img
         alt="Next button for the portfolio carousel."
-        style={imageStyle}
+        style={portfolioImageStyle}
         src="https://johnborkowski.me/images/right-chevron-40.png"
         srcSet="https://johnborkowski.me/images/right-chevron-20.png 20w,
           https://johnborkowski.me/images/right-chevron-40.png 40w,
@@ -30,22 +32,22 @@ function SampleNextArrow(props) {
     </button>
   );
 }
-// will be filled by library
-SampleNextArrow.defaultProps = {
+
+NextArrow.defaultProps = {
   style: {},
   className: '',
   onClick: function foo() {},
 };
 
-SampleNextArrow.propTypes = {
+NextArrow.propTypes = {
   style: PropTypes.objectOf(PropTypes.any),
   className: PropTypes.string,
   onClick: PropTypes.func,
 };
 
-function SamplePrevArrow(props) {
+function PrevArrow(props) {
   const { className, style, onClick } = props;
-  const imageStyle = {
+  const portfolioImageStyle = {
     width: '100%', top: 0, left: 0, position: 'absolute', opacity: 0.55,
   };
   return (
@@ -56,7 +58,7 @@ function SamplePrevArrow(props) {
     >
       <img
         alt="Previous button for portfolio carousel."
-        style={imageStyle}
+        style={portfolioImageStyle}
         src="https://johnborkowski.me/images/left-chevron-40.png"
         srcSet="https://johnborkowski.me/images/left-chevron-20.png 20w,
         https://johnborkowski.me/images/left-chevron-40.png 40w,
@@ -66,13 +68,14 @@ function SamplePrevArrow(props) {
     </button>
   );
 }
-SamplePrevArrow.defaultProps = {
+
+PrevArrow.defaultProps = {
   style: {},
   className: '',
   onClick: function foo() {},
 };
 
-SamplePrevArrow.propTypes = {
+PrevArrow.propTypes = {
   style: PropTypes.objectOf(PropTypes.any),
   className: PropTypes.string,
   onClick: PropTypes.func,
@@ -108,8 +111,8 @@ class Carousel extends Component {
     const settings = {
       dots: false,
       arrows: true,
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
       slidesToShow: 3,
       swipe: false,
       initialSlide: this.props.currentPortfolioIndex - 1,

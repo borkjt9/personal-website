@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 import map from 'lodash/map';
 
 import PortfolioItem from '../portfolio-item/portfolio-item';
@@ -7,47 +6,22 @@ import portfolioArr from '../../public-objects/portfolio-arr';
 import './portfolio-grid.scss';
 
 
-class PortfolioGrid extends Component {
-  constructor(props) {
-    super(props);
-    this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
-  }
-
-  selectPortfolioItem(portfolioItem) {
-    this.props.selectPortfolioItem(portfolioItem);
-  }
-
-  renderPortfolioItems() {
-    const portfolioItems = map(portfolioArr, item => (
-      <PortfolioItem
-        key={item.name}
-        selectPortfolioItem={this.selectPortfolioItem}
-        item={item}
-      />
-    ));
-
-    return (
+function PortfolioGrid(props) {
+  const portfolioItems = map(portfolioArr, item => (
+    <PortfolioItem
+      key={item.name}
+      selectPortfolioItem={props.selectPortfolioItem}
+      item={item}
+    />
+  ));
+  const portfolioGridClassNames = props.fromLandingPage ? "portfolio-grid": "portfolio-grid margin-top-is-header"
+  return (
+    <div className={portfolioGridClassNames}>
       <div className="portfolio portfolio--wrapped portfolio-grid justify-content-around">
         {portfolioItems}
       </div>
-    );
-  }
-
-  render() {
-    const portfolioGridStyle = this.props.fromLandingPage ? {} : { marginTop: '115px' };
-    return (
-      <div className="portfolio-grid" style={portfolioGridStyle}>
-        {this.renderPortfolioItems()}
-      </div>
-    );
-  }
-}
-
-PortfolioGrid.defaultProps = {
-  fromLandingPage: false,
+    </div>
+  );
 };
-PortfolioGrid.propTypes = {
-  selectPortfolioItem: PropTypes.func.isRequired,
-  fromLandingPage: PropTypes.bool,
-};
+
 export default PortfolioGrid;
