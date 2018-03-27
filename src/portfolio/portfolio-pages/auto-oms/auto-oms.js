@@ -43,15 +43,15 @@ function AutoOMS() {
   ];
 
   const designInput = {
-    body: "I designed the first prototype of Boon in August 2015. Over the next year, Boon went through many iterations (each incrementally less terrible) before launching to the public.\n\nI used Sketch to design Boon's interface, and developed the application in Swift, Apple’s native programming language.",
-    caption: 'From Conception to MVP',
-    href: 'https://johnborkowski.me/images/boon-wireframe.jpg',
+    body: "The Auto-OMS began as an API that connected partners to Boon's internal engine.\n\nVery quickly, I realized (i.e. our partners repeatedly told me) that they needed an interface through which they could more easily interact with the API. I designed the RIA Portal to satisfy this need.",
+    caption: 'From API to GUI',
+    href: 'https://johnborkowski.me/images/auto-oms-wireframe.jpg',
     img: {
-      alt: 'thumbnail of the design wireframe for the boon investments application',
+      alt: 'thumbail of the design wireframe for the ria portal',
       classNames: 'portfolio-page__design__wireframe__image transition-border',
-      src: 'https://johnborkowski.me/images/boon-wireframe-500.jpg',
-      srcSet: 'https://johnborkowski.me/images/boon-wireframe-250.jpg 250w, https://johnborkowski.me/images/boon-wireframe-500.jpg 500w, https://johnborkowski.me/images/boon-wireframe-750.jpg 750w',
-      sizes: '(max-width: 250px) 95vw, 250px',
+      src: 'https://johnborkowski.me/images/auto-oms-wireframe-thumbnail-600.jpg',
+      srcSet: 'https://johnborkowski.me/images/auto-oms-wireframe-thumbnail-300.jpg 300w, https://johnborkowski.me/images/auto-oms-wireframe-thumbnail-600.jpg 600w, https://johnborkowski.me/images/auto-oms-wireframe-thumbnail-900.jpg 900w',
+      sizes: '(max-width: 300px) 100vw, 300px',
     },
   };
 

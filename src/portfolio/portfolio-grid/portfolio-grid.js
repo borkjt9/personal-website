@@ -6,12 +6,7 @@ import PortfolioItem from '../portfolio-item/portfolio-item';
 import portfolioArr from '../../public-objects/portfolio-arr';
 import './portfolio-grid.scss';
 
-
-
-const memoizedPortfolioGrid = moize.react(PortfolioGrid);
-
 function PortfolioGrid(props) {
-
   const portfolioItems = map(portfolioArr, item => (
     <PortfolioItem
       key={item.name}
@@ -37,5 +32,7 @@ PortfolioGrid.propTypes = {
   selectPortfolioItem: PropTypes.func.isRequired,
   fromLandingPage: PropTypes.bool,
 };
+
+const memoizedPortfolioGrid = moize.react(PortfolioGrid);
 
 export default memoizedPortfolioGrid;

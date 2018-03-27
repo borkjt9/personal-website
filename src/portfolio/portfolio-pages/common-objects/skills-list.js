@@ -20,5 +20,5 @@ function renderSkillsList(skillsDictionary) {
   );
 }
 
-const memoizedRenderSkillsList = moize.react(renderSkillsList)
+const memoizedRenderSkillsList = moize.react(renderSkillsList);
 export default memoizedRenderSkillsList;

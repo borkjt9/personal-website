@@ -50,9 +50,11 @@ class LandingPage extends Component {
   handleScrollEvent() {
     // + is unary operator, same as Number(window.scrollY)
     const currScrollPositionY = Number(window.scrollY);
-    if (this.state.scrollPositionY > this.scrollThreshold && currScrollPositionY < this.scrollThreshold) {
+    if (this.state.scrollPositionY > this.scrollThreshold
+      && currScrollPositionY < this.scrollThreshold) {
       this.setState({ scrollPositionY: currScrollPositionY });
-    } else if (this.state.scrollPositionY < this.scrollThreshold && currScrollPositionY > this.scrollThreshold) {
+    } else if (this.state.scrollPositionY < this.scrollThreshold
+      && currScrollPositionY > this.scrollThreshold) {
       this.setState({ scrollPositionY: currScrollPositionY });
     }
   }

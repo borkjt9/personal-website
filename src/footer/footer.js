@@ -3,8 +3,6 @@ import map from 'lodash/map';
 import moize from 'moize';
 import './footer.scss';
 
-const memoizedFooter = moize.react(Footer);
-
 function Footer() {
   const links = [
     { title: 'Email', href: 'mailto:borkjt9@gmail.com' },
@@ -36,5 +34,7 @@ function Footer() {
     </div>
   );
 }
+
+const memoizedFooter = moize.react(Footer);
 
 export default memoizedFooter;

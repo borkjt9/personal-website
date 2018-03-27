@@ -27,5 +27,5 @@ function renderTimeline(portfolio) {
   );
 }
 
-const memoizedRenderTimeline = moize.react(renderTimeline)
+const memoizedRenderTimeline = moize.react(renderTimeline);
 export default memoizedRenderTimeline;
