@@ -1,5 +1,5 @@
 import React from 'react';
-
+import moize from 'moize';
 function renderDesign(input) {
   return (
     <div className="portfolio-page__section boon-investments__design">
@@ -26,4 +26,5 @@ function renderDesign(input) {
   );
 }
 
-export default renderDesign;
+const memoizedRenderDesign = moize.react(renderDesign)
+export default memoizedRenderDesign;

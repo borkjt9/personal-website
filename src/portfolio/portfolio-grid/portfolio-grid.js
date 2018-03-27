@@ -1,12 +1,17 @@
 import React from 'react';
 import map from 'lodash/map';
 import PropTypes from 'prop-types';
+import moize from 'moize';
 import PortfolioItem from '../portfolio-item/portfolio-item';
 import portfolioArr from '../../public-objects/portfolio-arr';
 import './portfolio-grid.scss';
 
 
+
+const memoizedPortfolioGrid = moize.react(PortfolioGrid);
+
 function PortfolioGrid(props) {
+
   const portfolioItems = map(portfolioArr, item => (
     <PortfolioItem
       key={item.name}
@@ -33,4 +38,4 @@ PortfolioGrid.propTypes = {
   fromLandingPage: PropTypes.bool,
 };
 
-export default PortfolioGrid;
+export default memoizedPortfolioGrid;

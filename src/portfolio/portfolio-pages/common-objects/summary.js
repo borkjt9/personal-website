@@ -1,4 +1,5 @@
 import React from 'react';
+import moize from 'moize';
 
 function renderSummary(summaryBody) {
   return (
@@ -11,4 +12,5 @@ function renderSummary(summaryBody) {
   );
 }
 
-export default renderSummary;
+const memoizedRenderSummary = moize.react(renderSummary);
+export default memoizedRenderSummary;

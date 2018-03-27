@@ -46,17 +46,22 @@ class LandingPage extends Component {
     document.removeEventListener('scroll', debounce(this.handleScrollEvent, 0));
   }
 
-  scrollThreshold = 40;
 
   handleScrollEvent() {
     // + is unary operator, same as Number(window.scrollY)
-    const scrollPositionY = Number(window.scrollY);
-    this.setState({ scrollPositionY });
+    const currScrollPositionY = Number(window.scrollY);
+    if (this.state.scrollPositionY > this.scrollThreshold && currScrollPositionY < this.scrollThreshold) {
+      this.setState({ scrollPositionY: currScrollPositionY });
+    } else if (this.state.scrollPositionY < this.scrollThreshold && currScrollPositionY > this.scrollThreshold) {
+      this.setState({ scrollPositionY: currScrollPositionY });
+    }
   }
 
   selectPortfolioItem(portfolioItem) {
     this.props.history.push(`../portfolio/${portfolioItem}`);
   }
+
+  scrollThreshold = 40;
 
   changeToAboutSection() {
     if (this.state.activeSection === 'portfolio') {

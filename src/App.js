@@ -1,6 +1,6 @@
 import React from 'react';
 
-import 'normalize.css'; // Note this
+import 'normalize.css';
 import './App.scss';
 import './styles/theme/typography.scss';
 import './styles/theme/spacing.scss';

@@ -32,8 +32,18 @@
   overflow: hidden;
   transform: translate3d(0, 0, 0);
 
+  &.is-not-carousel{
+    text-align: center;
+    max-width: 250px;
+    max-height: 225px;
+    margin: 20px;
+    padding: 20px ;
+    background-color: #FFFFFF;
+  }
 
 }
+
+
 
 .portfolio-item__image {
   width: 90%;

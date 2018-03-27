@@ -43,7 +43,7 @@ function PortfolioItem(props) {
       portfolioItemClassNames += ' is-minimizing';
     }
   } else {
-    portfolioItemClassNames += ' portfolio-grid__portfolio__item';
+    portfolioItemClassNames += ' is-not-carousel';
   }
 
   const portfolioItemStyle = props.isCarousel ? {

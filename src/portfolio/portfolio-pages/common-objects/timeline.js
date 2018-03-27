@@ -1,4 +1,5 @@
 import React from 'react';
+import moize from 'moize';
 
 function renderTimeline(portfolio) {
   return (
@@ -26,4 +27,5 @@ function renderTimeline(portfolio) {
   );
 }
 
-export default renderTimeline;
+const memoizedRenderTimeline = moize.react(renderTimeline)
+export default memoizedRenderTimeline;

@@ -9,16 +9,16 @@ const portfolioNavRefs = {
     nref: 'white-label-apps',
     index: 1,
   },
-  'white-label-apps': {
-    pref: 'auto-oms',
-    nref: 'autoPOOL',
-    index: 2,
-
-  },
   autoPOOL: {
     pref: 'white-label-apps',
     nref: 'bank-of-america',
+    index: 2,
+  },
+  'white-label-apps': {
+    pref: 'auto-oms',
+    nref: 'autoPOOL',
     index: 3,
+
   },
   'bank-of-america': {
     pref: 'autoPOOL',

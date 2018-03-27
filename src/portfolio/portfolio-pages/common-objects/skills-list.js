@@ -1,5 +1,6 @@
 import React from 'react';
 import map from 'lodash/map';
+import moize from 'moize';
 
 function renderSkillsList(skillsDictionary) {
   const skillsTable = map(skillsDictionary, (skills, key) => (
@@ -19,4 +20,5 @@ function renderSkillsList(skillsDictionary) {
   );
 }
 
-export default renderSkillsList;
+const memoizedRenderSkillsList = moize.react(renderSkillsList)
+export default memoizedRenderSkillsList;

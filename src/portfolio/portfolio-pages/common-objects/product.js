@@ -1,4 +1,5 @@
 import React from 'react';
+import moize from 'moize';
 
 function renderProduct(rows) {
   const subSections = [];
@@ -50,4 +51,5 @@ function renderProduct(rows) {
   );
 }
 
-export default renderProduct;
+const memoizedRenderProduct = moize.react(renderProduct);
+export default memoizedRenderProduct;

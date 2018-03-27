@@ -1,4 +1,5 @@
 import React from 'react';
+import moize from 'moize';
 
 function renderInvestment(input) {
   return (
@@ -30,4 +31,5 @@ function renderInvestment(input) {
   );
 }
 
-export default renderInvestment;
+const memoizedRenderInvestment = moize.react(renderInvestment);
+export default memoizedRenderInvestment;

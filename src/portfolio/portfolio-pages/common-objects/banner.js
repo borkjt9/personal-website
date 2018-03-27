@@ -1,4 +1,5 @@
 import React from 'react';
+import moize from 'moize';
 
 function renderBanner(portfolio, title = '') {
   return (
@@ -18,4 +19,5 @@ function renderBanner(portfolio, title = '') {
   );
 }
 
-export default renderBanner;
+const memoizedRenderBanner = moize.react(renderBanner);
+export default memoizedRenderBanner;

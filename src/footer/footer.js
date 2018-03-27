@@ -1,7 +1,9 @@
 import React from 'react';
 import map from 'lodash/map';
+import moize from 'moize';
 import './footer.scss';
 
+const memoizedFooter = moize.react(Footer);
 
 function Footer() {
   const links = [
@@ -35,4 +37,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default memoizedFooter;

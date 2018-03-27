@@ -20,6 +20,7 @@
     "html-minifier": "^3.5.9",
     "html-webpack-plugin": "2.29.0",
     "lodash": "^4.17.5",
+    "moize": "^5.2.1",
     "node-sass": "^3.13.1",
     "normalize.css": "^8.0.0",
     "object-assign": "4.1.1",
