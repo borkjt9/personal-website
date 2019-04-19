@@ -4,19 +4,24 @@ h1, h2, h3, h4, h5, a, button, p {
   text-rendering: optimizeLegibility;
 }
 
-
-
 h1 {
-  font-weight: 300;
+  font-size: 3.5rem;
+  letter-spacing: .7em;
+  line-height: 1.3em;
   text-transform: uppercase;
   color: #636363;
+  text-indent: .7em;
+  font-weight: 300;
 }
 
 h2 {
+  font-size: 3.0rem;
+  line-height: 1.2em;
+  letter-spacing: .7em;
+  text-indent: .7em;
   font-weight: 300;
   text-transform: lowercase;
   color: #636363;
-
 }
 
 h3 {

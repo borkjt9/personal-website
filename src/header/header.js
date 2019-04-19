@@ -115,10 +115,14 @@ class Header extends Component {
   }
 }
 
+Header.defaultProps = {
+  currentPortfolioIndex: 0,
+};
+
 Header.propTypes = {
   selectSubSection: PropTypes.func.isRequired,
   onPortfolioToggle: PropTypes.func.isRequired,
-  currentPortfolioIndex: PropTypes.number.isRequired,
+  currentPortfolioIndex: PropTypes.number,
 };
 
 export default Header;
