@@ -155,6 +155,9 @@ class Portfolio extends Component {
           currentPortfolioIndex={this.state.currentPortfolioIndex}
           onPortfolioToggle={this.handlePortfolioToggle}
           selectSubSection={this.selectSubSection}
+          isTopBar
+          addCarousel
+          activeSection={this.selectedSubSection}
         />
         {this.renderSubSection()}
         {this.renderPortfolioNavs()}
