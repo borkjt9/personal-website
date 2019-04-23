@@ -3,7 +3,7 @@ import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 import PortfolioItem from '../portfolio/portfolio-item/portfolio-item';
-import portfolioArr from '../public-objects/portfolio-arr';
+import portfolioArr from '../shared/portfolio-arr';
 
 Enzyme.configure({ adapter: new Adapter() });
 

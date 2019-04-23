@@ -3,7 +3,7 @@ import map from 'lodash/map';
 import PropTypes from 'prop-types';
 import moize from 'moize';
 import PortfolioItem from '../portfolio-item/portfolio-item';
-import { portfolioArr } from '../public-objects/enums';
+import { portfolioArr } from '../shared/enums';
 import './portfolio-grid.scss';
 
 function PortfolioGrid(props) {

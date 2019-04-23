@@ -4,18 +4,30 @@ import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 
 import 'normalize.css'; // Note this
 
-import App from './App';
+import App from './app/app';
 
-import './styles/theme/typography.scss';
-import './styles/theme/spacing.scss';
-import './styles/base.scss';
-import './styles/animations.scss';
-import './styles/transitions.scss';
+import './shared/styles/theme/typography.scss';
+import './shared/styles/theme/spacing.scss';
+import './shared/styles/base.scss';
+import './shared/styles/animations.scss';
+import './shared/styles/transitions.scss';
 
 
 ReactDOM.render(
   <BrowserRouter>
-    {App()}
+    <Switch>
+      <Route path="/home" component={App} />
+      <Route path="/portfolio/:activeSection" component={App} />
+      <Route path="/portfolio" component={App} />
+      <Route path="/about" component={App} />
+
+      <Route
+        path="/"
+        render={() => (
+          <Redirect to="/home" />
+        )}
+      />
+    </Switch>
   </BrowserRouter>
   , document.getElementById('root'),
 );

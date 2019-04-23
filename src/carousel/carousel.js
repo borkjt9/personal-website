@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import map from 'lodash/map';
 import PortfolioItem from '../portfolio-item/portfolio-item';
-import { portfolioArr } from '../public-objects/enums';
+import { portfolioArr } from '../shared/enums';
 import './carousel.scss';
 
 // below is an implementation of react-slick library.

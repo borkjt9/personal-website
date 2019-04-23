@@ -1,5 +1,8 @@
+.app {
+  text-align: center;
+}
 @media (min-width: 768px) {
-  .landing-page {
+  .app {
     //125px is top bar height
     top: 125px;
     &.is-scrolling {
@@ -10,12 +13,12 @@
 }
 
 @media (max-width: 767px) {
-  .landing-page {
+  .app {
     //75px is top bar height
     top: 75px;
   }
 }
 
-.landing-page {
+.app {
   position: absolute;
 }

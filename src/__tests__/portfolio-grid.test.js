@@ -2,8 +2,8 @@ import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import PortfolioGrid from '../portfolio/portfolio-grid/portfolio-grid';
-import portfolioArr from '../public-objects/portfolio-arr';
+import PortfolioGrid from '../portfolio-grid/portfolio-grid';
+import portfolioArr from '../shared/portfolio-arr';
 
 Enzyme.configure({ adapter: new Adapter() });
 
