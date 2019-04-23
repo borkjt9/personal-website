@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 import PropTypes from 'prop-types';
-
-import About from '../about/about';
 import Footer from '../footer/footer';
 import Header from '../header/header';
-import PortfolioGrid from '../portfolio/portfolio-grid/portfolio-grid';
+import { browserPaths, components, portfolioItems } from '../public-objects/enums';
 import './landing-page.scss';
 
 // used below to handle scroll events
@@ -18,12 +16,21 @@ const debounce = (func, wait) => {
   };
 };
 
+function addCustomProp(component, key, val) {
+  const propDict = {};
+  propDict[key] = val;
+  return React.cloneElement(
+    component,
+    propDict,
+  );
+}
+
 // This variable doesn't do anything other than add 'portfolio' or 'about' to the browser.
 // I found if it wasn't added after it was clicked, it became confusing.
 
 const defaultSection = 'about';
 const scrollThreshold = 40;
-const fakeBrowserHistory = createHistory(); 
+const fakeBrowserHistory = createHistory();
 class LandingPage extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +38,7 @@ class LandingPage extends Component {
     this.state = {
       activeSection,
       scrollPositionY: 0,
+      topBarFixed: false,
     };
     this.selectSubSection = this.selectSubSection.bind(this);
     this.changeToSection = this.changeToSection.bind(this);
@@ -50,7 +58,6 @@ class LandingPage extends Component {
   
   fakeBrowserHistory = createHistory();
   scrollThreshold = 40;
-
   handleScrollEvent() {
     // + is unary operator, same as Number(window.scrollY)
     const currScrollPositionY = Number(window.scrollY);
@@ -76,7 +83,7 @@ class LandingPage extends Component {
       this.setState({
         activeSection: section,
       });
-      this.fakeBrowserHistory.push(`../home/${section}`);
+      this.fakeBrowserHistory.push(`../${section}`);
     }
   }
 
@@ -84,7 +91,8 @@ class LandingPage extends Component {
     this.setState({
       activeSection: defaultSection,
     });
-    this.fakeBrowserHistory.push('../home/');
+    console.log('resetting page');
+    this.fakeBrowserHistory.replace('/home');
     window.scrollTo(0, 0);
   }
 
@@ -122,38 +130,44 @@ class LandingPage extends Component {
 
   selectSubSection(section) {
     const pageIsScrolling = (this.state.scrollPositionY > scrollThreshold);
+    const browserPath = browserPaths[section];
 
     if (pageIsScrolling) {
-      window.scrollTo(0, 125);
+      window.scrollTo(0, 0);
     }
-    fakeBrowserHistory.push({
-      pathname: `../home/${section}`,
+    fakeBrowserHistory.replace({
+      pathname: browserPath,
     });
+    let { topBarFixed } = this.state;
+    if (portfolioItems[section]) {
+      topBarFixed = true;
+    }
     this.setState({
       activeSection: section,
+      topBarFixed,
     });
   }
 
+
+
   render() {
-    const { activeSection } = this.state;
-    const pageIsScrolling = (this.state.scrollPositionY > scrollThreshold) ? 'is-scrolling' : '';
-    const isTopBar = this.state.scrollPositionY > scrollThreshold;
+    const { activeSection, topBarFixed } = this.state;
+    const pageIsScrolling = this.state.scrollPositionY > scrollThreshold ? 'is-scrolling' : '';
+    const isTopBar = this.state.scrollPositionY > scrollThreshold || topBarFixed;
+    const topClasses = portfolioItems[activeSection] ? 'portfolio' : `landing-page width-is-screen vert-center ${pageIsScrolling}`
+
+    const activeComponent = addCustomProp(components[activeSection], 'selectPortfolioItem', this.selectSubSection);
     return (
-      <div className={`landing-page width-is-screen vert-center ${pageIsScrolling}`}>
+      <div className={topClasses}>
         <div>
-          {/* {this.renderHeader()} */}
           <Header
             selectSubSection={this.selectSubSection}
             isTopBar={isTopBar}
-            addCarousel={false}
+            addCarousel={topBarFixed}
             resetPage={this.resetPage}
             activeSection={activeSection}
           />
-          {activeSection === ('about') ? <About /> : <PortfolioGrid
-            selectPortfolioItem={this.selectPortfolioItem}
-            fromLandingPage
-          />
-          }
+          {activeComponent}
           <Footer />
         </div>
       </div>

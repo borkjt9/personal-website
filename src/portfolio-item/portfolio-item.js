@@ -8,6 +8,7 @@ function PortfolioItem(props) {
   // But this creates a new function every time the component is rendered.
   // This is worse from a memory perspective. So we keek the handler from now on.
   function selectPortfolioItemHandler() {
+    console.log('selecting item', props.item)
     props.selectPortfolioItem(props.item.href);
   }
 

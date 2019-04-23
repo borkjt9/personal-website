@@ -1,9 +1,20 @@
+import React from 'react';
+import BankOfAmerica from '../portfolio/portfolio-pages/bank-of-america/bank-of-america';
+import Sunrun from '../portfolio/portfolio-pages/sunrun/sunrun';
+import AutoOMS from '../portfolio/portfolio-pages/auto-oms/auto-oms';
+import AutoPOOL from '../portfolio/portfolio-pages/autopool/autopool';
+import BoonInvestments from '../portfolio/portfolio-pages/boon-investments/boon-investments';
+import WhiteLabelApps from '../portfolio/portfolio-pages/white-label-apps/white-label-apps';
+import PortfolioGrid from '../portfolio/portfolio-grid/portfolio-grid';
+import About from '../about/about';
+222222222
 export const browserPaths = {
-  about: 'about',
-  portfolio: 'portfolio',
-  home: 'home',
+  about: '/about',
+  portfolio: '/portfolio',
+  home: '/home',
   'bank-of-america': 'portfolio/bankofamerica',
   'boon-investments': 'portfolio/booninvestments',
+  autoPOOL: 'portfolio/autoPOOL',
 };
 
 export const portfolioArr = [
@@ -64,4 +75,22 @@ export const portfolioArr = [
   },
 ];
 
-export default portfolioArr;
+export const components = {
+  'bank-of-america': <BankOfAmerica />,
+  'auto-oms': <AutoOMS />,
+  'boon-investments': <BoonInvestments />,
+  sunrun: <Sunrun />,
+  autoPOOL: <AutoPOOL />,
+  'white-label-apps': <WhiteLabelApps />,
+  portfolio: <PortfolioGrid />,
+  about: <About />,
+};
+
+export const portfolioItems = {
+  'bank-of-america': true,
+  'auto-oms': true,
+  'boon-investments': true,
+  sunrun: true,
+  autoPOOL: true,
+  'white-label-apps': true,
+};

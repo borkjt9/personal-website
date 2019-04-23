@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import createHistory from 'history/createBrowserHistory';
-import Carousel from '../portfolio/carousel/carousel';
+import Carousel from '../carousel/carousel';
 import './header.scss';
 
 
@@ -71,10 +71,10 @@ class Header extends Component {
   }
   handleHeaderClick(section) {
     const { addCarousel } = this.props;
-    if (section === 'about') {
-      this.changeToSection(section);
-    } else if (addCarousel) {
+    if (addCarousel && section !== 'about') {
       this.toggleCarousel();
+    } else {
+      this.changeToSection(section);
     }
   }
   renderCarousel() {
@@ -136,7 +136,7 @@ Header.defaultProps = {
   isTopBar: true,
   currentPortfolioIndex: 0,
   addCarousel: true,
-  onPortfolioToggle: () => this.fakeBrowserHistory.push('../home/'),
+  onPortfolioToggle: () => {},
 };
 
 Header.propTypes = {
