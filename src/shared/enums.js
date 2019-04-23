@@ -11,7 +11,6 @@ import About from '../about/about';
 export const browserPaths = {
   about: '/about',
   portfolio: '/portfolio',
-  home: '/home',
   'bank-of-america': '/portfolio/bankofamerica',
   'boon-investments': '/portfolio/boon-investments',
   autoPOOL: '/portfolio/autoPOOL',
