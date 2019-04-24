@@ -4,7 +4,7 @@ import moize from 'moize';
 
 function renderSkillsList(skillsDictionary) {
   const skillsTable = map(skillsDictionary, (skills, key) => (
-    <div className="portfolio-page__skills__row">
+    <div key={key} className="portfolio-page__skills__row">
       <p className="portfolio-page__skills__table__key">{`${key}: `}</p>
       <p className="portfolio-page__skills__table__description">{skills.reduce((acc, x) => (acc === null ? [x] : [acc, ' | ', x]), null)}</p>
     </div>

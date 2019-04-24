@@ -6,7 +6,7 @@ function renderProduct(rows) {
   rows.forEach((row, index) => {
     if (index % 2) {
       const subSection = (
-        <div className="portfolio-page__section__body row-wrap-reverse">
+        <div key={row.caption} className="portfolio-page__section__body row-wrap-reverse">
           <div className="portfolio-page__product__iphone-text">
             <h3>{row.caption}</h3>
             <p className="portfolio-page__section__body__description">{row.description}</p>
@@ -24,7 +24,7 @@ function renderProduct(rows) {
       subSections.push(subSection);
     } else {
       const subSection = (
-        <div className="portfolio-page__section__body row-wrap">
+        <div key={row.caption} className="portfolio-page__section__body row-wrap">
           <img
             alt={row.img.alt}
             className={row.img.classNames}

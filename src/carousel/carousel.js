@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Slider from 'react-slick';
 import map from 'lodash/map';
 import PortfolioItem from '../portfolio-item/portfolio-item';
@@ -82,26 +83,13 @@ PrevArrow.propTypes = {
 };
 
 class Carousel extends Component {
-  constructor(props) {
-    super(props);
-    this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
-  }
-
-  selectPortfolioItem(selectedPortfolio) {
-    this.props.selectPortfolioItem(selectedPortfolio);
-  }
-
   render() {
-    let shouldExpand = false;
-    if (this.props.shouldExpand) {
-      shouldExpand = true;
+    if (this.props.clearCarousel) {
+      return '';
     }
-
     const portfolioItems = map(portfolioArr, item => (
-      <div>
+      <div key={item.href}>
         <PortfolioItem
-          selectPortfolioItem={this.selectPortfolioItem}
-          shouldExpand={shouldExpand}
           item={item}
           isCarousel
         />
@@ -115,20 +103,46 @@ class Carousel extends Component {
       prevArrow: <PrevArrow />,
       slidesToShow: 3,
       swipe: false,
-      initialSlide: this.props.currentPortfolioIndex - 1,
+      initialSlide: this.props.carouselIndex - 1,
     };
     return (
-      <Slider {...settings}>
-        {portfolioItems}
-      </Slider>
+      <div className="portfolio portfolio--wrapped carousel">
+        <Slider {...settings}>
+          {portfolioItems}
+        </Slider>
+      </div>
     );
   }
 }
 
-Carousel.propTypes = {
-  selectPortfolioItem: PropTypes.func.isRequired,
-  currentPortfolioIndex: PropTypes.number.isRequired,
-  shouldExpand: PropTypes.bool.isRequired,
+Carousel.defaultProps = {
+  expandCarousel: false,
+  topBarFixed: false,
+  clearCarousel: true,
+  carouselIndex: 0,
 };
 
-export default Carousel;
+Carousel.propTypes = {
+  expandCarousel: PropTypes.bool,
+  dispatch: PropTypes.func.isRequired,
+  topBarFixed: PropTypes.bool,
+  clearCarousel: PropTypes.bool,
+  carouselIndex: PropTypes.number,
+};
+
+function mapStateToProps(state) {
+  const {
+    expandCarousel,
+    topBarFixed,
+    clearCarousel,
+    carouselIndex,
+  } = state;
+  return {
+    expandCarousel,
+    topBarFixed,
+    clearCarousel,
+    carouselIndex,
+  };
+}
+
+export default connect(mapStateToProps)(Carousel);

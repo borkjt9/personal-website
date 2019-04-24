@@ -28,6 +28,7 @@ export const portfolioArr = [
     href: 'boon-investments',
     nref: 'auto-oms',
     pref: 'autoPOOL',
+    idx: 0,
   },
   {
     name: 'Auto-OMS',
@@ -37,7 +38,7 @@ export const portfolioArr = [
     href: 'auto-oms',
     nref: 'white-label-apps',
     pref: 'boon-investments',
-
+    idx: 1,
   },
   {
     name: 'AutoPOOL',
@@ -47,6 +48,7 @@ export const portfolioArr = [
     href: 'autoPOOL',
     nref: 'bank-of-america',
     pref: 'white-label-apps',
+    idx: 2,
   },
   {
     name: 'White Label Apps',
@@ -56,6 +58,7 @@ export const portfolioArr = [
     href: 'white-label-apps',
     nref: 'autoPOOL',
     pref: 'auto-oms',
+    idx: 3,
   },
   {
     name: 'Bank of America',
@@ -65,6 +68,7 @@ export const portfolioArr = [
     href: 'bank-of-america',
     nref: 'sunrun',
     pref: 'autoPOOL',
+    idx: 4,
   },
   {
     name: 'Sunrun',
@@ -74,6 +78,7 @@ export const portfolioArr = [
     href: 'sunrun',
     nref: 'boon-investments',
     pref: 'bank-of-america',
+    idx: 5,
   },
 ];
 

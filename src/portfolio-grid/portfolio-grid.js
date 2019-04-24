@@ -1,16 +1,14 @@
 import React from 'react';
 import map from 'lodash/map';
-import PropTypes from 'prop-types';
 import moize from 'moize';
 import PortfolioItem from '../portfolio-item/portfolio-item';
 import { portfolioArr } from '../shared/enums';
 import './portfolio-grid.scss';
 
-function PortfolioGrid(props) {
+function PortfolioGrid() {
   const portfolioItems = map(portfolioArr, item => (
     <PortfolioItem
-      key={item.name}
-      selectPortfolioItem={props.selectPortfolioItem}
+      key={item.href}
       item={item}
     />
   ));
@@ -23,9 +21,6 @@ function PortfolioGrid(props) {
   );
 }
 
-PortfolioGrid.propTypes = {
-  selectPortfolioItem: PropTypes.func.isRequired,
-};
 
 const memoizedPortfolioGrid = moize.react(PortfolioGrid);
 

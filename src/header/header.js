@@ -1,106 +1,72 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import createHistory from 'history/createBrowserHistory';
+import { connect } from 'react-redux';
+import { createBrowserHistory } from 'history';
 import Carousel from '../carousel/carousel';
 import './header.scss';
+import { resetState, setActiveSection, setExpandCarousel, setClearCarousel } from '../redux/actions';
 
 
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
     this.toggleCarousel = this.toggleCarousel.bind(this);
-
-    // clearCarousel is needed to reset the carousel after it closes.
-    // If carousel is closed, need to clear carousel after delay,
-    // which means setting state after delay a second time.
-
-    this.state = {
-      carouselShouldExpand: false,
-      clearCarousel: true,
-    };
+    this.resetPage = this.resetPage.bind(this);
   }
-  fakeBrowserHistory = createHistory();
+  fakeBrowserHistory = createBrowserHistory();
   aboutLabel = 'about';
   portfolioLabel = 'portfolio';
 
-  selectPortfolioItem(selectedPortfolio) {
-    this.portfolioLabel = 'portfolio';
-
-    this.setState({
-      carouselShouldExpand: false,
-      clearCarousel: true,
-
-    });
-    this.props.selectSubSection(selectedPortfolio);
-  }
-
-  collapseCarousel(collapseDuration) {
-    setTimeout(() => {
-      this.setState({
-        clearCarousel: true,
-      });
-    }, collapseDuration);
-  }
-
   changeToSection(section) {
-    if (this.state.activeSection !== section) {
-      if (this.state.scrollPositionY) {
-        window.scrollTo(0, 125);
-      }
-      this.props.selectSubSection(section);
-    }
+    this.props.dispatch(setActiveSection(section));
   }
 
   // toggleCarousel onlyimplements the animation.
   // Rendering is done in renderCarousel below.
   toggleCarousel() {
-    const carouselShouldExpand = !this.state.carouselShouldExpand;
-    this.portfolioLabel = carouselShouldExpand ? 'close' : 'portfolio';
-    this.props.onPortfolioToggle(carouselShouldExpand);
-
-    this.setState({
-      clearCarousel: false,
-      carouselShouldExpand,
-    });
-
-    if (!carouselShouldExpand) {
-      const collapseDuration = 500;
-      this.collapseCarousel(collapseDuration);
+    const { expandCarousel, dispatch } = this.props;
+    if (expandCarousel) {
+      setTimeout(() => {
+        dispatch(setClearCarousel(true));
+      }, 500);
     }
+    dispatch(setExpandCarousel(!expandCarousel));
+    dispatch(setClearCarousel(false));
+
+
   }
+
   handleHeaderClick(section) {
-    const { addCarousel } = this.props;
-    if (addCarousel && section !== 'about') {
+    const { topBarFixed } = this.props;
+    if (topBarFixed && section !== 'about') {
       this.toggleCarousel();
     } else {
       this.changeToSection(section);
     }
   }
+
+  resetPage() {
+    const { dispatch } = this.props;
+    dispatch(resetState());
+    this.fakeBrowserHistory.replace('/home');
+    window.scrollTo(0, 0);
+  }
+
   renderCarousel() {
-    if (this.state.clearCarousel) {
-      return '';
-    }
-    const { carouselShouldExpand } = this.state;
-    const carouselWrapperClassNames = 'portfolio portfolio--wrapped header__carousel';
     return (
-      <div className={carouselWrapperClassNames}>
-        <Carousel
-          selectPortfolioItem={this.selectPortfolioItem}
-          onPortfolioToggle={this.onPortfolioToggle}
-          currentPortfolioIndex={this.props.currentPortfolioIndex}
-          shouldExpand={carouselShouldExpand}
-        />
-      </div>
+      <Carousel
+        currentPortfolioIndex={this.props.currentPortfolioIndex}
+      />
     );
   }
 
   render() {
-    const { isTopBar, activeSection } = this.props;
+    const { isTopBar, activeSection, expandCarousel } = this.props;
     const headerExtraClassNames = isTopBar ? 'is-top-bar position-is-fixed' : 'not-top-bar';
-    const headerSubClasses = isTopBar && 'header__top-bar';
+    const headerSubClasses = isTopBar ? 'header__top-bar' : '';
     const aboutClassName = activeSection === 'about' ? 'is-active' : 'is-inactive';
     const portfolioClassName = activeSection === 'portfolio' ? 'is-active' : 'is-inactive';
+    const portfolioLabel = !expandCarousel ? 'portfolio' : 'close';
     return (
       <div className={`header ${headerExtraClassNames}`}>
         <div className={headerSubClasses}>
@@ -108,7 +74,7 @@ class Header extends Component {
             <h2 className="header__home-link__text">
                 john borkowski
             </h2>
-            <button onClick={this.props.resetPage}>
+            <button onClick={this.resetPage}>
               <img className="header__home-link__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
             </button>
           </div>
@@ -119,7 +85,7 @@ class Header extends Component {
             </button>
             <h4 className="header__divide margins--remove-default">|</h4>
             <button onClick={() => this.handleHeaderClick('portfolio')} className={`header__section-link ${portfolioClassName}`}>
-              <h4 className="header__section-link__text margins--remove-default">{this.portfolioLabel}</h4>
+              <h4 className="header__section-link__text margins--remove-default">{portfolioLabel}</h4>
             </button>
             <a href="../portfolio" className="header__section-link is-mobile">
               <img className="header__section-link__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
@@ -135,18 +101,25 @@ class Header extends Component {
 Header.defaultProps = {
   isTopBar: true,
   currentPortfolioIndex: 0,
-  addCarousel: true,
-  onPortfolioToggle: () => {},
+  expandCarousel: false,
+  topBarFixed: false,
 };
 
 Header.propTypes = {
   activeSection: PropTypes.string.isRequired,
   isTopBar: PropTypes.bool,
-  selectSubSection: PropTypes.func.isRequired,
-  onPortfolioToggle: PropTypes.func,
   currentPortfolioIndex: PropTypes.number,
-  addCarousel: PropTypes.bool,
-  resetPage: PropTypes.func.isRequired,
+  expandCarousel: PropTypes.bool,
+  dispatch: PropTypes.func.isRequired,
+  topBarFixed: PropTypes.bool,
 };
 
-export default Header;
+function mapStateToProps(state) {
+  const { activeSection, expandCarousel, topBarFixed } = state;
+  return {
+    activeSection,
+    expandCarousel,
+    topBarFixed,
+  };
+}
+export default connect(mapStateToProps)(Header);

@@ -1,95 +1,127 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import './portfolio-item.scss';
+import { createBrowserHistory } from 'history';
+import { browserPaths } from '../shared/enums';
 
-function PortfolioItem(props) {
-  // I researched to find better ways to get around using a handler.
-  // The most efficient way was to create a function directly in JSX.
-  // But this creates a new function every time the component is rendered.
-  // This is worse from a memory perspective. So we keek the handler from now on.
-  function selectPortfolioItemHandler() {
-    console.log('selecting item', props.item)
-    props.selectPortfolioItem(props.item.href);
+import './portfolio-item.scss';
+import { setExpandCarousel, setClearCarousel, setTopBarFixed, setActiveSection, setBrowserPath, setCarouselIndex } from '../redux/actions';
+
+class PortfolioItem extends Component {
+  constructor(props) {
+    super(props);
+    // clearCarousel is needed to reset the carousel after it closes.
+    // If carousel is closed, need to clear carousel after delay,
+    // which means setting state after delay a second time.
+    this.selectPortfolioItem = this.selectPortfolioItem.bind(this);
+  }
+  collapseDuration = 500;
+
+  selectPortfolioItem() {
+    const fakeBrowserHistory = createBrowserHistory();
+
+    const { dispatch, item } = this.props;
+    const { href } = item;
+    const browserPath = browserPaths[href];
+    fakeBrowserHistory.replace({
+      pathname: browserPath,
+    });
+    window.scrollTo(0, 0);
+    dispatch(setBrowserPath(browserPath));
+    dispatch(setTopBarFixed(true));
+    dispatch(setActiveSection(href));
+    dispatch(setExpandCarousel(false));
+    dispatch(setCarouselIndex(item.idx));
+    setTimeout(() => {
+      dispatch(setClearCarousel(true));
+    }, 500);
   }
 
-  function renderPortfolioItemText() {
-    if (props.isCarousel) {
+  renderPortfolioItemText() {
+    if (this.props.topBarFixed) {
       const descriptionStyle = {
         bottom: '6px', textAlign: 'center', margin: '0px', marginLeft: '5px', width: 'calc(100% - 5px)',
       };
       return (
         <h5 className="portfolio-item__desc__title" style={descriptionStyle}>
-          {props.item.name}
+          {this.props.item.name}
         </h5>
       );
     }
     return (
       <div className="portfolio-item__desc">
         <div className="portfolio-item__desc__title">
-          <h4 className="is-animated">{props.item.name}</h4>
+          <h4 className="is-animated">{this.props.item.name}</h4>
         </div>
         <div className="portfolio-item__desc__skills">
-          <h5 className="">{props.item.skills.join(' | ')}</h5>
+          <h5 className="">{this.props.item.skills.join(' | ')}</h5>
         </div>
       </div>
     );
   }
 
-  let portfolioItemClassNames = 'transition-border portfolio-item max-dimensions-is-screen';
-  if (props.isCarousel) {
-    portfolioItemClassNames += ' header__carousel__item';
-    if (props.shouldExpand) {
-      portfolioItemClassNames += ' is-expanding';
+  render() {
+    let portfolioItemClassNames = 'transition-border portfolio-item max-dimensions-is-screen';
+    if (this.props.topBarFixed) {
+      portfolioItemClassNames += ' carousel__item';
+      if (this.props.expandCarousel) {
+        portfolioItemClassNames += ' is-expanding';
+      } else {
+        portfolioItemClassNames += ' is-minimizing';
+      }
     } else {
-      portfolioItemClassNames += ' is-minimizing';
+      portfolioItemClassNames += ' is-not-carousel';
     }
-  } else {
-    portfolioItemClassNames += ' is-not-carousel';
-  }
+    const portfolioItemStyle = this.props.topBarFixed ? {
+      marginLeft: 'calc(50% - 98.5px)',
+      border: 1,
+      borderColor: 'rgba(52,71,89,0.05)',
+      borderStyle: 'solid',
+      backgroundColor: '#FFFFFF',
+      width: 175,
+      height: 0,
+      boxShadow: '2px 3px 3px rgba(52,71,89,0.15)',
+    } : {};
 
-  const portfolioItemStyle = props.isCarousel ? {
-    marginLeft: 'calc(50% - 98.5px)',
-    border: 1,
-    borderColor: 'rgba(52,71,89,0.05)',
-    borderStyle: 'solid',
-    backgroundColor: '#FFFFFF',
-    width: 175,
-    height: 0,
-    boxShadow: '2px 3px 3px rgba(52,71,89,0.15)',
-  } : {};
-
-  const slickSlideStyle = props.isCarousel ? { minHeight: '0' } : {};
-
-  return (
-    <div style={slickSlideStyle} >
-      <div className={portfolioItemClassNames} style={portfolioItemStyle} >
-        <button onClick={selectPortfolioItemHandler} >
-          <img
-            alt={`${props.item.name}`}
-            className="portfolio-item__image"
-            src={`https://johnborkowski.me/images/${props.item.image}-250.jpg`}
-            srcSet={`https://johnborkowski.me/images/${props.item.image}-250.jpg 250w,
-            https://johnborkowski.me/images/${props.item.image}-500.jpg 500w,
-            https://johnborkowski.me/images/${props.item.image}-750.jpg 750w`}
-            sizes="(max-width: 250px) 95vw, 250px"
-          />
-          {renderPortfolioItemText()}
-        </button>
+    const slickSlideStyle = this.props.topBarFixed ? { minHeight: '0' } : {};
+    return (
+      <div style={slickSlideStyle} >
+        <div className={portfolioItemClassNames} style={portfolioItemStyle} >
+          <button onClick={this.selectPortfolioItem} >
+            <img
+              alt={`${this.props.item.name}`}
+              className="portfolio-item__image"
+              src={`https://johnborkowski.me/images/${this.props.item.image}-250.jpg`}
+              srcSet={`https://johnborkowski.me/images/${this.props.item.image}-250.jpg 250w,
+              https://johnborkowski.me/images/${this.props.item.image}-500.jpg 500w,
+              https://johnborkowski.me/images/${this.props.item.image}-750.jpg 750w`}
+              sizes="(max-width: 250px) 95vw, 250px"
+            />
+            {this.renderPortfolioItemText()}
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 PortfolioItem.defaultProps = {
-  isCarousel: false,
-  shouldExpand: true,
+  expandCarousel: true,
+  topBarFixed: false,
 };
 
 PortfolioItem.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
-  shouldExpand: PropTypes.bool,
-  isCarousel: PropTypes.bool,
-  selectPortfolioItem: PropTypes.func.isRequired,
+  expandCarousel: PropTypes.bool,
+  topBarFixed: PropTypes.bool,
+  dispatch: PropTypes.func.isRequired,
 };
 
-export default PortfolioItem;
+function mapStateToProps(state) {
+  const { expandCarousel, topBarFixed } = state;
+  return {
+    expandCarousel,
+    topBarFixed,
+  };
+}
+export default connect(mapStateToProps)(PortfolioItem);
