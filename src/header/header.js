@@ -30,10 +30,9 @@ class Header extends Component {
         dispatch(setClearCarousel(true));
       }, 500);
     }
+
     dispatch(setExpandCarousel(!expandCarousel));
     dispatch(setClearCarousel(false));
-
-
   }
 
   handleHeaderClick(section) {
@@ -52,18 +51,15 @@ class Header extends Component {
     window.scrollTo(0, 0);
   }
 
-  renderCarousel() {
-    return (
-      <Carousel
-        currentPortfolioIndex={this.props.currentPortfolioIndex}
-      />
-    );
-  }
-
   render() {
-    const { isTopBar, activeSection, expandCarousel } = this.props;
-    const headerExtraClassNames = isTopBar ? 'is-top-bar position-is-fixed' : 'not-top-bar';
-    const headerSubClasses = isTopBar ? 'header__top-bar' : '';
+    const {
+      headerIsTopBar,
+      topBarFixed,
+      activeSection,
+      expandCarousel,
+    } = this.props;
+    const headerExtraClassNames = headerIsTopBar || topBarFixed ? 'is-top-bar position-is-fixed' : 'not-top-bar';
+    const headerSubClasses = headerIsTopBar || topBarFixed ? 'header__top-bar' : '';
     const aboutClassName = activeSection === 'about' ? 'is-active' : 'is-inactive';
     const portfolioClassName = activeSection === 'portfolio' ? 'is-active' : 'is-inactive';
     const portfolioLabel = !expandCarousel ? 'portfolio' : 'close';
@@ -92,34 +88,33 @@ class Header extends Component {
             </a>
           </div>
         </div>
-        {this.renderCarousel()}
+        <Carousel />
       </div>
     );
   }
 }
 
 Header.defaultProps = {
-  isTopBar: true,
-  currentPortfolioIndex: 0,
+  headerIsTopBar: false,
   expandCarousel: false,
   topBarFixed: false,
 };
 
 Header.propTypes = {
   activeSection: PropTypes.string.isRequired,
-  isTopBar: PropTypes.bool,
-  currentPortfolioIndex: PropTypes.number,
+  headerIsTopBar: PropTypes.bool,
   expandCarousel: PropTypes.bool,
   dispatch: PropTypes.func.isRequired,
   topBarFixed: PropTypes.bool,
 };
 
 function mapStateToProps(state) {
-  const { activeSection, expandCarousel, topBarFixed } = state;
+  const { activeSection, expandCarousel, topBarFixed, headerIsTopBar } = state;
   return {
     activeSection,
     expandCarousel,
     topBarFixed,
+    headerIsTopBar,
   };
 }
 export default connect(mapStateToProps)(Header);

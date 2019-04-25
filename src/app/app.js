@@ -7,8 +7,9 @@ import Footer from '../footer/footer';
 import Header from '../header/header';
 import { browserPaths, components, portfolioItems } from '../shared/enums';
 import { debounce, addCustomProps } from '../shared/functions';
-import { setActiveSection, setTopBarFixed } from '../redux/actions';
+import { setActiveSection, setTopBarFixed, setHeaderIsTopBar } from '../redux/actions';
 import './app.scss';
+import header from '../header/header';
 
 // This variable doesn't do anything other than add 'portfolio' or 'about' to the browser.
 // I found if it wasn't added after it was clicked, it became confusing.
@@ -52,15 +53,14 @@ class App extends Component {
   defaultSection = 'about';
 
   handleScrollEvent() {
-    // + is unary operator, same as Number(window.scrollY)
     const { scrollThreshold } = this;
     const currScrollPositionY = Number(window.scrollY);
-    if (this.state.scrollPositionY > scrollThreshold
-      && currScrollPositionY < scrollThreshold) {
-      this.setState({ scrollPositionY: currScrollPositionY });
-    } else if (this.state.scrollPositionY < scrollThreshold
-      && currScrollPositionY > scrollThreshold) {
-      this.setState({ scrollPositionY: currScrollPositionY });
+    const { dispatch, headerIsTopBar } = this.props;
+
+    if (headerIsTopBar && currScrollPositionY < scrollThreshold) {
+      dispatch(setHeaderIsTopBar(false));
+    } else if (!headerIsTopBar && currScrollPositionY > scrollThreshold) {
+      dispatch(setHeaderIsTopBar(true));
     }
   }
 
@@ -81,11 +81,10 @@ class App extends Component {
   }
 
   render() {
-    const { scrollThreshold } = this;
+    const { scrollThreshold, headerIsTopBar } = this;
     const { activeSection, topBarFixed } = this.props;
     console.log('active section', activeSection);
-    const pageIsScrolling = this.state.scrollPositionY > scrollThreshold && !topBarFixed ? 'is-scrolling' : '';
-    const isTopBar = this.state.scrollPositionY > scrollThreshold || topBarFixed;
+    const pageIsScrolling = headerIsTopBar && !topBarFixed ? 'is-scrolling' : '';
     const topClasses = portfolioItems[activeSection] ? 'portfolio' : `app width-is-screen vert-center ${pageIsScrolling}`;
     const activeComponent = addCustomProps(
       components[activeSection],
@@ -94,10 +93,7 @@ class App extends Component {
     return (
       <div className={topClasses}>
         <div>
-          <Header
-            selectSubSection={this.selectSubSection}
-            isTopBar={isTopBar}
-          />
+          <Header />
           {activeComponent}
           <Footer />
         </div>
@@ -110,6 +106,7 @@ App.defaultProps = {
   match: {},
   activeSection: 'about',
   topBarFixed: false,
+  headerIsTopBar: false,
 };
 
 App.propTypes = {
@@ -117,14 +114,16 @@ App.propTypes = {
   activeSection: PropTypes.string,
   dispatch: PropTypes.func.isRequired,
   topBarFixed: PropTypes.bool,
+  headerIsTopBar: PropTypes.bool,
 };
 
 function mapStateToProps(state) {
-  const { browserPath, activeSection, topBarFixed } = state;
+  const { browserPath, activeSection, topBarFixed, headerIsTopBar } = state;
   return {
     browserPath,
     activeSection,
     topBarFixed,
+    headerIsTopBar,
   };
 }
 export default withRouter(connect(mapStateToProps)(App));

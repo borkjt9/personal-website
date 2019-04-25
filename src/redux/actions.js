@@ -2,6 +2,7 @@ import {
   SET_ACTIVE_SECTION,
   SET_BROWSER_PATH,
   SET_CAROUSEL_INDEX,
+  SET_HEADER_IS_TOP_BAR,
   SET_TOP_BAR_FIXED,
   SET_EXPAND_CAROUSEL,
   SET_CLEAR_CAROUSEL,
@@ -46,9 +47,14 @@ export function setClearCarousel(shouldClear) {
   return {
     type: SET_CLEAR_CAROUSEL,
     payload: shouldClear,
-  }
+  };
 }
-
+export function setHeaderIsTopBar(isTopBar) {
+  return {
+    type: SET_HEADER_IS_TOP_BAR,
+    payload: isTopBar,
+  };
+}
 export function setTopBarFixed(isFixed) {
   return {
     type: SET_TOP_BAR_FIXED,

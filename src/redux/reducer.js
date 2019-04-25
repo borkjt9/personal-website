@@ -6,6 +6,7 @@ import {
   SET_EXPAND_CAROUSEL,
   RESET_STATE,
   SET_CLEAR_CAROUSEL,
+  SET_HEADER_IS_TOP_BAR,
 } from './constants';
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
   expandCarousel: false,
   topBarFixed: false,
   clearCarousel: true,
+  headerIsTopBar: false,
 };
 function reducer(state = initialState, action) {
   switch (action.type) {
@@ -26,6 +28,8 @@ function reducer(state = initialState, action) {
       return { ...state, ...{ activeSection: action.payload } };
     case SET_CAROUSEL_INDEX:
       return { ...state, ...{ carouselIndex: action.payload } };
+    case SET_HEADER_IS_TOP_BAR:
+      return { ...state, ...{ headerIsTopBar: action.payload } };
     case SET_TOP_BAR_FIXED:
       return { ...state, ...{ topBarFixed: action.payload } };
     case SET_EXPAND_CAROUSEL:

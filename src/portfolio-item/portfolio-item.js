@@ -61,8 +61,10 @@ class PortfolioItem extends Component {
   }
 
   render() {
+    const { topBarFixed, item } = this.props;
+    const { image, name } = item;
     let portfolioItemClassNames = 'transition-border portfolio-item max-dimensions-is-screen';
-    if (this.props.topBarFixed) {
+    if (topBarFixed) {
       portfolioItemClassNames += ' carousel__item';
       if (this.props.expandCarousel) {
         portfolioItemClassNames += ' is-expanding';
@@ -72,7 +74,7 @@ class PortfolioItem extends Component {
     } else {
       portfolioItemClassNames += ' is-not-carousel';
     }
-    const portfolioItemStyle = this.props.topBarFixed ? {
+    const portfolioItemStyle = topBarFixed ? {
       marginLeft: 'calc(50% - 98.5px)',
       border: 1,
       borderColor: 'rgba(52,71,89,0.05)',
@@ -83,18 +85,18 @@ class PortfolioItem extends Component {
       boxShadow: '2px 3px 3px rgba(52,71,89,0.15)',
     } : {};
 
-    const slickSlideStyle = this.props.topBarFixed ? { minHeight: '0' } : {};
+    const slickSlideStyle = topBarFixed ? { minHeight: '0' } : {};
     return (
       <div style={slickSlideStyle} >
         <div className={portfolioItemClassNames} style={portfolioItemStyle} >
           <button onClick={this.selectPortfolioItem} >
             <img
-              alt={`${this.props.item.name}`}
+              alt={`${name}`}
               className="portfolio-item__image"
-              src={`https://johnborkowski.me/images/${this.props.item.image}-250.jpg`}
-              srcSet={`https://johnborkowski.me/images/${this.props.item.image}-250.jpg 250w,
-              https://johnborkowski.me/images/${this.props.item.image}-500.jpg 500w,
-              https://johnborkowski.me/images/${this.props.item.image}-750.jpg 750w`}
+              src={`https://johnborkowski.me/images/${image}-250.jpg`}
+              srcSet={`https://johnborkowski.me/images/${image}-250.jpg 250w,
+              https://johnborkowski.me/images/${image}-500.jpg 500w,
+              https://johnborkowski.me/images/${image}-750.jpg 750w`}
               sizes="(max-width: 250px) 95vw, 250px"
             />
             {this.renderPortfolioItemText()}

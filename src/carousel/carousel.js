@@ -124,10 +124,11 @@ Carousel.defaultProps = {
 
 Carousel.propTypes = {
   expandCarousel: PropTypes.bool,
-  dispatch: PropTypes.func.isRequired,
   topBarFixed: PropTypes.bool,
   clearCarousel: PropTypes.bool,
   carouselIndex: PropTypes.number,
+  dispatch: PropTypes.func.isRequired,
+
 };
 
 function mapStateToProps(state) {
