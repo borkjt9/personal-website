@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createBrowserHistory } from 'history';
+import browserHistory from '../shared/browser-history';
 import Carousel from '../carousel/carousel';
 import './header.scss';
 import { resetState, setActiveSection, setExpandCarousel, setClearCarousel } from '../redux/actions';
@@ -13,7 +13,6 @@ class Header extends Component {
     this.toggleCarousel = this.toggleCarousel.bind(this);
     this.resetPage = this.resetPage.bind(this);
   }
-  fakeBrowserHistory = createBrowserHistory();
   aboutLabel = 'about';
   portfolioLabel = 'portfolio';
 
@@ -47,7 +46,7 @@ class Header extends Component {
   resetPage() {
     const { dispatch } = this.props;
     dispatch(resetState());
-    this.fakeBrowserHistory.replace('/home');
+    browserHistory.replace('/home');
     window.scrollTo(0, 0);
   }
 

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import PropTypes from 'prop-types';
+import browserHistory from '../shared/browser-history';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import { browserPaths, components, portfolioItems } from '../shared/enums';
 import { debounce, addCustomProps } from '../shared/functions';
 import { setActiveSection, setTopBarFixed, setHeaderIsTopBar } from '../redux/actions';
 import './app.scss';
-import header from '../header/header';
 
 // This variable doesn't do anything other than add 'portfolio' or 'about' to the browser.
 // I found if it wasn't added after it was clicked, it became confusing.
@@ -48,7 +47,6 @@ class App extends Component {
     document.removeEventListener('scroll', debounce(this.handleScrollEvent, 0));
   }
 
-  fakeBrowserHistory = createBrowserHistory();
   scrollThreshold = 40;
   defaultSection = 'about';
 
@@ -71,7 +69,7 @@ class App extends Component {
     if (pageIsScrolling) {
       window.scrollTo(0, 0);
     }
-    this.fakeBrowserHistory.replace({
+    browserHistory.replace({
       pathname: browserPath,
     });
     if (!topBarFixed && portfolioItems[section]) {
@@ -81,7 +79,7 @@ class App extends Component {
   }
 
   render() {
-    const { scrollThreshold, headerIsTopBar } = this;
+    const { headerIsTopBar } = this;
     const { activeSection, topBarFixed } = this.props;
     console.log('active section', activeSection);
     const pageIsScrolling = headerIsTopBar && !topBarFixed ? 'is-scrolling' : '';
