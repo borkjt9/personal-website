@@ -108,7 +108,12 @@ Header.propTypes = {
 };
 
 function mapStateToProps(state) {
-  const { activeSection, expandCarousel, topBarFixed, headerIsTopBar } = state;
+  const {
+    activeSection,
+    expandCarousel,
+    topBarFixed,
+    headerIsTopBar,
+  } = state;
   return {
     activeSection,
     expandCarousel,

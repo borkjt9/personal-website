@@ -3,7 +3,7 @@ import './about.scss';
 
 function About() {
   function renderWorkSection() {
-    const workDesc = 'I am a product designer and front-end developer in the financial sector.\n\nMost recently I was co-founder / CEO of Boon Investments, the first robo-advisor in the United States to accept international clients.\n\nI enjoy working on small, dynamic teams that build intuitive products to solve real problems for real people.';
+    const workDesc = 'I am a product designer and front-end developer in the financial sector.\n\nI am currently a senior software engineer for Bloomberg, where I build trading blotters for the Bloomberg Terminal.\n\nI enjoy working on small, dynamic teams that build intuitive products to solve real problems for real people.';
     const imageCaption = 'My last professional headshot. Taken two years ago.\nA lot has changed.';
 
     return (

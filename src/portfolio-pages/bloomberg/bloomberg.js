@@ -30,35 +30,15 @@ function BankOfAmerica() {
       },
     },
   ];
-  const fullStackDescription = "During my time at Bank of America, I did have some real finance work as well.\n\nIn my first year, I was responsible for analyzing the drivers to variances in BAC's NII/NIM forecast through time.\n\nIn my second year, I calculated the hypothetical impacts to BAC’s commercial allowance as a result of the Federal Reserve’s Stress Tests.";
+  // const fullStackDescription = "During my time at Bank of America,
+  // I did have some real finance work as well.\n\nIn my first year,
+  // I was responsible for analyzing the drivers to variances inBAC's
+  // NII/NIM forecast through time.\n\nIn my second year,
+  // I calculated the hypothetical impacts to BAC’s commercial
+  // allowance as a result of the Federal Reserve’s Stress Tests.";
 
   const summaryBody = "The Bloomberg Terminal is a electronic financial trading platform that enables financial professionals to monitor and analyze real-time market data and place trades.\n\nAs a full stack senior software engineer in Bloomberg's trading platform division, I work to develop new features for Bloomberg's trading blotters.";
 
-  function renderDevelopment() {
-    return (
-      <div className="portfolio-page__section">
-        <h2 className="portfolio-page__section__title">Full Stack Development</h2>
-        <div className="portfolio-page__section__body row-wrap-reverse">
-          <p className="bac__stressTesting__text">{fullStackDescription}</p>
-          <div className="bac__stressTesting__image-group">
-            <img
-              alt="Janet Yellen. The GOAT."
-              className="bac__stressTesting__image"
-              src="https://johnborkowski.me/images/janet-yellen-450.jpg"
-              srcSet="https://johnborkowski.me/images/janet-yellen-225.jpg 225w,
-              https://johnborkowski.me/images/janet-yellen-450.jpg 450w,
-              https://johnborkowski.me/images/janet-yellen-900.jpg 900w,
-              https://johnborkowski.me/images/janet-yellen-1350.jpg 1350w"
-              sizes="(max-width: 450px) 100vw, 450px"
-            />
-            <h5 className="bac__stressTesting__imageDescription">Janet Yellen. Cultural Icon.</h5>
-          </div>
-
-
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="portfolio-page bac">
@@ -66,7 +46,7 @@ function BankOfAmerica() {
         {renderBanner('bloomberg')}
         {renderSummary(summaryBody)}
         {renderProduct(productInputs)}
-        {renderDevelopment()}
+        {/* {renderDevelopment()} */}
         {renderSkillsList(skillsDictionary)}
       </div>
     </div>

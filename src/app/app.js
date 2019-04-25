@@ -16,10 +16,8 @@ import './app.scss';
 class App extends Component {
   constructor(props) {
     super(props);
- 
     this.selectSubSection = this.selectSubSection.bind(this);
     this.handleScrollEvent = this.handleScrollEvent.bind(this);
-
     this.state = {
       scrollPositionY: 0,
     };
@@ -81,7 +79,6 @@ class App extends Component {
   render() {
     const { headerIsTopBar } = this;
     const { activeSection, topBarFixed } = this.props;
-    console.log('active section', activeSection);
     const pageIsScrolling = headerIsTopBar && !topBarFixed ? 'is-scrolling' : '';
     const topClasses = portfolioItems[activeSection] ? 'portfolio' : `app width-is-screen vert-center ${pageIsScrolling}`;
     const activeComponent = addCustomProps(
@@ -116,7 +113,12 @@ App.propTypes = {
 };
 
 function mapStateToProps(state) {
-  const { browserPath, activeSection, topBarFixed, headerIsTopBar } = state;
+  const {
+    browserPath,
+    activeSection,
+    topBarFixed,
+    headerIsTopBar,
+  } = state;
   return {
     browserPath,
     activeSection,

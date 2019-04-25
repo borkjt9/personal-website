@@ -1,4 +1,5 @@
 import React from 'react';
+import Bloomberg from '../portfolio-pages/bloomberg/bloomberg';
 import BankOfAmerica from '../portfolio-pages/bank-of-america/bank-of-america';
 import Sunrun from '../portfolio-pages/sunrun/sunrun';
 import AutoOMS from '../portfolio-pages/auto-oms/auto-oms';
@@ -17,9 +18,20 @@ export const browserPaths = {
   sunrun: '/portfolio/sunrun',
   'white-label-apps': '/portfolio/white-label-apps',
   'auto-oms': '/portfolio/auto-oms',
+  bloomberg: '/portfolio/bloomberg',
 };
 
 export const portfolioArr = [
+  {
+    name: 'Bloomberg',
+    component: 'Bloomberg',
+    image: 'bloomberg',
+    skills: ['UI/UX', 'Swift', 'Python'],
+    href: 'bloomberg',
+    nref: 'boon-investments',
+    pref: 'autoPOOL',
+    idx: 1,
+  },
   {
     name: 'Boon Investments',
     component: 'BoonInvestments',
@@ -27,8 +39,8 @@ export const portfolioArr = [
     skills: ['UI/UX', 'Swift', 'Python'],
     href: 'boon-investments',
     nref: 'auto-oms',
-    pref: 'autoPOOL',
-    idx: 0,
+    pref: 'bloomberg',
+    idx: 2,
   },
   {
     name: 'Auto-OMS',
@@ -38,7 +50,7 @@ export const portfolioArr = [
     href: 'auto-oms',
     nref: 'white-label-apps',
     pref: 'boon-investments',
-    idx: 1,
+    idx: 3,
   },
   {
     name: 'AutoPOOL',
@@ -48,7 +60,7 @@ export const portfolioArr = [
     href: 'autoPOOL',
     nref: 'bank-of-america',
     pref: 'white-label-apps',
-    idx: 2,
+    idx: 4,
   },
   {
     name: 'White Label Apps',
@@ -58,7 +70,7 @@ export const portfolioArr = [
     href: 'white-label-apps',
     nref: 'autoPOOL',
     pref: 'auto-oms',
-    idx: 3,
+    idx: 5,
   },
   {
     name: 'Bank of America',
@@ -68,7 +80,7 @@ export const portfolioArr = [
     href: 'bank-of-america',
     nref: 'sunrun',
     pref: 'autoPOOL',
-    idx: 4,
+    idx: 6,
   },
   {
     name: 'Sunrun',
@@ -76,13 +88,14 @@ export const portfolioArr = [
     image: 'sunrun',
     skills: ['FP&A', 'IPO'],
     href: 'sunrun',
-    nref: 'boon-investments',
+    nref: 'bloomberg',
     pref: 'bank-of-america',
-    idx: 5,
+    idx: 7,
   },
 ];
 
 export const components = {
+  bloomberg: <Bloomberg />,
   'bank-of-america': <BankOfAmerica />,
   'auto-oms': <AutoOMS />,
   'boon-investments': <BoonInvestments />,
@@ -94,6 +107,7 @@ export const components = {
 };
 
 export const portfolioItems = {
+  bloomberg: true,
   'bank-of-america': true,
   'auto-oms': true,
   'boon-investments': true,

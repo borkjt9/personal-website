@@ -14,8 +14,6 @@ import './shared/styles/base.scss';
 import './shared/styles/animations.scss';
 import './shared/styles/transitions.scss';
 
-
-
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

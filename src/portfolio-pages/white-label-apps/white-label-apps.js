@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 import React from 'react';
 import renderSkillsList from '../common-objects/skills-list';
 import renderTimeline from '../common-objects/timeline';
@@ -15,6 +16,14 @@ function WhiteLabelApps() {
     General: ['Product Management', 'Design', 'Partnerships', 'Contracts'],
   };
 
+  const beanstox200 = require('../../assets/images/beanstox-sign-up-200.jpg');
+  const beanstox400 = require('../../assets/images/beanstox-sign-up-400.jpg');
+  const beanstox600 = require('../../assets/images/beanstox-sign-up-600.jpg');
+
+  const astor200 = require('../../assets/images/astor-investment-history-200.jpg');
+  const astor400 = require('../../assets/images/astor-investment-history-400.jpg');
+  const astor600 = require('../../assets/images/astor-investment-history-600.jpg');
+
   const productSections = [
     {
       caption: 'OShares ETF Investment',
@@ -22,8 +31,8 @@ function WhiteLabelApps() {
       img: {
         alt: 'Beanstox application showing the allocation screen',
         classNames: 'white-label-apps__product__iphone-image',
-        src: 'https://johnborkowski.me/images/beanstox-sign-up-400.jpg',
-        srcSet: 'https://johnborkowski.me/images/beanstox-sign-up-200.jpg 200w, https://johnborkowski.me/images/beanstox-sign-up-400.jpg 400w, https://johnborkowski.me/images/beanstox-sign-up-600.jpg 600w',
+        src: beanstox400,
+        srcSet: `${beanstox200} 200w, ${beanstox400} 400w, ${beanstox600} 600w`,
         sizes: '(max-width: 200px) 95vw, 200px',
       },
     },
@@ -33,8 +42,8 @@ function WhiteLabelApps() {
       img: {
         alt: 'Astor application showing the investment detail screen',
         classNames: 'white-label-apps__product__iphone-image',
-        src: 'https://johnborkowski.me/images/astor-investment-history-400.jpg',
-        srcSet: 'https://johnborkowski.me/images/astor-investment-history-200.jpg 200w, https://johnborkowski.me/images/astor-investment-history-400.jpg 400w, https://johnborkowski.me/images/astor-investment-history-600.jpg 600w',
+        src: astor200,
+        srcSet: `${astor200} 200w, ${astor400} 400w, ${astor600} 600w`,
         sizes: '(max-width: 200px) 95vw, 200px',
       },
     },

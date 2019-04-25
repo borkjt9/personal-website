@@ -1,3 +1,5 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -86,6 +88,10 @@ class PortfolioItem extends Component {
     } : {};
 
     const slickSlideStyle = topBarFixed ? { minHeight: '0' } : {};
+    const img250 = require(`../assets/images/${image}-250.jpg`);
+    const img500 = require(`../assets/images/${image}-500.jpg`);
+    const img750 = require(`../assets/images/${image}-750.jpg`);
+
     return (
       <div style={slickSlideStyle} >
         <div className={portfolioItemClassNames} style={portfolioItemStyle} >
@@ -93,10 +99,10 @@ class PortfolioItem extends Component {
             <img
               alt={`${name}`}
               className="portfolio-item__image"
-              src={`https://johnborkowski.me/images/${image}-250.jpg`}
-              srcSet={`https://johnborkowski.me/images/${image}-250.jpg 250w,
-              https://johnborkowski.me/images/${image}-500.jpg 500w,
-              https://johnborkowski.me/images/${image}-750.jpg 750w`}
+              src={img250}
+              srcSet={`${img250} 250w,
+              ${img500} 500w,
+              ${img750} 750w`}
               sizes="(max-width: 250px) 95vw, 250px"
             />
             {this.renderPortfolioItemText()}
