@@ -13,22 +13,22 @@ function Footer() {
   ];
 
   const renderLinks = map(links, link => (
-    <span key={link.title} className="footer-link">
+    <span key={link.title} className="footer__links__link">
       <a
-        className={`${link.title.toLowerCase()} footer-link__image`}
+        className={`${link.title.toLowerCase()} footer__links__link__ref`}
         href={link.href}
         target="_blank"
         rel="noopener noreferrer"
       >
         {link.title}
       </a>
-      <h5 className="footer-link__name">{link.title}</h5>
+      <h5 className="footer__links__link__name">{link.title}</h5>
     </span>
   ));
 
   return (
     <div className="footer">
-      <div className="footer-links">
+      <div className="footer__links">
         {renderLinks}
       </div>
     </div>

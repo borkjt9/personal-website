@@ -11,30 +11,28 @@ $pageColor: #FCFCFC;
   text-align: center;
   display: inline-block;
 
-  .footer-links {
+  &__links {
     display: flex;
     margin: auto;
     justify-content: space-between;
     width: 90%;
     max-width: 800px;
-
-    a {
-      color: rgba(0,0,0,0);
-      height:40px ;
-      width: 40px;
-      margin:auto;
-      text-decoration: none;
-      font-family: "Lato", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 400;
-      display: block;
-    }
-
-    .footer-link__image {
-      background-size: 80px 40px;
-      background-repeat: no-repeat;
-      background-position: 0px;
+    &__link {
+      &__ref {
+        background-size: 80px 40px;
+        background-repeat: no-repeat;
+        background-position: 0px;
+        color: rgba(0,0,0,0);
+        height:40px ;
+        width: 40px;
+        margin:auto;
+        text-decoration: none;
+        font-family: "Lato", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 400;
+        display: block;
+      }
     }
     
     .linkedin {
@@ -55,43 +53,46 @@ $pageColor: #FCFCFC;
     .resume {
       background-image: url('https://johnborkowski.me/images/resume-sprite-80.jpg');
     }
-
-    .footer-link__name {
-      display: none;
-    }
   }
 }
 
 @media (min-width: 768px) {
   .footer {
-    .footer-link {
-      float: left;
-      border-bottom: solid $pageColor 0px;
-      border-top: solid $pageColor 3px;
-      &:hover {
-        .footer-link__name {
-          opacity: 1;
+    &__links {
+      &__link {
+        float: left;
+        border-bottom: solid $pageColor 0px;
+        border-top: solid $pageColor 3px;
+        &__name {
+          display: block;
+          font-size: 10px;
+          letter-spacing: 1px;
+          opacity: 0;
+          margin: 5px auto;
+          text-align: center;
         }
 
-        .footer-link__image {
-          background-position: -40px;
+        &:hover {
+          .footer__links__link__name {
+            opacity: 1;
+          }
+
+          .footer__links__link__ref {
+            background-position: -40px;
+          }
         }
+
+
       }
 
-      .footer-link__name {
-        display: block;
-        font-size: 10px;
-        letter-spacing: 1px;
-        opacity: 0;
-        margin: 5px auto;
-        text-align: center;
-      }
+
+
     }
   }
 }
 
-@media (max-width: 767) {
-  .footer-link__name {
+@media (max-width: 767px) {
+  .footer__links__link__name {
     display: none;
   }
 }

@@ -4,35 +4,35 @@ $underlineColor: #636363;
 
 .auto-oms {
 
-  .auto-oms__design__text,  .auto-oms__investment__text{
+  &__design__text,  &__investment__text{
     margin: auto 0px;
     width: 100%;
     max-width: 300px;
     display: inline-block;
   }
 
-  .auto-oms__wireframe {
+  &__wireframe {
     width: 100%;
     max-width: 288px;
     transition: all 0.2s ease-in-out;
     margin: auto 0px;
     cursor: pointer;
 
-    .auto-oms__design__wireframe__image {
+    &__image {
       width: 100%;
       border: solid 1px $borderColor;
       padding: 2px;
       box-shadow: 1px 1px 2px $borderColor;
     }
 
-     .auto-oms__design__wireframe__description {
+     &__description {
       margin: 4px auto;
       transition: all 0.1s ease-in-out;
       text-align: center;
     }
   }
 
-  .auto-oms__product__portal-image {
+  &__product__portal-image {
 
     width: 100%;
     max-width: 288px;
@@ -42,7 +42,7 @@ $underlineColor: #636363;
   }
 
 
-  .auto-oms__product__text {
+  &__product__text {
     width: 100%;
     max-width: 325px;
     margin: auto 0px;

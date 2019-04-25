@@ -57,10 +57,10 @@ class Header extends Component {
       activeSection,
       expandCarousel,
     } = this.props;
-    const headerExtraClassNames = headerIsTopBar || topBarFixed ? 'is-top-bar position-is-fixed' : 'not-top-bar';
+    const headerExtraClassNames = headerIsTopBar || topBarFixed ? '--is-top-bar position-is-fixed' : '--not-top-bar';
     const headerSubClasses = headerIsTopBar || topBarFixed ? 'header__top-bar' : '';
-    const aboutClassName = activeSection === 'about' ? 'is-active' : 'is-inactive';
-    const portfolioClassName = activeSection === 'portfolio' ? 'is-active' : 'is-inactive';
+    const aboutClassName = activeSection === 'about' ? '--is-active' : '--is-inactive';
+    const portfolioClassName = activeSection === 'portfolio' ? '--is-active' : 'is-inactive';
     const portfolioLabel = !expandCarousel ? 'portfolio' : 'close';
     return (
       <div className={`header ${headerExtraClassNames}`}>
@@ -82,7 +82,7 @@ class Header extends Component {
             <button onClick={() => this.handleHeaderClick('portfolio')} className={`header__section-link ${portfolioClassName}`}>
               <h4 className="header__section-link__text margins--remove-default">{portfolioLabel}</h4>
             </button>
-            <a href="../portfolio" className="header__section-link is-mobile">
+            <a href="../portfolio" className="header__section-link --is-mobile">
               <img className="header__section-link__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
             </a>
           </div>

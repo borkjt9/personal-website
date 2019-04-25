@@ -3,11 +3,11 @@ $borderColor: #D9D9D9;
 
 .bac {
 
-  .bac__banner {
+  &__banner {
     width: 100%;
   }
 
-  .bac__body {
+  &__body {
     max-width: 800px;
     min-height: 1000px;
     margin: 0px auto 0px;
@@ -17,49 +17,49 @@ $borderColor: #D9D9D9;
     border-right: 1px solid $borderColor;
     box-shadow: #D9D9D9 0px 0px 8px;
 
-    .bac__tasks {
+    &__tasks {
       padding-right: 40px;
     }
 
   }
 
-  .bac__automation__text {
-
-  }
-
-  .bac__automation__image {
+  &__automation__image {
     width: 100%;
     height: 28.95%;
   }
+  &__riskManagement {
+    &__image {
+      width: 60%;
+      height: 37.35%
+    }
 
-  .bac__riskManagement__image {
-    width: 60%;
-    height: 37.35%
+    &__text {
+        margin: auto;
+    }
   }
 
-  .bac__riskManagement__text {
-      margin: auto;
-  }
+  &__stressTesting {
+    &__image-group {
+      width: 100%;
+      max-width: 450px;
+      margin:auto;
+    }
 
-  .bac__stressTesting__image-group {
-    width: 100%;
-    max-width: 450px;
-    margin:auto;
-  }
+    &__text {
+      width: 100%;
+    }
 
-  .bac__stressTesting__text {
-    width: 100%;
-  }
+    &__image {
+      width: 100%;
+    }
 
-  .bac__stressTesting__image {
-    width: 100%;
-  }
-  .bac__stressTesting__imageDescription {
-    font-weight: 400;
-    letter-spacing: 3px;
-    font-size: 10px;
-    color: #636363;
-    text-align: center;
-    margin: 5px auto;
+    &__imageDescription {
+      font-weight: 400;
+      letter-spacing: 3px;
+      font-size: 10px;
+      color: #636363;
+      text-align: center;
+      margin: 5px auto;
+    }
   }
 }

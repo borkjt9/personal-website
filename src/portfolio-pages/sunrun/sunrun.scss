@@ -4,56 +4,61 @@ $borderColor: #D9D9D9;
 
 .sunrun {
 
-  .sunrun__ipo__image-group {
-    //56.34
-    max-width: 400px;
-    width: 100%;
-    margin: 0px auto;
+  &__ipo {
+    &__image-group {
+      //56.34
+      max-width: 400px;
+      width: 100%;
+      margin: 0px auto;
+    }
+
+    &__image {
+      //56.34
+      width: 100%;
+      &__description {
+        font-weight: 400;
+        letter-spacing: 3px;
+        font-size: 10px;
+        color: #636363;
+        text-align: center;
+        margin: 5px auto;
+      }
+    }
+    &__text {
+      //56.34
+      margin: auto;
+    }
   }
 
-  .sunrun__ipo__image {
-    //56.34
-    width: 100%;
+  &__cash-flow {
+    &__image {
+      //77.4
+      width: 50%;
+      height: 38.7%;
+    }
+  
+    &__text{
+      //77.4
+      margin: auto;
+    }
   }
 
-  .sunrun__ipo__image__description {
-    font-weight: 400;
-    letter-spacing: 3px;
-    font-size: 10px;
-    color: #636363;
-    text-align: center;
-    margin: 5px auto;
-  }
 
-  .sunrun__ipo__text {
-    //56.34
-    margin: auto;
-  }
-
-  .sunrun__cash-flow__image {
-    //77.4
-    width: 50%;
-    height: 38.7%;
-  }
-
-  .sunrun__cash-flow__text{
-    //77.4
-    margin: auto;
-  }
-
-  .sunrun__financial-modeling__image-group {
-    //58.53
-    max-width: 400px;
-    width: 100%;
-    margin: 0px auto;
-  }
-
-  .sunrun__financial-modeling__image {
-    width: 100%;
-  }
-
-  .sunrun__financial-modeling__text{
-    //77.4
-    margin: auto;
+  &__financial-modeling {
+    &__image-group {
+      //58.53
+      max-width: 400px;
+      width: 100%;
+      margin: 0px auto;
+    }
+  
+    &__image {
+      width: 100%;
+    }
+  
+    &__text{
+      //77.4
+      margin: auto;
+    }
   }
 }

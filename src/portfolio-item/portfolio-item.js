@@ -51,7 +51,7 @@ class PortfolioItem extends Component {
     return (
       <div className="portfolio-item__desc">
         <div className="portfolio-item__desc__title">
-          <h4 className="is-animated">{this.props.item.name}</h4>
+          <h4 className="--is-animated">{this.props.item.name}</h4>
         </div>
         <div className="portfolio-item__desc__skills">
           <h5 className="">{this.props.item.skills.join(' | ')}</h5>
@@ -65,14 +65,14 @@ class PortfolioItem extends Component {
     const { image, name } = item;
     let portfolioItemClassNames = 'transition-border portfolio-item max-dimensions-is-screen';
     if (topBarFixed) {
-      portfolioItemClassNames += ' carousel__item';
+      portfolioItemClassNames += ' --is-carousel';
       if (this.props.expandCarousel) {
-        portfolioItemClassNames += ' is-expanding';
+        portfolioItemClassNames += ' --is-expanding';
       } else {
-        portfolioItemClassNames += ' is-minimizing';
+        portfolioItemClassNames += ' --is-minimizing';
       }
     } else {
-      portfolioItemClassNames += ' is-not-carousel';
+      portfolioItemClassNames += ' --is-not-carousel';
     }
     const portfolioItemStyle = topBarFixed ? {
       marginLeft: 'calc(50% - 98.5px)',
