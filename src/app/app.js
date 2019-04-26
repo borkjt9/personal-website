@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import browserHistory from '../shared/browser-history';
 import Footer from '../footer/footer';
 import Header from '../header/header';
+import PortfolioNavs from '../portfolio-navs/portfolio-navs';
 import { browserPaths, components, portfolioItems } from '../shared/enums';
 import { debounce, addCustomProps } from '../shared/functions';
 import { setActiveSection, setTopBarFixed, setHeaderIsTopBar } from '../redux/actions';
@@ -91,6 +92,7 @@ class App extends Component {
           <Header />
           {activeComponent}
           <Footer />
+          <PortfolioNavs />
         </div>
       </div>
     );

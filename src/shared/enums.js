@@ -82,6 +82,16 @@ export const browserPaths = {
   bloomberg: '/portfolio/bloomberg',
 };
 
+export const portfolioIdxMap = {
+  bloomberg: 0,
+  'boon-investments': 1,
+  'auto-oms': 2,
+  autopool: 3,
+  'white-label-apps': 4,
+  'bank-of-america': 5,
+  sunrun: 6,
+};
+
 export const portfolioArr = [
   {
     name: 'Bloomberg',
@@ -90,8 +100,8 @@ export const portfolioArr = [
     skills: ['UI/UX', 'Swift', 'Python'],
     href: 'bloomberg',
     nref: 'boon-investments',
-    pref: 'autopool',
-    idx: 1,
+    pref: 'sunrun',
+    idx: 0,
   },
   {
     name: 'Boon Investments',
@@ -101,7 +111,7 @@ export const portfolioArr = [
     href: 'boon-investments',
     nref: 'auto-oms',
     pref: 'bloomberg',
-    idx: 2,
+    idx: 1,
   },
   {
     name: 'Auto-OMS',
@@ -109,9 +119,9 @@ export const portfolioArr = [
     image: 'auto-oms',
     skills: ['UI/UX', 'Angular', 'AWS'],
     href: 'auto-oms',
-    nref: 'white-label-apps',
+    nref: 'autopool',
     pref: 'boon-investments',
-    idx: 3,
+    idx: 2,
   },
   {
     name: 'AutoPOOL',
@@ -119,9 +129,9 @@ export const portfolioArr = [
     image: 'autopool',
     skills: ['UI/UX', 'Swift', 'App Engine'],
     href: 'autopool',
-    nref: 'bank-of-america',
-    pref: 'white-label-apps',
-    idx: 4,
+    nref: 'white-label-apps',
+    pref: 'auto-oms',
+    idx: 3,
   },
   {
     name: 'White Label Apps',
@@ -129,9 +139,9 @@ export const portfolioArr = [
     image: 'oshares',
     skills: ['Swift', 'Partnerships'],
     href: 'white-label-apps',
-    nref: 'autopool',
-    pref: 'auto-oms',
-    idx: 5,
+    nref: 'bank-of-america',
+    pref: 'autopool',
+    idx: 4,
   },
   {
     name: 'Bank of America',
@@ -140,8 +150,8 @@ export const portfolioArr = [
     skills: ['Modeling', 'Forecasting'],
     href: 'bank-of-america',
     nref: 'sunrun',
-    pref: 'autopool',
-    idx: 6,
+    pref: 'white-label-apps',
+    idx: 5,
   },
   {
     name: 'Sunrun',
@@ -151,7 +161,7 @@ export const portfolioArr = [
     href: 'sunrun',
     nref: 'bloomberg',
     pref: 'bank-of-america',
-    idx: 7,
+    idx: 6,
   },
 ];
 

@@ -1,0 +1,58 @@
+@media (min-width: 768px)  {
+  .portfolio-navs__link {
+
+    &__title {
+      display: none;
+    }
+    &:hover {
+      .portfolio-navs__link__title {
+        margin: 0px 5px;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio-navs {
+    display: none;
+  }
+}
+
+.portfolio-navs {
+  &__link{
+    z-index: 2;
+    color: #333;
+    position: fixed;
+    top: 45%;
+    padding: 1.2em;
+    border: solid #ccc thin;
+    opacity: 0.5;
+    background: #FFFFFF;
+    transition: all ease 0.2s;
+
+    &:hover {
+      opacity: 1
+    }
+
+    &.--next {
+      right: -1px;
+      float: right;
+      text-align: right;
+    }
+
+    &.--previous {
+      left: -1px;
+      float: left;
+      text-align: left;
+    }
+
+    &__chevron {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+  }
+  }
+
+
+}

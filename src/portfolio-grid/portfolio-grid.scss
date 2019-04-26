@@ -39,19 +39,6 @@ $borderColor: #D9D9D9;
   .portfolio-page__section__title {
     margin: 40px auto 30px;
   }
-  .portfolio__nav__link {
-
-    .portfolio__nav__link__title {
-      display: none;
-    }
-    &:hover {
-      .portfolio__nav__link__title {
-        margin: 0px 5px 0px 5px;
-        display: inline-block;
-      }
-    }
-  }
-
 }
 
 @media(max-width: 570px) {
@@ -63,9 +50,6 @@ $borderColor: #D9D9D9;
     margin: 20px auto;
   }
 
-  .portfolio__nav__link {
-    display: none;
-  }
   .portfolio-page__skills__row {
     margin: 15px auto;
   }
@@ -77,40 +61,6 @@ $borderColor: #D9D9D9;
     flex-flow: row wrap;
   }
 
-  .portfolio__nav {
-    .portfolio__nav__link--next {
-      right: -1px;
-      float: right;
-      text-align: right;
-    }
-    .portfolio__nav__link--previous {
-      left: -1px;
-      float: left;
-      text-align: left;
-    }
-
-    .portfolio__nav__chevron {
-        width: 20px;
-        height: 20px;
-        vertical-align: middle;
-    }
-
-    .portfolio__nav__link {
-      z-index: 2;
-      color: #333;
-      position: fixed;
-      top: 45%;
-      padding: 1.2em;
-      border: solid #ccc thin;
-      opacity: 0.5;
-      background: #FFFFFF;
-      transition: all ease 0.2s;
-      &:hover {
-        opacity: 1
-      }
-
-    }
-  }
 
   .portfolio-page {
     margin-top: 75px;
