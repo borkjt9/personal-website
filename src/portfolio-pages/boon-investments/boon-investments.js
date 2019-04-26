@@ -8,6 +8,36 @@ import renderDesign from '../common-objects/design';
 import renderInvestment from '../common-objects/investment';
 import './boon-investments.scss';
 
+import imgTD400 from '../../assets/images/boon-investments-timeline-desktop-400.jpg';
+import imgTD800 from '../../assets/images/boon-investments-timeline-desktop-800.jpg';
+import imgTD1600 from '../../assets/images/boon-investments-timeline-desktop-1600.jpg';
+import imgTM400 from '../../assets/images/boon-investments-timeline-mobile-400.jpg';
+import imgTM800 from '../../assets/images/boon-investments-timeline-mobile-800.jpg';
+import imgTM1600 from '../../assets/images/boon-investments-timeline-mobile-1600.jpg';
+
+
+import iphoneInvestmentHistory200 from '../../assets/images/iphone-investment-history-200.jpg';
+import iphoneInvestmentHistory400 from '../../assets/images/iphone-investment-history-400.jpg';
+import iphoneInvestmentHistory600 from '../../assets/images/iphone-investment-history-600.jpg';
+
+import iphoneAllocation200 from '../../assets/images/iphone-allocation-200.jpg';
+import iphoneAllocation400 from '../../assets/images/iphone-allocation-400.jpg';
+import iphoneAllocation600 from '../../assets/images/iphone-allocation-600.jpg';
+import boonWireframe250 from '../../assets/images/boon-wireframe-250.jpg';
+import boonWireframe500 from '../../assets/images/boon-wireframe-500.jpg';
+import boonWireframe750 from '../../assets/images/boon-wireframe-750.jpg';
+import whitePaperThumbnail250 from '../../assets/images/white-paper-thumbnail-250.jpg';
+import whitePaperThumbnail500 from '../../assets/images/white-paper-thumbnail-500.jpg';
+import whitePaperThumbnail750 from '../../assets/images/white-paper-thumbnail-750.jpg';
+
+const timelineImgSet = {
+  imgTD400,
+  imgTD800,
+  imgTD1600,
+  imgTM400,
+  imgTM800,
+  imgTM1600,
+};
 function BoonInvestments() {
   const summaryBody = "Boon Investments is the first S.E.C. registered investment advisor in the U.S> to accept international clients.\n\nAs CEO/Co-founder of Boon, my main responsibilities included leading design for Boon's suite of products, writing the investment algorithms which power Boon's portfolios, developing Boon's flagship iOS application, and closing deals with multiple business partners.";
 
@@ -25,8 +55,8 @@ function BoonInvestments() {
       img: {
         alt: "boon investments app screen depicting the user's investment history",
         classNames: 'portfolio-page__product__iphone-image',
-        src: 'https://johnborkowski.me/images/iphone-investment-history-400.jpg',
-        srcSet: 'https://johnborkowski.me/images/iphone-investment-history-200.jpg 200w, https://johnborkowski.me/images/iphone-investment-history-400.jpg 400w, https://johnborkowski.me/images/iphone-investment-history-600.jpg 600w',
+        src: iphoneInvestmentHistory400,
+        srcSet: `${iphoneInvestmentHistory200} 200w, ${iphoneInvestmentHistory400} 400w, ${iphoneInvestmentHistory600} 600w`,
         sizes: '(max-width: 200px) 95vw, 200px',
       },
     },
@@ -36,8 +66,8 @@ function BoonInvestments() {
       img: {
         alt: "boon investments app screen depicting the user's allocation",
         classNames: 'portfolio-page__product__iphone-image',
-        src: 'https://johnborkowski.me/images/iphone-allocation-400.jpg',
-        srcSet: 'https://johnborkowski.me/images/iphone-allocation-200.jpg 200w, https://johnborkowski.me/images/iphone-allocation-400.jpg 400w, https://johnborkowski.me/images/iphone-allocation-600.jpg 600w',
+        src: iphoneInvestmentHistory400,
+        srcSet: `${iphoneAllocation200} 200w, ${iphoneAllocation400} 400w, ${iphoneAllocation600} 600w`,
         sizes: '(max-width: 200px) 95vw, 200px',
       },
     },
@@ -50,8 +80,8 @@ function BoonInvestments() {
     img: {
       alt: 'thumbnail of the design wireframe for the boon investments application',
       classNames: 'portfolio-page__design__wireframe__image transition-border',
-      src: 'https://johnborkowski.me/images/boon-wireframe-500.jpg',
-      srcSet: 'https://johnborkowski.me/images/boon-wireframe-250.jpg 250w, https://johnborkowski.me/images/boon-wireframe-500.jpg 500w, https://johnborkowski.me/images/boon-wireframe-750.jpg 750w',
+      src: boonWireframe500,
+      srcSet: `${boonWireframe250} 250w, ${boonWireframe500} 500w, ${boonWireframe750}.jpg 750w`,
       sizes: '(max-width: 250px) 95vw, 250px',
     },
   };
@@ -63,12 +93,11 @@ function BoonInvestments() {
     img: {
       alt: "thumbnail of Boon Investment's investment white paper",
       classNames: 'portfolio-page__investment__white-paper__image transition-border',
-      src: 'https://johnborkowski.me/images/white-paper-thumbnail-500.jpg',
-      srcSet: 'https://johnborkowski.me/images/white-paper-thumbnail-250.jpg 250w, https://johnborkowski.me/images/white-paper-thumbnail-500.jpg 500w, https://johnborkowski.me/images/white-paper-thumbnail-750.jpg 750w',
+      src: whitePaperThumbnail250,
+      srcSet: `${whitePaperThumbnail250} 250w, ${whitePaperThumbnail500} 500w, ${whitePaperThumbnail750} 750w`,
       sizes: '(max-width: 250px) 95vw, 250px',
     },
   };
-
   return (
     <div className="portfolio-page boon-investments">
       <div className="portfolio-page__body">
@@ -77,7 +106,7 @@ function BoonInvestments() {
         {renderDesign(designInput)}
         {renderProduct(productInputs)}
         {renderInvestment(investmentInput)}
-        {renderTimeline('boon-investments')}
+        {renderTimeline('boon-investments', timelineImgSet)}
         {renderSkillsList(skillsDictionary)}
       </div>
     </div>

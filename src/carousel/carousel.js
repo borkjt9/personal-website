@@ -4,9 +4,14 @@ import { connect } from 'react-redux';
 import Slider from 'react-slick';
 import map from 'lodash/map';
 import PortfolioItem from '../portfolio-item/portfolio-item';
-import { portfolioArr } from '../shared/enums';
+import { portfolioArr, portfolioItemImgSets } from '../shared/enums';
 import './carousel.scss';
-
+import rightChev20 from '../assets/images/right-chevron-20.png';
+import rightChev40 from '../assets/images/right-chevron-40.png';
+import rightChev60 from '../assets/images/right-chevron-60.png';
+import leftChev20 from '../assets/images/left-chevron-20.png';
+import leftChev40 from '../assets/images/left-chevron-40.png';
+import leftChev60 from '../assets/images/left-chevron-60.png';
 // below is an implementation of react-slick library.
 // See https://github.com/akiran/react-slick for full details.
 function NextArrow(props) {
@@ -24,10 +29,10 @@ function NextArrow(props) {
       <img
         alt="Next button for the portfolio carousel."
         style={portfolioImageStyle}
-        src="https://johnborkowski.me/images/right-chevron-40.png"
-        srcSet="https://johnborkowski.me/images/right-chevron-20.png 20w,
-          https://johnborkowski.me/images/right-chevron-40.png 40w,
-          https://johnborkowski.me/images/right-chevron-60.png 60w"
+        src={rightChev40}
+        srcSet={`${rightChev20} 20w,
+        ${rightChev40} 40w,
+        ${rightChev60} 60w`}
         sizes="20px"
       />
     </button>
@@ -60,10 +65,10 @@ function PrevArrow(props) {
       <img
         alt="Previous button for portfolio carousel."
         style={portfolioImageStyle}
-        src="https://johnborkowski.me/images/left-chevron-40.png"
-        srcSet="https://johnborkowski.me/images/left-chevron-20.png 20w,
-        https://johnborkowski.me/images/left-chevron-40.png 40w,
-        https://johnborkowski.me/images/left-chevron-60.png 60w"
+        src={leftChev40}
+        srcSet={`${leftChev20} 20w,
+        ${leftChev40} 40w,
+        ${leftChev60} 60w`}
         sizes="20px"
       />
     </button>
@@ -87,14 +92,19 @@ class Carousel extends Component {
     if (this.props.clearCarousel) {
       return '';
     }
-    const portfolioItems = map(portfolioArr, item => (
-      <div key={item.href}>
-        <PortfolioItem
-          item={item}
-          isCarousel
-        />
-      </div>
-    ));
+    const portfolioItems = map(portfolioArr, (item) => {
+      const { href } = item;
+      const imgSet = portfolioItemImgSets[href];
+      return (
+        <div key={href}>
+          <PortfolioItem
+            item={item}
+            isCarousel
+            imgSet={imgSet}
+          />
+        </div>
+      );
+    });
 
     const settings = {
       dots: false,

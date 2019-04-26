@@ -1,9 +1,14 @@
 import React from 'react';
 import './about.scss';
-
+import headshot350 from '../assets/images/headshot-350.jpg';
+import headshot700 from '../assets/images/headshot-700.jpg';
+import headshot1050 from '../assets/images/headshot-1050.jpg';
+import guinea350 from '../assets/images/guinea-350.jpg';
+import guinea700 from '../assets/images/guinea-700.jpg';
+import guinea1050 from '../assets/images/guinea-1050.jpg';
 function About() {
   function renderWorkSection() {
-    const workDesc = 'I am a product designer and front-end developer in the financial sector.\n\nI am currently a senior software engineer for Bloomberg, where I build trading blotters for the Bloomberg Terminal.\n\nI enjoy working on small, dynamic teams that build intuitive products to solve real problems for real people.';
+    const workDesc = 'I am a product designer and front-end developer in the financial sector.\n\nI currently work as senior software engineer for Bloomberg, where I build trading blotters for the Bloomberg Terminal.\n\nI enjoy working on small, dynamic teams that build intuitive products to solve real problems for real people.';
     const imageCaption = 'My last professional headshot. Taken two years ago.\nA lot has changed.';
 
     return (
@@ -11,10 +16,10 @@ function About() {
         <div className="about__section__image">
           <img
             alt="My headshot"
-            src="https://johnborkowski.me/images/headshot-700.jpg"
-            srcSet="https://johnborkowski.me/images/headshot-350.jpg 350w,
-            https://johnborkowski.me/images/headshot-700.jpg 700w,
-            https://johnborkowski.me/images/headshot-1050.jpg 1050w"
+            src={headshot350}
+            srcSet={`${headshot350} 350w,
+            ${headshot700} 700w,
+            ${headshot1050} 1050w`}
             sizes="(max-width: 350px) 95vw, 350px"
           />
           <p className="about__section__image__desc">{imageCaption}</p>
@@ -38,10 +43,10 @@ function About() {
         <div className="about__section__image" >
           <img
             alt="Me dancing in Guinea, Africa"
-            src="https://johnborkowski.me/images/guinea-700.jpg"
-            srcSet="https://johnborkowski.me/images/guinea-350.jpg 350w,
-            https://johnborkowski.me/images/guinea-700.jpg 700w,
-            https://johnborkowski.me/images/guinea-1050.jpg 1050w"
+            src={guinea350}
+            srcSet={`${guinea350} 350w,
+            ${guinea700} 700w,
+            ${guinea1050} 1050w`}
             sizes="(max-width: 350px) 95vw, 350px"
           />
           <p className="about__section__image__desc">{imageCaption}</p>

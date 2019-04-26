@@ -5,6 +5,16 @@ import renderBanner from '../common-objects/banner';
 import renderProduct from '../common-objects/product';
 import './autopool.scss';
 
+import autopoolSetRide200 from '../../assets/images/autopool-set-ride-200.jpg';
+import autopoolSetRide400 from '../../assets/images/autopool-set-ride-400.jpg';
+import autopoolSetRide600 from '../../assets/images/autopool-set-ride-600.jpg';
+import autopoolCreateAlert200 from '../../assets/images/autopool-create-alert-200.jpg';
+import autopoolCreateAlert400 from '../../assets/images/autopool-create-alert-400.jpg';
+import autopoolCreateAlert600 from '../../assets/images/autopool-create-alert-600.jpg';
+import autopoolReceieveAlert200 from '../../assets/images/autopool-receive-alert-200.jpg';
+import autopoolReceieveAlert400 from '../../assets/images/autopool-receive-alert-400.jpg';
+import autopoolReceieveAlert600 from '../../assets/images/autopool-receive-alert-600.jpg';
+
 function AutoPOOL() {
   const summaryBody = "AutoPOOl was a fun iOS application I built to solve an incredibly significant painpoint in today’s society: the highly volatile prices of UberPOOL rides.\n\nAutoPOOL sends users automatic push notifications containing UberPOOL price updates at time intervals they set. Once the price is in the user’s desired range, Auto-POOL alerts the user with a fun pokemon-themed notifications.\n\nI developed AutoPOOL in Swift, and used Google's App Engine to schedule cron jobs and send push notifications.";
 
@@ -20,8 +30,8 @@ function AutoPOOL() {
       img: {
         alt: 'autopool screen that lets you set your destination and current location',
         className: 'autopool__product__iphone-image',
-        src: 'https://johnborkowski.me/images/autopool-side-ride-400.jpg',
-        srcSet: 'https://johnborkowski.me/images/autopool-set-ride-200.jpg 200w, https://johnborkowski.me/images/autopool-set-ride-400.jpg 400w, https://johnborkowski.me/images/autopool-set-ride-600.jpg 600w',
+        src: autopoolSetRide400,
+        srcSet: `${autopoolSetRide200} 200w, ${autopoolSetRide400} 400w, ${autopoolSetRide600} 600w`,
         sizes: '(max-width: 200px) 95vw, 200px',
       },
     },
@@ -31,8 +41,8 @@ function AutoPOOL() {
       img: {
         alt: 'autopool screen that creates your alert',
         className: 'autopool__product__iphone-image',
-        src: 'https://johnborkowski.me/images/autopool-create-alert-400.jpg',
-        srcSet: 'https://johnborkowski.me/images/autopool-create-alert-200.jpg 200w, https://johnborkowski.me/images/autopool-create-alert-400.jpg 400w, https://johnborkowski.me/images/autopool-create-alert-600.jpg 600w',
+        src: autopoolCreateAlert400,
+        srcSet: `${autopoolCreateAlert200} 200w, ${autopoolCreateAlert400} 400w, ${autopoolCreateAlert600} 600w`,
         sizes: '(max-width: 200px) 95vw, 200px',
       },
     },
@@ -42,8 +52,8 @@ function AutoPOOL() {
       img: {
         alt: 'iphone homescreen showing a push notification sent from autopool',
         classNames: 'autopool__product__iphone-image',
-        src: 'https://johnborkowski.me/images/autopool-receive-alert-400.jpg',
-        srcSet: 'https://johnborkowski.me/images/autopool-receive-alert-200.jpg 200w, https://johnborkowski.me/images/autopool-receive-alert-400.jpg 400w, https://johnborkowski.me/images/autopool-receive-alert-600.jpg 600w',
+        src: autopoolReceieveAlert400,
+        srcSet: `${autopoolReceieveAlert200} 200w, ${autopoolReceieveAlert400} 400w, ${autopoolReceieveAlert600} 600w`,
         sizes: '(max-width: 200px) 95vw, 200px',
       },
     },
@@ -52,7 +62,7 @@ function AutoPOOL() {
   return (
     <div className="portfolio-page autopool">
       <div className="portfolio-page__body">
-        {renderBanner('autopool', 'autoPOOL')}
+        {renderBanner('autopool', 'autopool')}
         {renderSummary(summaryBody)}
         {renderProduct(productInputs)}
         {renderSkillsList(skillsDictionary)}

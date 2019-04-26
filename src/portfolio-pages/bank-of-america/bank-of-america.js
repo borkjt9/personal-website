@@ -2,8 +2,18 @@ import React from 'react';
 import renderSkillsList from '../common-objects/skills-list';
 import renderSummary from '../common-objects/summary';
 import renderBanner from '../common-objects/banner';
-
 import './bank-of-america.scss';
+
+import automation400 from '../../assets/images/automation-400.jpg';
+import automation800 from '../../assets/images/automation-800.jpg';
+import automation1200 from '../../assets/images/automation-1200.jpg';
+import automation1600 from '../../assets/images/automation-1600.jpg';
+
+import janet225 from '../../assets/images/janet-yellen-225.jpg';
+import janet450 from '../../assets/images/janet-yellen-450.jpg';
+import janet900 from '../../assets/images/janet-yellen-900.jpg';
+import janet1350 from '../../assets/images/janet-yellen-1350.jpg';
+
 
 function BankOfAmerica() {
   const skillsDictionary = {
@@ -24,11 +34,11 @@ function BankOfAmerica() {
           <img
             alt="depicts the automation of labor intensive tasks to code"
             className="bac__automation__image"
-            src="https://johnborkowski.me/images/automation-800.jpg"
-            srcSet="https://johnborkowski.me/images/automation-400.jpg 400w,
-            https://johnborkowski.me/images/automation-800.jpg 800w,
-            https://johnborkowski.me/images/automation-1200.jpg 1200w,
-            https://johnborkowski.me/images/automation-1600.jpg 1600w"
+            src={automation800}
+            srcSet={`${automation400} 400w,
+            ${automation800} 800w,
+            ${automation1200} 1200w,
+            ${automation1600}1600w`}
             sizes="(max-width: 800px) 100vw, 800px"// "https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell.jpg 400w, https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/kirkjufell@2x.jpg 800w"
           />
         </div>
@@ -49,11 +59,11 @@ function BankOfAmerica() {
             <img
               alt="Janet Yellen. The GOAT."
               className="bac__stressTesting__image"
-              src="https://johnborkowski.me/images/janet-yellen-450.jpg"
-              srcSet="https://johnborkowski.me/images/janet-yellen-225.jpg 225w,
-              https://johnborkowski.me/images/janet-yellen-450.jpg 450w,
-              https://johnborkowski.me/images/janet-yellen-900.jpg 900w,
-              https://johnborkowski.me/images/janet-yellen-1350.jpg 1350w"
+              src={janet450}
+              srcSet={`${janet225} 225w,
+              ${janet450} 450w,
+              ${janet900} 900w,
+              ${janet1350} 1350w`}
               sizes="(max-width: 450px) 100vw, 450px"
             />
             <h5 className="bac__stressTesting__imageDescription">Janet Yellen. Cultural Icon.</h5>

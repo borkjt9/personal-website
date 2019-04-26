@@ -5,7 +5,9 @@ import browserHistory from '../shared/browser-history';
 import Carousel from '../carousel/carousel';
 import './header.scss';
 import { resetState, setActiveSection, setExpandCarousel, setClearCarousel } from '../redux/actions';
-
+import homeImg from '../assets/images/home.svg';
+import aboutImg from '../assets/images/about.svg';
+import portfolioImg from '../assets/images/portfolio.svg';
 
 class Header extends Component {
   constructor(props) {
@@ -70,20 +72,20 @@ class Header extends Component {
                 john borkowski
             </h2>
             <button onClick={this.resetPage}>
-              <img className="header__home-link__icon" alt="link to home section" src="https://johnborkowski.me/images/home.svg" />
+              <img className="header__home-link__icon" alt="link to home section" src={homeImg} />
             </button>
           </div>
           <div className="header__section-links text__vert-middle">
             <button onClick={() => this.handleHeaderClick('about')} className={`header__section-link ${aboutClassName}`}>
               <h4 className="header__section-link__text margins--remove-default">about</h4>
-              <img className="header__section-link__icon" alt="link to about section" src="https://johnborkowski.me/images/about.svg" />
+              <img className="header__section-link__icon" alt="link to about section" src={aboutImg} />
             </button>
             <h4 className="header__divide margins--remove-default">|</h4>
             <button onClick={() => this.handleHeaderClick('portfolio')} className={`header__section-link ${portfolioClassName}`}>
               <h4 className="header__section-link__text margins--remove-default">{portfolioLabel}</h4>
             </button>
             <a href="../portfolio" className="header__section-link --is-mobile">
-              <img className="header__section-link__icon" alt="link to portfoio section" src="https://johnborkowski.me/images/portfolio.svg" />
+              <img className="header__section-link__icon" alt="link to portfoio section" src={portfolioImg} />
             </a>
           </div>
         </div>

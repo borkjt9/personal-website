@@ -63,8 +63,9 @@ class PortfolioItem extends Component {
   }
 
   render() {
-    const { topBarFixed, item } = this.props;
-    const { image, name } = item;
+    const { topBarFixed, item, imgSet } = this.props;
+    const { name } = item;
+    const { img250, img500, img750 } = imgSet;
     let portfolioItemClassNames = 'transition-border portfolio-item max-dimensions-is-screen';
     if (topBarFixed) {
       portfolioItemClassNames += ' --is-carousel';
@@ -88,9 +89,7 @@ class PortfolioItem extends Component {
     } : {};
 
     const slickSlideStyle = topBarFixed ? { minHeight: '0' } : {};
-    const img250 = require(`../assets/images/${image}-250.jpg`);
-    const img500 = require(`../assets/images/${image}-500.jpg`);
-    const img750 = require(`../assets/images/${image}-750.jpg`);
+    
 
     return (
       <div style={slickSlideStyle} >
@@ -121,6 +120,7 @@ PortfolioItem.defaultProps = {
 PortfolioItem.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
   expandCarousel: PropTypes.bool,
+  imgSet: PropTypes.objectOf(PropTypes.any).isRequired,
   topBarFixed: PropTypes.bool,
   dispatch: PropTypes.func.isRequired,
 };

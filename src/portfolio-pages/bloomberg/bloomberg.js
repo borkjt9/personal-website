@@ -5,6 +5,9 @@ import renderSkillsList from '../common-objects/skills-list';
 import renderSummary from '../common-objects/summary';
 import renderBanner from '../common-objects/banner';
 import renderProduct from '../common-objects/product';
+import img200 from '../../assets/images/billions-200.jpg';
+import img400 from '../../assets/images/billions-400.jpg';
+import img600 from '../../assets/images/billions-600.jpg';
 import './bloomberg.scss';
 
 function BankOfAmerica() {
@@ -13,10 +16,6 @@ function BankOfAmerica() {
     Technology: ['Bloomberg'],
     General: ['Product Management', 'Product Design'],
   };
-  const img200 = require('../../assets/images/billions-200.jpg');
-  const img400 = require('../../assets/images/billions-400.jpg');
-  const img600 = require('../../assets/images/billions-600.jpg');
-
   const productInputs = [
     {
       caption: 'Trading Platforms',
@@ -24,7 +23,7 @@ function BankOfAmerica() {
       img: {
         alt: 'the show billions',
         classNames: 'portfolio-page__product__portal-image',
-        src: img400,
+        src: img200,
         srcSet: `${img200} 200w, ${img400} 400w, ${img600} 600w`,
         sizes: '(max-width: 200px) 95vw, 200px',
       },

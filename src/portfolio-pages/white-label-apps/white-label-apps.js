@@ -7,6 +7,22 @@ import renderBanner from '../common-objects/banner';
 import renderProduct from '../common-objects/product';
 import './white-label-apps.scss';
 
+import imgTD400 from '../../assets/images/white-label-apps-timeline-desktop-400.jpg';
+import imgTD800 from '../../assets/images/white-label-apps-timeline-desktop-800.jpg';
+import imgTD1600 from '../../assets/images/white-label-apps-timeline-desktop-1600.jpg';
+import imgTM400 from '../../assets/images/white-label-apps-timeline-mobile-400.jpg';
+import imgTM800 from '../../assets/images/white-label-apps-timeline-mobile-800.jpg';
+import imgTM1600 from '../../assets/images/white-label-apps-timeline-mobile-1600.jpg';
+
+const timelineImgSet = {
+  imgTD400,
+  imgTD800,
+  imgTD1600,
+  imgTM400,
+  imgTM800,
+  imgTM1600,
+};
+
 function WhiteLabelApps() {
   const summaryBody = 'While CEO of Boon Investments, my team developed multiple white-label applications to pair with our B2B SaaS offering to traditional investment management firms.\n\nAs CEO, I was responsible for negotiating contracts, designing and developing the core white-label template for iOS, and managing the project timelines for the applications we built for partners.';
 
@@ -55,7 +71,7 @@ function WhiteLabelApps() {
         {renderBanner('white-label-apps', 'white label apps')}
         {renderSummary(summaryBody)}
         {renderProduct(productSections)}
-        {renderTimeline('white-label-apps')}
+        {renderTimeline('white-label-apps', timelineImgSet)}
         {renderSkillsList(skillsDictionary)}
       </div>
     </div>

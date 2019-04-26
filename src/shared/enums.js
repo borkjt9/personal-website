@@ -9,12 +9,73 @@ import WhiteLabelApps from '../portfolio-pages/white-label-apps/white-label-apps
 import PortfolioGrid from '../portfolio-grid/portfolio-grid';
 import About from '../about/about';
 
+// imgSets for portfolioItems
+import autopool250 from '../assets/images/autopool-250.jpg';
+import autopool500 from '../assets/images/autopool-500.jpg';
+import autopool750 from '../assets/images/autopool-750.jpg';
+import bankOfAmerica250 from '../assets/images/bank-of-america-250.jpg';
+import bankOfAmerica500 from '../assets/images/bank-of-america-500.jpg';
+import bankOfAmerica750 from '../assets/images/bank-of-america-750.jpg';
+import boonInvestments250 from '../assets/images/boon-investments-250.jpg';
+import boonInvestments500 from '../assets/images/boon-investments-500.jpg';
+import boonInvestments750 from '../assets/images/boon-investments-750.jpg';
+import sunrun250 from '../assets/images/sunrun-250.jpg';
+import sunrun500 from '../assets/images/sunrun-500.jpg';
+import sunrun750 from '../assets/images/sunrun-750.jpg';
+import bloomberg250 from '../assets/images/bloomberg-250.jpg';
+import bloomberg500 from '../assets/images/bloomberg-500.jpg';
+import bloomberg750 from '../assets/images/bloomberg-750.jpg';
+import autoOMS250 from '../assets/images/auto-oms-250.jpg';
+import autoOMS500 from '../assets/images/auto-oms-500.jpg';
+import autoOMS750 from '../assets/images/auto-oms-750.jpg';
+import whiteLabelApps250 from '../assets/images/white-label-apps-250.jpg';
+import whiteLabelApps500 from '../assets/images/white-label-apps-500.jpg';
+import whiteLabelApps750 from '../assets/images/white-label-apps-750.jpg';
+
+export const portfolioItemImgSets = {
+  autopool: {
+    img250: autopool250,
+    img500: autopool500,
+    img750: autopool750,
+  },
+  'auto-oms': {
+    img250: autoOMS250,
+    img500: autoOMS500,
+    img750: autoOMS750,
+  },
+  'bank-of-america': {
+    img250: bankOfAmerica250,
+    img500: bankOfAmerica500,
+    img750: bankOfAmerica750,
+  },
+  'boon-investments': {
+    img250: boonInvestments250,
+    img500: boonInvestments500,
+    img750: boonInvestments750,
+  },
+  bloomberg: {
+    img250: bloomberg250,
+    img500: bloomberg500,
+    img750: bloomberg750,
+  },
+  sunrun: {
+    img250: sunrun250,
+    img500: sunrun500,
+    img750: sunrun750,
+  },
+  'white-label-apps': {
+    img250: whiteLabelApps250,
+    img500: whiteLabelApps500,
+    img750: whiteLabelApps750,
+  },
+};
+
 export const browserPaths = {
   about: '/about',
   portfolio: '/portfolio',
   'bank-of-america': '/portfolio/bankofamerica',
   'boon-investments': '/portfolio/boon-investments',
-  autoPOOL: '/portfolio/autoPOOL',
+  autopool: '/portfolio/autopool',
   sunrun: '/portfolio/sunrun',
   'white-label-apps': '/portfolio/white-label-apps',
   'auto-oms': '/portfolio/auto-oms',
@@ -29,7 +90,7 @@ export const portfolioArr = [
     skills: ['UI/UX', 'Swift', 'Python'],
     href: 'bloomberg',
     nref: 'boon-investments',
-    pref: 'autoPOOL',
+    pref: 'autopool',
     idx: 1,
   },
   {
@@ -57,7 +118,7 @@ export const portfolioArr = [
     component: 'AutoPOOL',
     image: 'autopool',
     skills: ['UI/UX', 'Swift', 'App Engine'],
-    href: 'autoPOOL',
+    href: 'autopool',
     nref: 'bank-of-america',
     pref: 'white-label-apps',
     idx: 4,
@@ -68,7 +129,7 @@ export const portfolioArr = [
     image: 'oshares',
     skills: ['Swift', 'Partnerships'],
     href: 'white-label-apps',
-    nref: 'autoPOOL',
+    nref: 'autopool',
     pref: 'auto-oms',
     idx: 5,
   },
@@ -79,7 +140,7 @@ export const portfolioArr = [
     skills: ['Modeling', 'Forecasting'],
     href: 'bank-of-america',
     nref: 'sunrun',
-    pref: 'autoPOOL',
+    pref: 'autopool',
     idx: 6,
   },
   {
@@ -100,7 +161,7 @@ export const components = {
   'auto-oms': <AutoOMS />,
   'boon-investments': <BoonInvestments />,
   sunrun: <Sunrun />,
-  autoPOOL: <AutoPOOL />,
+  autopool: <AutoPOOL />,
   'white-label-apps': <WhiteLabelApps />,
   portfolio: <PortfolioGrid />,
   about: <About />,
@@ -112,6 +173,6 @@ export const portfolioItems = {
   'auto-oms': true,
   'boon-investments': true,
   sunrun: true,
-  autoPOOL: true,
+  autopool: true,
   'white-label-apps': true,
 };

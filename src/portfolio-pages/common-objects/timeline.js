@@ -3,13 +3,15 @@
 import React from 'react';
 import moize from 'moize';
 
-function renderTimeline(portfolio) {
-  const imgTD400 = require(`../../assets/images/${portfolio}-timeline-desktop-400.jpg`);
-  const imgTD800 = require(`../../assets/images/${portfolio}-timeline-desktop-800.jpg`);
-  const imgTD1600 = require(`../../assets/images/${portfolio}-timeline-desktop-1200.jpg`);
-  const imgTM400 = require(`../../assets/images/${portfolio}-timeline-mobile-400.jpg`);
-  const imgTM800 = require(`../../assets/images/${portfolio}-timeline-mobile-800.jpg`);
-  const imgTM1600 = require(`../../assets/images/${portfolio}-timeline-mobile-1200.jpg`);
+function renderTimeline(portfolio, imgSet) {
+  const {
+    imgTD400,
+    imgTD800,
+    imgTD1600,
+    imgTM400,
+    imgTM800,
+    imgTM1600,
+  } = imgSet;
   return (
     <div className="portfolio-page__section portfolio-page__timeline">
       <h2 className="portfolio-page__section__title">Progress</h2>
