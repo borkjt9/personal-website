@@ -1,7 +1,9 @@
 import React from 'react';
-import renderSkillsList from '../common-objects/skills-list';
-import renderSummary from '../common-objects/summary';
-import renderBanner from '../common-objects/banner';
+import {
+  renderSkillsList,
+  renderSummary,
+  renderBanner,
+} from '../portfolio-page';
 import './bank-of-america.scss';
 
 import automation400 from '../../assets/images/automation-400.jpg';
@@ -14,6 +16,17 @@ import janet450 from '../../assets/images/janet-yellen-450.jpg';
 import janet900 from '../../assets/images/janet-yellen-900.jpg';
 import janet1350 from '../../assets/images/janet-yellen-1350.jpg';
 
+import banner400 from '../../assets/images/bank-of-america-banner-400.jpg';
+import banner800 from '../../assets/images/bank-of-america-banner-800.jpg';
+import banner1200 from '../../assets/images/bank-of-america-banner-1200.jpg';
+import banner1600 from '../../assets/images/bank-of-america-banner-1600.jpg';
+
+const bannerImgSet = {
+  banner400,
+  banner800,
+  banner1200,
+  banner1600,
+};
 
 function BankOfAmerica() {
   const skillsDictionary = {
@@ -78,7 +91,7 @@ function BankOfAmerica() {
   return (
     <div className="portfolio-page bac">
       <div className="portfolio-page__body">
-        {renderBanner('bank-of-america')}
+        {renderBanner(bannerImgSet)}
         {renderSummary(summaryBody)}
         {renderAutomation()}
         {renderStressTesting()}

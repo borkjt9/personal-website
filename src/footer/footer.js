@@ -1,6 +1,5 @@
 import React from 'react';
 import map from 'lodash/map';
-import moize from 'moize';
 import './footer.scss';
 
 function Footer() {
@@ -35,6 +34,4 @@ function Footer() {
   );
 }
 
-const memoizedFooter = moize.react(Footer);
-
-export default memoizedFooter;
+export default Footer;

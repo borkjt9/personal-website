@@ -1,10 +1,12 @@
 /* eslint-disable global-require */
 import React from 'react';
-import renderSkillsList from '../common-objects/skills-list';
-import renderTimeline from '../common-objects/timeline';
-import renderSummary from '../common-objects/summary';
-import renderBanner from '../common-objects/banner';
-import renderProduct from '../common-objects/product';
+import {
+  renderSkillsList,
+  renderTimeline,
+  renderSummary,
+  renderBanner,
+  renderProduct,
+} from '../portfolio-page';
 import './white-label-apps.scss';
 
 import imgTD400 from '../../assets/images/white-label-apps-timeline-desktop-400.jpg';
@@ -13,6 +15,18 @@ import imgTD1600 from '../../assets/images/white-label-apps-timeline-desktop-160
 import imgTM400 from '../../assets/images/white-label-apps-timeline-mobile-400.jpg';
 import imgTM800 from '../../assets/images/white-label-apps-timeline-mobile-800.jpg';
 import imgTM1600 from '../../assets/images/white-label-apps-timeline-mobile-1600.jpg';
+
+import banner400 from '../../assets/images/white-label-apps-banner-400.jpg';
+import banner800 from '../../assets/images/white-label-apps-banner-800.jpg';
+import banner1200 from '../../assets/images/white-label-apps-banner-1200.jpg';
+import banner1600 from '../../assets/images/white-label-apps-banner-1600.jpg';
+
+const bannerImgSet = {
+  banner400,
+  banner800,
+  banner1200,
+  banner1600,
+};
 
 const timelineImgSet = {
   imgTD400,
@@ -68,7 +82,7 @@ function WhiteLabelApps() {
   return (
     <div className="portfolio-page white-label-apps">
       <div className="portfolio-page__body">
-        {renderBanner('white-label-apps', 'white label apps')}
+        {renderBanner(bannerImgSet, 'white label apps')}
         {renderSummary(summaryBody)}
         {renderProduct(productSections)}
         {renderTimeline('white-label-apps', timelineImgSet)}

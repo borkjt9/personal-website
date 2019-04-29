@@ -1,12 +1,19 @@
 import React from 'react';
-import renderSkillsList from '../common-objects/skills-list';
-import renderTimeline from '../common-objects/timeline';
-import renderSummary from '../common-objects/summary';
-import renderBanner from '../common-objects/banner';
-import renderProduct from '../common-objects/product';
-import renderDesign from '../common-objects/design';
+import {
+  renderSkillsList,
+  renderTimeline,
+  renderSummary,
+  renderBanner,
+  renderProduct,
+  renderDesign,
+} from '../portfolio-page';
 
 import './auto-oms.scss';
+
+import banner400 from '../../assets/images/auto-oms-banner-400.jpg';
+import banner800 from '../../assets/images/auto-oms-banner-800.jpg';
+import banner1200 from '../../assets/images/auto-oms-banner-1200.jpg';
+import banner1600 from '../../assets/images/auto-oms-banner-1600.jpg';
 
 import imgTD400 from '../../assets/images/auto-oms-timeline-desktop-400.jpg';
 import imgTD800 from '../../assets/images/auto-oms-timeline-desktop-800.jpg';
@@ -26,6 +33,13 @@ import prod2900 from '../../assets/images/auto-oms-2-900.jpg';
 import design300 from '../../assets/images/auto-oms-wireframe-thumbnail-300.jpg';
 import design600 from '../../assets/images/auto-oms-wireframe-thumbnail-600.jpg';
 import design900 from '../../assets/images/auto-oms-wireframe-thumbnail-900.jpg';
+
+const bannerImgSet = {
+  banner400,
+  banner800,
+  banner1200,
+  banner1600,
+};
 
 const timelineImgSet = {
   imgTD400,
@@ -86,7 +100,7 @@ function AutoOMS() {
   return (
     <div className="portfolio-page auto-oms">
       <div className="portfolio-page__body">
-        {renderBanner('auto-oms', 'auto-oms')}
+        {renderBanner(bannerImgSet, 'auto-oms')}
         {renderSummary(summaryBody)}
         {renderDesign(designInput)}
         {renderProduct(productInputs)}

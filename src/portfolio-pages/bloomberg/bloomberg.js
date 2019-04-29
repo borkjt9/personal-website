@@ -1,14 +1,31 @@
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable global-require */
 import React from 'react';
-import renderSkillsList from '../common-objects/skills-list';
-import renderSummary from '../common-objects/summary';
-import renderBanner from '../common-objects/banner';
-import renderProduct from '../common-objects/product';
+import {
+  renderSkillsList,
+  renderSummary,
+  renderBanner,
+  renderProduct,
+} from '../portfolio-page';
+
+import './bloomberg.scss';
+
 import img200 from '../../assets/images/billions-200.jpg';
 import img400 from '../../assets/images/billions-400.jpg';
 import img600 from '../../assets/images/billions-600.jpg';
-import './bloomberg.scss';
+
+import banner400 from '../../assets/images/bloomberg-banner-400.jpg';
+import banner800 from '../../assets/images/bloomberg-banner-800.jpg';
+import banner1200 from '../../assets/images/bloomberg-banner-1200.jpg';
+import banner1600 from '../../assets/images/bloomberg-banner-1600.jpg';
+
+const bannerImgSet = {
+  banner400,
+  banner800,
+  banner1200,
+  banner1600,
+};
+
 
 function BankOfAmerica() {
   const skillsDictionary = {
@@ -42,7 +59,7 @@ function BankOfAmerica() {
   return (
     <div className="portfolio-page bac">
       <div className="portfolio-page__body">
-        {renderBanner('bloomberg')}
+        {renderBanner(bannerImgSet)}
         {renderSummary(summaryBody)}
         {renderProduct(productInputs)}
         {/* {renderDevelopment()} */}

@@ -1,10 +1,25 @@
 /* eslint-disable global-require */
 import React from 'react';
-import renderSkillsList from '../common-objects/skills-list';
-import renderSummary from '../common-objects/summary';
-import renderBanner from '../common-objects/banner';
+import {
+  renderSkillsList,
+  renderSummary,
+  renderBanner,
+} from '../portfolio-page';
+
+import banner400 from '../../assets/images/sunrun-banner-400.jpg';
+import banner800 from '../../assets/images/sunrun-banner-800.jpg';
+import banner1200 from '../../assets/images/sunrun-banner-1200.jpg';
+import banner1600 from '../../assets/images/sunrun-banner-1600.jpg';
 
 import './sunrun.scss';
+
+const bannerImgSet = {
+  banner400,
+  banner800,
+  banner1200,
+  banner1600,
+};
+
 
 function Sunrun() {
   const skillsDictionary = {
@@ -79,7 +94,7 @@ function Sunrun() {
   return (
     <div className="sunrun portfolio-page">
       <div className="portfolio-page__body">
-        {renderBanner('sunrun')}
+        {renderBanner(bannerImgSet)}
         {renderSummary(summaryBody)}
         {renderFinancialModeling()}
         {renderIPO()}

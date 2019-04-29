@@ -1,11 +1,14 @@
 import React from 'react';
-import renderSkillsList from '../common-objects/skills-list';
-import renderTimeline from '../common-objects/timeline';
-import renderSummary from '../common-objects/summary';
-import renderBanner from '../common-objects/banner';
-import renderProduct from '../common-objects/product';
-import renderDesign from '../common-objects/design';
-import renderInvestment from '../common-objects/investment';
+import {
+  renderSkillsList,
+  renderTimeline,
+  renderSummary,
+  renderBanner,
+  renderProduct,
+  renderDesign,
+  renderInvestment,
+} from '../portfolio-page';
+
 import './boon-investments.scss';
 
 import imgTD400 from '../../assets/images/boon-investments-timeline-desktop-400.jpg';
@@ -29,6 +32,18 @@ import boonWireframe750 from '../../assets/images/boon-wireframe-750.jpg';
 import whitePaperThumbnail250 from '../../assets/images/white-paper-thumbnail-250.jpg';
 import whitePaperThumbnail500 from '../../assets/images/white-paper-thumbnail-500.jpg';
 import whitePaperThumbnail750 from '../../assets/images/white-paper-thumbnail-750.jpg';
+
+import banner400 from '../../assets/images/boon-investments-banner-400.jpg';
+import banner800 from '../../assets/images/boon-investments-banner-800.jpg';
+import banner1200 from '../../assets/images/boon-investments-banner-1200.jpg';
+import banner1600 from '../../assets/images/boon-investments-banner-1600.jpg';
+
+const bannerImgSet = {
+  banner400,
+  banner800,
+  banner1200,
+  banner1600,
+};
 
 const timelineImgSet = {
   imgTD400,
@@ -101,7 +116,7 @@ function BoonInvestments() {
   return (
     <div className="portfolio-page boon-investments">
       <div className="portfolio-page__body">
-        {renderBanner('boon-investments', 'boon investments')}
+        {renderBanner(bannerImgSet, 'boon investments')}
         {renderSummary(summaryBody)}
         {renderDesign(designInput)}
         {renderProduct(productInputs)}

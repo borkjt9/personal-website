@@ -1,8 +1,11 @@
 import React from 'react';
-import renderSkillsList from '../common-objects/skills-list';
-import renderSummary from '../common-objects/summary';
-import renderBanner from '../common-objects/banner';
-import renderProduct from '../common-objects/product';
+import {
+  renderSkillsList,
+  renderSummary,
+  renderBanner,
+  renderProduct,
+} from '../portfolio-page';
+
 import './autopool.scss';
 
 import autopoolSetRide200 from '../../assets/images/autopool-set-ride-200.jpg';
@@ -14,6 +17,18 @@ import autopoolCreateAlert600 from '../../assets/images/autopool-create-alert-60
 import autopoolReceieveAlert200 from '../../assets/images/autopool-receive-alert-200.jpg';
 import autopoolReceieveAlert400 from '../../assets/images/autopool-receive-alert-400.jpg';
 import autopoolReceieveAlert600 from '../../assets/images/autopool-receive-alert-600.jpg';
+
+import banner400 from '../../assets/images/autopool-banner-400.jpg';
+import banner800 from '../../assets/images/autopool-banner-800.jpg';
+import banner1200 from '../../assets/images/autopool-banner-1200.jpg';
+import banner1600 from '../../assets/images/autopool-banner-1600.jpg';
+
+const bannerImgSet = {
+  banner400,
+  banner800,
+  banner1200,
+  banner1600,
+};
 
 function AutoPOOL() {
   const summaryBody = "AutoPOOl was a fun iOS application I built to solve an incredibly significant painpoint in today’s society: the highly volatile prices of UberPOOL rides.\n\nAutoPOOL sends users automatic push notifications containing UberPOOL price updates at time intervals they set. Once the price is in the user’s desired range, Auto-POOL alerts the user with a fun pokemon-themed notifications.\n\nI developed AutoPOOL in Swift, and used Google's App Engine to schedule cron jobs and send push notifications.";
@@ -62,7 +77,7 @@ function AutoPOOL() {
   return (
     <div className="portfolio-page autopool">
       <div className="portfolio-page__body">
-        {renderBanner('autopool', 'autopool')}
+        {renderBanner(bannerImgSet, 'autopool')}
         {renderSummary(summaryBody)}
         {renderProduct(productInputs)}
         {renderSkillsList(skillsDictionary)}
