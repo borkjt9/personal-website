@@ -3,6 +3,8 @@
 import React from 'react';
 import map from 'lodash/map';
 
+import './portfolio-page.scss';
+
 export function renderBanner(imgSet, title = '') {
   const {
     banner400,
@@ -177,7 +179,7 @@ export function renderTimeline(portfolio, imgSet) {
       <h2 className="portfolio-page__section__title">Progress</h2>
       <img
         alt="timeline showing the progress made on the auto-oms over the past year"
-        className="timeline__image--desktop"
+        className="portfolio-page__timeline__image--desktop"
         src={imgTD400}
         srcSet={`${imgTD400} 400w,
           ${imgTD800} 800w,
@@ -186,7 +188,7 @@ export function renderTimeline(portfolio, imgSet) {
       />
       <img
         alt="timeline showing the progress made on the auto-oms over the past year"
-        className="timeline__image--mobile"
+        className="portfolio-page__timeline__image--mobile"
         src={imgTM400}
         srcSet={`${imgTM400} 400w,
           ${imgTM800} 800w,

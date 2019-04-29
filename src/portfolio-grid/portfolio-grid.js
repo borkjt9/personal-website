@@ -19,7 +19,7 @@ function PortfolioGrid() {
   });
   return (
     <div>
-      <div className="portfolio portfolio--wrapped portfolio-grid justify-content-around">
+      <div className="portfolio --wrapped portfolio-grid justify-content-around">
         {portfolioItems}
       </div>
     </div>
