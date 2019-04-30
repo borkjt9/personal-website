@@ -5,6 +5,8 @@ import Sunrun from '../portfolio-pages/sunrun/sunrun';
 import AutoOMS from '../portfolio-pages/auto-oms/auto-oms';
 import AutoPOOL from '../portfolio-pages/autopool/autopool';
 import BoonInvestments from '../portfolio-pages/boon-investments/boon-investments';
+import Mediate from '../portfolio-pages/mediate/mediate';
+
 import WhiteLabelApps from '../portfolio-pages/white-label-apps/white-label-apps';
 import PortfolioGrid from '../portfolio-grid/portfolio-grid';
 import About from '../about/about';
@@ -28,6 +30,9 @@ import bloomberg750 from '../assets/images/bloomberg-750.jpg';
 import autoOMS250 from '../assets/images/auto-oms-250.jpg';
 import autoOMS500 from '../assets/images/auto-oms-500.jpg';
 import autoOMS750 from '../assets/images/auto-oms-750.jpg';
+import mediate250 from '../assets/images/mediate-250.jpg';
+import mediate500 from '../assets/images/mediate-500.jpg';
+import mediate750 from '../assets/images/mediate-750.jpg';
 import whiteLabelApps250 from '../assets/images/white-label-apps-250.jpg';
 import whiteLabelApps500 from '../assets/images/white-label-apps-500.jpg';
 import whiteLabelApps750 from '../assets/images/white-label-apps-750.jpg';
@@ -58,6 +63,11 @@ export const portfolioItemImgSets = {
     img500: bloomberg500,
     img750: bloomberg750,
   },
+  mediate: {
+    img250: mediate250,
+    img500: mediate500,
+    img750: mediate750,
+  },
   sunrun: {
     img250: sunrun250,
     img500: sunrun500,
@@ -80,6 +90,7 @@ export const browserPaths = {
   'white-label-apps': '/portfolio/white-label-apps',
   'auto-oms': '/portfolio/auto-oms',
   bloomberg: '/portfolio/bloomberg',
+  mediate: '/portfolio/mediate',
 };
 
 export const portfolioIdxMap = {
@@ -99,9 +110,19 @@ export const portfolioArr = [
     image: 'bloomberg',
     skills: ['JS', 'C++', 'Python'],
     href: 'bloomberg',
-    nref: 'boon-investments',
+    nref: 'mediate',
     pref: 'sunrun',
     idx: 0,
+  },
+  {
+    name: 'Mediate',
+    component: 'mediate',
+    image: 'mediate',
+    skills: ['JS', 'Firebase', 'React'],
+    href: 'mediate',
+    nref: 'boon-investments',
+    pref: 'bloomberg',
+    idx: 1,
   },
   {
     name: 'Boon Investments',
@@ -110,8 +131,8 @@ export const portfolioArr = [
     skills: ['UI/UX', 'Swift', 'Python'],
     href: 'boon-investments',
     nref: 'auto-oms',
-    pref: 'bloomberg',
-    idx: 1,
+    pref: 'mediate',
+    idx: 2,
   },
   {
     name: 'Auto-OMS',
@@ -121,7 +142,7 @@ export const portfolioArr = [
     href: 'auto-oms',
     nref: 'autopool',
     pref: 'boon-investments',
-    idx: 2,
+    idx: 3,
   },
   {
     name: 'AutoPOOL',
@@ -131,7 +152,7 @@ export const portfolioArr = [
     href: 'autopool',
     nref: 'white-label-apps',
     pref: 'auto-oms',
-    idx: 3,
+    idx: 4,
   },
   {
     name: 'White Label Apps',
@@ -141,7 +162,7 @@ export const portfolioArr = [
     href: 'white-label-apps',
     nref: 'bank-of-america',
     pref: 'autopool',
-    idx: 4,
+    idx: 5,
   },
   {
     name: 'Bank of America',
@@ -151,7 +172,7 @@ export const portfolioArr = [
     href: 'bank-of-america',
     nref: 'sunrun',
     pref: 'white-label-apps',
-    idx: 5,
+    idx: 6,
   },
   {
     name: 'Sunrun',
@@ -161,7 +182,7 @@ export const portfolioArr = [
     href: 'sunrun',
     nref: 'bloomberg',
     pref: 'bank-of-america',
-    idx: 6,
+    idx: 7,
   },
 ];
 
@@ -175,6 +196,7 @@ export const components = {
   'white-label-apps': <WhiteLabelApps />,
   portfolio: <PortfolioGrid />,
   about: <About />,
+  mediate: <Mediate />,
 };
 
 export const portfolioItems = {
@@ -183,6 +205,7 @@ export const portfolioItems = {
   'auto-oms': true,
   'boon-investments': true,
   sunrun: true,
+  mediate: true,
   autopool: true,
   'white-label-apps': true,
 };
