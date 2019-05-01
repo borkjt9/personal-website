@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { createBrowserHistory } from 'history';
-import { browserPaths } from '../shared/enums';
+import { browserPaths, portfolioOrder } from '../shared/enums';
 
 import './portfolio-item.scss';
 import { setExpandCarousel, setClearCarousel, setTopBarFixed, setActiveSection, setBrowserPath, setCarouselIndex } from '../redux/actions';
@@ -24,6 +24,7 @@ class PortfolioItem extends Component {
 
     const { dispatch, item } = this.props;
     const { href } = item;
+    const idx = portfolioOrder.indexOf(href);
     const browserPath = browserPaths[href];
     fakeBrowserHistory.replace({
       pathname: browserPath,
@@ -33,7 +34,7 @@ class PortfolioItem extends Component {
     dispatch(setTopBarFixed(true));
     dispatch(setActiveSection(href));
     dispatch(setExpandCarousel(false));
-    dispatch(setCarouselIndex(item.idx));
+    dispatch(setCarouselIndex(idx));
     setTimeout(() => {
       dispatch(setClearCarousel(true));
     }, 500);
@@ -122,6 +123,7 @@ PortfolioItem.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
   expandCarousel: PropTypes.bool,
   topBarFixed: PropTypes.bool,
+  isDesktop: PropTypes.bool,
   dispatch: PropTypes.func.isRequired,
 };
 

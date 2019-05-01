@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setActiveSection, setCarouselIndex } from '../redux/actions';
-import { portfolioItems } from '../shared/enums';
+import { portfolioItems, portfolioOrder } from '../shared/enums';
 import browserHistory from '../shared/browser-history';
 import './portfolio-navs.scss';
 
@@ -17,21 +17,23 @@ function PortfolioNavs(props) {
   const {
     expandCarousel,
     activeSection,
-    carouselIndex,
     dispatch,
   } = props;
-
+  if (!portfolioItems[activeSection]) {
+    return '';
+  }
   const item = portfolioItems[activeSection];
+  const idx = portfolioOrder.indexOf(item.href);
   const itemCount = Object.keys(portfolioItems).length;
   function handleNextPortfolio() {
     dispatch(setActiveSection(item.nref));
-    dispatch(setCarouselIndex((carouselIndex % itemCount) + 1));
+    dispatch(setCarouselIndex((idx % itemCount) + 1));
     browserHistory.replace(item.nref);
   }
 
   function handlePreviousPortfolio() {
     dispatch(setActiveSection(item.pref));
-    dispatch(setCarouselIndex(carouselIndex - 1));
+    dispatch(setCarouselIndex((idx % itemCount) - 1));
     browserHistory.replace(item.pref);
   }
   if (expandCarousel || activeSection === 'about' || activeSection === 'portfolio') {
