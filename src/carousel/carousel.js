@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Slider from 'react-slick';
-import map from 'lodash/map';
 import PortfolioItem from '../portfolio-item/portfolio-item';
-import { portfolioArr, portfolioItemImgSets } from '../shared/enums';
+import { portfolioItems, portfolioOrder } from '../shared/enums';
 import './carousel.scss';
 import rightChev20 from '../assets/images/right-chevron-20.png';
 import rightChev40 from '../assets/images/right-chevron-40.png';
@@ -92,16 +91,11 @@ class Carousel extends Component {
     if (this.props.clearCarousel) {
       return '';
     }
-    const portfolioItems = map(portfolioArr, (item) => {
-      const { href } = item;
-      const imgSet = portfolioItemImgSets[href];
+    const portfolioArr = portfolioOrder.map((key) => {
+      const item = portfolioItems[key];
       return (
-        <div key={href}>
-          <PortfolioItem
-            item={item}
-            isCarousel
-            imgSet={imgSet}
-          />
+        <div key={key}>
+          <PortfolioItem item={item} />
         </div>
       );
     });
@@ -118,7 +112,7 @@ class Carousel extends Component {
     return (
       <div className="portfolio portfolio--wrapped carousel">
         <Slider {...settings}>
-          {portfolioItems}
+          {portfolioArr}
         </Slider>
       </div>
     );

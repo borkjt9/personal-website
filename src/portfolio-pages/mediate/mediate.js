@@ -58,7 +58,7 @@ function Mediate() {
       },
     },
     {
-      caption: 'Clients pick the companies\nWe optimize the portfolios',
+      caption: 'Keep track of journalists',
       description: 'Whenever you visit an article written by a journalist you have read, Mediate will display the journalist\'s average rating next to their name.\n\nThis way, you can keep track of which journalists you like and do not like to read.',
       img: {
         alt: 'screenshot two for mediate',

@@ -76,7 +76,7 @@ function BoonInvestments() {
       },
     },
     {
-      caption: 'Clients pick the companies\nWe optimize the portfolios',
+      caption: 'Clients pick the companies. We optimize the portfolios',
       description: 'Boon offers clients the ability to incorporate companies of their choice into the portfolio allocation process.\n\nWe then blend these choices with a diversified pool of assets to create a portfolio tailored to each client’s unique financial circumstance.',
       img: {
         alt: "boon investments app screen depicting the user's allocation",

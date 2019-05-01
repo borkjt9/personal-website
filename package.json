@@ -51,7 +51,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "jest --watch",
-    "test:watch": "npm run test --watch"
+    "test:watch": "npm run test --watch",
+    "lint": "eslint src/**/*.js"
   },
   "devDependencies": {
     "babel-jest": "^20.0.3",

@@ -63,11 +63,11 @@ class PortfolioItem extends Component {
   }
 
   render() {
-    const { topBarFixed, item, imgSet } = this.props;
-    const { name } = item;
+    const { topBarFixed, isDesktop, item } = this.props;
+    const { name, imgSet } = item;
     const { img250, img500, img750 } = imgSet;
     let portfolioItemClassNames = 'transition-border portfolio-item max-dimensions-is-screen';
-    if (topBarFixed) {
+    if (topBarFixed && isDesktop) {
       portfolioItemClassNames += ' --is-carousel';
       if (this.props.expandCarousel) {
         portfolioItemClassNames += ' --is-expanding';
@@ -77,7 +77,7 @@ class PortfolioItem extends Component {
     } else {
       portfolioItemClassNames += ' --is-not-carousel';
     }
-    const portfolioItemStyle = topBarFixed ? {
+    const portfolioItemStyle = topBarFixed && isDesktop ? {
       marginLeft: 'calc(50% - 98.5px)',
       border: 1,
       borderColor: 'rgba(52,71,89,0.05)',
@@ -88,8 +88,8 @@ class PortfolioItem extends Component {
       boxShadow: '2px 3px 3px rgba(52,71,89,0.15)',
     } : {};
 
-    const slickSlideStyle = topBarFixed ? { minHeight: '0' } : {};
-    
+    const slickSlideStyle = topBarFixed && isDesktop ? { minHeight: '0' } : {};
+
 
     return (
       <div style={slickSlideStyle} >
@@ -115,21 +115,22 @@ class PortfolioItem extends Component {
 PortfolioItem.defaultProps = {
   expandCarousel: true,
   topBarFixed: false,
+  isDesktop: true,
 };
 
 PortfolioItem.propTypes = {
   item: PropTypes.objectOf(PropTypes.any).isRequired,
   expandCarousel: PropTypes.bool,
-  imgSet: PropTypes.objectOf(PropTypes.any).isRequired,
   topBarFixed: PropTypes.bool,
   dispatch: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
-  const { expandCarousel, topBarFixed } = state;
+  const { expandCarousel, topBarFixed, isDesktop } = state;
   return {
     expandCarousel,
     topBarFixed,
+    isDesktop,
   };
 }
 export default connect(mapStateToProps)(PortfolioItem);

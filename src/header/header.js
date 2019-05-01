@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import browserHistory from '../shared/browser-history';
 import Carousel from '../carousel/carousel';
 import './header.scss';
-import { resetState, setActiveSection, setExpandCarousel, setClearCarousel } from '../redux/actions';
+import { browserPaths } from '../shared/enums';
+import { setBrowserPath, resetState, setActiveSection, setExpandCarousel, setClearCarousel } from '../redux/actions';
 import homeImg from '../assets/images/home.svg';
 import aboutImg from '../assets/images/about.svg';
 import portfolioImg from '../assets/images/portfolio.svg';
+import blogImg from '../assets/images/blog.svg';
 
 class Header extends Component {
   constructor(props) {
@@ -15,11 +17,18 @@ class Header extends Component {
     this.toggleCarousel = this.toggleCarousel.bind(this);
     this.resetPage = this.resetPage.bind(this);
   }
+
   aboutLabel = 'about';
   portfolioLabel = 'portfolio';
 
   changeToSection(section) {
-    this.props.dispatch(setActiveSection(section));
+    const browserPath = browserPaths[section];
+    const { dispatch } = this.props;
+    browserHistory.replace({
+      pathname: browserPath,
+    });
+    dispatch(setBrowserPath(browserPath));
+    dispatch(setActiveSection(section));
   }
 
   // toggleCarousel onlyimplements the animation.
@@ -37,8 +46,8 @@ class Header extends Component {
   }
 
   handleHeaderClick(section) {
-    const { topBarFixed } = this.props;
-    if (topBarFixed && section !== 'about') {
+    const { topBarFixed, isDesktop } = this.props;
+    if (topBarFixed && isDesktop && section !== 'about') {
       this.toggleCarousel();
     } else {
       this.changeToSection(section);
@@ -83,9 +92,12 @@ class Header extends Component {
             <h4 className="header__divide margins--remove-default">|</h4>
             <button onClick={() => this.handleHeaderClick('portfolio')} className={`header__section-link ${portfolioClassName}`}>
               <h4 className="header__section-link__text margins--remove-default">{portfolioLabel}</h4>
-            </button>
-            <a href="../portfolio" className="header__section-link --is-mobile">
               <img className="header__section-link__icon" alt="link to portfoio section" src={portfolioImg} />
+            </button>
+            <h4 className="header__divide margins--remove-default">|</h4>
+            <a href="https://medium.com/@johnborkowski7" className="header__section-link --is-inactive">
+              <h4 className="header__section-link__text margins--remove-default">blog</h4>
+              <img className="header__section-link__icon" alt="link to blog" src={blogImg} />
             </a>
           </div>
         </div>
@@ -99,6 +111,7 @@ Header.defaultProps = {
   headerIsTopBar: false,
   expandCarousel: false,
   topBarFixed: false,
+  isDesktop: true,
 };
 
 Header.propTypes = {
@@ -107,6 +120,7 @@ Header.propTypes = {
   expandCarousel: PropTypes.bool,
   dispatch: PropTypes.func.isRequired,
   topBarFixed: PropTypes.bool,
+  isDesktop: PropTypes.bool,
 };
 
 function mapStateToProps(state) {
@@ -115,12 +129,14 @@ function mapStateToProps(state) {
     expandCarousel,
     topBarFixed,
     headerIsTopBar,
+    isDesktop,
   } = state;
   return {
     activeSection,
     expandCarousel,
     topBarFixed,
     headerIsTopBar,
+    isDesktop,
   };
 }
 export default connect(mapStateToProps)(Header);

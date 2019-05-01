@@ -37,49 +37,6 @@ import whiteLabelApps250 from '../assets/images/white-label-apps-250.jpg';
 import whiteLabelApps500 from '../assets/images/white-label-apps-500.jpg';
 import whiteLabelApps750 from '../assets/images/white-label-apps-750.jpg';
 
-export const portfolioItemImgSets = {
-  autopool: {
-    img250: autopool250,
-    img500: autopool500,
-    img750: autopool750,
-  },
-  'auto-oms': {
-    img250: autoOMS250,
-    img500: autoOMS500,
-    img750: autoOMS750,
-  },
-  'bank-of-america': {
-    img250: bankOfAmerica250,
-    img500: bankOfAmerica500,
-    img750: bankOfAmerica750,
-  },
-  'boon-investments': {
-    img250: boonInvestments250,
-    img500: boonInvestments500,
-    img750: boonInvestments750,
-  },
-  bloomberg: {
-    img250: bloomberg250,
-    img500: bloomberg500,
-    img750: bloomberg750,
-  },
-  mediate: {
-    img250: mediate250,
-    img500: mediate500,
-    img750: mediate750,
-  },
-  sunrun: {
-    img250: sunrun250,
-    img500: sunrun500,
-    img750: sunrun750,
-  },
-  'white-label-apps': {
-    img250: whiteLabelApps250,
-    img500: whiteLabelApps500,
-    img750: whiteLabelApps750,
-  },
-};
-
 export const browserPaths = {
   about: '/about',
   portfolio: '/portfolio',
@@ -92,99 +49,123 @@ export const browserPaths = {
   bloomberg: '/portfolio/bloomberg',
   mediate: '/portfolio/mediate',
 };
+export const portfolioOrder = [
+  'bloomberg',
+  'mediate',
+  'boon-investments',
+  'auto-oms',
+  'autopool',
+  'white-label-apps',
+  'bank-of-america',
+  'sunrun',
+];
 
-export const portfolioIdxMap = {
-  bloomberg: 0,
-  'boon-investments': 1,
-  'auto-oms': 2,
-  autopool: 3,
-  'white-label-apps': 4,
-  'bank-of-america': 5,
-  sunrun: 6,
-};
-
-export const portfolioArr = [
-  {
+export const portfolioItems = {
+  bloomberg: {
     name: 'Bloomberg',
-    component: 'Bloomberg',
     image: 'bloomberg',
     skills: ['JS', 'C++', 'Python'],
     href: 'bloomberg',
     nref: 'mediate',
     pref: 'sunrun',
-    idx: 0,
+    imgSet: {
+      img250: bloomberg250,
+      img500: bloomberg500,
+      img750: bloomberg750,
+    },
   },
-  {
+  mediate: {
     name: 'Mediate',
-    component: 'mediate',
     image: 'mediate',
     skills: ['JS', 'Firebase', 'React'],
     href: 'mediate',
     nref: 'boon-investments',
     pref: 'bloomberg',
-    idx: 1,
+    imgSet: {
+      img250: mediate250,
+      img500: mediate500,
+      img750: mediate750,
+    },
   },
-  {
+  'boon-investments': {
     name: 'Boon Investments',
-    component: 'BoonInvestments',
     image: 'boon-investments',
     skills: ['UI/UX', 'Swift', 'Python'],
     href: 'boon-investments',
     nref: 'auto-oms',
     pref: 'mediate',
-    idx: 2,
+    imgSet: {
+      img250: boonInvestments250,
+      img500: boonInvestments500,
+      img750: boonInvestments750,
+    },
   },
-  {
+  'auto-oms': {
     name: 'Auto-OMS',
-    component: 'AutoOMS',
     image: 'auto-oms',
     skills: ['UI/UX', 'JS', 'Angular'],
     href: 'auto-oms',
     nref: 'autopool',
     pref: 'boon-investments',
-    idx: 3,
+    imgSet: {
+      img250: autoOMS250,
+      img500: autoOMS500,
+      img750: autoOMS750,
+    },
   },
-  {
+  autopool: {
     name: 'AutoPOOL',
-    component: 'AutoPOOL',
     image: 'autopool',
     skills: ['UI/UX', 'Swift', 'App Engine'],
     href: 'autopool',
     nref: 'white-label-apps',
     pref: 'auto-oms',
-    idx: 4,
+    imgSet: {
+      img250: autopool250,
+      img500: autopool500,
+      img750: autopool750,
+    },
   },
-  {
+  'white-label-apps': {
     name: 'White Label Apps',
-    component: 'WhiteLabelApps',
     image: 'oshares',
     skills: ['Swift', 'Partnerships'],
     href: 'white-label-apps',
     nref: 'bank-of-america',
     pref: 'autopool',
-    idx: 5,
+    imgSet: {
+      img250: whiteLabelApps250,
+      img500: whiteLabelApps500,
+      img750: whiteLabelApps750,
+    },
   },
-  {
+  'bank-of-america': {
     name: 'Bank of America',
-    component: 'BankOfAmerica',
     image: 'bank-of-america',
     skills: ['Modeling', 'Forecasting'],
     href: 'bank-of-america',
     nref: 'sunrun',
     pref: 'white-label-apps',
-    idx: 6,
+    imgSet: {
+      img250: bankOfAmerica250,
+      img500: bankOfAmerica500,
+      img750: bankOfAmerica750,
+    },
   },
-  {
+  sunrun: {
     name: 'Sunrun',
-    component: 'Sunrun',
     image: 'sunrun',
     skills: ['FP&A', 'IPO'],
     href: 'sunrun',
     nref: 'bloomberg',
     pref: 'bank-of-america',
-    idx: 7,
+    imgSet: {
+      img250: sunrun250,
+      img500: sunrun500,
+      img750: sunrun750,
+    },
   },
-];
+};
 
 export const components = {
   bloomberg: <Bloomberg />,
@@ -197,15 +178,4 @@ export const components = {
   portfolio: <PortfolioGrid />,
   about: <About />,
   mediate: <Mediate />,
-};
-
-export const portfolioItems = {
-  bloomberg: true,
-  'bank-of-america': true,
-  'auto-oms': true,
-  'boon-investments': true,
-  sunrun: true,
-  mediate: true,
-  autopool: true,
-  'white-label-apps': true,
 };

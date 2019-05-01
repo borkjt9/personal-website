@@ -7,6 +7,7 @@ import {
   RESET_STATE,
   SET_CLEAR_CAROUSEL,
   SET_HEADER_IS_TOP_BAR,
+  SET_IS_DESKTOP,
 } from './constants';
 
 const initialState = {
@@ -17,6 +18,7 @@ const initialState = {
   topBarFixed: false,
   clearCarousel: true,
   headerIsTopBar: false,
+  isDesktop: true,
 };
 function reducer(state = initialState, action) {
   switch (action.type) {
@@ -36,6 +38,8 @@ function reducer(state = initialState, action) {
       return { ...state, ...{ expandCarousel: action.payload } };
     case SET_CLEAR_CAROUSEL:
       return { ...state, ...{ clearCarousel: action.payload } };
+    case SET_IS_DESKTOP:
+      return { ...state, ...{ isDesktop: action.payload } };
     default:
       return state;
   }

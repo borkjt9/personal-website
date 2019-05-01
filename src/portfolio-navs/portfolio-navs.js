@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { setActiveSection, setCarouselIndex } from '../redux/actions';
-import { portfolioIdxMap, portfolioArr } from '../shared/enums';
+import { portfolioItems } from '../shared/enums';
 import browserHistory from '../shared/browser-history';
 import './portfolio-navs.scss';
 
@@ -17,20 +17,21 @@ function PortfolioNavs(props) {
   const {
     expandCarousel,
     activeSection,
+    carouselIndex,
     dispatch,
   } = props;
-  const idx = portfolioIdxMap[activeSection];
-  const item = portfolioArr[idx];
 
+  const item = portfolioItems[activeSection];
+  const itemCount = Object.keys(portfolioItems).length;
   function handleNextPortfolio() {
     dispatch(setActiveSection(item.nref));
-    dispatch(setCarouselIndex(idx + 1));
+    dispatch(setCarouselIndex((carouselIndex % itemCount) + 1));
     browserHistory.replace(item.nref);
   }
 
   function handlePreviousPortfolio() {
     dispatch(setActiveSection(item.pref));
-    dispatch(setCarouselIndex(idx - 1));
+    dispatch(setCarouselIndex(carouselIndex - 1));
     browserHistory.replace(item.pref);
   }
   if (expandCarousel || activeSection === 'about' || activeSection === 'portfolio') {
@@ -69,19 +70,22 @@ function PortfolioNavs(props) {
 PortfolioNavs.defaultProps = {
   activeSection: 'about',
   expandCarousel: false,
+  carouselIndex: 0,
 };
 
 PortfolioNavs.propTypes = {
   expandCarousel: PropTypes.bool,
   activeSection: PropTypes.string,
+  carouselIndex: PropTypes.number,
   dispatch: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
-  const { expandCarousel, activeSection } = state;
+  const { expandCarousel, activeSection, carouselIndex } = state;
   return {
     expandCarousel,
     activeSection,
+    carouselIndex,
   };
 }
 

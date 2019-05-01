@@ -6,6 +6,7 @@ import {
   SET_TOP_BAR_FIXED,
   SET_EXPAND_CAROUSEL,
   SET_CLEAR_CAROUSEL,
+  SET_IS_DESKTOP,
   RESET_STATE,
 } from './constants';
 
@@ -40,6 +41,13 @@ export function setExpandCarousel(shouldExpand) {
   return {
     type: SET_EXPAND_CAROUSEL,
     payload: shouldExpand,
+  };
+}
+
+export function setIsDesktop(isDesktop) {
+  return {
+    type: SET_IS_DESKTOP,
+    payload: isDesktop,
   };
 }
 

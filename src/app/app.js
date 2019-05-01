@@ -6,9 +6,14 @@ import browserHistory from '../shared/browser-history';
 import Footer from '../footer/footer';
 import Header from '../header/header';
 import PortfolioNavs from '../portfolio-navs/portfolio-navs';
-import { browserPaths, components, portfolioItems } from '../shared/enums';
-import { debounce, addCustomProps } from '../shared/functions';
-import { setActiveSection, setTopBarFixed, setHeaderIsTopBar } from '../redux/actions';
+import { browserPaths, portfolioItems, components } from '../shared/enums';
+import { debounce } from '../shared/functions';
+import {
+  setActiveSection,
+  setTopBarFixed,
+  setHeaderIsTopBar,
+  setIsDesktop,
+} from '../redux/actions';
 import './app.scss';
 
 // This variable doesn't do anything other than add 'portfolio' or 'about' to the browser.
@@ -19,11 +24,12 @@ class App extends Component {
     super(props);
     this.selectSubSection = this.selectSubSection.bind(this);
     this.handleScrollEvent = this.handleScrollEvent.bind(this);
+    this.setViewport = this.setViewport.bind(this);
     this.state = {
       scrollPositionY: 0,
+
     };
   }
-
 
   componentDidMount() {
     const { dispatch, match } = this.props;
@@ -40,11 +46,31 @@ class App extends Component {
       }
     }
     document.addEventListener('scroll', debounce(this.handleScrollEvent, 0));
+    this.setViewport();
+    // removing below listener because it messes with props if user is constantly resizing screen.
+    // setting carousel at initial mount does not affect user experience significantly
+    // window.addEventListener('resize', this.setViewport);
   }
+
 
   componentWillUnmount() {
     document.removeEventListener('scroll', debounce(this.handleScrollEvent, 0));
+    // removing below listener because it messes with props if user is constantly resizing screen.
+    // setting carousel at initial mount does not affect user experience significantly
+    // window.removeEventListener('resize', this.setViewport);
   }
+
+  setViewport() {
+    const { isDesktop, dispatch } = this.props;
+    if (window.innerWidth <= this.mobileThreshold && isDesktop) {
+      dispatch(setIsDesktop(false));
+    } else if (window.innerWidth > this.mobileThreshold && !isDesktop) {
+      dispatch(setIsDesktop(true));
+    }
+  }
+
+    mobileThreshold = 767;
+
 
   scrollThreshold = 40;
   defaultSection = 'about';
@@ -78,19 +104,15 @@ class App extends Component {
   }
 
   render() {
-    const { headerIsTopBar } = this;
-    const { activeSection, topBarFixed } = this.props;
+    const { activeSection, topBarFixed, headerIsTopBar } = this.props;
     const pageIsScrolling = headerIsTopBar && !topBarFixed ? 'is-scrolling' : '';
     const topClasses = portfolioItems[activeSection] ? 'portfolio' : `app width-is-screen vert-center ${pageIsScrolling}`;
-    const activeComponent = addCustomProps(
-      components[activeSection],
-      { selectPortfolioItem: this.selectSubSection },
-    );
+    const component = components[activeSection];
     return (
       <div className={topClasses}>
         <div>
           <Header />
-          {activeComponent}
+          {component}
           <Footer />
           <PortfolioNavs />
         </div>
@@ -104,6 +126,7 @@ App.defaultProps = {
   activeSection: 'about',
   topBarFixed: false,
   headerIsTopBar: false,
+  isDesktop: true,
 };
 
 App.propTypes = {
@@ -112,6 +135,7 @@ App.propTypes = {
   dispatch: PropTypes.func.isRequired,
   topBarFixed: PropTypes.bool,
   headerIsTopBar: PropTypes.bool,
+  isDesktop: PropTypes.bool,
 };
 
 function mapStateToProps(state) {
@@ -120,12 +144,14 @@ function mapStateToProps(state) {
     activeSection,
     topBarFixed,
     headerIsTopBar,
+    isDesktop,
   } = state;
   return {
     browserPath,
     activeSection,
     topBarFixed,
     headerIsTopBar,
+    isDesktop,
   };
 }
 export default withRouter(connect(mapStateToProps)(App));

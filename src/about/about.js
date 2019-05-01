@@ -6,6 +6,7 @@ import headshot1050 from '../assets/images/headshot-1050.jpg';
 import guinea350 from '../assets/images/guinea-350.jpg';
 import guinea700 from '../assets/images/guinea-700.jpg';
 import guinea1050 from '../assets/images/guinea-1050.jpg';
+
 function About() {
   function renderWorkSection() {
     const workDesc = 'I am a product designer and front-end developer in the financial sector.\n\nI currently work as senior software engineer for Bloomberg, where I build trading blotters for the Bloomberg Terminal.\n\nI enjoy working on small, dynamic teams that build intuitive products to solve real problems for real people.';

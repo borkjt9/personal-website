@@ -136,7 +136,7 @@ module.exports = {
           // "url" loader works just like "file" loader but it also embeds
           // assets smaller than specified size as data URLs to avoid requests.
           {
-            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+            test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
             loader: require.resolve('url-loader'),
             options: {
               limit: 10000,
@@ -274,7 +274,7 @@ module.exports = {
             // by webpacks internal loaders.
             exclude: [/\.js$/, /\.html$/, /\.json$/, /\.scss$/],
             options: {
-              name: 'assets/images/[name].[hash:8].[ext]',
+              name: 'static/media/[name].[hash:8].[ext]',
             },
           },
           // ** STOP ** Are you adding a new loader?
