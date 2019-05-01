@@ -72,22 +72,19 @@ function PortfolioNavs(props) {
 PortfolioNavs.defaultProps = {
   activeSection: 'about',
   expandCarousel: false,
-  carouselIndex: 0,
 };
 
 PortfolioNavs.propTypes = {
   expandCarousel: PropTypes.bool,
   activeSection: PropTypes.string,
-  carouselIndex: PropTypes.number,
   dispatch: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {
-  const { expandCarousel, activeSection, carouselIndex } = state;
+  const { expandCarousel, activeSection } = state;
   return {
     expandCarousel,
     activeSection,
-    carouselIndex,
   };
 }
 
